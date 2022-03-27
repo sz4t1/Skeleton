@@ -12,43 +12,43 @@ public class Main {
 
             switch(input){
                 case 1:{
-                    System.out.println("1. Check Environment"); break;
+                    Menu.CheckEnviroment(); break;
                 }
                 case 2:{
-                    System.out.println("2. Craft Virus"); break;
+                    Menu.CraftVirus(); break;
                 }
                 case 3:{
-                    System.out.println("3. Drop Equipment"); break;
+                    Menu.DropEquipment(); break;
                 }
                 case 4:{
-                    System.out.println("4. Drop Material"); break;
+                    Menu.DropMaterial(); break;
                 }
                 case 5:{
-                    System.out.println("5. End Game"); break;
+                    Menu.EndGame(); break;
                 }
                 case 6:{
-                    System.out.println("6. Move Virologist"); break;
+                    Menu.MoveVirologist(); break;
                 }
                 case 7:{
-                    System.out.println("7. Pick Up Equipment"); break;
+                    Menu.PickUpEquipment(); break;
                 }
                 case 8:{
-                    System.out.println("8. Pick Up Material"); break;
+                    Menu.PickUpMaterial(); break;
                 }
                 case 9:{
-                    System.out.println("9. Scan Genetic"); break;
+                    Menu.VirologistScans(); break;
                 }
                 case 10:{
-                    System.out.println("10. Steal Equipment"); break;
+                    Menu.StealEquipment(); break;
                 }
                 case 11:{
-                    System.out.println("11. Steal Material"); break;
+                    Menu.StealMaterial(); break;
                 }
                 case 12:{
-                    System.out.println("12. Use Virus On Other Virologist"); break;
+                    Menu.UseVirusOnOtherVirologist(); break;
                 }
                 case 13:{
-                    System.out.println("13. Use Virus On Self"); break;
+                    Menu.UseVirusOnSelf(); break;
                 }
                 case 14:{
                     System.out.println("14."); break;

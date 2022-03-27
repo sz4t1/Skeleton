@@ -33,7 +33,7 @@ public class Virologist {
     private ReflectionAbility reflectionAbility;
     //Add material to the virologists inventory
     public void AddMaterial(Material m){
-        System.out.println("Yes I got a new material");
+        System.out.println("AddMaterial(Material m)");
     }
     //Addd virus to the inventory
     public void AddVirus(Virus v){
@@ -49,7 +49,7 @@ public class Virologist {
     }
     //Remove virus from the virologists inventory
     public void RemoveVirus(Virus v){
-        System.out.println("Removed virus from inventory");
+        System.out.println("RemoveVirus(Virus v)");
     }
     //Remove equipment from the virologists inventory
     public void RemoveEquipment(Equipment e){
@@ -61,7 +61,7 @@ public class Virologist {
     }
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){
-        System.out.println("New genetic I checked: "+gen);
+        System.out.println("AddGeneticCode(Integer gen)");
     }
     //Remove a genetic code from the virologist's knowledge
     public void RemoveGeneticCodes(){
@@ -73,15 +73,15 @@ public class Virologist {
     }
     //Attacks another virologist with the chosen virus
     public void Attack(Virus v, Virologist vir){
-        System.out.println("Attacked another virologist");
+        System.out.println("Attack(Virus v, Virologist vir)");
     }
     //Uses virus
     public void UseVirus(Virus v){
-        System.out.println("Used a virus");
+        System.out.println("UseVirus(Virus v)");
     }
     //Uses virus on self
     public void UseVirusOnSelf(Virus v){
-        System.out.println("Used a virus on myslef :/)");
+        System.out.println("UseVirusOnSelf(Virus v)");
     }
     //Scans a code on a laboratory
     public void ScanCode(){
@@ -89,12 +89,12 @@ public class Virologist {
     }
     //Checks if the virologist have a genetic code
     public boolean HaveGeneticCode(Integer gen){
-        System.out.println("I hope i don't have it, just kidding i know i don't have any in the skeleton part :') ");
+        System.out.println(" HaveGeneticCode(Integer gen)");
         return false;
     }
     //Steal an equipment from another virologist
     public void StealEquipment(Virologist v, Equipment e){
-        System.out.println("Stolen cool item");
+        System.out.println("StealEquipment(Virologist v, Equipment e)");
     }
     //Steak a material from another virologist
     public void StealMaterial(Virologist v, Material m){
@@ -102,7 +102,7 @@ public class Virologist {
     }
     //Being attacked by another virologist it passes the virus that was used by the attacker
     public void AttackedBy(Virologist vir, Virus v){
-        System.out.println("Somebody attacked me :( let's hope I have reverse UNO card :8)");
+        System.out.println("AttackedBy(Virologist vir, Virus v)");
     }
     //Getters and setters
     public Virus getVirusOn() {
@@ -122,6 +122,7 @@ public class Virologist {
     }
 
     public Integer getMaterialSize() {
+        System.out.println("getMaterialSize()");
         return materialSize;
     }
 
@@ -138,6 +139,7 @@ public class Virologist {
     }
 
     public CapacityAbility getCapacityAbility() {
+        System.out.println("getCapacityAbility()");
         return capacityAbility;
     }
 

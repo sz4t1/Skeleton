@@ -89,7 +89,93 @@ public class Menu {
         System.out.println("cape Cape "+cape);
 
         vir.AddEquipment(cape);
-        shelter.getName();
-
+        if(shelter.getName().equals("Shelter")){
+            shelter.RemoveEquipment(cape);
+            cape.Equip(vir);
+        }
     }
+
+    public static void PickUpMaterial(){
+        Virologist vir= new Virologist();
+        System.out.println("vir Virologist "+vir);
+        Warehouse warehouse= new Warehouse();
+        System.out.println("warehouse Warehouse: "+warehouse);
+        AminoAcid aminoAcid= new AminoAcid();
+        System.out.println("aminoAcid AminoAcid: "+aminoAcid);
+        vir.AddMaterial(aminoAcid);
+        if(warehouse.getName().equals("Warehouse")){
+            warehouse.RemoveMaterial(aminoAcid);
+        }
+    }
+
+    public static void VirologistScans(){
+        Virologist vir= new Virologist();
+        System.out.println("vir Virologist "+vir);
+        Laboratory laboratory= new Laboratory();
+        System.out.println("laboratory Laboratory: "+laboratory);
+        vir.ScanCode();
+        if(!vir.HaveGeneticCode(laboratory.getGeneticCode()))
+            vir.AddGeneticCode(laboratory.getGeneticCode());
+    }
+
+    public static void StealEquipment(){
+        Virologist vir= new Virologist();
+        System.out.println("vir Virologist "+vir);
+        Virologist vir2= new Virologist();
+        System.out.println("vir2 Virologist "+vir2);
+        Cape cape= new Cape();
+        System.out.println("cape Cape "+cape);
+
+        vir.StealEquipment(vir2,cape);
+        if(vir.getEquipmentSize()<2){
+            vir2.RemoveEquipment(cape);
+            cape.UnEquip(vir2);
+            vir.AddEquipment(cape);
+            cape.Equip(vir);
+        }
+    }
+
+    public static void StealMaterial(){
+        Virologist vir= new Virologist();
+        System.out.println("vir Virologist "+vir);
+        Virologist vir2= new Virologist();
+        System.out.println("vir2 Virologist "+vir2);
+        AminoAcid aminoAcid= new AminoAcid();
+        System.out.println("aminoAcid AminoAcid "+aminoAcid);
+
+        vir.StealMaterial(vir2,aminoAcid);
+        if(vir.getCapacityAbility().getMaxMaterialSize()<=vir.getMaterialSize()+1){
+            vir2.RemoveMaterial(aminoAcid);
+            vir.AddMaterial(aminoAcid);
+        }
+    }
+
+    public static void UseVirusOnOtherVirologist(){
+        Virologist vir= new Virologist();
+        System.out.println("vir Virologist "+vir);
+        Virologist vir2= new Virologist();
+        System.out.println("vir2 Virologist "+vir2);
+        NoReflection noReflection= new NoReflection();
+        System.out.println("noReflection NoReflection "+noReflection);
+        Amnesia amnesia= new Amnesia();
+        System.out.println("amnesia Amnesia "+amnesia);
+
+        vir.Attack(amnesia,vir2);
+        vir2.AttackedBy(vir,amnesia);
+        noReflection.invokeEffect(vir,vir2,amnesia);
+        vir2.UseVirus(amnesia);
+        vir.RemoveVirus(amnesia);
+    }
+
+    public static void UseVirusOnSelf(){
+        Virologist vir= new Virologist();
+        System.out.println("vir Virologist "+vir);
+        Dance dance= new Dance();
+        System.out.println("dance Dance "+dance);
+
+        vir.UseVirusOnSelf(dance);
+        dance.Effect(vir);
+    }
+
+
 }
