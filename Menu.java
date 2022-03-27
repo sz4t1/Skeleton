@@ -21,12 +21,15 @@ public class Menu {
         System.out.println("15. Use Amnesia On Self");
         System.out.println("16. Use Dance On Self");
         System.out.println("17. Use Paralyzing On Self");
-        System.out.println("18.Use Protection On Self");
+        System.out.println("18. Use Protection On Self");
 
         System.out.println("0. Exit Skeleton");
         System.out.println("---------------------------------------");
     }
     public static void CheckEnviroment(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Check Environment]");
+        
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Field field= new Field();
@@ -35,6 +38,9 @@ public class Menu {
     }
 
     public static void CraftVirus(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Craft Virus]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         AmnesiaRecipe amnesiaRecipe= new AmnesiaRecipe();
@@ -49,6 +55,9 @@ public class Menu {
     }
 
     public static void DropEquipment(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Drop Equipment]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Cape cape= new Cape();
@@ -58,6 +67,9 @@ public class Menu {
     }
 
     public static void DropMaterial(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Drop Material]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         AminoAcid aminoAcid= new AminoAcid();
@@ -67,11 +79,17 @@ public class Menu {
     }
     //todo
     public static void EndGame(){
+        System.out.println("---------------------------------------");
+        System.out.println("[End Game]");
+
         Game game= new Game();
         Virologist vir= new Virologist();
     }
 
     public static void MoveVirologist(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Move Virologist]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         FreeMovememnt freeMovememnt = new FreeMovememnt();
@@ -90,6 +108,9 @@ public class Menu {
     }
 
     public static void PickUpEquipment(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Pick Up Equipment]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Shelter shelter= new Shelter();
@@ -105,6 +126,9 @@ public class Menu {
     }
 
     public static void PickUpMaterial(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Pick Up Material]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Warehouse warehouse= new Warehouse();
@@ -118,6 +142,9 @@ public class Menu {
     }
 
     public static void VirologistScans(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Virologist Scans]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Laboratory laboratory= new Laboratory();
@@ -128,6 +155,9 @@ public class Menu {
     }
 
     public static void StealCape(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Steal Cape]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
@@ -151,6 +181,9 @@ public class Menu {
     }
 
     public static void StealGlove(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Steal Glove]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
@@ -174,6 +207,9 @@ public class Menu {
     }
 
     public static void StealSack(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Steal Sack]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
@@ -195,6 +231,9 @@ public class Menu {
         }
     }
     public static void StealMaterial(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Steal Material]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
@@ -210,6 +249,9 @@ public class Menu {
     }
 
     public static void UseVirusOnOtherVirologist(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Use Virus On Other Virologist]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
@@ -227,6 +269,9 @@ public class Menu {
     }
 
     public static void UseDanceOnSelf(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Use Dance On Self]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Dance dance= new Dance();
@@ -246,6 +291,9 @@ public class Menu {
 
 
     public static void UseAmnesiaOnSelf(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Use Amnesia On Self]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Amnesia amnesia= new Amnesia();
@@ -264,6 +312,9 @@ public class Menu {
     }
 
     public static void UseProtectionOnSelf(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Use Protection On Self]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Protection protection= new Protection();
@@ -283,6 +334,9 @@ public class Menu {
     }
 
     public static void UseParalyzingOnSelf(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Use Paralyzing On Self]");
+
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Paralyzing paralyzing= new Paralyzing();

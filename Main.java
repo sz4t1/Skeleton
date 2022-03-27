@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +11,7 @@ public class Main {
 
             switch(input){
                 case 0:{
+                    sc.close();
                     System.exit(0); break;
                 }
                 case 1:{

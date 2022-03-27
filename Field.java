@@ -3,7 +3,7 @@ import java.util.ArrayList;
 //This class represents a field on the game map
 public class Field {
     public Field(){
-        System.out.println("Field constructed");
+        System.out.println("Field() - Field constructed.");
     }
     //The attribute name is an id
     private String name;
