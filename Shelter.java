@@ -3,12 +3,15 @@
 public class Shelter extends Field{
     //Constructor
     public Shelter(){
-        System.out.println("Sgelter constructed");
+        this.setName("Shelter");
+        System.out.println("Shelter constructed");
     }
     //The equipment it have
     private Equipment equipment;
     //Removes the equipment from the shelter
-    public void RemoveEquipment(Equipment e){}
+    public void RemoveEquipment(Equipment e){
+        System.out.println("RemoveEquipment(Equipment e");
+    }
     //Get-set
     public Equipment getEquipment() {
         return equipment;

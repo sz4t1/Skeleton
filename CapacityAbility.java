@@ -14,6 +14,7 @@ public abstract class CapacityAbility {
     }
 
     public Integer getMaxMaterialSize() {
+        System.out.println("getMaxMaterialSize()");
         return maxMaterialSize;
     }
 

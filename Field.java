@@ -29,6 +29,7 @@ public class Field {
     }
 
     public void setName(String name) {
+        System.out.println("setName: "+name);
         this.name = name;
     }
 
