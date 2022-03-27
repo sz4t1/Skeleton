@@ -39,25 +39,31 @@ public class Main {
                     Menu.VirologistScans(); break;
                 }
                 case 10:{
-                    Menu.StealEquipment(); break;
+                    Menu.StealCape(); break;
                 }
                 case 11:{
-                    Menu.StealMaterial(); break;
+                    Menu.StealGlove(); break;
                 }
                 case 12:{
-                    Menu.UseVirusOnOtherVirologist(); break;
+                    Menu.StealSack(); break;
                 }
                 case 13:{
-                    Menu.UseVirusOnSelf(); break;
+                    Menu.StealMaterial(); break;
                 }
                 case 14:{
-                    System.out.println("14."); break;
+                    Menu.UseVirusOnOtherVirologist(); break;
                 }
                 case 15:{
-                    System.out.println("15."); break;
+                    Menu.UseAmnesiaOnSelf(); break;
                 }
                 case 16:{
-                    System.out.println("16."); break;
+                    Menu.UseDanceOnSelf(); break;
+                }
+                case 17:{
+                    Menu.UseParalyzingOnSelf(); break;
+                }
+                case 18:{
+                    Menu.UseProtectionOnSelf(); break;
                 }
 
 
