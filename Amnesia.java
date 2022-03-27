@@ -2,6 +2,9 @@
 //This class extends the Virus abstract class
 public class Amnesia extends Virus {
 //This overrides the Effect so we can effect the targeted Virologist with Amneisa
+    public Amnesia(){
+        System.out.println("Amnesia constructed");
+    }
     @Override
     public void Effect(Virologist v) {
         System.out.println("Amnesia is on");

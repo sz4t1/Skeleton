@@ -9,6 +9,7 @@ public class Main {
         while(input!=-1){
             Menu.menuElements();
             input=sc.nextInt();
+
             switch(input){
                 case 1:{
                     System.out.println("1. Check Environment"); break;
@@ -58,6 +59,8 @@ public class Main {
                 case 16:{
                     System.out.println("16."); break;
                 }
+
+
             }
         }
     }

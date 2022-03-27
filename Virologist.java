@@ -5,6 +5,8 @@ public class Virologist {
     public Virologist(){
         System.out.println("Virologist constructed");
     }
+    //The actual place of the virologist
+    private Field field;
     //The virus on the virologist if she/he have one on self
     private Virus virusOn;
     //Actual equipment count in inventory
@@ -35,15 +37,15 @@ public class Virologist {
     }
     //Addd virus to the inventory
     public void AddVirus(Virus v){
-        System.out.println("I have a new virus in my pocket");
+        System.out.println("AddVirus(Virus v)");
     }
     //Add equipment to the virologists inventory
     public void AddEquipment(Equipment e){
-        System.out.println("I got an equipment");
+        System.out.println("AddEquipment(Equipment e)");
     }
     //Remove material from the virologists inventory
     public void RemoveMaterial(Material m){
-        System.out.println("Removed material");
+        System.out.println("RemoveMaterial(Material m)");
     }
     //Remove virus from the virologists inventory
     public void RemoveVirus(Virus v){
@@ -51,11 +53,11 @@ public class Virologist {
     }
     //Remove equipment from the virologists inventory
     public void RemoveEquipment(Equipment e){
-        System.out.println("Removed item");
+        System.out.println("RemoveEquipment(Equipment e)");
     }
     //Virologist move to another field that was given as a parameter
     public void Move(Field f){
-        System.out.println("Moved to new field");
+        System.out.println("Move(Field f)");
     }
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){
@@ -67,8 +69,7 @@ public class Virologist {
     }
     //Creates a new virus
     public void CraftVirus(Virus v){
-        System.out.println("Crafted a new virus");
-        v.
+        System.out.println("CraftVirus(Virus v)");
     }
     //Attacks another virologist with the chosen virus
     public void Attack(Virus v, Virologist vir){
@@ -166,5 +167,14 @@ public class Virologist {
 
     public void setProtectionAbility(ProtectionAbility protectionAbility) {
         this.protectionAbility = protectionAbility;
+    }
+
+    public Field getField() {
+        return field;
+    }
+
+    public void setField(Field field) {
+        System.out.println("setField");
+        this.field = field;
     }
 }
