@@ -4,11 +4,11 @@ public class Sack extends Equipment {
     //Virologist equips the sack
     @Override
     public void Equip(Virologist vir) {
-        System.out.println("Sack equipped");
+        System.out.println("Equip(Virologist vir) - Sack equipped");
     }
     //Virologist unequip the sack
     @Override
     public void UnEquip(Virologist vir) {
-        System.out.println("Sack unequipped");
+        System.out.println("UnEquip(Virologist vir) - Sack unequipped");
     }
 }

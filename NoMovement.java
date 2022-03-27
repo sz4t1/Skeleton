@@ -4,6 +4,6 @@ public class NoMovement extends MovementAbility {
     //Use the effect on the virologist
     @Override
     public void invokeEffect(Virologist v, Field f) {
-        System.out.println("Life is hard :) so you can't move :'(");
+        System.out.println("invokeEffect(Virologist v, Field f)");
     }
 }

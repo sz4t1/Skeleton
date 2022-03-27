@@ -5,5 +5,6 @@ public class SackCapacity extends CapacityAbility {
     public SackCapacity(){
         setMaxMaterialSize(20);
         setMaxVirusSize(4);
+        System.out.println("MaxMaterialSize is 20 and MaxVirusSize is 4 now");
     }
 }

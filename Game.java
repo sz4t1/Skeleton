@@ -12,20 +12,20 @@ public class Game {
     }
     //Starts the game
     public void StartGame(){
-        System.out.println("gl hf");
+        System.out.println("StartGame()");
     }
     //Ends the game
     public void EndGame(){
-        System.out.println("wp gg");
+        System.out.println("EndGame()");
     }
     //Checks if the virologist have all the genetic codes
     public boolean CheckGeneticCodes(Virologist v){
 
-        System.out.println("You basically won like a Bantha, yes ");
+        System.out.println("CheckGeneticCodes(Virologist v)");
         return true;
     }
     //Move the virologist to a random place
     public void RandomMovement(Virologist v){
-        System.out.println("Am I drunk?");
+        System.out.println("RandomMovement(Virologist v)");
     }
 }
