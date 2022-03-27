@@ -4,6 +4,6 @@ public class CompleteProtection extends ProtectionAbility {
     //We override the method here and it gives the Virologist the ability to not get hit by the incoming ability
     @Override
     public void invokeEffect(Virologist v) {
-        System.out.println("Protection virus effect");
+        System.out.println("invokeEffect(Virologist v) - Complete protection against viruses.");
     }
 }

@@ -4,7 +4,7 @@ public class ParalyzingRecipe implements Recipe {
     //We Override the CreateVirus, so we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {
-        System.out.println("New Paralyzing virus is created");
+        System.out.println("CreateVirus(Virologist v) - New Paralyzing virus is created");
         return new Dance();
     }
     // We Override the RemoveUsedMaterials, this removes the materials needed to create the virus from the Virologist that was given as parameter

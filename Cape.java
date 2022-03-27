@@ -3,16 +3,16 @@
 public class Cape extends Equipment {
     //Constructor
     public Cape(){
-        System.out.println("Cape constructed");
+        System.out.println("Cape() - Cape constructed.");
     }
     //The method Equip is being override here, so we can give the player the CapeProtection Ability
     @Override
     public void Equip(Virologist vir) {
-        System.out.println("Equip(Virologist vir)");
+        System.out.println("Equip(Virologist vir) - Cape is equipped.");
     }
     //The method UnEquip is being override here, so we can remove the CapeProtection Ability from the player
     @Override
     public void UnEquip(Virologist vir) {
-        System.out.println("UnEquip(Virologist vir)");
+        System.out.println("UnEquip(Virologist vir) - Cape is unequipped.");
     }
 }

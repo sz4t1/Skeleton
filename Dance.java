@@ -3,16 +3,16 @@
 public class Dance extends Virus {
     //Constructor
     public Dance(){
-        System.out.println("Dance constructed");
+        System.out.println("Dance() - Dance virus is constructed.");
     }
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override
     public void Effect(Virologist v) {
-        System.out.println("Effect(Virologist v)");
+        System.out.println("Effect(Virologist v) - Dance virus affects the virologist.");
     }
     //This removes the effect of the virus on the Virologist that was given as parameter
     @Override
     public void EffectOff(Virologist v) {
-        System.out.println("EffectOff(Virologist v)");
+        System.out.println("EffectOff(Virologist v) - Dance virus is affecting no more the virologist.");
     }
 }

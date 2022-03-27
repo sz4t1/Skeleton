@@ -5,6 +5,6 @@ public class DefaultCapacity extends CapacityAbility {
     public DefaultCapacity(){
         setMaxMaterialSize(10);
         setMaxVirusSize(2);
-        System.out.println("MaxMaterialSize is 10 and MaxVirusSize is 2 now");
+        System.out.println("DefaultCapacity() - MaxMaterialSize is 10 and MaxVirusSize is 2 now");
     }
 }

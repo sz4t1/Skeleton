@@ -4,6 +4,6 @@ public class Nukleotide extends Material {
     //We override the abstract method beingUsed so we can use Nukleotide en recipes
     @Override
     public void beingUsed() {
-        System.out.println("beingUsed()");
+        System.out.println("beingUsed() - the used Nukleotide is destroyed.");
     }
 }

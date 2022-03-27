@@ -8,6 +8,6 @@ public class NoReflection extends ReflectionAbility {
     //Override invokeEffect and the virologist can't reflect
     @Override
     public void invokeEffect(Virologist vir1, Virologist vir2, Virus v) {
-        System.out.println("invokeEffect(Virologist vir1, Virologist vir2, Virus v)");
+        System.out.println("invokeEffect(Virologist vir1, Virologist vir2, Virus v) - The virologist can't reflec the attacks.");
     }
 }

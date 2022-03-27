@@ -11,16 +11,16 @@ public class Field {
     private ArrayList<Field> neighbours;
     //Check if the given field is a neighbour
     public boolean IsNeighbour(Field f){
-        System.out.println("IsNeighbour(Field f)");
+        System.out.println("IsNeighbour(Field f) - Checking, if the fields are neighbours.");
         return true;
     }
 
     public void RemoveVirologist(Virologist v){
-        System.out.println(" RemoveVirologist(Virologist v)");
+        System.out.println(" RemoveVirologist(Virologist v) - Virologist is removed from the field.");
     }
 
     public void AddVirologist(Virologist v){
-        System.out.println("AddVirologist(Virologist v)");
+        System.out.println("AddVirologist(Virologist v) - The virologist now stands on this field.");
     }
     //Public getters and setters
     public String getName() {
@@ -34,7 +34,7 @@ public class Field {
     }
 
     public ArrayList<Field> getNeighbours() {
-        System.out.println("Field getNeighbours");
+        System.out.println("getNeighbours() - Searching for neighbours.");
         return neighbours;
     }
 

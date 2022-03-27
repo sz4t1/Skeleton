@@ -12,20 +12,20 @@ public class Game {
     }
     //Starts the game
     public void StartGame(){
-        System.out.println("StartGame()");
+        System.out.println("StartGame() - The game is started.");
     }
     //Ends the game
     public void EndGame(){
-        System.out.println("EndGame()");
+        System.out.println("EndGame() - The game has ended.");
     }
     //Checks if the virologist have all the genetic codes
     public boolean CheckGeneticCodes(Virologist v){
 
-        System.out.println("CheckGeneticCodes(Virologist v)");
+        System.out.println("CheckGeneticCodes(Virologist v) - Checking for the win conditions.");
         return true;
     }
     //Move the virologist to a random place
     public void RandomMovement(Virologist v){
-        System.out.println("RandomMovement(Virologist v)");
+        System.out.println("RandomMovement(Virologist v) - The virologist is moved randomly.");
     }
 }
