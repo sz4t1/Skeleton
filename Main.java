@@ -11,6 +11,9 @@ public class Main {
             input=sc.nextInt();
 
             switch(input){
+                case 0:{
+                    System.exit(0); break;
+                }
                 case 1:{
                     Menu.CheckEnviroment(); break;
                 }

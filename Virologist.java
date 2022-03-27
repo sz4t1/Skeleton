@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Virologist {
     //Virologist constructor
     public Virologist(){
-        System.out.println("Virologist constructed");
+        System.out.println("Virologist() - Virologist constructed");
     }
     //The actual place of the virologist
     private Field field;

@@ -2,6 +2,8 @@ import java.util.Random;
 
 public class Menu {
     public static void menuElements(){
+        System.out.println("---------------------------------------");
+
         System.out.println("1. Check Environment");
         System.out.println("2. Craft Virus");
         System.out.println("3. Drop Equipment");
@@ -20,6 +22,9 @@ public class Menu {
         System.out.println("16. Use Dance On Self");
         System.out.println("17. Use Paralyzing On Self");
         System.out.println("18.Use Protection On Self");
+
+        System.out.println("0. Exit Skeleton");
+        System.out.println("---------------------------------------");
     }
     public static void CheckEnviroment(){
         Virologist vir= new Virologist();
