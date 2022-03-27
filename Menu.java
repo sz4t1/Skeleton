@@ -77,13 +77,17 @@ public class Menu {
         vir.RemoveMaterial(aminoAcid);
         aminoAcid.beingUsed();
     }
-    //todo
+
     public static void EndGame(){
         System.out.println("---------------------------------------");
         System.out.println("[End Game]");
 
         Game game= new Game();
         Virologist vir= new Virologist();
+        game.StartGame();
+        if(game.CheckGeneticCodes(vir)){
+            game.EndGame();
+        }
     }
 
     public static void MoveVirologist(){
