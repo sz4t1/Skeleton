@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 //The virologist class represents the character which is being controlled by the player
 public class Virologist {
+    //Virologist constructor
+    public Virologist(){
+        System.out.println("Virologist constructed");
+    }
     //The virus on the virologist if she/he have one on self
     private Virus virusOn;
     //Actual equipment count in inventory
@@ -28,6 +32,10 @@ public class Virologist {
     //Add material to the virologists inventory
     public void AddMaterial(Material m){
         System.out.println("Yes I got a new material");
+    }
+    //Addd virus to the inventory
+    public void AddVirus(Virus v){
+        System.out.println("I have a new virus in my pocket");
     }
     //Add equipment to the virologists inventory
     public void AddEquipment(Equipment e){
@@ -60,6 +68,7 @@ public class Virologist {
     //Creates a new virus
     public void CraftVirus(Virus v){
         System.out.println("Crafted a new virus");
+        v.
     }
     //Attacks another virologist with the chosen virus
     public void Attack(Virus v, Virologist vir){

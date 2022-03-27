@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 //This class represents a field on the game map
 public class Field {
+    public Field(){
+        System.out.println("Field constructed");
+    }
     //The attribute name is an id
     private String name;
     //The attribute neighbours contains the neighbour fields of this field
@@ -19,12 +22,21 @@ public class Field {
     public void AddVirologist(Virologist v){
         System.out.println("A new Virologist etnered this field");
     }
-    //Public getter and setter
+    //Public getters and setters
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public ArrayList<Field> getNeighbours() {
+        System.out.println("You got my neighbours");
+        return neighbours;
+    }
+
+    public void setNeighbours(ArrayList<Field> neighbours) {
+        this.neighbours = neighbours;
     }
 }
