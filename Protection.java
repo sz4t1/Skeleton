@@ -7,7 +7,7 @@ public class Protection extends Virus {
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override
     public void Effect(Virologist v) {
-        System.out.println("Effect(Virologist v) - Protection virus effect on");
+        System.out.println("Effect(Virologist v) - Protection virus is effecting the virologist.");
         //If the virologist has a virus on already, it is overwritten by the new one
         if(v.getVirusOn() != null){
             v.getVirusOn().EffectOff(v);

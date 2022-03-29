@@ -337,22 +337,15 @@ public class Menu {
     public static void UseParalyzingOnSelf(){
         System.out.println("---------------------------------------");
         System.out.println("[Use Paralyzing On Self]");
-
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Paralyzing paralyzing= new Paralyzing();
         System.out.println("paralyzing Paralyzing "+paralyzing);
-        Dance dance= new Dance();
-        System.out.println("dance Dance "+dance);
-        CompleteProtection completeProtection= new CompleteProtection();
-        System.out.println("completeProtection CompleteProtection"+completeProtection);
-        NoMovement noMovement = new NoMovement();
-        System.out.println("noMovement NoMovement"+noMovement);
-
+        vir.AddVirus(paralyzing);
+        //Testcase
+        System.out.println(".......................................");
         vir.UseVirusOnSelf(paralyzing);
-        paralyzing.Effect(vir);
-        dance.EffectOff(vir);
-        vir.setMovementAbility(noMovement);
     }
 
 
