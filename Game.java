@@ -41,6 +41,7 @@ public class Game {
         System.out.println("RandomMovement(Virologist v) - The virologist is moved randomly.");
     }
     //Adds a virologist to the game
+    //Nem feltétlenül marad meg, a szkeletonhoz kellett egy publikus függvény, mellyel virológust lehet a game-hez adni
     public void AddVirologist(Virologist v){
         System.out.println("AddVirologist(Virologist v) - New virologist added to the game.");
         virologists.add(v);
