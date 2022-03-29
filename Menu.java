@@ -34,6 +34,14 @@ public class Menu {
         System.out.println("vir Virologist "+vir);
         Field field= new Field();
         System.out.println("field Field "+field);
+        Laboratory laboratory= new Laboratory();
+        System.out.println("laboratory Laboratory "+laboratory);
+        Shelter shelter= new Shelter();
+        System.out.println("shelter Shelter "+shelter);
+
+        field.addNeighbour(laboratory);
+        field.addNeighbour(shelter);
+        vir.setField(field);
         field.getNeighbours();
     }
 
@@ -45,13 +53,10 @@ public class Menu {
         System.out.println("vir Virologist "+vir);
         AmnesiaRecipe amnesiaRecipe= new AmnesiaRecipe();
         System.out.println("amnesiaRecipe AmnesiaRecipe "+amnesiaRecipe);
-        Amnesia type= new Amnesia();
-        System.out.println("type Amnesia "+type);
-        vir.CraftVirus(type);
-        if(amnesiaRecipe.IsCraftable(vir)) {
-            amnesiaRecipe.RemoveUsedMaterials(vir);
-            vir.AddVirus(amnesiaRecipe.CreateVirus(vir));
-        }
+        Amnesia amnesia= new Amnesia();
+        System.out.println("amnesia Amnesia "+amnesia);
+        vir.CraftVirus(amnesiaRecipe);
+
     }
 
     public static void DropEquipment(){
@@ -62,8 +67,9 @@ public class Menu {
         System.out.println("vir Virologist "+vir);
         Cape cape= new Cape();
         System.out.println("cape Cape "+cape);
+        vir.addEquipment(cape);
         vir.RemoveEquipment(cape);
-        cape.UnEquip(vir);
+
     }
 
     public static void DropMaterial(){
@@ -75,9 +81,9 @@ public class Menu {
         AminoAcid aminoAcid= new AminoAcid();
         System.out.println("aminoAcid AminoAcid "+aminoAcid);
         vir.RemoveMaterial(aminoAcid);
-        aminoAcid.beingUsed();
-    }
 
+    }
+    // TODO
     public static void EndGame(){
         System.out.println("---------------------------------------");
         System.out.println("[End Game]");
@@ -121,12 +127,10 @@ public class Menu {
         System.out.println("shelter Shelter "+shelter);
         Cape cape= new Cape();
         System.out.println("cape Cape "+cape);
+        vir.setField(shelter);
+        shelter.setEquipment(cape);
+        vir.AddEquipment(shelter.getEquipment());
 
-        vir.AddEquipment(cape);
-        if(shelter.getName().equals("Shelter")){
-            shelter.RemoveEquipment(cape);
-            cape.Equip(vir);
-        }
     }
 
     public static void PickUpMaterial(){
@@ -139,10 +143,11 @@ public class Menu {
         System.out.println("warehouse Warehouse: "+warehouse);
         AminoAcid aminoAcid= new AminoAcid();
         System.out.println("aminoAcid AminoAcid: "+aminoAcid);
+        vir.setField(warehouse);
+        warehouse.addMaterial(aminoAcid);
         vir.AddMaterial(aminoAcid);
-        if(warehouse.getName().equals("Warehouse")){
-            warehouse.RemoveMaterial(aminoAcid);
-        }
+
+
     }
 
     public static void VirologistScans(){

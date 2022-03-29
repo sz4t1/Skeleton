@@ -4,6 +4,10 @@ public class Virologist {
     //Virologist constructor
     public Virologist(){
         System.out.println("Virologist() - Virologist constructed");
+        viruses= new ArrayList<>();
+        equipment=new ArrayList<>();
+        materials=new ArrayList<>();
+        genCodes=new ArrayList<>();
     }
     //The actual place of the virologist
     private Field field;
@@ -34,6 +38,7 @@ public class Virologist {
     //Add material to the virologists inventory
     public void AddMaterial(Material m){
         System.out.println("AddMaterial(Material m) - Material is added to the virologist's inventory.");
+        this.getField().Remove(null,m,null);
     }
     //Addd virus to the inventory
     public void AddVirus(Virus v){
@@ -42,9 +47,12 @@ public class Virologist {
     //Add equipment to the virologists inventory
     public void AddEquipment(Equipment e){
         System.out.println("AddEquipment(Equipment e) - Equipment is added to the virologist's inventory.");
+        this.getField().Remove(e,null,null);
+        e.Equip(this);
     }
     //Remove material from the virologists inventory
     public void RemoveMaterial(Material m){
+        m.beingUsed();
         System.out.println("RemoveMaterial(Material m) - Matrial is removed from the virologist's inventory.");
     }
     //Remove virus from the virologists inventory
@@ -53,6 +61,8 @@ public class Virologist {
     }
     //Remove equipment from the virologists inventory
     public void RemoveEquipment(Equipment e){
+        e.UnEquip(this);
+        this.removeEquipment(e);
         System.out.println("RemoveEquipment(Equipment e) - Equipment is removed from the virologist's inventory.");
     }
     //Virologist move to another field that was given as a parameter
@@ -68,7 +78,11 @@ public class Virologist {
         System.out.println("RemoveGeneticCodes() - Lost the genetic codes.");
     }
     //Creates a new virus
-    public void CraftVirus(Virus v){
+    public void CraftVirus( Recipe recipe){
+        if(recipe.IsCraftable(this)) {
+            recipe.RemoveUsedMaterials(this);
+            this.AddVirus(recipe.CreateVirus(this));
+        }
         System.out.println("CraftVirus(Virus v) - Virologist wants to craft a virus.");
     }
     //Attacks another virologist with the chosen virus
@@ -188,5 +202,13 @@ public class Virologist {
     public void setField(Field field) {
         System.out.println("setField");
         this.field = field;
+    }
+
+    public void removeEquipment(Equipment e){
+        equipment.remove(e);
+    }
+
+    public void addEquipment(Equipment e){
+        equipment.add(e);
     }
 }

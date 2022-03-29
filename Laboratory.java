@@ -9,7 +9,7 @@ public class Laboratory extends Field{
     //Id of a gen code the Laboratory have
     private Integer geneticCode;
     //Virologist scans the genetic code
-    public void BeingScanned(Virologist v){
+    public void Remove(Equipment e, Material m, Virologist v){
         System.out.println(geneticCode+" BeingScanned(Virologist v)");
     }
     //Get-set
