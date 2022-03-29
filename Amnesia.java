@@ -3,7 +3,7 @@
 public class Amnesia extends Virus {
 //This overrides the Effect so we can effect the targeted Virologist with Amneisa
     public Amnesia(){
-        System.out.println("Amnesia() - Amnesia constructed");
+        System.out.println("Amnesia() - Amnesia (virus) constructed: " + this);
     }
     @Override
     public void Effect(Virologist v) {

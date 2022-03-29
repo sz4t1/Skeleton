@@ -3,7 +3,7 @@
 public class NoReflection extends ReflectionAbility {
     //Constructor
     public NoReflection(){
-        System.out.println("NoReflection() - NoReflection (ability) constructed");
+        System.out.println("NoReflection() - NoReflection (ability) constructed: " + this);
     }
     //Override invokeEffect and the virologist can't reflect
     @Override

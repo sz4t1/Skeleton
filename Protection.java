@@ -2,7 +2,7 @@
 //This extends the Virus abstract class
 public class Protection extends Virus {
     public Protection(){
-        System.out.println("Protection() - Protection (virus) constructed.");
+        System.out.println("Protection() - Protection (virus) constructed: " + this);
     }
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override

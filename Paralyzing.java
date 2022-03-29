@@ -2,7 +2,7 @@
 //This extends the Virus abstract class
 public class Paralyzing extends Virus {
     public Paralyzing(){
-        System.out.println("Paralyzing() - Paralyzing (virus) constructed.");
+        System.out.println("Paralyzing() - Paralyzing (virus) constructed: " + this);
     }
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override

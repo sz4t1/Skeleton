@@ -227,13 +227,9 @@ public class Menu {
         System.out.println("[Steal Sack]");
 
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
-        System.out.println("vir2 Virologist "+vir2);
         Cape cape= new Cape();
-        System.out.println("cape Cape "+cape);
         SackCapacity sackCapacity= new SackCapacity();
-        System.out.println("sackCapacity SackCapacity "+ sackCapacity);
         DefaultCapacity defaultCapacity= new DefaultCapacity();
         vir.StealEquipment(vir2,cape);
 
@@ -251,11 +247,8 @@ public class Menu {
         System.out.println("[Steal Material]");
 
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
-        System.out.println("vir2 Virologist "+vir2);
         AminoAcid aminoAcid= new AminoAcid();
-        System.out.println("aminoAcid AminoAcid "+aminoAcid);
 
         vir.StealMaterial(vir2,aminoAcid);
         if(vir.getCapacityAbility().getMaxMaterialSize()<=vir.getMaterialSize()+1){
@@ -269,13 +262,9 @@ public class Menu {
         System.out.println("[Use Virus On Other Virologist]");
 
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
-        System.out.println("vir2 Virologist "+vir2);
         NoReflection noReflection= new NoReflection();
-        System.out.println("noReflection NoReflection "+noReflection);
         Amnesia amnesia= new Amnesia();
-        System.out.println("amnesia Amnesia "+amnesia);
 
         vir.Attack(amnesia,vir2);
         vir2.AttackedBy(vir,amnesia);
@@ -289,9 +278,7 @@ public class Menu {
         System.out.println("[Use Dance On Self]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Dance dance= new Dance();
-        System.out.println("dance Dance "+dance);
         vir.AddVirus(dance);
         //Testcase
         System.out.println(".......................................");
@@ -304,9 +291,7 @@ public class Menu {
         System.out.println("[Use Amnesia On Self]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Amnesia amnesia= new Amnesia();
-        System.out.println("amnesia Amnesia "+amnesia);
         vir.AddVirus(amnesia);
         //Testcase
         System.out.println(".......................................");
@@ -318,9 +303,7 @@ public class Menu {
         System.out.println("[Use Protection On Self]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Protection protection= new Protection();
-        System.out.println("protection Protection "+protection);
         vir.AddVirus(protection);
         //Testcase
         System.out.println(".......................................");
@@ -332,9 +315,7 @@ public class Menu {
         System.out.println("[Use Paralyzing On Self]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Paralyzing paralyzing= new Paralyzing();
-        System.out.println("paralyzing Paralyzing "+paralyzing);
         vir.AddVirus(paralyzing);
         //Testcase
         System.out.println(".......................................");

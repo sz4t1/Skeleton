@@ -3,7 +3,7 @@
 public class Cape extends Equipment {
     //Constructor
     public Cape(){
-        System.out.println("Cape() - Cape constructed.");
+        System.out.println("Cape() - Cape constructed: " + this);
     }
     //The method Equip is being override here, so we can give the player the CapeProtection Ability
     @Override

@@ -3,7 +3,7 @@
 public class Dance extends Virus {
     //Constructor
     public Dance(){
-        System.out.println("Dance() - Dance virus is constructed.");
+        System.out.println("Dance() - Dance (virus) constructed: " + this);
     }
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override
