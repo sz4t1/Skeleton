@@ -79,7 +79,7 @@ public class Menu {
         vir.RemoveMaterial(aminoAcid);
 
     }
-    // TODO
+    
     public static void EndGame(){
         System.out.println("---------------------------------------");
         System.out.println("[End Game]");
