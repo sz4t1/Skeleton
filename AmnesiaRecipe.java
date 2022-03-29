@@ -3,7 +3,7 @@
 public class AmnesiaRecipe implements Recipe{
     //Constructor
     public AmnesiaRecipe(){
-        System.out.println("AmnesiaRecipe() - AmnesiaRecipe constructed.");
+        System.out.println("AmnesiaRecipe() - AmnesiaRecipe constructed: " + this);
     }
     //We Override the CreateVirus, sow we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override

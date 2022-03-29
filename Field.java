@@ -10,7 +10,7 @@ public class Field {
     //constructor
     public Field(){
         neighbours=new ArrayList<>();
-        System.out.println("Field() - Field constructed.");
+        System.out.println("Field() - Field constructed: " + this);
     }
     //Check if the given field is a neighbour
     public boolean IsNeighbour(Field f){

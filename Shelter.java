@@ -4,7 +4,7 @@ public class Shelter extends Field{
     //Constructor
     public Shelter(){
         this.setName("Shelter");
-        System.out.println("Shelter() - Shelter constructed");
+        System.out.println("Shelter() - Shelter constructed: " + this);
     }
     //The equipment it have
     private Equipment equipment;

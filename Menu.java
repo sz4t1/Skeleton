@@ -31,13 +31,9 @@ public class Menu {
         System.out.println("[Check Environment]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Field field= new Field();
-        System.out.println("field Field "+field);
         Laboratory laboratory= new Laboratory();
-        System.out.println("laboratory Laboratory "+laboratory);
         Shelter shelter= new Shelter();
-        System.out.println("shelter Shelter "+shelter);
         field.addNeighbour(laboratory);
         field.addNeighbour(shelter);
         vir.setField(field);
@@ -51,11 +47,8 @@ public class Menu {
         System.out.println("[Craft Virus]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         AmnesiaRecipe amnesiaRecipe= new AmnesiaRecipe();
-        System.out.println("amnesiaRecipe AmnesiaRecipe "+amnesiaRecipe);
         Amnesia amnesia= new Amnesia();
-        System.out.println("amnesia Amnesia "+amnesia);
         //Testcase
         System.out.println(".......................................");
         vir.CraftVirus(amnesiaRecipe);
@@ -67,9 +60,7 @@ public class Menu {
         System.out.println("[Drop Equipment]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Cape cape= new Cape();
-        System.out.println("cape Cape "+cape);
         vir.addEquipment(cape);
         //Testcase
         System.out.println(".......................................");
@@ -82,9 +73,7 @@ public class Menu {
         System.out.println("[Drop Material]");
         //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         AminoAcid aminoAcid= new AminoAcid();
-        System.out.println("aminoAcid AminoAcid "+aminoAcid);
         //Testcase
         System.out.println(".......................................");
         vir.RemoveMaterial(aminoAcid);
