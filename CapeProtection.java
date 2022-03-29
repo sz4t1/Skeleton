@@ -1,3 +1,5 @@
+import java.util.Random;
+
 //This is an ability which the player can have, this gives her/him the chance of block an incoming attack
 //This class extends the ProtectionAbility abstract class
 public class CapeProtection extends ProtectionAbility {
@@ -8,5 +10,9 @@ public class CapeProtection extends ProtectionAbility {
     @Override
     public void invokeEffect(Virologist vir, Virus v) {
         System.out.println("invokeEffect(Virologist v) - Cape Protection effect is invoked.");
+        //Az egyszerűség kedvéért it 50%-os eséllyel véd a köpeny, végleges változatnál átdolgozás szükséges
+        if(new Random().nextInt(2) == 0){
+            v.Effect(vir);
+        }
     }
 }

@@ -55,18 +55,30 @@ public class Main {
                     Menu.StealMaterial(); break;
                 }
                 case 14:{
-                    Menu.UseVirusOnOtherVirologist(); break;
+                    Menu.UseVirusOnOtherVirologistWithACape(); break;
                 }
                 case 15:{
-                    Menu.UseAmnesiaOnSelf(); break;
+                    
                 }
                 case 16:{
-                    Menu.UseDanceOnSelf(); break;
+                    
                 }
                 case 17:{
-                    Menu.UseParalyzingOnSelf(); break;
+                    Menu.UseVirusOnOtherVirologistWithNoProtection(); break;
                 }
                 case 18:{
+                    
+                }
+                case 19:{
+                    Menu.UseAmnesiaOnSelf(); break;
+                }
+                case 20:{
+                    Menu.UseDanceOnSelf(); break;
+                }
+                case 21:{
+                    Menu.UseParalyzingOnSelf(); break;
+                }
+                case 22:{
                     Menu.UseProtectionOnSelf(); break;
                 }
             }
