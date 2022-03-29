@@ -2,7 +2,7 @@
 //This class extends the ProtectionAbility abstract class
 public class CompleteProtection extends ProtectionAbility {
     public CompleteProtection(){
-        System.out.println("CompleteProtection() - CompleteProtection (ability) constructed.");
+        System.out.println("CompleteProtection() - CompleteProtection (ability) constructed: " + this);
     }
     //We override the method here and it gives the Virologist the ability to not get hit by the incoming ability
     @Override

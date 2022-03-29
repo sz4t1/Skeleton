@@ -1,6 +1,9 @@
 //This is the recipe of the Dance virus
 //It implements the Recipe interface
 public class DanceRecipe implements Recipe {
+    public DanceRecipe(){
+        System.out.println("DanceRecipe() - DanceRecipe constructed: " + this);
+    }
     //We Override the CreateVirus, so we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {

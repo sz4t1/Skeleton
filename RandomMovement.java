@@ -2,7 +2,7 @@
 //This extends MovementAbility abstract class
 public class RandomMovement extends MovementAbility {
     public RandomMovement(){
-        System.out.println("RandomMovement() - RandomMovement (ability) constructed.");
+        System.out.println("RandomMovement() - RandomMovement (ability) constructed: " + this);
     }
     //Use the effect in certain situation
     @Override

@@ -2,7 +2,7 @@
 //This extends MovementAbility abstract class
 public class NoMovement extends MovementAbility {
     public NoMovement(){
-        System.out.println("NoMovement() - NoMovement (ability) constructed.");
+        System.out.println("NoMovement() - NoMovement (ability) constructed: " + this);
     }
     //Use the effect on the virologist
     @Override

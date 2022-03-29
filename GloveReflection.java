@@ -2,7 +2,7 @@
 //This class extends RelfectionAbility abstract class
 public class GloveReflection extends ReflectionAbility {
     public GloveReflection(){
-        System.out.println("GloveReflection() - GloveReflection (ability) constructed.");
+        System.out.println("GloveReflection() - GloveReflection (ability) constructed: " + this);
     }
     //Override invokeEffect so the virologist can get the ability to reflect virus
     @Override

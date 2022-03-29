@@ -9,7 +9,7 @@ public class Game {
     public Game(){
         virologists= new ArrayList<>();
         fields= new ArrayList<>();
-        System.out.println("Game() - Game constructed.");
+        System.out.println("Game() - Game constructed: " + this);
     }
     //Starts the game
     public void StartGame(){
