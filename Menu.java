@@ -148,47 +148,53 @@ public class Menu {
     public static void StealCape(){
         System.out.println("---------------------------------------");
         System.out.println("[Steal Cape]");
-
+        //Init
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
         Cape cape= new Cape();
         vir2.addEquipment(cape);
+        //Testcase
+        System.out.println(".......................................");
         vir.StealEquipment(vir2,cape);
-
     }
 
     public static void StealGlove(){
         System.out.println("---------------------------------------");
         System.out.println("[Steal Glove]");
-
+        //Init
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
         Glove glove= new Glove();
-        vir.addEquipment(glove);
+        vir2.addEquipment(glove);
+        //Testcase
+        System.out.println(".......................................");
         vir.StealEquipment(vir2,glove);
-
     }
 
     public static void StealSack(){
         System.out.println("---------------------------------------");
         System.out.println("[Steal Sack]");
-
+        //Init
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
         Sack sack= new Sack();
-        vir.StealEquipment(vir2,sack);
-        vir.addEquipment(sack);
+        vir2.addEquipment(sack);
+        //Testcase
+        System.out.println(".......................................");
         vir.StealEquipment(vir2,sack);
     }
+
     public static void StealMaterial(){
         System.out.println("---------------------------------------");
         System.out.println("[Steal Material]");
-
+        //Init
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
         AminoAcid aminoAcid= new AminoAcid();
+        vir2.AddMaterial(aminoAcid);
+        //Testcase
+        System.out.println(".......................................");
         vir.StealMaterial(vir2,aminoAcid);
-
     }
 
     public static void UseVirusOnOtherVirologist(){
