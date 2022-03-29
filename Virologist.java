@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Virologist {
     //Virologist constructor
     public Virologist(){
-        System.out.println("Virologist() - Virologist constructed");
+        System.out.println("Virologist() - Virologist constructed: " + this);
         viruses= new ArrayList<>();
         equipment=new ArrayList<>();
         materials=new ArrayList<>();
@@ -79,6 +79,7 @@ public class Virologist {
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){
         System.out.println("AddGeneticCode(Integer gen) - A genetic code is stored.");
+        genCodes.add(gen);
     }
     //Remove a genetic code from the virologist's knowledge
     public void RemoveGeneticCodes(){
@@ -226,5 +227,9 @@ public class Virologist {
     public void addEquipment(Equipment e){
         System.out.println("addEquipment(Equipment e) - The virologist picked up an equipment.");
         equipment.add(e);
+    }
+
+    public ArrayList<Integer> getGenCodes(){
+        return genCodes;
     }
 }
