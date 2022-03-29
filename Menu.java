@@ -55,7 +55,6 @@ public class Menu {
         System.out.println("amnesiaRecipe AmnesiaRecipe "+amnesiaRecipe);
         Amnesia amnesia= new Amnesia();
         System.out.println("amnesia Amnesia "+amnesia);
-
         vir.CraftVirus(amnesiaRecipe);
 
     }
@@ -68,8 +67,9 @@ public class Menu {
         System.out.println("vir Virologist "+vir);
         Cape cape= new Cape();
         System.out.println("cape Cape "+cape);
+        vir.addEquipment(cape);
         vir.RemoveEquipment(cape);
-        cape.UnEquip(vir);
+
     }
 
     public static void DropMaterial(){
@@ -81,9 +81,9 @@ public class Menu {
         AminoAcid aminoAcid= new AminoAcid();
         System.out.println("aminoAcid AminoAcid "+aminoAcid);
         vir.RemoveMaterial(aminoAcid);
-        aminoAcid.beingUsed();
-    }
 
+    }
+    // TODO
     public static void EndGame(){
         System.out.println("---------------------------------------");
         System.out.println("[End Game]");

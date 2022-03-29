@@ -4,6 +4,10 @@ public class Virologist {
     //Virologist constructor
     public Virologist(){
         System.out.println("Virologist() - Virologist constructed");
+        viruses= new ArrayList<>();
+        equipment=new ArrayList<>();
+        materials=new ArrayList<>();
+        genCodes=new ArrayList<>();
     }
     //The actual place of the virologist
     private Field field;
@@ -45,6 +49,7 @@ public class Virologist {
     }
     //Remove material from the virologists inventory
     public void RemoveMaterial(Material m){
+        m.beingUsed();
         System.out.println("RemoveMaterial(Material m) - Matrial is removed from the virologist's inventory.");
     }
     //Remove virus from the virologists inventory
@@ -53,6 +58,8 @@ public class Virologist {
     }
     //Remove equipment from the virologists inventory
     public void RemoveEquipment(Equipment e){
+        e.UnEquip(this);
+        this.removeEquipment(e);
         System.out.println("RemoveEquipment(Equipment e) - Equipment is removed from the virologist's inventory.");
     }
     //Virologist move to another field that was given as a parameter
@@ -182,5 +189,13 @@ public class Virologist {
     public void setField(Field field) {
         System.out.println("setField");
         this.field = field;
+    }
+
+    public void removeEquipment(Equipment e){
+        equipment.remove(e);
+    }
+
+    public void addEquipment(Equipment e){
+        equipment.add(e);
     }
 }
