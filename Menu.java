@@ -108,13 +108,9 @@ public class Menu {
         System.out.println("field Field "+field);
         Field direction = new Field();
         System.out.println("field Field "+direction);
+        field.addNeighbour(direction);
+        vir.setField(field);
         vir.Move(direction);
-        freeMovememnt.invokeEffect(vir, direction);
-        if(field.IsNeighbour(direction)) {
-            field.RemoveVirologist(vir);
-            direction.AddVirologist(vir);
-            vir.setField(direction);
-        }
     }
 
     public static void PickUpEquipment(){
