@@ -318,23 +318,15 @@ public class Menu {
     public static void UseProtectionOnSelf(){
         System.out.println("---------------------------------------");
         System.out.println("[Use Protection On Self]");
-
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Protection protection= new Protection();
         System.out.println("protection Protection "+protection);
-        Paralyzing paralyzing= new Paralyzing();
-        System.out.println("paralyzing Paralyzing "+paralyzing);
-        CompleteProtection completeProtection= new CompleteProtection();
-        System.out.println("completeProtection CompleteProtection"+completeProtection);
-        FreeMovememnt freeMovememnt = new FreeMovememnt();
-        System.out.println("freeMovememnt FreeMovememnt"+freeMovememnt);
-
+        vir.AddVirus(protection);
+        //Testcase
+        System.out.println(".......................................");
         vir.UseVirusOnSelf(protection);
-        protection.Effect(vir);
-        paralyzing.EffectOff(vir);
-        vir.setProtectionAbility(completeProtection);
-        vir.setMovementAbility(freeMovememnt);
     }
 
     public static void UseParalyzingOnSelf(){

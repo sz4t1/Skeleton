@@ -4,6 +4,7 @@ public class Virologist {
     //Virologist constructor
     public Virologist(){
         System.out.println("Virologist() - Virologist constructed");
+        virusOn = null;
     }
     //The actual place of the virologist
     private Field field;
@@ -82,6 +83,8 @@ public class Virologist {
     //Uses virus on self
     public void UseVirusOnSelf(Virus v){
         System.out.println("UseVirusOnSelf(Virus v) - The virologist uses a virus on himself.");
+        v.Effect(this);
+        RemoveVirus(v);
     }
     //Scans a code on a laboratory
     public void ScanCode(){
@@ -110,6 +113,7 @@ public class Virologist {
     }
 
     public void setVirusOn(Virus virusOn) {
+        System.out.println("setVirusOn(Virus virusOn) - The virus on the virologist has been changed.");
         this.virusOn = virusOn;
     }
 
@@ -144,30 +148,37 @@ public class Virologist {
     }
 
     public void setCapacityAbility(CapacityAbility capacityAbility) {
+        System.out.println("setCapacityAbility(CapacityAbility capacityAbility) - The CapacityAbility on the virologist has been changed.");
         this.capacityAbility = capacityAbility;
     }
 
     public MovementAbility getMovementAbility() {
+        System.out.println("getMovementAbility()");
         return movementAbility;
     }
 
     public void setMovementAbility(MovementAbility movementAbility) {
+        System.out.println("setMovementAbility(MovementAbility movementAbility) - The MovementAbility on the virologist has been changed.");
         this.movementAbility = movementAbility;
     }
 
     public ReflectionAbility getReflectionAbility() {
+        System.out.println("getReflectionAbility()");
         return reflectionAbility;
     }
 
     public void setReflectionAbility(ReflectionAbility reflectionAbility) {
+        System.out.println("setReflectionAbility(ReflectionAbility reflectionAbility) - The ReflectionAbility on the virologist has been changed.");
         this.reflectionAbility = reflectionAbility;
     }
 
     public ProtectionAbility getProtectionAbility() {
+        System.out.println("getProtectionAbility()");
         return protectionAbility;
     }
 
     public void setProtectionAbility(ProtectionAbility protectionAbility) {
+        System.out.println("setProtectionAbility(ProtectionAbility protectionAbility) - The ProtectionAbility on the virologist has been changed.");
         this.protectionAbility = protectionAbility;
     }
 
