@@ -12,6 +12,7 @@ public class Virologist {
         this.capacityAbility=new DefaultCapacity();
         this.protectionAbility=new NoProtection();
         this.reflectionAbility=new NoReflection();
+        virusOn = null;
     }
     //The actual place of the virologist
     private Field field;
@@ -137,10 +138,12 @@ public class Virologist {
     }
 
     public Integer getEquipmentSize() {
+        System.out.println("getEquipmentSize()");
         return equipmentSize;
     }
 
     public void setEquipmentSize(Integer equipmentSize) {
+        System.out.println("setEquipmentSize(Integer equipmentSize)");
         this.equipmentSize = equipmentSize;
     }
 
@@ -150,14 +153,17 @@ public class Virologist {
     }
 
     public void setMaterialSize(Integer materialSize) {
+        System.out.println("setMaterialSize(Integer materialSize)");
         this.materialSize = materialSize;
     }
 
     public Integer getVirusSize() {
+        System.out.println("getVirusSize()");
         return virusSize;
     }
 
     public void setVirusSize(Integer virusSize) {
+        System.out.println("setVirusSize(Integer virusSize)");
         this.virusSize = virusSize;
     }
 
@@ -202,19 +208,22 @@ public class Virologist {
     }
 
     public Field getField() {
+        System.out.println("getField()");
         return field;
     }
 
     public void setField(Field field) {
-        System.out.println("setField");
+        System.out.println("setField(Field field) - The virologist now stands on the field.");
         this.field = field;
     }
 
     public void removeEquipment(Equipment e){
+        System.out.println("addEquipment(Equipment e) - The virologist dropped an equipment.");
         equipment.remove(e);
     }
 
     public void addEquipment(Equipment e){
+        System.out.println("addEquipment(Equipment e) - The virologist picked up an equipment.");
         equipment.add(e);
     }
 }
