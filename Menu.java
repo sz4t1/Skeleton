@@ -34,6 +34,14 @@ public class Menu {
         System.out.println("vir Virologist "+vir);
         Field field= new Field();
         System.out.println("field Field "+field);
+        Laboratory laboratory= new Laboratory();
+        System.out.println("laboratory Laboratory "+laboratory);
+        Shelter shelter= new Shelter();
+        System.out.println("shelter Shelter "+shelter);
+
+        field.addNeighbour(laboratory);
+        field.addNeighbour(shelter);
+        vir.setField(field);
         field.getNeighbours();
     }
 
@@ -45,13 +53,11 @@ public class Menu {
         System.out.println("vir Virologist "+vir);
         AmnesiaRecipe amnesiaRecipe= new AmnesiaRecipe();
         System.out.println("amnesiaRecipe AmnesiaRecipe "+amnesiaRecipe);
-        Amnesia type= new Amnesia();
-        System.out.println("type Amnesia "+type);
-        vir.CraftVirus(type);
-        if(amnesiaRecipe.IsCraftable(vir)) {
-            amnesiaRecipe.RemoveUsedMaterials(vir);
-            vir.AddVirus(amnesiaRecipe.CreateVirus(vir));
-        }
+        Amnesia amnesia= new Amnesia();
+        System.out.println("amnesia Amnesia "+amnesia);
+
+        vir.CraftVirus(amnesiaRecipe);
+
     }
 
     public static void DropEquipment(){

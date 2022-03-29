@@ -68,7 +68,11 @@ public class Virologist {
         System.out.println("RemoveGeneticCodes() - Lost the genetic codes.");
     }
     //Creates a new virus
-    public void CraftVirus(Virus v){
+    public void CraftVirus( Recipe recipe){
+        if(recipe.IsCraftable(this)) {
+            recipe.RemoveUsedMaterials(this);
+            this.AddVirus(recipe.CreateVirus(this));
+        }
         System.out.println("CraftVirus(Virus v) - Virologist wants to craft a virus.");
     }
     //Attacks another virologist with the chosen virus
