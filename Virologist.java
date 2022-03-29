@@ -38,6 +38,7 @@ public class Virologist {
     //Add material to the virologists inventory
     public void AddMaterial(Material m){
         System.out.println("AddMaterial(Material m) - Material is added to the virologist's inventory.");
+        this.getField().Remove(null,m,null);
     }
     //Addd virus to the inventory
     public void AddVirus(Virus v){
@@ -46,6 +47,8 @@ public class Virologist {
     //Add equipment to the virologists inventory
     public void AddEquipment(Equipment e){
         System.out.println("AddEquipment(Equipment e) - Equipment is added to the virologist's inventory.");
+        this.getField().Remove(e,null,null);
+        e.Equip(this);
     }
     //Remove material from the virologists inventory
     public void RemoveMaterial(Material m){

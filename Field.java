@@ -51,4 +51,6 @@ public class Field {
         System.out.println("addNeughbour(Field neighbour) - Add a new neighbour to the neighbours list.");
         neighbours.add(neighbour);
     }
+
+    public void Remove(Equipment e, Material m, Virologist v){}
 }

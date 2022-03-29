@@ -9,7 +9,8 @@ public class Shelter extends Field{
     //The equipment it have
     private Equipment equipment;
     //Removes the equipment from the shelter
-    public void RemoveEquipment(Equipment e){
+
+    public void Remove(Equipment e, Material m, Virologist v){
         System.out.println("RemoveEquipment(Equipment e) - the picked up equipment is removed from the Shelter.");
     }
     //Get-set

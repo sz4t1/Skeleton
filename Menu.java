@@ -127,12 +127,10 @@ public class Menu {
         System.out.println("shelter Shelter "+shelter);
         Cape cape= new Cape();
         System.out.println("cape Cape "+cape);
+        vir.setField(shelter);
+        shelter.setEquipment(cape);
+        vir.AddEquipment(shelter.getEquipment());
 
-        vir.AddEquipment(cape);
-        if(shelter.getName().equals("Shelter")){
-            shelter.RemoveEquipment(cape);
-            cape.Equip(vir);
-        }
     }
 
     public static void PickUpMaterial(){
@@ -145,10 +143,11 @@ public class Menu {
         System.out.println("warehouse Warehouse: "+warehouse);
         AminoAcid aminoAcid= new AminoAcid();
         System.out.println("aminoAcid AminoAcid: "+aminoAcid);
+        vir.setField(warehouse);
+        warehouse.addMaterial(aminoAcid);
         vir.AddMaterial(aminoAcid);
-        if(warehouse.getName().equals("Warehouse")){
-            warehouse.RemoveMaterial(aminoAcid);
-        }
+
+
     }
 
     public static void VirologistScans(){
