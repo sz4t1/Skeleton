@@ -6,7 +6,7 @@ public class CapeProtection extends ProtectionAbility {
     }
     //We override the method here and it gives the Virologist chance to not get hit by the incoming ability
     @Override
-    public void invokeEffect(Virologist v) {
+    public void invokeEffect(Virologist vir, Virus v) {
         System.out.println("invokeEffect(Virologist v) - Cape Protection effect is invoked.");
     }
 }

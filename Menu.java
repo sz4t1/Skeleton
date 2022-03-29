@@ -200,17 +200,14 @@ public class Menu {
     public static void UseVirusOnOtherVirologist(){
         System.out.println("---------------------------------------");
         System.out.println("[Use Virus On Other Virologist]");
-
+        //Init
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
-        NoReflection noReflection= new NoReflection();
         Amnesia amnesia= new Amnesia();
-
+        vir.AddVirus(amnesia);
+        //Testcase
+        System.out.println("---------------------------------------");
         vir.Attack(amnesia,vir2);
-        vir2.AttackedBy(vir,amnesia);
-        noReflection.invokeEffect(vir,vir2,amnesia);
-        vir2.UseVirus(amnesia);
-        vir.RemoveVirus(amnesia);
     }
 
     public static void UseDanceOnSelf(){

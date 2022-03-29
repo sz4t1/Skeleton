@@ -107,10 +107,12 @@ public class Virologist {
     //Attacks another virologist with the chosen virus
     public void Attack(Virus v, Virologist vir){
         System.out.println("Attack(Virus v, Virologist vir) - Virologist attacks a virologist.");
+        vir.AttackedBy(this, v);
     }
     //Uses virus
     public void UseVirus(Virus v){
         System.out.println("UseVirus(Virus v) - A virus effects the virologist.");
+        protectionAbility.invokeEffect(this, v);
     }
     //Uses virus on self
     public void UseVirusOnSelf(Virus v){
@@ -149,6 +151,7 @@ public class Virologist {
     //Being attacked by another virologist it passes the virus that was used by the attacker
     public void AttackedBy(Virologist vir, Virus v){
         System.out.println("AttackedBy(Virologist vir, Virus v) - The virologist recieves an attack.");
+        reflectionAbility.invokeEffect(vir, this, v);
     }
     //Getters and setters
     public Virus getVirusOn() {

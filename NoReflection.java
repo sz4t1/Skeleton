@@ -9,5 +9,7 @@ public class NoReflection extends ReflectionAbility {
     @Override
     public void invokeEffect(Virologist vir1, Virologist vir2, Virus v) {
         System.out.println("invokeEffect(Virologist vir1, Virologist vir2, Virus v) - The virologist can't reflec the attacks.");
+        vir2.UseVirus(v);
+        vir1.RemoveVirus(v);
     }
 }

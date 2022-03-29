@@ -6,7 +6,8 @@ public class NoProtection extends ProtectionAbility {
     }
     //We override the method here and it gives the Virologist can get hit by any viruses
     @Override
-    public void invokeEffect(Virologist v) {
+    public void invokeEffect(Virologist vir, Virus v) {
         System.out.println("invokeEffect(Virologist v) - No protection effect is invoked.");
+        v.Effect(vir);
     }
 }
