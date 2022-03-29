@@ -17,13 +17,12 @@ public class Menu {
         System.out.println("13. Steal Material");
         System.out.println("14. Use Virus On Other Virologist With a Cape");
         System.out.println("15. Use Virus On Other Virologist With Gloves");
-        System.out.println("16. Use Virus On Other Virologist With No Gloves On");
-        System.out.println("17. Use Virus On Other Virologist With No Protection");
-        System.out.println("18. Use Virus On Other Virologist With Protection Virus On");
-        System.out.println("19. Use Amnesia On Self");
-        System.out.println("20. Use Dance On Self");
-        System.out.println("21. Use Paralyzing On Self");
-        System.out.println("22. Use Protection On Self");
+        System.out.println("16. Use Virus On Other Virologist With No Protection");
+        System.out.println("17. Use Virus On Other Virologist With Protection Virus On");
+        System.out.println("18. Use Amnesia On Self");
+        System.out.println("19. Use Dance On Self");
+        System.out.println("20. Use Paralyzing On Self");
+        System.out.println("21. Use Protection On Self");
 
         System.out.println("\n0. Exit Skeleton");
         System.out.println("=======================================");
@@ -239,6 +238,21 @@ public class Menu {
         Virologist vir2= new Virologist();
         Amnesia amnesia= new Amnesia();
         vir.AddVirus(amnesia);
+        //Testcase
+        System.out.println(".......................................");
+        vir.Attack(amnesia,vir2);
+    }
+
+    public static void UseVirusOnOtherVirologistWithProtectionVirusOn(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Use Virus On Other Virologist With Protection Virus On]");
+        //Init
+        Virologist vir= new Virologist();
+        Virologist vir2= new Virologist();
+        Amnesia amnesia= new Amnesia();
+        vir.AddVirus(amnesia);
+        Protection pv = new Protection();
+        vir2.UseVirusOnSelf(pv);
         //Testcase
         System.out.println(".......................................");
         vir.Attack(amnesia,vir2);

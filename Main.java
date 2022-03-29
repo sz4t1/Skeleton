@@ -61,24 +61,21 @@ public class Main {
                     Menu.UseVirusOnOtherVirologistWithGloves(); break;
                 }
                 case 16:{
-                    
-                }
-                case 17:{
                     Menu.UseVirusOnOtherVirologistWithNoProtection(); break;
                 }
-                case 18:{
-                    
+                case 17:{
+                    Menu.UseVirusOnOtherVirologistWithProtectionVirusOn(); break;
                 }
-                case 19:{
+                case 18:{
                     Menu.UseAmnesiaOnSelf(); break;
                 }
-                case 20:{
+                case 19:{
                     Menu.UseDanceOnSelf(); break;
                 }
-                case 21:{
+                case 20:{
                     Menu.UseParalyzingOnSelf(); break;
                 }
-                case 22:{
+                case 21:{
                     Menu.UseProtectionOnSelf(); break;
                 }
             }
