@@ -79,7 +79,7 @@ public class Menu {
         vir.RemoveMaterial(aminoAcid);
 
     }
-    
+
     public static void EndGame(){
         System.out.println("---------------------------------------");
         System.out.println("[End Game]");
@@ -99,61 +99,54 @@ public class Menu {
     public static void MoveVirologist(){
         System.out.println("---------------------------------------");
         System.out.println("[Move Virologist]");
-
+        //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         FreeMovememnt freeMovememnt = new FreeMovememnt();
-        System.out.println("freeMovememnt FreeMovememnt "+freeMovememnt);
         Field field= new Field();
-        System.out.println("field Field "+field);
         Field direction = new Field();
-        System.out.println("field Field "+direction);
         field.addNeighbour(direction);
         vir.setField(field);
+        //TestCase
+        System.out.println(".......................................");
         vir.Move(direction);
     }
 
     public static void PickUpEquipment(){
         System.out.println("---------------------------------------");
         System.out.println("[Pick Up Equipment]");
-
+        //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Shelter shelter= new Shelter();
-        System.out.println("shelter Shelter "+shelter);
         Cape cape= new Cape();
-        System.out.println("cape Cape "+cape);
         vir.setField(shelter);
         shelter.setEquipment(cape);
+        //Testcase
+        System.out.println(".......................................");
         vir.AddEquipment(shelter.getEquipment());
-
     }
 
     public static void PickUpMaterial(){
         System.out.println("---------------------------------------");
         System.out.println("[Pick Up Material]");
-
+        //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Warehouse warehouse= new Warehouse();
-        System.out.println("warehouse Warehouse: "+warehouse);
         AminoAcid aminoAcid= new AminoAcid();
-        System.out.println("aminoAcid AminoAcid: "+aminoAcid);
         vir.setField(warehouse);
         warehouse.addMaterial(aminoAcid);
+        //Testcase
+        System.out.println(".......................................");
         vir.AddMaterial(aminoAcid);
-
-
     }
 
     public static void VirologistScans(){
         System.out.println("---------------------------------------");
         System.out.println("[Virologist Scans]");
-
+        //Init
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Laboratory laboratory= new Laboratory();
-        System.out.println("laboratory Laboratory: "+laboratory);
+        //Testcase
+        System.out.println(".......................................");
         vir.ScanCode();
         if(!vir.HaveGeneticCode(laboratory.getGeneticCode()))
             vir.AddGeneticCode(laboratory.getGeneticCode());

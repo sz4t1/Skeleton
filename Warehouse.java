@@ -5,7 +5,7 @@ public class Warehouse extends Field{
     //Constructor
     public Warehouse(){
         materials=new ArrayList<>();
-        System.out.println("Warehouse() - Warehouse constructed");
+        System.out.println("Warehouse() - Warehouse constructed: " + this);
     }
     //The materials it contains
     private ArrayList<Material> materials;

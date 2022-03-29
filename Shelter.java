@@ -3,8 +3,8 @@
 public class Shelter extends Field{
     //Constructor
     public Shelter(){
-        this.setName("Shelter");
         System.out.println("Shelter() - Shelter constructed: " + this);
+        this.setName("Shelter");
     }
     //The equipment it have
     private Equipment equipment;

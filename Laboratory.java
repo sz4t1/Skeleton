@@ -3,8 +3,8 @@
 public class Laboratory extends Field{
     //Constructor
     public Laboratory(){
-        this.setName("Laboratory");
         System.out.println("Laboratory() - Laboratory constructed: " + this);
+        this.setName("Laboratory");
     }
     //Id of a gen code the Laboratory have
     private Integer geneticCode;
