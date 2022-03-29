@@ -62,7 +62,6 @@ public class Menu {
         //Testcase
         System.out.println(".......................................");
         vir.RemoveEquipment(cape);
-
     }
 
     public static void DropMaterial(){
@@ -75,7 +74,6 @@ public class Menu {
         //Testcase
         System.out.println(".......................................");
         vir.RemoveMaterial(aminoAcid);
-
     }
 
     public static void EndGame(){
