@@ -48,7 +48,6 @@ public class Menu {
         //Init
         Virologist vir= new Virologist();
         AmnesiaRecipe amnesiaRecipe= new AmnesiaRecipe();
-        Amnesia amnesia= new Amnesia();
         //Testcase
         System.out.println(".......................................");
         vir.CraftVirus(amnesiaRecipe);
@@ -74,6 +73,7 @@ public class Menu {
         //Init
         Virologist vir= new Virologist();
         AminoAcid aminoAcid= new AminoAcid();
+        vir.AddMaterial(aminoAcid);
         //Testcase
         System.out.println(".......................................");
         vir.RemoveMaterial(aminoAcid);
