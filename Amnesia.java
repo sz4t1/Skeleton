@@ -8,6 +8,12 @@ public class Amnesia extends Virus {
     @Override
     public void Effect(Virologist v) {
         System.out.println("Effect(Virologist v) - Amnesia virus is affecting the virologist.");
+        //If the virologist has a virus on already, it is overwritten by the new one
+        if(v.getVirusOn() != null){
+            v.getVirusOn().EffectOff(v);
+        }
+        //The virologist's genetis codes are removed
+        v.RemoveGeneticCodes();
     }
     //This overrides the EffectOff so we can remove amnesia from the targeted Virologist
     @Override

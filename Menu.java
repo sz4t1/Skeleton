@@ -298,22 +298,15 @@ public class Menu {
     public static void UseAmnesiaOnSelf(){
         System.out.println("---------------------------------------");
         System.out.println("[Use Amnesia On Self]");
-
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Amnesia amnesia= new Amnesia();
         System.out.println("amnesia Amnesia "+amnesia);
-        Dance dance= new Dance();
-        System.out.println("dance Dance "+dance);
-        FreeMovememnt freeMovememnt = new FreeMovememnt();
-        System.out.println("freeMovememnt FreeMovememnt"+freeMovememnt);
-
+        vir.AddVirus(amnesia);
+        //Testcase
+        System.out.println(".......................................");
         vir.UseVirusOnSelf(amnesia);
-        amnesia.Effect(vir);
-        dance.EffectOff(vir);
-        vir.setMovementAbility(freeMovememnt);
-        vir.RemoveGeneticCodes();
-
     }
 
     public static void UseProtectionOnSelf(){

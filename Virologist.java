@@ -82,7 +82,8 @@ public class Virologist {
     }
     //Remove a genetic code from the virologist's knowledge
     public void RemoveGeneticCodes(){
-        System.out.println("RemoveGeneticCodes() - Lost the genetic codes.");
+        System.out.println("RemoveGeneticCodes() - The virologist lost the genetic codes.");
+        genCodes.clear();
     }
     //Creates a new virus
     public void CraftVirus( Recipe recipe){
