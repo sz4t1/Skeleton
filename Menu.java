@@ -139,12 +139,10 @@ public class Menu {
         System.out.println("[Virologist Scans]");
         //Init
         Virologist vir= new Virologist();
-        Laboratory laboratory= new Laboratory();
         //Testcase
         System.out.println(".......................................");
         vir.ScanCode();
-        if(!vir.HaveGeneticCode(laboratory.getGeneticCode()))
-            vir.AddGeneticCode(laboratory.getGeneticCode());
+
     }
 
     public static void StealCape(){
@@ -152,25 +150,11 @@ public class Menu {
         System.out.println("[Steal Cape]");
 
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
-        System.out.println("vir2 Virologist "+vir2);
         Cape cape= new Cape();
-        System.out.println("cape Cape "+cape);
-        CapeProtection capeProtection= new CapeProtection();
-        System.out.println("capeProtection CapeProtection "+capeProtection);
-        NoProtection noProtection= new NoProtection();
-        System.out.println("noProtection NoProtection "+noProtection);
-
+        vir2.addEquipment(cape);
         vir.StealEquipment(vir2,cape);
-        if(vir.getEquipmentSize()<2){
-            vir2.RemoveEquipment(cape);
-            cape.UnEquip(vir2);
-            vir2.setProtectionAbility(noProtection);
-            vir.AddEquipment(cape);
-            cape.Equip(vir);
-            vir.setProtectionAbility(capeProtection);
-        }
+
     }
 
     public static void StealGlove(){
@@ -178,25 +162,11 @@ public class Menu {
         System.out.println("[Steal Glove]");
 
         Virologist vir= new Virologist();
-        System.out.println("vir Virologist "+vir);
         Virologist vir2= new Virologist();
-        System.out.println("vir2 Virologist "+vir2);
-        Cape cape= new Cape();
-        System.out.println("cape Cape "+cape);
-        GloveReflection gloveReflection= new GloveReflection();
-        System.out.println("gloveReflection GloveReflection "+gloveReflection);
-        NoReflection noReflection= new NoReflection();
-        System.out.println("noReflection NoReflection "+noReflection);
+        Glove glove= new Glove();
+        vir.addEquipment(glove);
+        vir.StealEquipment(vir2,glove);
 
-        vir.StealEquipment(vir2,cape);
-        if(vir.getEquipmentSize()<2){
-            vir2.RemoveEquipment(cape);
-            cape.UnEquip(vir2);
-            vir2.setReflectionAbility(noReflection);
-            vir.AddEquipment(cape);
-            cape.Equip(vir);
-            vir.setReflectionAbility(gloveReflection);
-        }
     }
 
     public static void StealSack(){
@@ -205,19 +175,10 @@ public class Menu {
 
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
-        Cape cape= new Cape();
-        SackCapacity sackCapacity= new SackCapacity();
-        DefaultCapacity defaultCapacity= new DefaultCapacity();
-        vir.StealEquipment(vir2,cape);
-
-        if(vir.getEquipmentSize()<2){
-            vir2.RemoveEquipment(cape);
-            cape.UnEquip(vir2);
-            vir2.setCapacityAbility(defaultCapacity);
-            vir.AddEquipment(cape);
-            cape.Equip(vir);
-            vir.setCapacityAbility(sackCapacity);
-        }
+        Sack sack= new Sack();
+        vir.StealEquipment(vir2,sack);
+        vir.addEquipment(sack);
+        vir.StealEquipment(vir2,sack);
     }
     public static void StealMaterial(){
         System.out.println("---------------------------------------");
@@ -226,12 +187,8 @@ public class Menu {
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
         AminoAcid aminoAcid= new AminoAcid();
-
         vir.StealMaterial(vir2,aminoAcid);
-        if(vir.getCapacityAbility().getMaxMaterialSize()<=vir.getMaterialSize()+1){
-            vir2.RemoveMaterial(aminoAcid);
-            vir.AddMaterial(aminoAcid);
-        }
+
     }
 
     public static void UseVirusOnOtherVirologist(){

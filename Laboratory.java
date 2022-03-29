@@ -11,6 +11,8 @@ public class Laboratory extends Field{
     //Virologist scans the genetic code
     public void Remove(Equipment e, Material m, Virologist v){
         System.out.println(geneticCode+" BeingScanned(Virologist v)");
+        if(!v.HaveGeneticCode(this.geneticCode))
+            v.AddGeneticCode(this.geneticCode);
     }
     //Get-set
     public Integer getGeneticCode() {

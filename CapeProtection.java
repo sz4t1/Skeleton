@@ -2,7 +2,7 @@
 //This class extends the ProtectionAbility abstract class
 public class CapeProtection extends ProtectionAbility {
     public CapeProtection(){
-        System.out.println("CapeProtection() - CapeProtection (ability) constructed: " + this);
+        System.out.println("CapeProtection() - CapeProtection (ability) constructed.");
     }
     //We override the method here and it gives the Virologist chance to not get hit by the incoming ability
     @Override

@@ -1,9 +1,6 @@
 //This is the recipe of the Paralyzing virus
 //It implements the Recipe interface
 public class ParalyzingRecipe implements Recipe {
-   public ParalyzingRecipe(){
-    System.out.println("ParalyzingRecipe() - ParalyzingRecipe constructed: " + this);
-   }
     //We Override the CreateVirus, so we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {

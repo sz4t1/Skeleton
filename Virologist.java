@@ -13,6 +13,9 @@ public class Virologist {
         this.protectionAbility=new NoProtection();
         this.reflectionAbility=new NoReflection();
         virusOn = null;
+        equipmentSize=0;
+        virusSize=0;
+        materialSize=0;
     }
     //The actual place of the virologist
     private Field field;
@@ -48,21 +51,28 @@ public class Virologist {
     //Addd virus to the inventory
     public void AddVirus(Virus v){
         System.out.println("AddVirus(Virus v) - Virus is added to the virologist's inventory.");
+        viruses.add(v);
+        virusSize++;
     }
     //Add equipment to the virologists inventory
     public void AddEquipment(Equipment e){
         System.out.println("AddEquipment(Equipment e) - Equipment is added to the virologist's inventory.");
         this.getField().Remove(e,null,null);
-        e.Equip(this);
+        addEquipment(e);
+
     }
     //Remove material from the virologists inventory
     public void RemoveMaterial(Material m){
         m.beingUsed();
         System.out.println("RemoveMaterial(Material m) - Matrial is removed from the virologist's inventory.");
+        materials.remove(m);
+        materialSize--;
     }
     //Remove virus from the virologists inventory
     public void RemoveVirus(Virus v){
         System.out.println("RemoveVirus(Virus v) - Virus is removed from the virologist's inventory.");
+        viruses.remove(v);
+        virusSize--;
     }
     //Remove equipment from the virologists inventory
     public void RemoveEquipment(Equipment e){
@@ -111,6 +121,8 @@ public class Virologist {
     //Scans a code on a laboratory
     public void ScanCode(){
         System.out.println("ScanCode() - Scanned a code");
+        this.field.Remove(null,null,this);
+
     }
     //Checks if the virologist have a genetic code
     public boolean HaveGeneticCode(Integer gen){
@@ -120,10 +132,19 @@ public class Virologist {
     //Steal an equipment from another virologist
     public void StealEquipment(Virologist v, Equipment e){
         System.out.println("StealEquipment(Virologist v, Equipment e) - Virologist steals equipment.");
+        if( this.equipmentSize<2){
+            v.RemoveEquipment(e);
+            this.addEquipment(e);
+
+        }
     }
     //Steak a material from another virologist
     public void StealMaterial(Virologist v, Material m){
         System.out.println("StealMaterial(Virologist v, Material m) - Stolen materials.");
+        if(capacityAbility.getMaxMaterialSize()<materialSize+1){
+            v.RemoveMaterial(m);
+            this.AddMaterial(m);
+        }
     }
     //Being attacked by another virologist it passes the virus that was used by the attacker
     public void AttackedBy(Virologist vir, Virus v){
@@ -222,11 +243,14 @@ public class Virologist {
     public void removeEquipment(Equipment e){
         System.out.println("addEquipment(Equipment e) - The virologist dropped an equipment.");
         equipment.remove(e);
+        equipmentSize--;
     }
 
     public void addEquipment(Equipment e){
         System.out.println("addEquipment(Equipment e) - The virologist picked up an equipment.");
         equipment.add(e);
+        e.Equip(this);
+        equipmentSize++;
     }
 
     public ArrayList<Integer> getGenCodes(){

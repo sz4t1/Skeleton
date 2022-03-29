@@ -1,9 +1,6 @@
 //This is the recipe of the Protection virus
 //It implements the Recipe interface
 public class ProtectionRecipe implements Recipe {
-    public ProtectionRecipe(){
-        System.out.println("ProtectionRecipe() - ProtectionRecipe constructed: " + this);
-       }
     //We Override the CreateVirus, so we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {

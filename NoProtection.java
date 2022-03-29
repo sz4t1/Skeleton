@@ -2,7 +2,7 @@
 //This class extends the ProtectionAbility abstract class
 public class NoProtection extends ProtectionAbility {
     public NoProtection(){
-        System.out.println("NoProtection() - NoProtection (ability) constructed: " + this);
+        System.out.println("NoProtection() - NoProtection (ability) constructed.");
     }
     //We override the method here and it gives the Virologist can get hit by any viruses
     @Override
