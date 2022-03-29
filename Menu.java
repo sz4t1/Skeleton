@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Menu {
     public static void menuElements(){
         System.out.println("=======================================");
@@ -101,7 +99,6 @@ public class Menu {
         System.out.println("[Move Virologist]");
         //Init
         Virologist vir= new Virologist();
-        FreeMovememnt freeMovememnt = new FreeMovememnt();
         Field field= new Field();
         Field direction = new Field();
         field.addNeighbour(direction);
