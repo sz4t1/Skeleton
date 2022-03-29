@@ -3,7 +3,7 @@
 public class FreeMovememnt extends MovementAbility {
     //Constructor
     public FreeMovememnt(){
-        System.out.println("FreeMovememnt() - FreeMovement constructed");
+        System.out.println("FreeMovememnt() - FreeMovement (ability) constructed.");
     }
     //Use the effect in certain situation
     @Override

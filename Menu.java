@@ -276,22 +276,15 @@ public class Menu {
     public static void UseDanceOnSelf(){
         System.out.println("---------------------------------------");
         System.out.println("[Use Dance On Self]");
-
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Dance dance= new Dance();
         System.out.println("dance Dance "+dance);
-        Amnesia amnesia= new Amnesia();
-        System.out.println("amnesia Amnesia "+amnesia);
-        RandomMovement randomMovement= new RandomMovement();
-        System.out.println("randomMovement RandomMovement "+randomMovement);
-
-
+        vir.AddVirus(dance);
+        //Testcase
+        System.out.println(".......................................");
         vir.UseVirusOnSelf(dance);
-        dance.Effect(vir);
-        amnesia.EffectOff(vir);
-        vir.setVirusOn(dance);
-        vir.setMovementAbility(randomMovement);
     }
 
 

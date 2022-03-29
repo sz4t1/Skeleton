@@ -5,6 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Integer input=0;
         Scanner sc = new Scanner(System.in);
+
         while(input!=-1){
             Menu.menuElements();
             input=sc.nextInt();
@@ -68,11 +69,7 @@ public class Main {
                 case 18:{
                     Menu.UseProtectionOnSelf(); break;
                 }
-
-
             }
         }
     }
-
-
 }

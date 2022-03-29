@@ -27,7 +27,7 @@ public class Paralyzing extends Virus {
         v.setVirusOn(null);
         //New FreeMovement is created
         FreeMovememnt np = new FreeMovememnt();
-        //The virologist's protection ability is set to NoProtection
+        //The virologist's movement ability is set to freeMovement
         v.setMovementAbility(np);
     }
 }
