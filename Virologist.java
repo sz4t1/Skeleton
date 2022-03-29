@@ -8,6 +8,10 @@ public class Virologist {
         equipment=new ArrayList<>();
         materials=new ArrayList<>();
         genCodes=new ArrayList<>();
+        this.movementAbility=new FreeMovememnt();
+        this.capacityAbility=new DefaultCapacity();
+        this.protectionAbility=new NoProtection();
+        this.reflectionAbility=new NoReflection();
     }
     //The actual place of the virologist
     private Field field;
@@ -68,6 +72,8 @@ public class Virologist {
     //Virologist move to another field that was given as a parameter
     public void Move(Field f){
         System.out.println("Move(Field f) - The virologist moves to another field.");
+        getMovementAbility().invokeEffect(this, f);
+
     }
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){
