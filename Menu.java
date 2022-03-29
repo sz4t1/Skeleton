@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Menu {
     public static void menuElements(){
-        System.out.println("---------------------------------------");
+        System.out.println("=======================================");
 
         System.out.println("1. Check Environment");
         System.out.println("2. Craft Virus");
@@ -23,13 +23,13 @@ public class Menu {
         System.out.println("17. Use Paralyzing On Self");
         System.out.println("18. Use Protection On Self");
 
-        System.out.println("0. Exit Skeleton");
-        System.out.println("---------------------------------------");
+        System.out.println("\n0. Exit Skeleton");
+        System.out.println("=======================================");
     }
     public static void CheckEnviroment(){
         System.out.println("---------------------------------------");
         System.out.println("[Check Environment]");
-        
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Field field= new Field();
@@ -38,23 +38,26 @@ public class Menu {
         System.out.println("laboratory Laboratory "+laboratory);
         Shelter shelter= new Shelter();
         System.out.println("shelter Shelter "+shelter);
-
         field.addNeighbour(laboratory);
         field.addNeighbour(shelter);
         vir.setField(field);
+        //testcase
+        System.out.println(".......................................");
         field.getNeighbours();
     }
 
     public static void CraftVirus(){
         System.out.println("---------------------------------------");
         System.out.println("[Craft Virus]");
-
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         AmnesiaRecipe amnesiaRecipe= new AmnesiaRecipe();
         System.out.println("amnesiaRecipe AmnesiaRecipe "+amnesiaRecipe);
         Amnesia amnesia= new Amnesia();
         System.out.println("amnesia Amnesia "+amnesia);
+        //Testcase
+        System.out.println(".......................................");
         vir.CraftVirus(amnesiaRecipe);
 
     }
@@ -62,12 +65,14 @@ public class Menu {
     public static void DropEquipment(){
         System.out.println("---------------------------------------");
         System.out.println("[Drop Equipment]");
-
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         Cape cape= new Cape();
         System.out.println("cape Cape "+cape);
         vir.addEquipment(cape);
+        //Testcase
+        System.out.println(".......................................");
         vir.RemoveEquipment(cape);
 
     }
@@ -75,11 +80,13 @@ public class Menu {
     public static void DropMaterial(){
         System.out.println("---------------------------------------");
         System.out.println("[Drop Material]");
-
+        //Init
         Virologist vir= new Virologist();
         System.out.println("vir Virologist "+vir);
         AminoAcid aminoAcid= new AminoAcid();
         System.out.println("aminoAcid AminoAcid "+aminoAcid);
+        //Testcase
+        System.out.println(".......................................");
         vir.RemoveMaterial(aminoAcid);
 
     }
@@ -87,13 +94,17 @@ public class Menu {
     public static void EndGame(){
         System.out.println("---------------------------------------");
         System.out.println("[End Game]");
-
+        //Init
         Game game= new Game();
-        Virologist vir= new Virologist();
+        Virologist vir1= new Virologist();
+        Virologist vir2= new Virologist();
+        game.AddVirologist(vir1);
+        game.AddVirologist(vir2);
+        vir2.AddGeneticCode(1);
+        //Testcase
+        System.out.println(".......................................");
         game.StartGame();
-        if(game.CheckGeneticCodes(vir)){
-            game.EndGame();
-        }
+        
     }
 
     public static void MoveVirologist(){
