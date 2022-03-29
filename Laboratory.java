@@ -2,9 +2,10 @@
 //It extends the Field class
 public class Laboratory extends Field{
     //Constructor
-    public Laboratory(){
+    public Laboratory(Integer i){
         System.out.println("Laboratory() - Laboratory constructed: " + this);
         this.setName("Laboratory");
+        geneticCode = i;
     }
     //Id of a gen code the Laboratory have
     private Integer geneticCode;

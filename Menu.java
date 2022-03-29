@@ -33,7 +33,7 @@ public class Menu {
         //Init
         Virologist vir= new Virologist();
         Field field= new Field();
-        Laboratory laboratory= new Laboratory();
+        Laboratory laboratory= new Laboratory(1);
         Shelter shelter= new Shelter();
         field.addNeighbour(laboratory);
         field.addNeighbour(shelter);
@@ -73,7 +73,7 @@ public class Menu {
         //Init
         Virologist vir= new Virologist();
         AminoAcid aminoAcid= new AminoAcid();
-        vir.AddMaterial(aminoAcid);
+        vir.addMaterial(aminoAcid);
         //Testcase
         System.out.println(".......................................");
         vir.RemoveMaterial(aminoAcid);
@@ -142,6 +142,8 @@ public class Menu {
         System.out.println("[Virologist Scans]");
         //Init
         Virologist vir= new Virologist();
+        Laboratory lab = new Laboratory(25215);
+        vir.setField(lab);
         //Testcase
         System.out.println(".......................................");
         vir.ScanCode();
@@ -194,7 +196,7 @@ public class Menu {
         Virologist vir= new Virologist();
         Virologist vir2= new Virologist();
         AminoAcid aminoAcid= new AminoAcid();
-        vir2.AddMaterial(aminoAcid);
+        vir2.addMaterial(aminoAcid);
         //Testcase
         System.out.println(".......................................");
         vir.StealMaterial(vir2,aminoAcid);

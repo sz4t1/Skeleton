@@ -63,8 +63,8 @@ public class Virologist {
     }
     //Remove material from the virologists inventory
     public void RemoveMaterial(Material m){
-        m.beingUsed();
         System.out.println("RemoveMaterial(Material m) - Matrial is removed from the virologist's inventory.");
+        m.beingUsed();
         materials.remove(m);
         materialSize--;
     }
@@ -254,6 +254,10 @@ public class Virologist {
         equipment.add(e);
         e.Equip(this);
         equipmentSize++;
+    }
+
+    public void addMaterial(Material m){
+        materials.add(m);
     }
 
     public ArrayList<Integer> getGenCodes(){
