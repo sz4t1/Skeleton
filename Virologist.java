@@ -4,7 +4,6 @@ public class Virologist {
     //Virologist constructor
     public Virologist(){
         System.out.println("Virologist() - Virologist constructed");
-        virusOn = null;
     }
     //The actual place of the virologist
     private Field field;
