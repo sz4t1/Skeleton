@@ -210,7 +210,22 @@ public class Menu {
         Amnesia amnesia= new Amnesia();
         vir.AddVirus(amnesia);
         Cape cape = new Cape();
-        vir2.AddEquipment(cape);
+        vir2.addEquipment(cape);
+        //Testcase
+        System.out.println(".......................................");
+        vir.Attack(amnesia,vir2);
+    }
+
+    public static void UseVirusOnOtherVirologistWithGloves(){
+        System.out.println("---------------------------------------");
+        System.out.println("[Use Virus On Other Virologist With Gloves]");
+        //Init
+        Virologist vir= new Virologist();
+        Virologist vir2= new Virologist();
+        Amnesia amnesia= new Amnesia();
+        vir.AddVirus(amnesia);
+        Glove glove = new Glove();
+        vir2.addEquipment(glove);
         //Testcase
         System.out.println(".......................................");
         vir.Attack(amnesia,vir2);

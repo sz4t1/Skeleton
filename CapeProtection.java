@@ -14,5 +14,8 @@ public class CapeProtection extends ProtectionAbility {
         if(new Random().nextInt(2) == 0){
             v.Effect(vir);
         }
+        else{
+            System.out.println("The virologist was saved from the Virus, thanks to the CAPE.");
+        }
     }
 }

@@ -58,7 +58,7 @@ public class Main {
                     Menu.UseVirusOnOtherVirologistWithACape(); break;
                 }
                 case 15:{
-                    
+                    Menu.UseVirusOnOtherVirologistWithGloves(); break;
                 }
                 case 16:{
                     
