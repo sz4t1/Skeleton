@@ -2,31 +2,39 @@ public class Menu {
     public static void menuElements(){
         System.out.println("=======================================");
 
-        System.out.println("1. Check Environment");
-        System.out.println("2. Craft Virus");
-        System.out.println("3. Drop Equipment");
-        System.out.println("4. Drop Material");
-        System.out.println("5. End Game");
-        System.out.println("6. Move Virologist");
-        System.out.println("7. Pick Up Equipment");
-        System.out.println("8. Pick Up Material");
-        System.out.println("9. Scan Genetic");
-        System.out.println("10. Steal Cape");
-        System.out.println("11. Steal Glove");
-        System.out.println("12. Steal Sack");
-        System.out.println("13. Steal Material");
-        System.out.println("14. Use Virus On Other Virologist With a Cape");
-        System.out.println("15. Use Virus On Other Virologist With Gloves");
-        System.out.println("16. Use Virus On Other Virologist With No Protection");
-        System.out.println("17. Use Virus On Other Virologist With Protection Virus On");
-        System.out.println("18. Use Amnesia On Self");
-        System.out.println("19. Use Dance On Self");
-        System.out.println("20. Use Paralyzing On Self");
-        System.out.println("21. Use Protection On Self");
+        System.out.println("1. Tests");
+        System.out.println("2. Manual Testing");
+        System.out.println("3. Load Custom Test-File");
+        System.out.println("4. Play");
 
-        System.out.println("\n0. Exit Skeleton");
+        System.out.println("\n0. Exit Prototype");
         System.out.println("=======================================");
     }
+
+    public static void testMenuElements(){
+        System.out.println("=======================================");
+
+        System.out.println("1. Attack Other Virologist With Axe");
+        System.out.println("2. Craft Amnesia");
+        System.out.println("3. Craft Dance");
+        System.out.println("4. Craft Protection");
+        System.out.println("5. Craft Stun");
+        System.out.println("6. End Game");
+        System.out.println("7. Move virologist and check neighbours");
+        System.out.println("8. Pick Up Equipment Drop Equipment Steal Equipment");
+        System.out.println("9. Pick Up Material Steal Material Drop Material");
+        System.out.println("10. Scan genetic");
+        System.out.println("11. Use Amnesia On Other Virologist");
+        System.out.println("12. Use Dance On Other Virologist");
+        System.out.println("13. Use Virus On Self");
+        System.out.println("14. Use Stun On Other Virologist");
+        System.out.println("15. Use Up Glove");
+
+        System.out.println("\n0. Return to Main Menu");
+        System.out.println("=======================================");
+    }
+
+    //ezek még a szkeletonból maradtak
     public static void CheckEnviroment(){
         System.out.println("---------------------------------------");
         System.out.println("[Check Environment]");

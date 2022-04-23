@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
+        Game game = new Game();
+        
         Integer input=0;
         Scanner sc = new Scanner(System.in);
 
@@ -16,67 +17,97 @@ public class Main {
                     System.exit(0); break;
                 }
                 case 1:{
-                    Menu.CheckEnviroment(); break;
+                    testMenu();
+                    break;
                 }
                 case 2:{
-                    Menu.CraftVirus(); break;
+                    CommandProcessor.readCommandLine(game);
+                    break;
                 }
                 case 3:{
-                    Menu.DropEquipment(); break;
+
+                    break;
                 }
                 case 4:{
-                    Menu.DropMaterial(); break;
+
+                    break;
+                }
+            }
+        }
+    }
+
+    public static void testMenu(){
+        Integer input=0;
+        Scanner scm = new Scanner(System.in);
+
+        while(input!=-1){
+            Menu.testMenuElements();
+            input=scm.nextInt();
+
+            switch(input){
+                case 0:{
+                    scm.close();
+                    input = -1; break;
+                }
+                case 1:{
+                    
+                    break;
+                }
+                case 2:{
+                    
+                    break;
+                }
+                case 3:{
+                    
+                    break;
+                }
+                case 4:{
+                    
+                    break;
                 }
                 case 5:{
-                    Menu.EndGame(); break;
+                    
+                    break;
                 }
                 case 6:{
-                    Menu.MoveVirologist(); break;
+                    
+                    break;
                 }
                 case 7:{
-                    Menu.PickUpEquipment(); break;
+                    
+                    break;
                 }
                 case 8:{
-                    Menu.PickUpMaterial(); break;
+                    
+                    break;
                 }
                 case 9:{
-                    Menu.VirologistScans(); break;
+                    
+                    break;
                 }
                 case 10:{
-                    Menu.StealCape(); break;
+                   
+                    break;
                 }
                 case 11:{
-                    Menu.StealGlove(); break;
+                   
+                    break;
                 }
                 case 12:{
-                    Menu.StealSack(); break;
+                    
+                    break;
                 }
                 case 13:{
-                    Menu.StealMaterial(); break;
+                    
+                    break;
                 }
                 case 14:{
-                    Menu.UseVirusOnOtherVirologistWithACape(); break;
+                    
+                    break;
                 }
                 case 15:{
-                    Menu.UseVirusOnOtherVirologistWithGloves(); break;
-                }
-                case 16:{
-                    Menu.UseVirusOnOtherVirologistWithNoProtection(); break;
-                }
-                case 17:{
-                    Menu.UseVirusOnOtherVirologistWithProtectionVirusOn(); break;
-                }
-                case 18:{
-                    Menu.UseAmnesiaOnSelf(); break;
-                }
-                case 19:{
-                    Menu.UseDanceOnSelf(); break;
-                }
-                case 20:{
-                    Menu.UseParalyzingOnSelf(); break;
-                }
-                case 21:{
-                    Menu.UseProtectionOnSelf(); break;
+                    
+                    break;
                 }
             }
         }
