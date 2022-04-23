@@ -45,6 +45,7 @@ public class CommandProcessor {
             } catch (IOException e) {
                 //hibakezelés.....
             }
+            //If no more lines are found in the file, the while loop breaks
             if(line == null) break;
             processCommand(game, line);
         }
@@ -75,6 +76,33 @@ public class CommandProcessor {
             case "": {
                 return true;
             }
+            //Create commands
+            case "create": {
+                switch(command[1]){
+                    //virologist
+                    case "virologist":{}
+                    //fields
+                    case "field": {}
+                    case "laboratory": {}
+                    case "shelter": {}
+                    case "warehouse": {}
+                    //viruses
+                    case "amnesiavirus": {}
+                    case "dancevirus": {}
+                    case "stunvirus": {}
+                    case "protectionvirus": {}
+                    //materials
+                    case "aminoacid": {}
+                    case "nukleotide": {}
+                    //equipments
+                    case "axe": {}
+                    case "cape": {}
+                    case "glove": {}
+                    case "sack": {}
+                }
+                return true;
+            }
+            //Breaking the while loop with the return false
 	    	case "exit": {
                 return false;
             }
