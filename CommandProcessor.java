@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * This class processes the commands.
@@ -14,8 +15,8 @@ public class CommandProcessor {
      * Reades the commands from the standard input.
      * @param game
      */
-    public static void readCommandLine(Game game) {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static void readCommandLine(Scanner sc, Game game) {
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         //Here is stored the processCommand's return value, which is gona be the while loop's condition
         boolean readMore = true;
 
@@ -25,18 +26,8 @@ public class CommandProcessor {
          */
         while(readMore) {
             String cmd;
-            try {
-                cmd = br.readLine();
-                readMore = processCommand(game, cmd);
-            } catch (IOException e) {
-                //itt loggolni kéne vagy nem tom...
-            }
-        }
-
-        try {
-            br.close();
-        } catch (IOException e) {
-            //itt is loggolni kell...?
+            cmd = sc.nextLine();
+            readMore = processCommand(game, cmd);
         }
     }
 
