@@ -41,7 +41,7 @@ public class Menu {
         //Init
         Virologist vir= new Virologist();
         Field field= new Field();
-        Laboratory laboratory= new Laboratory(1);
+        Laboratory laboratory= new Laboratory();
         Shelter shelter= new Shelter();
         field.addNeighbour(laboratory);
         field.addNeighbour(shelter);
@@ -94,8 +94,8 @@ public class Menu {
         Game game= new Game();
         Virologist vir1= new Virologist();
         Virologist vir2= new Virologist();
-        game.AddVirologist(vir1);
-        game.AddVirologist(vir2);
+        game.AddVirologist("A", vir1);
+        game.AddVirologist("B", vir2);
         vir2.AddGeneticCode(1);
         //Testcase
         System.out.println(".......................................");
@@ -150,7 +150,7 @@ public class Menu {
         System.out.println("[Virologist Scans]");
         //Init
         Virologist vir= new Virologist();
-        Laboratory lab = new Laboratory(25215);
+        Laboratory lab = new Laboratory();
         vir.setField(lab);
         //Testcase
         System.out.println(".......................................");

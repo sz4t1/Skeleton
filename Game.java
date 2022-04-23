@@ -1,27 +1,28 @@
-import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 //This class represents the game itself, it contains the players and the map
 public class Game {
     //The virologist attribute contains the players in an arrayList
-    private ArrayList<Virologist> virologists;
+    private Map<String, Virologist> virologists;
     //This attribute contains the fields of the map
-    private ArrayList<Field> fields;
+    private Map<String, Field> fields;
     //Constructor
     public Game(){
-        virologists= new ArrayList<>();
-        fields= new ArrayList<>();
+        virologists= new TreeMap<>();
+        fields= new TreeMap<>();
         System.out.println("Game() - Game constructed.");
     }
     //Starts the game
     public void StartGame(){
         System.out.println("StartGame() - The game is started.");
-        for(Virologist v : virologists){
-            StepVirologist(v);
-            if(CheckGeneticCodes(v)){
-                System.out.println(v + " knows all the codes.");
+        for(String key : virologists.keySet()){
+            StepVirologist(virologists.get(key));
+            if(CheckGeneticCodes(virologists.get(key))){
+                System.out.println(key + " knows all the codes.");
                 EndGame();
             }
             else{
-                System.out.println(v + " doesn't know all the codes.");
+                System.out.println(key + " doesn't know all the codes.");
             }
         }
     }
@@ -42,9 +43,24 @@ public class Game {
     }
     //Adds a virologist to the game
     //Nem feltétlenül marad meg, a szkeletonhoz kellett egy publikus függvény, mellyel virológust lehet a game-hez adni
-    public void AddVirologist(Virologist v){
-        System.out.println("AddVirologist(Virologist v) - New virologist added to the game.");
-        virologists.add(v);
+    public void AddVirologist(String key, Virologist v){
+        System.out.println("AddVirologist(String key, Virologist v) - New virologist added to the game.");
+        virologists.put(key, v);
+    }
+
+    public void AddField(String key, Field f){
+        System.out.println("AddField(String key, Field f) - New field added to the game.");
+        fields.put(key, f);
+    }
+
+    //Returns with a field
+    public Field getField(String key){
+        return fields.get(key);
+    }
+
+    //Checks, if both fields exist in this game
+    public boolean fieldsExist(String k1, String k2){
+        return (fields.containsKey(k1) && fields.containsKey(k2));
     }
 
     //virologist steps
@@ -53,8 +69,8 @@ public class Game {
     }
 
     //Clears the game object: all Virologists, fields, ... should be removed from this object
-    //TODO
     public void clear(){
-
+        virologists.clear();
+        fields.clear();
     }
 }

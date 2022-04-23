@@ -78,16 +78,38 @@ public class CommandProcessor {
             }
             //Create commands
             case "create": {
+                //The Create commands always have 2 parameters: object type and name
+                if(command.length != 3){
+                    System.out.println(line + " <=== NEM MEGFELELO PARAMÉTEREZÉS");
+                    return true;
+                }
+
                 switch(command[1]){
                     //virologist
-                    case "virologist":{}
+                    case "virologist":{
+                        game.AddVirologist(command[2], new Virologist());
+                        break;
+                    }
                     //fields
-                    case "field": {}
-                    case "laboratory": {}
-                    case "shelter": {}
-                    case "warehouse": {}
+                    case "field": {
+                        game.AddField(command[2], new Field());
+                        break;
+                    }
+                    case "laboratory": {
+                        game.AddField(command[2], new Laboratory());
+                        break;
+                    }
+                    case "shelter": {
+                        game.AddField(command[2], new Shelter());
+                        break;
+                    }
+                    case "warehouse": {
+                        game.AddField(command[2], new Warehouse());
+                        break;
+                    }
                     //viruses
                     case "amnesiavirus": {}
+                    case "beardancevirus": {}
                     case "dancevirus": {}
                     case "stunvirus": {}
                     case "protectionvirus": {}
@@ -102,12 +124,28 @@ public class CommandProcessor {
                 }
                 return true;
             }
+            //Connect two fields == making neighbors
+            case "connectfields": {
+                 //The ConnectFields commands always have 2 parameters: field1 and field2
+                 if(command.length != 3){
+                    System.out.println(line + " <=== NEM MEGFELELO PARAMÉTEREZÉS");
+                    return true;
+                }
+                //Checking the two given fields' existence
+                if(!game.fieldsExist(command[1], command[2])){
+                    System.out.println(line + " <=== NEM LÉTEZIK AZ EGYIK VAGY MINDKÉT MEZo, VAGY ROSSZ NEVET/NEVEKET ADTAL MEG");
+                    return true;
+                }
+                game.getField(command[1]).addNeighbour(game.getField(command[2]));
+                game.getField(command[2]).addNeighbour(game.getField(command[1]));
+                return true;
+            }
             //Breaking the while loop with the return false
 	    	case "exit": {
                 return false;
             }
             default: {
-                System.out.println(line + " <=== ISMERETLEN PARANCS");
+                System.out.println(command[0] + " <=== ISMERETLEN PARANCS");
                 return true;
             }
 	    }
