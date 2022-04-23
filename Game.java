@@ -51,4 +51,10 @@ public class Game {
     private void StepVirologist(Virologist v){
         System.out.println(v + " stepped.");
     }
+
+    //Clears the game object: all Virologists, fields, ... should be removed from this object
+    //TODO
+    public void clear(){
+
+    }
 }

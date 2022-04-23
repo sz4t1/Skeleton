@@ -2,7 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Game game;
+        System.out.println("=======================================");
+        System.out.println("|              PROTOTYPE              |");
+        
+        Game game = null;
         Integer input=0;
         Scanner sc = new Scanner(System.in);
 
@@ -12,23 +15,30 @@ public class Main {
                     
             switch(input){
                 case 0:{
+                    //Exit
                     sc.close();
-                    System.exit(0); break;
+                    System.out.println("Na csumi!!!");
+                    System.exit(0);
+                    break;
                 }
                 case 1:{
-                    testMenu(sc);
+                    //Tests
+                    testMenu(sc, game);
                     break;
                 }
                 case 2:{
+                    //Manual Testing
                     game  = new Game();
                     CommandProcessor.readCommandLine(sc, game);
                     break;
                 }
                 case 3:{
+                    //Load Custom Test-File
 
                     break;
                 }
                 case 4:{
+                    //Play
 
                     break;
                 }
@@ -41,14 +51,15 @@ public class Main {
      * Ide mehetnek a tesztek, vagy azokat megvalósító függvényhívások
      * @param sc
      */
-    private static void testMenu(Scanner sc){
+    private static void testMenu(Scanner sc, Game game){
         int i = 0;
+        game = new Game();
         while(i != -1){
             Menu.testMenuElements();
-            i=sc.nextInt();
+            i = sc.nextInt();
             switch(i){
                 case 0:{
-                    //break the while loop
+                    //break the while loop = Back to Main Menu
                     i = -1;
                     break;
                 }
@@ -114,6 +125,7 @@ public class Main {
                 }
                 default:{}
             }
+            game.clear();
         }
     }
 }

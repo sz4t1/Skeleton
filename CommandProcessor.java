@@ -2,7 +2,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 /**
@@ -16,7 +15,6 @@ public class CommandProcessor {
      * @param game
      */
     public static void readCommandLine(Scanner sc, Game game) {
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         //Here is stored the processCommand's return value, which is gona be the while loop's condition
         boolean readMore = true;
 
@@ -81,7 +79,7 @@ public class CommandProcessor {
                 return false;
             }
             default: {
-                System.out.println("Ismeretlen parancs");
+                System.out.println(line + " <=== ISMERETLEN PARANCS");
                 return true;
             }
 	    }
