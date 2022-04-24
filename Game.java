@@ -58,6 +58,13 @@ public class Game {
         return fields.get(key);
     }
 
+    //Returns with a virologist
+    public Virologist getVirologist(String key)
+    {
+        return virologists.get(key);
+    }
+
+
     //Checks, if both fields exist in this game
     public boolean fieldsExist(String k1, String k2){
         return (fields.containsKey(k1) && fields.containsKey(k2));

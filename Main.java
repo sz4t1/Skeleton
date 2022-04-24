@@ -9,6 +9,10 @@ public class Main {
         Integer input=0;
         Scanner sc = new Scanner(System.in);
 
+        private Map<String, Material> materials;
+        private Map<String, Equipment> equipments;
+        private Map<String, Virus> viruses;
+
         while(input!=-1){
             Menu.menuElements();
             input=sc.nextInt();
@@ -29,12 +33,13 @@ public class Main {
                 case 2:{
                     //Manual Testing
                     game  = new Game();
-                    CommandProcessor.readCommandLine(sc, game);
+                    CommandProcessor.readCommandLine(sc, game, materials, equipments, viruses);
                     break;
                 }
                 case 3:{
                     //Load Custom Test-File
-
+                    game = new Game();
+                    CommandProcessor.readCommandFile(game, "input.txt", materials, equipments, viruses);
                     break;
                 }
                 case 4:{
