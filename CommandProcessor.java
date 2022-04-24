@@ -108,19 +108,46 @@ public class CommandProcessor {
                         break;
                     }
                     //viruses
-                    case "amnesiavirus": {}
+                    case "amnesiavirus": {
+                        Amnesia amn = new Amnesia();
+                        break;
+                    }
                     case "beardancevirus": {}
-                    case "dancevirus": {}
-                    case "stunvirus": {}
-                    case "protectionvirus": {}
+                    case "dancevirus": {
+                        Dance dan = new Dance();
+                        break;
+                    }
+                    case "stunvirus": {
+                        Paralyzing par = new Paralyzing();
+                        break;
+                    }
+                    case "protectionvirus": {
+                        Protection pro = new Protection();
+                        break;
+                    }
                     //materials
-                    case "aminoacid": {}
-                    case "nukleotide": {}
+                    case "aminoacid": {
+                        AminoAcid aa = new AminoAcid();
+                        break;
+                    }
+                    case "nukleotide": {
+                        Nukleotide nu = new Nukleotide();
+                        break;
+                    }
                     //equipments
                     case "axe": {}
-                    case "cape": {}
-                    case "glove": {}
-                    case "sack": {}
+                    case "cape": {
+                        Cape cape = new Cape();
+                        break;
+                    }
+                    case "glove": {
+                        Glove glove = new Glove();
+                        break;
+                    }
+                    case "sack": {
+                        Sack sack = new Sack();
+                        break;
+                    }
                 }
                 return true;
             }
@@ -143,6 +170,24 @@ public class CommandProcessor {
             //Breaking the while loop with the return false
 	    	case "exit": {
                 return false;
+            }
+            //Add material to virologist
+            case "addmaterial": {
+
+                
+
+            }
+            //Put on equipment
+            case "equip": {
+
+
+
+            }
+            //Take off equipment
+            case "unequip": {
+
+
+
             }
             default: {
                 System.out.println(command[0] + " <=== ISMERETLEN PARANCS");
