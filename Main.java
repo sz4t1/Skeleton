@@ -81,39 +81,156 @@ public class Main {
                     break;
                 }
                 case 4:{
-                    
+                    Virologist vir = new Virologist();
+                    Dance dance = new Dance();
+                    Amnesia amn = new Amnesia();
+                    Protection prot = new Protection();
+                    Stun stun = new Stun();
+                    vir.UseVirusOnSelf(amn);
+                    vir.UseVirusOnSelf(dance);
+                    vir.UseVirusOnSelf(prot);
+                    vir.UseVirusOnSelf(stun);
+                    vir.UseVirusOnSelf(stun);
                     break;
                 }
                 case 5:{
-                    
+                    Virologist vir1 = new Virologist();
+                    Virologist vir2 = new Virologist();
+                    Dance dance = new Dance();
+                    Protection prot = new Protection();
+                    vir1.Attack(dance, vir2);
+                    vir2.getMovementAbility();
+                    vir2.UseVirusOnSelf(prot);
+                    vir1.Attack(dance, vir2);
+                    vir2.getMovementAbility();
                     break;
                 }
                 case 6:{
-                    
+                    Virologist vir1 = new Virologist();
+                    Virologist vir2 = new Virologist();
+                    Stun stun = new Stun();
+                    Protection prot = new Protection();
+                    vir1.Attack(stun, vir2);
+                    vir2.getMovementAbility();
+                    vir2.UseVirusOnSelf(prot);
+                    vir1.Attack(stun, vir2);
+                    vir2.getMovementAbility();
                     break;
                 }
                 case 7:{
-                    
+                    Virologist vir1 = new Virologist();
+                    Virologist vir2 = new Virologist();
+                    Amnesia amn = new Amnesia();
+                    Protection prot = new Protection();
+                    vir1.Attack(amn, vir2);
+                    vir2.getMovementAbility();
+                    vir2.UseVirusOnSelf(prot);
+                    vir1.Attack(amn, vir2);
+                    vir2.getMovementAbility();
                     break;
                 }
                 case 8:{
-                    
+                    Virologist vir = new Virologist();
+                    DanceRecipe dr = new DanceRecipe();
+                    dr.CreateVirus(vir);
+                    AminoAcid aa1 = new AminoAcid();
+                    AminoAcid aa2 = new AminoAcid();
+                    AminoAcid aa3 = new AminoAcid();
+                    AminoAcid aa4 = new AminoAcid();
+                    Nukleotide n1 = new Nukleotide();
+                    Nukleotide n2 = new Nukleotide();
+                    Nukleotide n3 = new Nukleotide();
+                    Nukleotide n4 = new Nukleotide();
+                    vir.addMaterial(aa1);
+                    vir.addMaterial(aa2);
+                    vir.addMaterial(aa3);
+                    vir.addMaterial(aa4);
+                    vir.addMaterial(n1);
+                    vir.addMaterial(n2);
+                    vir.addMaterial(n3);
+                    vir.addMaterial(n4);
+                    dr.CreateVirus(vir);
                     break;
                 }
                 case 9:{
-                    
+                    Virologist vir = new Virologist();
+                    AmnesiaRecipe ar = new AmnesiaRecipe();
+                    ar.CreateVirus(vir);
+                    AminoAcid aa1 = new AminoAcid();
+                    AminoAcid aa2 = new AminoAcid();
+                    AminoAcid aa3 = new AminoAcid();
+                    AminoAcid aa4 = new AminoAcid();
+                    Nukleotide n1 = new Nukleotide();
+                    Nukleotide n2 = new Nukleotide();
+                    Nukleotide n3 = new Nukleotide();
+                    Nukleotide n4 = new Nukleotide();
+                    vir.addMaterial(aa1);
+                    vir.addMaterial(aa2);
+                    vir.addMaterial(aa3);
+                    vir.addMaterial(aa4);
+                    vir.addMaterial(n1);
+                    vir.addMaterial(n2);
+                    vir.addMaterial(n3);
+                    vir.addMaterial(n4);
+                    ar.CreateVirus(vir);
                     break;
                 }
                 case 10:{
-                   
+                    Virologist vir = new Virologist();
+                    StunRecipe ar = new StunRecipe();
+                    sr.CreateVirus(vir);
+                    AminoAcid aa1 = new AminoAcid();
+                    AminoAcid aa2 = new AminoAcid();
+                    AminoAcid aa3 = new AminoAcid();
+                    AminoAcid aa4 = new AminoAcid();
+                    Nukleotide n1 = new Nukleotide();
+                    Nukleotide n2 = new Nukleotide();
+                    Nukleotide n3 = new Nukleotide();
+                    Nukleotide n4 = new Nukleotide();
+                    vir.addMaterial(aa1);
+                    vir.addMaterial(aa2);
+                    vir.addMaterial(aa3);
+                    vir.addMaterial(aa4);
+                    vir.addMaterial(n1);
+                    vir.addMaterial(n2);
+                    vir.addMaterial(n3);
+                    vir.addMaterial(n4);
+                    sr.CreateVirus(vir);
                     break;
                 }
                 case 11:{
-                   
+                    Virologist vir = new Virologist();
+                    ProtectionRecipe pr = new ProtectionRecipe();
+                    pr.CreateVirus(vir);
+                    AminoAcid aa1 = new AminoAcid();
+                    AminoAcid aa2 = new AminoAcid();
+                    AminoAcid aa3 = new AminoAcid();
+                    AminoAcid aa4 = new AminoAcid();
+                    Nukleotide n1 = new Nukleotide();
+                    Nukleotide n2 = new Nukleotide();
+                    Nukleotide n3 = new Nukleotide();
+                    Nukleotide n4 = new Nukleotide();
+                    vir.addMaterial(aa1);
+                    vir.addMaterial(aa2);
+                    vir.addMaterial(aa3);
+                    vir.addMaterial(aa4);
+                    vir.addMaterial(n1);
+                    vir.addMaterial(n2);
+                    vir.addMaterial(n3);
+                    vir.addMaterial(n4);
+                    pr.CreateVirus(vir);
                     break;
                 }
                 case 12:{
-                    
+                    Virologist vir1 = new Virologist();
+                    Virologist vir2 = new Virologist();
+                    Equipment e1 = new Equipment();
+                    Equipment e2 = new Equipment();
+                    vir1.addEquipment(e1);
+                    vir2.addEquipment(e2);
+                    vir1.removeEquipment(e1);
+                    vir1.StealEquipment(vir2, e2);
+                    vir1.StealEquipment(vir2, e2);
                     break;
                 }
                 case 13:{
@@ -121,11 +238,27 @@ public class Main {
                     break;
                 }
                 case 14:{
-                    
+                    Virologist vir1 = new Virologist();
+                    Virologist vir2 = new Virologist();
+                    AminoAcid aa = new AminoAcid();
+                    vir2.addMaterial(aa);
+                    vir1.StealMaterial(vir2, aa);
+                    vir1.StealMaterial(vir2, aa);
+                    vir1.RemoveMaterial(aa);
                     break;
                 }
                 case 15:{
-                    
+                    Virologist vir1 = new Virologist();
+                    Virologist vir2 = new Virologist();
+                    Glove g = new Glove();
+                    Dance dance = new Dance();
+                    Amnesia amn = new Amnesia();
+                    Stun stun = new Stun();
+                    vir2.AddEquipment(g);
+                    vir1.Attack(dance, vir2);
+                    vir1.Attack(amn, vir2);
+                    vir1.Attack(stun, vir2);
+                    vir2.removeEquipment(g);
                     break;
                 }
                 default:{}
