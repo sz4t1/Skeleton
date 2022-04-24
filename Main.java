@@ -34,8 +34,7 @@ public class Main {
                 }
                 case 3:{
                     //Load Custom Test-File
-                    game = new Game();
-                    CommandProcessor.readCommandFile(game, "input.txt");
+
                     break;
                 }
                 case 4:{
