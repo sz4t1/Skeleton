@@ -15,13 +15,6 @@ public class Main {
             input=sc.nextInt();
                     
             switch(input){
-                case 0:{
-                    //Exit
-                    sc.close();
-                    System.out.println("Na csumi!!!");
-                    System.exit(0);
-                    break;
-                }
                 case 1:{
                     //Tests
                     testMenu(sc, game);
@@ -47,6 +40,13 @@ public class Main {
                 case 4:{
                     //Play
 
+                    break;
+                }
+                case 0:{
+                    //Exit
+                    sc.close();
+                    System.out.println("Na csumi!!!");
+                    System.exit(0);
                     break;
                 }
                 default:{}

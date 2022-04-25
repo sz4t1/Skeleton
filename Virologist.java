@@ -12,6 +12,7 @@ public class Virologist {
         this.capacityAbility=new DefaultCapacity();
         this.protectionAbility=new NoProtection();
         this.reflectionAbility=new NoReflection();
+        this.executeAbility=new CanNotExecute();
         virusOn = null;
         equipmentSize=0;
         virusSize=0;
@@ -43,6 +44,8 @@ public class Virologist {
     private ProtectionAbility protectionAbility;
     //Actual reflection ability of the virologist
     private ReflectionAbility reflectionAbility;
+    //Actual execute ability of the virologist
+    private ExecuteAbility executeAbility;
     //Add material to the virologists inventory
     public void AddMaterial(Material m){
         System.out.println("AddMaterial(Material m) - Material is added to the virologist's inventory.");
