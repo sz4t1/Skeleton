@@ -78,7 +78,7 @@ public class Main {
                     Field field2 = new Field();
                     Laboratory lab1 = new Laboratory();
                     onField.getNeighbours();
-                    vir.Move(field1);
+                    vir.setField(field1);
                     vir.Move(onField);
                     vir.Move(lab1);
                     break;
@@ -86,8 +86,8 @@ public class Main {
                 case 2:{
                     Laboratory lab1 = new Laboratory();
                     Virologist vir = new Virologist();
+                    vir.setField(lab1);
                     vir.ScanCode();
-                    vir.AddGeneticCode(lab1.getGeneticCode());
                     vir.ScanCode();
                     break;
                 }
@@ -257,7 +257,7 @@ public class Main {
                     Axe axe = new Axe();
                     Virologist vir2 = new Virologist();
                     vir.AttackWithAxe(vir2);
-                    vir.AddEquipment(axe);
+                    vir.addEquipment(axe);
                     vir.AttackWithAxe(vir2);
                     Virologist vir3 = new Virologist();
                     vir.AttackWithAxe(vir3);
@@ -280,7 +280,7 @@ public class Main {
                     Dance dance = new Dance();
                     Amnesia amn = new Amnesia();
                     Paralyzing stun = new Paralyzing();
-                    vir2.AddEquipment(g);
+                    vir2.addEquipment(g);
                     vir1.Attack(dance, vir2);
                     vir1.Attack(amn, vir2);
                     vir1.Attack(stun, vir2);

@@ -14,20 +14,20 @@ public class Menu {
     public static void testMenuElements(){
         System.out.println("=======================================");
 
-        System.out.println("1. Attack Other Virologist With Axe");
-        System.out.println("2. Craft Amnesia");
-        System.out.println("3. Craft Dance");
-        System.out.println("4. Craft Protection");
-        System.out.println("5. Craft Stun");
-        System.out.println("6. End Game");
-        System.out.println("7. Move virologist and check neighbours");
-        System.out.println("8. Pick Up Equipment Drop Equipment Steal Equipment");
-        System.out.println("9. Pick Up Material Steal Material Drop Material");
-        System.out.println("10. Scan genetic");
-        System.out.println("11. Use Amnesia On Other Virologist");
-        System.out.println("12. Use Dance On Other Virologist");
-        System.out.println("13. Use Virus On Self");
-        System.out.println("14. Use Stun On Other Virologist");
+        System.out.println("1. Move virologist and check neighbours");
+        System.out.println("2. Scan genetic");
+        System.out.println("3. End Game");
+        System.out.println("4. Use Virus On Self");
+        System.out.println("5. Use Dance On Other Virologist");
+        System.out.println("6. Use Stun On Other Virologist");
+        System.out.println("7. Use Amnesia On Other Virologist");
+        System.out.println("8. Craft Dance");
+        System.out.println("9. Craft Amnesia");
+        System.out.println("10. Craft Stun");
+        System.out.println("11. Craft Protection");
+        System.out.println("12. Pick Up Equipment Drop Equipment Steal Equipment");
+        System.out.println("13. Attack Other Virologist With Axe");
+        System.out.println("14. Pick Up Material Steal Material Drop Material");
         System.out.println("15. Use Up Glove");
 
         System.out.println("\n0. Return to Main Menu");
