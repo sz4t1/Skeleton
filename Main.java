@@ -71,15 +71,32 @@ public class Main {
                     break;
                 }
                 case 1:{
-                    
+                    Field onField = new Field();
+                    Virologist vir = new Virologist();
+                    onField.AddVirologist(vir);
+                    Field field1 = new Field();
+                    Field field2 = new Field();
+                    Laboratory lab1 = new Laboratory();
+                    onField.getNeighbours();
+                    vir.Move(field1);
+                    vir.Move(onField);
+                    vir.Move(lab1);
                     break;
                 }
                 case 2:{
-                    
+                    Laboratory lab1 = new Laboratory();
+                    Virologist vir = new Virologist();
+                    vir.ScanCode();
+                    vir.AddGeneticCode(lab1.getGeneticCode());
+                    vir.ScanCode();
                     break;
                 }
                 case 3:{
-                    
+                    Virologist vir1 = new Virologist();
+                    Virologist vir2 = new Virologist();
+                    vir2.AddGeneticCode(1);
+                    game.StartGame();
+                    game.EndGame();
                     break;
                 }
                 case 4:{
@@ -236,7 +253,14 @@ public class Main {
                     break;
                 }
                 case 13:{
-                    
+                    Virologist vir = new Virologist();
+                    Axe axe = new Axe();
+                    Virologist vir2 = new Virologist();
+                    vir.AttackWithAxe(vir2);
+                    vir.AddEquipment(axe);
+                    vir.AttackWithAxe(vir2);
+                    Virologist vir3 = new Virologist();
+                    vir.AttackWithAxe(vir3);
                     break;
                 }
                 case 14:{

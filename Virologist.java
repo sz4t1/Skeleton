@@ -156,6 +156,11 @@ public class Virologist {
         System.out.println("AttackedBy(Virologist vir, Virus v) - The virologist recieves an attack.");
         reflectionAbility.invokeEffect(vir, this, v);
     }
+    //Attacks another virologist with an axe
+    public void AttackWithAxe(Virologist vir){
+        System.out.println("AttackWithAxe(Virologist v) - The virologist attacked another virologist with an axe");
+        executeAbility.invokeEffekt(vir);
+    }
     //Getters and setters
     public Virus getVirusOn() {
         return virusOn;
@@ -266,4 +271,5 @@ public class Virologist {
     public ArrayList<Integer> getGenCodes(){
         return genCodes;
     }
+
 }
