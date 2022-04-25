@@ -113,7 +113,11 @@ public class CommandProcessor {
                         game.AddVirus(command[2], amn);
                         break;
                     }
-                    case "beardancevirus": {}
+                    case "beardancevirus": {
+                        BearDance bear = new BearDance();
+                        game.AddVirus(command[2], bear);
+                        break;
+                    }
                     case "dancevirus": {
                         Dance dan = new Dance();
                         game.AddVirus(command[2], dan);
