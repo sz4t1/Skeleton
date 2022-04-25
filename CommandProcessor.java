@@ -14,7 +14,7 @@ public class CommandProcessor {
      * Reades the commands from the standard input.
      * @param game
      */
-    public static void readCommandLine(Scanner sc, Game game, Map<String, Material> materials, Map<String, Equipment> equipments, Map<String, Virus> viruses) {
+    public static void readCommandLine(Scanner sc, Game game) {
         //Here is stored the processCommand's return value, which is gona be the while loop's condition
         boolean readMore = true;
 
@@ -25,7 +25,7 @@ public class CommandProcessor {
         while(readMore) {
             String cmd;
             cmd = sc.nextLine();
-            readMore = processCommand(game, cmd, materials, equipments);
+            readMore = processCommand(game, cmd);
         }
     }
 
@@ -35,7 +35,7 @@ public class CommandProcessor {
      * @param fileName
      * @throws FileNotFoundException
      */
-    public static void readCommandFile(Game game, String fileName, Map<String, Material> materials, Map<String, Equipment> equipments, Map<String, Virus> viruses) throws FileNotFoundException {
+    public static void readCommandFile(Game game, String fileName) throws FileNotFoundException {
   	
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         String line = null;
@@ -47,7 +47,7 @@ public class CommandProcessor {
             }
             //If no more lines are found in the file, the while loop breaks
             if(line == null) break;
-            processCommand(game, line, materials, equipments);
+            processCommand(game, line);
         }
 
         try {
@@ -64,7 +64,7 @@ public class CommandProcessor {
      * @param line
      * @return
      */
-    private static boolean processCommand(Game game, String line, Map<String, Material> materials, Map<String, Equipment> equipments, Map<String, Virus> viruses){
+    private static boolean processCommand(Game game, String line){
         //To lower case, no need to pay attention when typing
         line = line.toLowerCase();
         //Parsing with at least one whitespace
@@ -110,51 +110,55 @@ public class CommandProcessor {
                     //viruses
                     case "amnesiavirus": {
                         Amnesia amn = new Amnesia();
-                        viruses.put(command[2], amn);
+                        game.AddVirus(command[2], amn);
                         break;
                     }
                     case "beardancevirus": {}
                     case "dancevirus": {
                         Dance dan = new Dance();
-                        viruses.put(command[2], dan);
+                        game.AddVirus(command[2], dan);
                         break;
                     }
                     case "stunvirus": {
                         Paralyzing par = new Paralyzing();
-                        viruses.put(command[2], par);
+                       game.AddVirus(command[2], par);
                         break;
                     }
                     case "protectionvirus": {
                         Protection pro = new Protection();
-                        viruses.put(command[2], pro);
+                        game.AddVirus(command[2], pro);
                         break;
                     }
                     //materials
                     case "aminoacid": {
                         AminoAcid aa = new AminoAcid();
-                        materials.put(command[2], aa);
+                        game.AddMaterial(command[2], aa);
                         break;
                     }
                     case "nukleotide": {
                         Nukleotide nu = new Nukleotide();
-                        materials.put(command[2], nu);
+                        game.AddMaterial(command[2], nu);
                         break;
                     }
                     //equipments
-                    case "axe": {}
+                    case "axe": {
+                        Axe axe = new Axe();
+                        game.AddEquipment(command[2], axe);
+                        break;
+                    }
                     case "cape": {
                         Cape cape = new Cape();
-                        equipments.put(command[2], cape);
+                        game.AddEquipment(command[2], cape);
                         break;
                     }
                     case "glove": {
                         Glove glove = new Glove();
-                        equipments.put(command[2], glove);
+                        game.AddEquipment(command[2], glove);
                         break;
                     }
                     case "sack": {
                         Sack sack = new Sack();
-                        equipments.put(command[2], sack);
+                        game.AddEquipment(command[2], sack);
                         break;
                     }
                 }
@@ -167,57 +171,61 @@ public class CommandProcessor {
                     System.out.println(line + " <=== NEM MEGFELELO PARAMÉTEREZÉS");
                     return true;
                 }
+                Field f1 = game.getField(command[1]);
+                Field f2 = game.getField(command[2]);
                 //Checking the two given fields' existence
-                if(!game.fieldsExist(command[1], command[2])){
-                    System.out.println(line + " <=== NEM LÉTEZIK AZ EGYIK VAGY MINDKÉT MEZo, VAGY ROSSZ NEVET/NEVEKET ADTAL MEG");
+                if(f1 == null || f2 == null){
+                    System.out.println(line + " <=== NEM LÉTEZIK AZ EGYIK VAGY MINDKÉT MEZO, VAGY ROSSZ NEVET/NEVEKET ADTAL MEG");
                     return true;
                 }
-                game.getField(command[1]).addNeighbour(game.getField(command[2]));
-                game.getField(command[2]).addNeighbour(game.getField(command[1]));
+                else{
+                    f1.addNeighbour(f2);
+                    f2.addNeighbour(f1);
+                }
                 return true;
-            }
-            //Breaking the while loop with the return false
-	    	case "exit": {
-                return false;
             }
             //Add material to virologist
             case "addmaterial": {
 
-                game.getVirologist(command[1]).addMaterial(materials.get(command[2]));
-
+                game.getVirologist(command[1]).addMaterial(game.getMaterial(command[2]));
+                return true;
             }
             //Put on equipment
             case "equip": {
 
-                game.getVirologist(command[1]).addEquipment(equipments.get(command[2]));
-
+                game.getVirologist(command[1]).addEquipment(game.getEquipment(command[2]));
+                return true;
             }
             //Take off equipment
             case "unequip": {
 
-                game.getVirologist(command[1]).removeEquipment(equipments.get(command[2]));
-
+                game.getVirologist(command[1]).removeEquipment(game.getEquipment(command[2]));
+                return true;
             }
             //Steal material
             case "stealmaterial": {
-                game.getVirologist(command[1]).StealMaterial(game.getVirologist(command[2]), materials.get(command[3]));
-                break;
+                game.getVirologist(command[1]).StealMaterial(game.getVirologist(command[2]), game.getMaterial(command[3]));
+                return true;
             }
             //Steal equipment
             case "stealequipment": {
-                game.getVirologist(command[1]).StealEquipment(game.getVirologist(command[2]), equipments.get(command[3]));
-                break;
+                game.getVirologist(command[1]).StealEquipment(game.getVirologist(command[2]), game.getEquipment(command[3]));
+                return true;
             }
             //Attack another virologist
-            case: "attack": {
-                game.getVirologist(command[1]).Attack(viruses.command[3], game.getVirologist(command[2]));
-                break;
+            case "attack": {
+                game.getVirologist(command[1]).Attack(game.getVirus(command[3]), game.getVirologist(command[2]));
+                return true;
             }
             //Use virus
             case "usevirusonself": {
-                game.getVirologist(command[1]).UseVirusOnSelf(viruses.get(command[2]));
-                break;
+                game.getVirologist(command[1]).UseVirusOnSelf(game.getVirus(command[2]));
+                return true;
             } 
+             //Breaking the while loop with the return false
+	    	case "exit": {
+                return false;
+            }
             default: {
                 System.out.println(command[0] + " <=== ISMERETLEN PARANCS");
                 return true;

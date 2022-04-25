@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
@@ -8,10 +9,6 @@ public class Main {
         Game game = null;
         Integer input=0;
         Scanner sc = new Scanner(System.in);
-
-        private Map<String, Material> materials;
-        private Map<String, Equipment> equipments;
-        private Map<String, Virus> viruses;
 
         while(input!=-1){
             Menu.menuElements();
@@ -33,13 +30,18 @@ public class Main {
                 case 2:{
                     //Manual Testing
                     game  = new Game();
-                    CommandProcessor.readCommandLine(sc, game, materials, equipments, viruses);
+                    CommandProcessor.readCommandLine(sc, game);
                     break;
                 }
                 case 3:{
                     //Load Custom Test-File
                     game = new Game();
-                    CommandProcessor.readCommandFile(game, "input.txt", materials, equipments, viruses);
+                    try {
+                        CommandProcessor.readCommandFile(game, "input.txt");
+                    } catch (FileNotFoundException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 4:{
@@ -85,7 +87,7 @@ public class Main {
                     Dance dance = new Dance();
                     Amnesia amn = new Amnesia();
                     Protection prot = new Protection();
-                    Stun stun = new Stun();
+                    Paralyzing stun = new Paralyzing();
                     vir.UseVirusOnSelf(amn);
                     vir.UseVirusOnSelf(dance);
                     vir.UseVirusOnSelf(prot);
@@ -108,7 +110,7 @@ public class Main {
                 case 6:{
                     Virologist vir1 = new Virologist();
                     Virologist vir2 = new Virologist();
-                    Stun stun = new Stun();
+                    Paralyzing stun = new Paralyzing();
                     Protection prot = new Protection();
                     vir1.Attack(stun, vir2);
                     vir2.getMovementAbility();
@@ -177,8 +179,8 @@ public class Main {
                 }
                 case 10:{
                     Virologist vir = new Virologist();
-                    StunRecipe ar = new StunRecipe();
-                    sr.CreateVirus(vir);
+                    ParalyzingRecipe ar = new ParalyzingRecipe();
+                    ar.CreateVirus(vir);
                     AminoAcid aa1 = new AminoAcid();
                     AminoAcid aa2 = new AminoAcid();
                     AminoAcid aa3 = new AminoAcid();
@@ -195,7 +197,7 @@ public class Main {
                     vir.addMaterial(n2);
                     vir.addMaterial(n3);
                     vir.addMaterial(n4);
-                    sr.CreateVirus(vir);
+                    ar.CreateVirus(vir);
                     break;
                 }
                 case 11:{
@@ -224,8 +226,8 @@ public class Main {
                 case 12:{
                     Virologist vir1 = new Virologist();
                     Virologist vir2 = new Virologist();
-                    Equipment e1 = new Equipment();
-                    Equipment e2 = new Equipment();
+                    Equipment e1 = new Glove();
+                    Equipment e2 = new Cape();
                     vir1.addEquipment(e1);
                     vir2.addEquipment(e2);
                     vir1.removeEquipment(e1);
@@ -253,7 +255,7 @@ public class Main {
                     Glove g = new Glove();
                     Dance dance = new Dance();
                     Amnesia amn = new Amnesia();
-                    Stun stun = new Stun();
+                    Paralyzing stun = new Paralyzing();
                     vir2.AddEquipment(g);
                     vir1.Attack(dance, vir2);
                     vir1.Attack(amn, vir2);

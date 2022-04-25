@@ -6,10 +6,18 @@ public class Game {
     private Map<String, Virologist> virologists;
     //This attribute contains the fields of the map
     private Map<String, Field> fields;
+    //Ezeket a prototípus miatt ide beraktam, a végleges kódban nem biztos, hogy itt is tárolva lesznek
+    private Map<String, Material> materials;
+    private Map<String, Equipment> equipments;
+    private Map<String, Virus> viruses;
+
     //Constructor
     public Game(){
         virologists= new TreeMap<>();
         fields= new TreeMap<>();
+        materials = new TreeMap<>();
+        equipments = new TreeMap<>();
+        viruses = new TreeMap<>();
         System.out.println("Game() - Game constructed.");
     }
     //Starts the game
@@ -32,7 +40,6 @@ public class Game {
     }
     //Checks if the virologist have all the genetic codes
     public boolean CheckGeneticCodes(Virologist v){
-
         System.out.println("CheckGeneticCodes(Virologist v) - Checking for the win conditions.");
         //A teszteset egyszerűsítéséért igazat ad, ha legalább egy elemet ismer, hamisat, ha egyet sem
         return !(v.getGenCodes().isEmpty());
@@ -53,6 +60,18 @@ public class Game {
         fields.put(key, f);
     }
 
+    public void AddMaterial(String key, Material m){
+        System.out.println("AddMaterial(String key, Material m) - New material added to the game.");
+        materials.put(key, m);
+    }
+    public void AddEquipment(String key, Equipment e){
+        System.out.println("AddEquipment(String key, Equipment e) - New equipment added to the game.");
+        equipments.put(key, e);
+    }
+    public void AddVirus(String key, Virus v){
+        System.out.println("AddVirus(String key, Virus v) - New virus added to the game.");
+        viruses.put(key, v);
+    }
     //Returns with a field
     public Field getField(String key){
         return fields.get(key);
@@ -63,11 +82,14 @@ public class Game {
     {
         return virologists.get(key);
     }
-
-
-    //Checks, if both fields exist in this game
-    public boolean fieldsExist(String k1, String k2){
-        return (fields.containsKey(k1) && fields.containsKey(k2));
+    public Material getMaterial(String key){
+        return materials.get(key);
+    }
+    public Equipment getEquipment(String key){
+        return equipments.get(key);
+    }
+    public Virus getVirus(String key){
+        return viruses.get(key);
     }
 
     //virologist steps
