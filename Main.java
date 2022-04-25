@@ -71,27 +71,15 @@ public class Main {
                     break;
                 }
                 case 1:{
-                    Field onField = new Field();
-                    Virologist vir = new Virologist();
-                    onField.AddVirologist(vir);
-                    Field field1 = new Field();
-                    Field field2 = new Field();
-                    Laboratory lab1 = new Laboratory();
-                    onField.getNeighbours();
-                    vir.setField(field1);
-                    vir.Move(onField);
-                    vir.Move(lab1);
+                    CommandProcessor.readCommandFile(game, "movevir_input.txt");
                     break;
                 }
                 case 2:{
-                    Laboratory lab1 = new Laboratory();
-                    Virologist vir = new Virologist();
-                    vir.setField(lab1);
-                    vir.ScanCode();
-                    vir.ScanCode();
+                    CommandProcessor.readCommandFile(game, "scan_input.txt");
                     break;
                 }
                 case 3:{
+                    CommandProcessor.readCommandFile(game, "endgame_input.txt");
                     Virologist vir1 = new Virologist();
                     Virologist vir2 = new Virologist();
                     vir2.AddGeneticCode(1);
@@ -100,43 +88,19 @@ public class Main {
                     break;
                 }
                 case 4:{
-                    Virologist vir = new Virologist();
-                    Dance dance = new Dance();
-                    Amnesia amn = new Amnesia();
-                    Protection prot = new Protection();
-                    Paralyzing stun = new Paralyzing();
-                    vir.UseVirusOnSelf(amn);
-                    vir.UseVirusOnSelf(dance);
-                    vir.UseVirusOnSelf(prot);
-                    vir.UseVirusOnSelf(stun);
-                    vir.UseVirusOnSelf(stun);
+                    CommandProcessor.readCommandFile(game, "virusself_input.txt");
                     break;
                 }
                 case 5:{
-                    Virologist vir1 = new Virologist();
-                    Virologist vir2 = new Virologist();
-                    Dance dance = new Dance();
-                    Protection prot = new Protection();
-                    vir1.Attack(dance, vir2);
-                    vir2.getMovementAbility();
-                    vir2.UseVirusOnSelf(prot);
-                    vir1.Attack(dance, vir2);
-                    vir2.getMovementAbility();
+                    CommandProcessor.readCommandFile(game, "usedance_input.txt");
                     break;
                 }
                 case 6:{
-                    Virologist vir1 = new Virologist();
-                    Virologist vir2 = new Virologist();
-                    Paralyzing stun = new Paralyzing();
-                    Protection prot = new Protection();
-                    vir1.Attack(stun, vir2);
-                    vir2.getMovementAbility();
-                    vir2.UseVirusOnSelf(prot);
-                    vir1.Attack(stun, vir2);
-                    vir2.getMovementAbility();
+                    CommandProcessor.readCommandFile(game, "usestun_input.txt");
                     break;
                 }
                 case 7:{
+                    CommandProcessor.readCommandFile(game, "useamnesia_input.txt");
                     Virologist vir1 = new Virologist();
                     Virologist vir2 = new Virologist();
                     Amnesia amn = new Amnesia();
@@ -149,6 +113,7 @@ public class Main {
                     break;
                 }
                 case 8:{
+                    CommandProcessor.readCommandFile(game, "craftdance_input.txt");
                     Virologist vir = new Virologist();
                     DanceRecipe dr = new DanceRecipe();
                     dr.CreateVirus(vir);
@@ -172,6 +137,7 @@ public class Main {
                     break;
                 }
                 case 9:{
+                    CommandProcessor.readCommandFile(game, "craftamnesia_input.txt");
                     Virologist vir = new Virologist();
                     AmnesiaRecipe ar = new AmnesiaRecipe();
                     ar.CreateVirus(vir);
@@ -195,6 +161,7 @@ public class Main {
                     break;
                 }
                 case 10:{
+                    CommandProcessor.readCommandFile(game, "craftstun_input.txt")
                     Virologist vir = new Virologist();
                     ParalyzingRecipe ar = new ParalyzingRecipe();
                     ar.CreateVirus(vir);
@@ -218,6 +185,7 @@ public class Main {
                     break;
                 }
                 case 11:{
+                    CommandProcessor.readCommandFile(game, "craftprotection_input.txt")
                     Virologist vir = new Virologist();
                     ProtectionRecipe pr = new ProtectionRecipe();
                     pr.CreateVirus(vir);
@@ -241,6 +209,7 @@ public class Main {
                     break;
                 }
                 case 12:{
+                    CommandProcessor.readCommandFile(game, "equipment_input.txt")
                     Virologist vir1 = new Virologist();
                     Virologist vir2 = new Virologist();
                     Equipment e1 = new Glove();
@@ -253,6 +222,7 @@ public class Main {
                     break;
                 }
                 case 13:{
+                    CommandProcessor.readCommandFile(game, "axeattack_input.txt")
                     Virologist vir = new Virologist();
                     Axe axe = new Axe();
                     Virologist vir2 = new Virologist();
@@ -264,6 +234,7 @@ public class Main {
                     break;
                 }
                 case 14:{
+                    CommandProcessor.readCommandFile(game, "material_input.txt")
                     Virologist vir1 = new Virologist();
                     Virologist vir2 = new Virologist();
                     AminoAcid aa = new AminoAcid();
@@ -274,6 +245,7 @@ public class Main {
                     break;
                 }
                 case 15:{
+                    CommandProcessor.readCommandFile(game, "useglove_input.txt")
                     Virologist vir1 = new Virologist();
                     Virologist vir2 = new Virologist();
                     Glove g = new Glove();

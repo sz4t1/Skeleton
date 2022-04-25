@@ -225,7 +225,30 @@ public class CommandProcessor {
             case "usevirusonself": {
                 game.getVirologist(command[1]).UseVirusOnSelf(game.getVirus(command[2]));
                 return true;
-            } 
+            }
+            //Move virologist
+            case "move": {
+                game.getVirologist(command[1]).Move(game.getField(command[2]));
+                return true;
+            }
+            //Place virologist on field
+            case "setfield": {
+                game.getVirologist(command[1]).setField(game.getField(command[2]));
+                return true;
+            }
+            //Get neighbours of field
+            case "getneighbours": {
+                game.getField(command[1]).getNeighbours();
+                return true;
+            }
+            case "scancode": {
+                game.getVirologist(command[1]).ScanCode();
+                return true;
+            }
+            case "getmovementability": {
+                game.getVirologist(command[1]).getMovementAbility();
+                return true;
+            }
              //Breaking the while loop with the return false
 	    	case "exit": {
                 return false;
