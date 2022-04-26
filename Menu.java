@@ -132,19 +132,6 @@ public class Menu {
         vir.AddMaterial(aminoAcid);
     }
 
-    public static void VirologistScans(){
-        System.out.println("---------------------------------------");
-        System.out.println("[Virologist Scans]");
-        //Init
-        Virologist vir= new Virologist();
-        Laboratory lab = new Laboratory();
-        vir.setField(lab);
-        //Testcase
-        System.out.println(".......................................");
-        vir.ScanCode();
-
-    }
-
     public static void StealCape(){
         System.out.println("---------------------------------------");
         System.out.println("[Steal Cape]");

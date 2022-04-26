@@ -24,6 +24,7 @@ public class CommandProcessor {
          */
         while(readMore) {
             String cmd;
+            System.out.print(">");
             cmd = sc.nextLine();
             readMore = processCommand(game, cmd);
         }
@@ -277,7 +278,17 @@ public class CommandProcessor {
             }
             //Scan genetic code
             case "scancode": {
-                game.getVirologist(command[1]).ScanCode();
+                //The Scancode commands always have 1 parameter: virologist
+                if(command.length != 2){
+                    System.out.println(line + " <=== Bad parameters: ScanCode virologist_name");
+                    return true;
+                }
+                Virologist v = game.getVirologist(command[1]);
+                if(v == null){
+                    System.out.println(line + " <=== Not existing virologist.");
+                    return true;
+                }
+                v.ScanCode();
                 return true;
             }
             //Get MovementAbility
