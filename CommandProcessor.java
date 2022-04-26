@@ -107,6 +107,27 @@ public class CommandProcessor {
                         game.AddField(command[2], new Warehouse());
                         break;
                     }
+                    //recipes
+                    case "amnesiarecipe": {
+                        AmnesiaRecipe ar = new AmnesiaRecipe();
+                        game.AddRecipe(command[2], ar);
+                        break;
+                    }
+                    case "dancerecipe": {
+                        DanceRecipe dr = new DanceRecipe();
+                        game.AddRecipe(command[2], dr);
+                        break;
+                    }
+                    case "stunrecipe": {
+                        ParalyzingRecipe sr = new ParalyzingRecipe();
+                       game.AddRecipe(command[2], sr);
+                        break;
+                    }
+                    case "protectionrecipe": {
+                        ProtectionRecipe pr = new ProtectionRecipe();
+                        game.AddRecipe(command[2], pr);
+                        break;
+                    }
                     //viruses
                     case "amnesiavirus": {
                         Amnesia amn = new Amnesia();
@@ -241,12 +262,49 @@ public class CommandProcessor {
                 game.getField(command[1]).getNeighbours();
                 return true;
             }
+            //Scan genetic code
             case "scancode": {
                 game.getVirologist(command[1]).ScanCode();
                 return true;
             }
+            //Get MovementAbility
             case "getmovementability": {
                 game.getVirologist(command[1]).getMovementAbility();
+                return true;
+            }
+            //Return the number of genetic codes the virologist knows
+            case "getgencodes": {
+                System.out.println("GetGenCodes(): " + game.getVirologist(command[1]).getGenCodes().size());
+                return true;
+            }
+            //Craft virus
+            case "craftvirus": {
+                game.getRecipe(command[1]).CreateVirus(game.getVirologist(command[2]));
+                return true;
+            }
+            //Attack another virologist with axe
+            case "attackwithaxe": {
+                game.getVirologist(command[1]).AttackWithAxe(game.getVirologist(command[2]));
+                return true;
+            }
+            //Virologist drops material
+            case "dropmaterial": {
+                game.getVirologist(command[1]).RemoveMaterial(game.getMaterial(command[2]));
+                return true;
+            }
+            //Steps virologist
+            case "step": {
+                game.StepVirologist(game.getVirologist(command[1]));
+                return true;
+            }
+            //Starts the game
+            case "startgame": {
+                game.StartGame();
+                return true;
+            }
+            //Adds a genetic code to a virologist
+            case "addgeneticcode": {
+                game.getVirologist(command[1]).AddGeneticCode(Integer.parseInt(command[2]));
                 return true;
             }
              //Breaking the while loop with the return false

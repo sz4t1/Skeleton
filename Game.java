@@ -10,6 +10,7 @@ public class Game {
     private Map<String, Material> materials;
     private Map<String, Equipment> equipments;
     private Map<String, Virus> viruses;
+    private Map<String, Recipe> recipes;
 
     //Constructor
     public Game(){
@@ -72,6 +73,10 @@ public class Game {
         System.out.println("AddVirus(String key, Virus v) - New virus added to the game.");
         viruses.put(key, v);
     }
+    public void AddRecipe(String key, Recipe r){
+        System.out.println("AddRecipe(String key, Recipe r) - New recipe added to the game.");
+        recipes.put(key, r);
+    }
     //Returns with a field
     public Field getField(String key){
         return fields.get(key);
@@ -90,6 +95,9 @@ public class Game {
     }
     public Virus getVirus(String key){
         return viruses.get(key);
+    }
+    public Recipe getRecipe(String key){
+        return recipes.get(key);
     }
 
     //virologist steps

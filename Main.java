@@ -80,11 +80,6 @@ public class Main {
                 }
                 case 3:{
                     CommandProcessor.readCommandFile(game, "endgame_input.txt");
-                    Virologist vir1 = new Virologist();
-                    Virologist vir2 = new Virologist();
-                    vir2.AddGeneticCode(1);
-                    game.StartGame();
-                    game.EndGame();
                     break;
                 }
                 case 4:{
@@ -101,162 +96,38 @@ public class Main {
                 }
                 case 7:{
                     CommandProcessor.readCommandFile(game, "useamnesia_input.txt");
-                    Virologist vir1 = new Virologist();
-                    Virologist vir2 = new Virologist();
-                    Amnesia amn = new Amnesia();
-                    Protection prot = new Protection();
-                    vir1.Attack(amn, vir2);
-                    vir2.getMovementAbility();
-                    vir2.UseVirusOnSelf(prot);
-                    vir1.Attack(amn, vir2);
-                    vir2.getMovementAbility();
                     break;
                 }
                 case 8:{
                     CommandProcessor.readCommandFile(game, "craftdance_input.txt");
-                    Virologist vir = new Virologist();
-                    DanceRecipe dr = new DanceRecipe();
-                    dr.CreateVirus(vir);
-                    AminoAcid aa1 = new AminoAcid();
-                    AminoAcid aa2 = new AminoAcid();
-                    AminoAcid aa3 = new AminoAcid();
-                    AminoAcid aa4 = new AminoAcid();
-                    Nukleotide n1 = new Nukleotide();
-                    Nukleotide n2 = new Nukleotide();
-                    Nukleotide n3 = new Nukleotide();
-                    Nukleotide n4 = new Nukleotide();
-                    vir.addMaterial(aa1);
-                    vir.addMaterial(aa2);
-                    vir.addMaterial(aa3);
-                    vir.addMaterial(aa4);
-                    vir.addMaterial(n1);
-                    vir.addMaterial(n2);
-                    vir.addMaterial(n3);
-                    vir.addMaterial(n4);
-                    dr.CreateVirus(vir);
                     break;
                 }
                 case 9:{
                     CommandProcessor.readCommandFile(game, "craftamnesia_input.txt");
-                    Virologist vir = new Virologist();
-                    AmnesiaRecipe ar = new AmnesiaRecipe();
-                    ar.CreateVirus(vir);
-                    AminoAcid aa1 = new AminoAcid();
-                    AminoAcid aa2 = new AminoAcid();
-                    AminoAcid aa3 = new AminoAcid();
-                    AminoAcid aa4 = new AminoAcid();
-                    Nukleotide n1 = new Nukleotide();
-                    Nukleotide n2 = new Nukleotide();
-                    Nukleotide n3 = new Nukleotide();
-                    Nukleotide n4 = new Nukleotide();
-                    vir.addMaterial(aa1);
-                    vir.addMaterial(aa2);
-                    vir.addMaterial(aa3);
-                    vir.addMaterial(aa4);
-                    vir.addMaterial(n1);
-                    vir.addMaterial(n2);
-                    vir.addMaterial(n3);
-                    vir.addMaterial(n4);
-                    ar.CreateVirus(vir);
                     break;
                 }
                 case 10:{
                     CommandProcessor.readCommandFile(game, "craftstun_input.txt")
-                    Virologist vir = new Virologist();
-                    ParalyzingRecipe ar = new ParalyzingRecipe();
-                    ar.CreateVirus(vir);
-                    AminoAcid aa1 = new AminoAcid();
-                    AminoAcid aa2 = new AminoAcid();
-                    AminoAcid aa3 = new AminoAcid();
-                    AminoAcid aa4 = new AminoAcid();
-                    Nukleotide n1 = new Nukleotide();
-                    Nukleotide n2 = new Nukleotide();
-                    Nukleotide n3 = new Nukleotide();
-                    Nukleotide n4 = new Nukleotide();
-                    vir.addMaterial(aa1);
-                    vir.addMaterial(aa2);
-                    vir.addMaterial(aa3);
-                    vir.addMaterial(aa4);
-                    vir.addMaterial(n1);
-                    vir.addMaterial(n2);
-                    vir.addMaterial(n3);
-                    vir.addMaterial(n4);
-                    ar.CreateVirus(vir);
                     break;
                 }
                 case 11:{
                     CommandProcessor.readCommandFile(game, "craftprotection_input.txt")
-                    Virologist vir = new Virologist();
-                    ProtectionRecipe pr = new ProtectionRecipe();
-                    pr.CreateVirus(vir);
-                    AminoAcid aa1 = new AminoAcid();
-                    AminoAcid aa2 = new AminoAcid();
-                    AminoAcid aa3 = new AminoAcid();
-                    AminoAcid aa4 = new AminoAcid();
-                    Nukleotide n1 = new Nukleotide();
-                    Nukleotide n2 = new Nukleotide();
-                    Nukleotide n3 = new Nukleotide();
-                    Nukleotide n4 = new Nukleotide();
-                    vir.addMaterial(aa1);
-                    vir.addMaterial(aa2);
-                    vir.addMaterial(aa3);
-                    vir.addMaterial(aa4);
-                    vir.addMaterial(n1);
-                    vir.addMaterial(n2);
-                    vir.addMaterial(n3);
-                    vir.addMaterial(n4);
-                    pr.CreateVirus(vir);
                     break;
                 }
                 case 12:{
                     CommandProcessor.readCommandFile(game, "equipment_input.txt")
-                    Virologist vir1 = new Virologist();
-                    Virologist vir2 = new Virologist();
-                    Equipment e1 = new Glove();
-                    Equipment e2 = new Cape();
-                    vir1.addEquipment(e1);
-                    vir2.addEquipment(e2);
-                    vir1.removeEquipment(e1);
-                    vir1.StealEquipment(vir2, e2);
-                    vir1.StealEquipment(vir2, e2);
                     break;
                 }
                 case 13:{
                     CommandProcessor.readCommandFile(game, "axeattack_input.txt")
-                    Virologist vir = new Virologist();
-                    Axe axe = new Axe();
-                    Virologist vir2 = new Virologist();
-                    vir.AttackWithAxe(vir2);
-                    vir.addEquipment(axe);
-                    vir.AttackWithAxe(vir2);
-                    Virologist vir3 = new Virologist();
-                    vir.AttackWithAxe(vir3);
                     break;
                 }
                 case 14:{
                     CommandProcessor.readCommandFile(game, "material_input.txt")
-                    Virologist vir1 = new Virologist();
-                    Virologist vir2 = new Virologist();
-                    AminoAcid aa = new AminoAcid();
-                    vir2.addMaterial(aa);
-                    vir1.StealMaterial(vir2, aa);
-                    vir1.StealMaterial(vir2, aa);
-                    vir1.RemoveMaterial(aa);
                     break;
                 }
                 case 15:{
                     CommandProcessor.readCommandFile(game, "useglove_input.txt")
-                    Virologist vir1 = new Virologist();
-                    Virologist vir2 = new Virologist();
-                    Glove g = new Glove();
-                    Dance dance = new Dance();
-                    Amnesia amn = new Amnesia();
-                    Paralyzing stun = new Paralyzing();
-                    vir2.addEquipment(g);
-                    vir1.Attack(dance, vir2);
-                    vir1.Attack(amn, vir2);
-                    vir1.Attack(stun, vir2);
-                    vir2.removeEquipment(g);
                     break;
                 }
                 default:{}

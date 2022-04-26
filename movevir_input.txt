@@ -8,4 +8,3 @@ getneighbours onField
 move vir field1
 move vir onField
 move vir lab1
-

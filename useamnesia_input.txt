@@ -1,0 +1,9 @@
+create virologist vir1
+create virologist vir2
+create amnesiavirus amn
+create protectionvirus prot
+usevirusonself vir2 prot
+attack vir1 vir2 amn
+getgencodes vir2
+attack vir1 vir2 amn
+getgencodes vir2

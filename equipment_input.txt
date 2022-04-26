@@ -1,0 +1,9 @@
+create virologist vir1
+create virologist vir2
+create equipment e1
+create equipment e2
+equip vir1 e1
+equip vir2 e2
+unequip vir1 e1
+stealequipment vir1 vir2 e2
+stealequipment vir1 vir2 e2
