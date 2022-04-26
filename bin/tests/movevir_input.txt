@@ -1,0 +1,10 @@
+create field onField
+create virologist vir
+setfield vir onField
+create field field1
+create field field2
+create laboratory lab1
+getneighbours onField
+move vir field1
+move vir onField
+move vir lab1

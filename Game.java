@@ -106,9 +106,13 @@ public class Game {
         System.out.println(v + " stepped.");
     }
 
-    //Clears the game object: all Virologists, fields, ... should be removed from this object
+    //Clears the game object: all Virologists, fields, ... should be removed from this object after a game ends
     public void clear(){
         virologists.clear();
         fields.clear();
+        materials.clear();
+        equipments.clear();
+        viruses.clear();
+        recipes.clear();
     }
 }

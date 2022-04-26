@@ -37,13 +37,13 @@ public class CommandProcessor {
      */
     public static void readCommandFile(Game game, String fileName) throws FileNotFoundException {
   	
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        BufferedReader br = new BufferedReader(new FileReader("tests/" + fileName));
         String line = null;
         while(true) {
             try {
                 line = br.readLine();
             } catch (IOException e) {
-                //hibakezelés.....
+                e.printStackTrace();
             }
             //If no more lines are found in the file, the while loop breaks
             if(line == null) break;
@@ -53,7 +53,7 @@ public class CommandProcessor {
         try {
             br.close();
         } catch (IOException e) {
-            //hibakezelééééés ide
+            e.printStackTrace();
         }
     }
 

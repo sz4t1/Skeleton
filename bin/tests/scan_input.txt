@@ -1,0 +1,5 @@
+create laboratory lab1
+create virologist vir
+setfield vir lab1
+scancode vir
+scancode vir

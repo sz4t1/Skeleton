@@ -32,7 +32,7 @@ public class Main {
                     try {
                         CommandProcessor.readCommandFile(game, "input.txt");
                     } catch (FileNotFoundException e) {
-                        // TODO Auto-generated catch block
+                        //hibakezelés ideeee
                         e.printStackTrace();
                     }
                     break;

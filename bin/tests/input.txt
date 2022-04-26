@@ -1,0 +1,9 @@
+create virologist vir
+create virologist vir2
+create aminoacid aa
+create nukleotide n
+addmaterial vir aa
+addmaterial vir2 n
+create cape cape
+equip vir cape
+unequip vir cape

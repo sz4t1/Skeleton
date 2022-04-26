@@ -34,7 +34,8 @@ public class Menu {
         System.out.println("=======================================");
     }
 
-    //ezek még a szkeletonból maradtak
+    //ezek még a szkeletonból maradtak, ezek alapján lehet teszteket ítni, végül törölve lesznek
+
     public static void CheckEnviroment(){
         System.out.println("---------------------------------------");
         System.out.println("[Check Environment]");
