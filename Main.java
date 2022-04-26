@@ -98,8 +98,15 @@ public class Main {
                     break;
                 }
                 case 3:{
-                    try {
+                    try {//Ez még nincs kész
+                        System.out.println("---------------------------------------");
+                        System.out.println("[End Game]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
                         CommandProcessor.readCommandFile(game, "endgame_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
