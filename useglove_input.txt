@@ -1,11 +1,11 @@
 create virologist vir1
 create virologist vir2
-create equipment g
-craftvirus dr vir1
-craftvirus ar vir1
-craftvirus sr vir1
+create glove g
+create virus dan
+create virus amn
+create virus stun
 equip vir2 g
-attack vir1 vir2 dr
-attack vir1 vir2 ar
-attack vir1 vir2 sr
+attack vir1 vir2 dan
+attack vir1 vir2 amn
+attack vir1 vir2 stun
 unequip vir2 g

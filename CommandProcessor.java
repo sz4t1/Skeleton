@@ -292,11 +292,6 @@ public class CommandProcessor {
                 game.getVirologist(command[1]).RemoveMaterial(game.getMaterial(command[2]));
                 return true;
             }
-            //Steps virologist
-            case "step": {
-                game.StepVirologist(game.getVirologist(command[1]));
-                return true;
-            }
             //Starts the game
             case "startgame": {
                 game.StartGame();

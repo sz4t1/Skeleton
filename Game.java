@@ -19,6 +19,7 @@ public class Game {
         materials = new TreeMap<>();
         equipments = new TreeMap<>();
         viruses = new TreeMap<>();
+        recipes = new TreeMap<>();
         System.out.println("Game() - Game constructed.");
     }
     //Starts the game

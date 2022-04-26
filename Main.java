@@ -71,63 +71,123 @@ public class Main {
                     break;
                 }
                 case 1:{
-                    CommandProcessor.readCommandFile(game, "movevir_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "movevir_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 2:{
-                    CommandProcessor.readCommandFile(game, "scan_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "scan_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 3:{
-                    CommandProcessor.readCommandFile(game, "endgame_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "endgame_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 4:{
-                    CommandProcessor.readCommandFile(game, "virusself_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "virusself_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 5:{
-                    CommandProcessor.readCommandFile(game, "usedance_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "usedance_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 6:{
-                    CommandProcessor.readCommandFile(game, "usestun_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "usestun_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 7:{
-                    CommandProcessor.readCommandFile(game, "useamnesia_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "useamnesia_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 8:{
-                    CommandProcessor.readCommandFile(game, "craftdance_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "craftdance_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 9:{
-                    CommandProcessor.readCommandFile(game, "craftamnesia_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "craftamnesia_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 10:{
-                    CommandProcessor.readCommandFile(game, "craftstun_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "craftstun_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 11:{
-                    CommandProcessor.readCommandFile(game, "craftprotection_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "craftprotection_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 12:{
-                    CommandProcessor.readCommandFile(game, "equipment_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "equipment_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 13:{
-                    CommandProcessor.readCommandFile(game, "axeattack_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "axeattack_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 14:{
-                    CommandProcessor.readCommandFile(game, "material_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "material_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 case 15:{
-                    CommandProcessor.readCommandFile(game, "useglove_input.txt");
+                    try {
+                        CommandProcessor.readCommandFile(game, "useglove_input.txt");
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 default:{}
