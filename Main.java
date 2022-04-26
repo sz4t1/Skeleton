@@ -65,14 +65,17 @@ public class Main {
             Menu.testMenuElements();
             i = sc.nextInt();
             switch(i){
-                case 0:{
-                    //break the while loop = Back to Main Menu
-                    i = -1;
-                    break;
-                }
                 case 1:{
                     try {
-                        CommandProcessor.readCommandFile(game, "movevir_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Move Virologist]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_movevir.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_movevir.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
@@ -188,6 +191,11 @@ public class Main {
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
+                    break;
+                }
+                case 0:{
+                    //break the while loop = Back to Main Menu
+                    i = -1;
                     break;
                 }
                 default:{}

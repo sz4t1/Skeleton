@@ -5,11 +5,11 @@ public class FreeMovememnt extends MovementAbility {
     public FreeMovememnt(){
         System.out.println("FreeMovememnt() - FreeMovement (ability) constructed: " + this);
     }
-    //Use the effect in certain situation
+    //If a virologist attempts to move, this function will be invoked, if the virologist can freely move
     @Override
     public void invokeEffect(Virologist v, Field f) {
         System.out.println("invokeEffect(Virologist v, Field f) - The virologist can freely move.");
-        if(f.IsNeighbour(f)) {
+        if(v.getField().IsNeighbour(f)) {
             v.getField().RemoveVirologist(v);
             f.AddVirologist(v);
             v.setField(f);

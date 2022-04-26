@@ -7,23 +7,28 @@ public class Field {
     private String name;
     //The attribute neighbours contains the neighbour fields of this field
     private ArrayList<Field> neighbours;
+    //This attribute contains the virologists, that stand on this field
+    private ArrayList<Virologist> virologists;
     //constructor
     public Field(){
-        neighbours=new ArrayList<>();
+        neighbours = new ArrayList<>();
+        virologists = new ArrayList<>();
         System.out.println("Field() - Field constructed: " + this);
     }
     //Check if the given field is a neighbour
     public boolean IsNeighbour(Field f){
         System.out.println("IsNeighbour(Field f) - Checking, if the fields are neighbours.");
-        return true;
+        return neighbours.contains(f);
     }
 
     public void RemoveVirologist(Virologist v){
-        System.out.println(" RemoveVirologist(Virologist v) - Virologist is removed from the field.");
+        System.out.println(" RemoveVirologist(Virologist v) - Virologist is removed from the old field.");
+        virologists.remove(v);
     }
 
     public void AddVirologist(Virologist v){
-        System.out.println("AddVirologist(Virologist v) - The virologist now stands on this field.");
+        System.out.println("AddVirologist(Virologist v) - The virologist  stepped on the new field.");
+        virologists.add(v);
     }
     //Public getters and setters
     public String getName() {

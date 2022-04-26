@@ -88,7 +88,7 @@ public class Virologist {
     }
     //Virologist move to another field that was given as a parameter
     public void Move(Field f){
-        System.out.println("Move(Field f) - The virologist moves to another field.");
+        System.out.println("Move(Field f) - The virologist attempts to move to another field.");
         getMovementAbility().invokeEffect(this, f);
 
     }
@@ -250,7 +250,7 @@ public class Virologist {
     }
 
     public void setField(Field field) {
-        System.out.println("setField(Field field) - The virologist now stands on the field.");
+        System.out.println("setField(Field field) - The virologist now stands on a field.");
         this.field = field;
     }
 
