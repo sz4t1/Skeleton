@@ -1,4 +1,0 @@
-create virologist vir1
-create virologist vir2
-addgeneticcode vir2 1
-startgame

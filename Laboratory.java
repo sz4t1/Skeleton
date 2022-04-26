@@ -16,4 +16,11 @@ public class Laboratory extends Field{
         System.out.println(geneticCode+" BeingScanned(Virologist v)");
         v.AddGeneticCode(this.geneticCode);
     }
+
+    //With this function, the Game will count all the Laboratories
+    //This returns with 1, unlike the other Field like classes
+    @Override
+    public int LabCount(){
+        return 1;
+    }
 }

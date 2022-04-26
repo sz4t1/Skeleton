@@ -81,7 +81,7 @@ public class CommandProcessor {
             case "create": {
                 //The Create commands always have 2 parameters: object type and name
                 if(command.length != 3){
-                    System.out.println(line + " <=== Bad parameters: Create type name");
+                    System.out.println(line + " <=== Bad parameters: Create <type> <name>");
                     return true;
                 }
 
@@ -194,7 +194,7 @@ public class CommandProcessor {
             case "connectfields": {
                  //The ConnectFields commands always have 2 parameters: field1 and field2
                  if(command.length != 3){
-                    System.out.println(line + " <=== Bad parameters: ConnectFields target_1_name target_2_name");
+                    System.out.println(line + " <=== Bad parameters: ConnectFields <target_1_name> <target_2_name>");
                     return true;
                 }
                 Field f1 = game.getField(command[1]);
@@ -253,7 +253,7 @@ public class CommandProcessor {
             case "move": {
                 //The Move commands always have 2 parameters: virologist and directionField
                 if(command.length != 3){
-                    System.out.println(line + " <=== Bad parameters: Move virologist_name target_field_name");
+                    System.out.println(line + " <=== Bad parameters: Move <virologist_name> <target_field_name>");
                     return true;
                 }
                 Virologist v = game.getVirologist(command[1]);
@@ -280,7 +280,7 @@ public class CommandProcessor {
             case "scancode": {
                 //The Scancode commands always have 1 parameter: virologist
                 if(command.length != 2){
-                    System.out.println(line + " <=== Bad parameters: ScanCode virologist_name");
+                    System.out.println(line + " <=== Bad parameters: ScanCode <virologist_name>");
                     return true;
                 }
                 Virologist v = game.getVirologist(command[1]);
@@ -298,7 +298,7 @@ public class CommandProcessor {
             }
             //Return the number of genetic codes the virologist knows
             case "getgencodes": {
-                System.out.println("GetGenCodes(): " + game.getVirologist(command[1]).getGenCodes().size());
+                System.out.println("GetGenCodes(): " + game.getVirologist(command[1]).getGenCodesAmmount());
                 return true;
             }
             //Craft virus
@@ -331,7 +331,7 @@ public class CommandProcessor {
                 return false;
             }
             default: {
-                System.out.println(command[0] + " <=== ISMERETLEN PARANCS");
+                System.out.println(command[0] + " <=== Unknown command");
                 return true;
             }
 	    }

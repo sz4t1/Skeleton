@@ -275,8 +275,8 @@ public class Virologist {
         materials.add(m);
     }
 
-    public ArrayList<Integer> getGenCodes(){
-        return genCodes;
+    public int getGenCodesAmmount(){
+        return genCodes.size();
     }
 
 }

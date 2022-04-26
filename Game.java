@@ -12,6 +12,8 @@ public class Game {
     private Map<String, Virus> viruses;
     private Map<String, Recipe> recipes;
 
+    private int numberOfLaboratories;
+
     //Constructor
     public Game(){
         virologists= new TreeMap<>();
@@ -20,11 +22,17 @@ public class Game {
         equipments = new TreeMap<>();
         viruses = new TreeMap<>();
         recipes = new TreeMap<>();
+        numberOfLaboratories = 0;
         System.out.println("Game() - Game constructed.");
     }
     //Starts the game
     public void StartGame(){
         System.out.println("StartGame() - The game is started.");
+        //Counting all the laboratories, because all of them have a unique genetic code
+        for(String key : fields.keySet()){
+            numberOfLaboratories += fields.get(key).LabCount();
+        }
+
         for(String key : virologists.keySet()){
             StepVirologist(virologists.get(key));
             if(CheckGeneticCodes(virologists.get(key))){
@@ -39,12 +47,19 @@ public class Game {
     //Ends the game
     public void EndGame(){
         System.out.println("EndGame() - The game has ended.");
+        System.out.println("Score Board:");
+        System.out.println("-------------------------");
+        for(String key : virologists.keySet()){
+            System.out.println("| " + key + ": " + virologists.get(key).getGenCodesAmmount());
+        }
+        System.out.println("-------------------------");
+        clear();
     }
     //Checks if the virologist have all the genetic codes
     public boolean CheckGeneticCodes(Virologist v){
         System.out.println("CheckGeneticCodes(Virologist v) - Checking for the win conditions.");
-        //A teszteset egyszerűsítéséért igazat ad, ha legalább egy elemet ismer, hamisat, ha egyet sem
-        return !(v.getGenCodes().isEmpty());
+        //returns true if the virologist has that many gen. codes, as many laboratories are in the game
+        return (v.getGenCodesAmmount() == numberOfLaboratories);
     }
     //Move the virologist to a random place
     public void RandomMovement(Virologist v){
@@ -114,5 +129,6 @@ public class Game {
         equipments.clear();
         viruses.clear();
         recipes.clear();
+        numberOfLaboratories = 0;
     }
 }

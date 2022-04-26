@@ -58,4 +58,10 @@ public class Field {
     }
 
     public void Remove(Equipment e, Material m, Virologist v){}
+
+    //with this function, the Game will count all the Laboratories
+    //Laboratory class must override this
+    public int LabCount(){
+        return 0;
+    }
 }
