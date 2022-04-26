@@ -107,27 +107,27 @@ public class Main {
                     break;
                 }
                 case 10:{
-                    CommandProcessor.readCommandFile(game, "craftstun_input.txt")
+                    CommandProcessor.readCommandFile(game, "craftstun_input.txt");
                     break;
                 }
                 case 11:{
-                    CommandProcessor.readCommandFile(game, "craftprotection_input.txt")
+                    CommandProcessor.readCommandFile(game, "craftprotection_input.txt");
                     break;
                 }
                 case 12:{
-                    CommandProcessor.readCommandFile(game, "equipment_input.txt")
+                    CommandProcessor.readCommandFile(game, "equipment_input.txt");
                     break;
                 }
                 case 13:{
-                    CommandProcessor.readCommandFile(game, "axeattack_input.txt")
+                    CommandProcessor.readCommandFile(game, "axeattack_input.txt");
                     break;
                 }
                 case 14:{
-                    CommandProcessor.readCommandFile(game, "material_input.txt")
+                    CommandProcessor.readCommandFile(game, "material_input.txt");
                     break;
                 }
                 case 15:{
-                    CommandProcessor.readCommandFile(game, "useglove_input.txt")
+                    CommandProcessor.readCommandFile(game, "useglove_input.txt");
                     break;
                 }
                 default:{}
