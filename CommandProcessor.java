@@ -80,7 +80,7 @@ public class CommandProcessor {
             case "create": {
                 //The Create commands always have 2 parameters: object type and name
                 if(command.length != 3){
-                    System.out.println(line + " <=== NEM MEGFELELO PARAMÉTEREZÉS");
+                    System.out.println(line + " <=== Bad parameters: Create type name");
                     return true;
                 }
 
@@ -247,6 +247,7 @@ public class CommandProcessor {
                 game.getVirologist(command[1]).UseVirusOnSelf(game.getVirus(command[2]));
                 return true;
             }
+
             //Move virologist
             case "move": {
                 //The Move commands always have 2 parameters: virologist and directionField
@@ -263,6 +264,7 @@ public class CommandProcessor {
                 v.Move(f);
                 return true;
             }
+
             //Place virologist on field
             case "setfield": {
                 game.getVirologist(command[1]).setField(game.getField(command[2]));

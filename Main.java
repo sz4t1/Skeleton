@@ -83,7 +83,15 @@ public class Main {
                 }
                 case 2:{
                     try {
-                        CommandProcessor.readCommandFile(game, "scan_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Scan Genetic Code]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_scan.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_scan.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }

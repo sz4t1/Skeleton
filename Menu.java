@@ -15,7 +15,7 @@ public class Menu {
         System.out.println("=======================================");
 
         System.out.println("1. Move virologist and check neighbours");
-        System.out.println("2. Scan genetic");
+        System.out.println("2. Scan Genetic Code");
         System.out.println("3. End Game");
         System.out.println("4. Use Virus On Self");
         System.out.println("5. Use Dance On Other Virologist");

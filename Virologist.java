@@ -94,8 +94,13 @@ public class Virologist {
     }
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){
-        System.out.println("AddGeneticCode(Integer gen) - A genetic code is stored.");
+        if(!HaveGeneticCode(gen)){
+        System.out.println("AddGeneticCode(Integer gen) - A new genetic code is stored.");
         genCodes.add(gen);
+        }
+        else{
+            System.out.println("AddGeneticCode(Integer gen) - This genetic code is already known.");
+        }
     }
     //Remove a genetic code from the virologist's knowledge
     public void RemoveGeneticCodes(){
@@ -128,14 +133,13 @@ public class Virologist {
     }
     //Scans a code on a laboratory
     public void ScanCode(){
-        System.out.println("ScanCode() - Scanned a code");
+        System.out.println("ScanCode() - The virologist attempts to scan some genetic code.");
         this.field.Remove(null,null,this);
-
     }
     //Checks if the virologist have a genetic code
-    public boolean HaveGeneticCode(Integer gen){
-        System.out.println(" HaveGeneticCode(Integer gen) - Checks if the genetic code s stored already.");
-        return false;
+    private boolean HaveGeneticCode(Integer gen){
+        System.out.println(" HaveGeneticCode(Integer gen) - Checks if the genetic code is stored already.");
+        return genCodes.contains(gen);
     }
     //Steal an equipment from another virologist
     public void StealEquipment(Virologist v, Equipment e){
