@@ -1,23 +1,7 @@
 import java.util.ArrayList;
 //The virologist class represents the character which is being controlled by the player
 public class Virologist {
-    //Virologist constructor
-    public Virologist(){
-        System.out.println("Virologist() - Virologist constructed: " + this);
-        viruses= new ArrayList<>();
-        equipment=new ArrayList<>();
-        materials=new ArrayList<>();
-        genCodes=new ArrayList<>();
-        this.movementAbility=new FreeMovememnt();
-        this.capacityAbility=new DefaultCapacity();
-        this.protectionAbility=new NoProtection();
-        this.reflectionAbility=new NoReflection();
-        this.executeAbility=new CanNotExecute();
-        virusOn = null;
-        equipmentSize=0;
-        virusSize=0;
-        materialSize=0;
-    }
+    
     //The actual place of the virologist
     private Field field;
     //The virus on the virologist if she/he have one on self
@@ -46,6 +30,25 @@ public class Virologist {
     private ReflectionAbility reflectionAbility;
     //Actual execute ability of the virologist
     private ExecuteAbility executeAbility;
+
+    //Virologist constructor
+    public Virologist(){
+        System.out.println("Virologist() - Virologist constructed: " + this);
+        viruses= new ArrayList<>();
+        equipment=new ArrayList<>();
+        materials=new ArrayList<>();
+        genCodes=new ArrayList<>();
+        this.movementAbility=new FreeMovememnt();
+        this.capacityAbility=new DefaultCapacity();
+        this.protectionAbility=new NoProtection();
+        this.reflectionAbility=new NoReflection();
+        this.executeAbility=new CanNotExecute();
+        virusOn = null;
+        equipmentSize=0;
+        virusSize=0;
+        materialSize=0;
+    }
+    
     //Add material to the virologists inventory
     public void AddMaterial(Material m){
         System.out.println("AddMaterial(Material m) - Material is added to the virologist's inventory.");
