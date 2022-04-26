@@ -13,6 +13,8 @@ public class FreeMovememnt extends MovementAbility {
             v.getField().RemoveVirologist(v);
             f.AddVirologist(v);
             v.setField(f);
+            return;
         }
+        System.out.println("The two fields aren't neighbors, the virologist couldn't step there.");
     }
 }

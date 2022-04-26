@@ -193,14 +193,14 @@ public class CommandProcessor {
             case "connectfields": {
                  //The ConnectFields commands always have 2 parameters: field1 and field2
                  if(command.length != 3){
-                    System.out.println(line + " <=== NEM MEGFELELO PARAMÉTEREZÉS");
+                    System.out.println(line + " <=== Bad parameters: ConnectFields target_1_name target_2_name");
                     return true;
                 }
                 Field f1 = game.getField(command[1]);
                 Field f2 = game.getField(command[2]);
                 //Checking the two given fields' existence
                 if(f1 == null || f2 == null){
-                    System.out.println(line + " <=== NEM LÉTEZIK AZ EGYIK VAGY MINDKÉT MEZO, VAGY ROSSZ NEVET/NEVEKET ADTAL MEG");
+                    System.out.println(line + " <=== Not existing fields.");
                     return true;
                 }
                 else{
@@ -249,7 +249,18 @@ public class CommandProcessor {
             }
             //Move virologist
             case "move": {
-                game.getVirologist(command[1]).Move(game.getField(command[2]));
+                //The Move commands always have 2 parameters: virologist and directionField
+                if(command.length != 3){
+                    System.out.println(line + " <=== Bad parameters: Move virologist_name target_field_name");
+                    return true;
+                }
+                Virologist v = game.getVirologist(command[1]);
+                Field f = game.getField(command[2]);
+                if(v == null || f == null){
+                    System.out.println(line + " <=== Not existing virologist or field.");
+                    return true;
+                }
+                v.Move(f);
                 return true;
             }
             //Place virologist on field

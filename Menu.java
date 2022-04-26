@@ -104,20 +104,6 @@ public class Menu {
         
     }
 
-    public static void MoveVirologist(){
-        System.out.println("---------------------------------------");
-        System.out.println("[Move Virologist]");
-        //Init
-        Virologist vir= new Virologist();
-        Field field= new Field();
-        Field direction = new Field();
-        field.addNeighbour(direction);
-        vir.setField(field);
-        //TestCase
-        System.out.println(".......................................");
-        vir.Move(direction);
-    }
-
     public static void PickUpEquipment(){
         System.out.println("---------------------------------------");
         System.out.println("[Pick Up Equipment]");
