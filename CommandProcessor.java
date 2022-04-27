@@ -257,12 +257,37 @@ public class CommandProcessor {
             }
             //Attack another virologist
             case "attack": {
-                game.getVirologist(command[1]).Attack(game.getVirus(command[3]), game.getVirologist(command[2]));
+                //The Attack commands always have 3 parameters: virologist, targeted_virologist and virus
+                if(command.length != 4){
+                    System.out.println(line + " <=== Bad parameters: Attack <attacking_virologist_name> <targeted_virologist_name> <virus_name>");
+                    return true;
+                }
+                Virologist viroA = game.getVirologist(command[1]);
+                Virologist viroT = game.getVirologist(command[2]);
+                Virus v = game.getVirus(command[3]);
+                //Checking the two given virologists' and the viruses existence
+                if(viroA == null || viroT == null || v == null){
+                    System.out.println(line + " <=== Not existing virologists or virus.");
+                    return true;
+                }
+                viroA.Attack(v, viroT);
                 return true;
             }
             //Use virus
             case "usevirusonself": {
-                game.getVirologist(command[1]).UseVirusOnSelf(game.getVirus(command[2]));
+                //The UseVirusOnSelf commands always have 2 parameters: virologist and virus
+                if(command.length != 3){
+                    System.out.println(line + " <=== Bad parameters: UseVirusOnSelf <virologist_name> <virus_name>");
+                    return true;
+                }
+                Virologist viro = game.getVirologist(command[1]);
+                Virus v = game.getVirus(command[2]);
+                //Checking the two given fields' existence
+                if(viro == null || v == null){
+                    System.out.println(line + " <=== Not existing virologist or virus.");
+                    return true;
+                }
+                viro.UseVirusOnSelf(v);
                 return true;
             }
 

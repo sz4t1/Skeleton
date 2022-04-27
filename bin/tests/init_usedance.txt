@@ -2,7 +2,5 @@ create virologist vir1
 create virologist vir2
 create dancevirus dance
 create protectionvirus prot
-attack vir1 vir2 dance
-getmovementability vir2
-usevirusonself vir2 prot
-attack vir1 vir2 dance
+addvirus vir1 dance
+addvirus vir2 prot

@@ -131,7 +131,15 @@ public class Main {
                 }
                 case 5:{
                     try {
-                        CommandProcessor.readCommandFile(game, "usedance_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Use Dance On Other Virologist]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_usedance.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_usedance.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
@@ -139,7 +147,15 @@ public class Main {
                 }
                 case 6:{
                     try {
-                        CommandProcessor.readCommandFile(game, "usestun_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Use Stun On Other Virologist]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_usestun.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_usestun.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
