@@ -243,7 +243,15 @@ public class Main {
                 }
                 case 12:{
                     try {
-                        CommandProcessor.readCommandFile(game, "equipment_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Pick Up Equipment Drop Equipment Steal Equipment]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_equipment.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_equipment.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
