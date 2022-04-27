@@ -1,6 +1,5 @@
 create virologist vir
 create stunrecipe sr
-craftvirus sr vir
 create aminoacid aa1
 create aminoacid aa2
 create aminoacid aa3
@@ -17,4 +16,3 @@ addmaterial vir n1
 addmaterial vir n2
 addmaterial vir n3
 addmaterial vir n4
-craftvirus sr vir
