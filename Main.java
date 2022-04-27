@@ -26,22 +26,7 @@ public class Main {
                     CommandProcessor.readCommandLine(sc, game);
                     break;
                 }
-                case 3:{
-                    //Load Custom Test-File
-                    game = new Game();
-                    try {
-                        CommandProcessor.readCommandFile(game, "input.txt");
-                    } catch (FileNotFoundException e) {
-                        //hibakezelés ideeee
-                        e.printStackTrace();
-                    }
-                    break;
-                }
-                case 4:{
-                    //Play
-
-                    break;
-                }
+                
                 case 0:{
                     //Exit
                     sc.close();

@@ -4,8 +4,7 @@ public class Menu {
 
         System.out.println("1. Tests");
         System.out.println("2. Manual Testing");
-        System.out.println("3. Load Custom Test-File");
-        System.out.println("4. Play");
+        
 
         System.out.println("\n0. Exit Prototype");
         System.out.println("=======================================");
