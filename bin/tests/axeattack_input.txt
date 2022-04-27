@@ -1,8 +1,0 @@
-create virologist vir
-create axe axe
-create virologist vir2
-attackwithaxe vir vir2
-addequipment vir axe
-attackwithaxe vir vir2
-create virologist vir3
-attackwithaxe vir vir3

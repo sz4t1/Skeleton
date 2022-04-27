@@ -1,0 +1,3 @@
+attackwithaxe vir vir2
+create virologist vir3
+attackwithaxe vir vir3

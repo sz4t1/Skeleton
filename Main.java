@@ -259,7 +259,15 @@ public class Main {
                 }
                 case 13:{
                     try {
-                        CommandProcessor.readCommandFile(game, "axeattack_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Attack Other Virologist With Axe]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_axeattack.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_axeattack.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }

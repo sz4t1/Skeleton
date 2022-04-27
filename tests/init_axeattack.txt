@@ -1,0 +1,4 @@
+create virologist vir
+create virologist vir2
+create axe axe
+addequipment vir axe
