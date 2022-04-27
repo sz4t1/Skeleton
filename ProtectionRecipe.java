@@ -5,7 +5,7 @@ public class ProtectionRecipe implements Recipe {
     @Override
     public Virus CreateVirus(Virologist v) {
         System.out.println("CreateVirus(Virologist v) - New Protection virus is created");
-        return new Dance();
+        return new Protection();
     }
     // We Override the RemoveUsedMaterials, this removes the materials needed to create the virus from the Virologist that was given as parameter
     @Override

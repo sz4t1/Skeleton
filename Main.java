@@ -227,7 +227,15 @@ public class Main {
                 }
                 case 11:{
                     try {
-                        CommandProcessor.readCommandFile(game, "craftprotection_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Craft Stun Virus]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_craftprotection.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_craftprotection.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
