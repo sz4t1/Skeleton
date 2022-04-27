@@ -21,10 +21,10 @@ public class Menu {
         System.out.println("5. Use Dance On Other Virologist");
         System.out.println("6. Use Stun On Other Virologist");
         System.out.println("7. Use Amnesia On Other Virologist");
-        System.out.println("8. Craft Dance");
-        System.out.println("9. Craft Amnesia");
-        System.out.println("10. Craft Stun");
-        System.out.println("11. Craft Protection");
+        System.out.println("8. Craft Dance Virus");
+        System.out.println("9. Craft Amnesia Virus");
+        System.out.println("10. Craft Stun Virus");
+        System.out.println("11. Craft Protection Virus");
         System.out.println("12. Pick Up Equipment Drop Equipment Steal Equipment");
         System.out.println("13. Attack Other Virologist With Axe");
         System.out.println("14. Pick Up Material Steal Material Drop Material");

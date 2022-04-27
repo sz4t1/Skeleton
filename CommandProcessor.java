@@ -212,8 +212,18 @@ public class CommandProcessor {
             }
             //Add material to virologist
             case "addmaterial": {
-
-                game.getVirologist(command[1]).addMaterial(game.getMaterial(command[2]));
+                //The AddMaterial commands always have 2 parameters: virologist_name and material_name
+                if(command.length != 3){
+                    System.out.println(line + " <=== Bad parameters: AddMaterial <virologist_name> <material_name>");
+                    return true;
+                }
+                Virologist viro = game.getVirologist(command[1]);
+                Material m = game.getMaterial(command[2]);
+                if(viro == null || m == null){
+                    System.out.println(line + " <=== Not existing virologist or material.");
+                    return true;
+                }
+               viro.addMaterial(m);
                 return true;
             }
             //Add virus to virologist
