@@ -163,7 +163,15 @@ public class Main {
                 }
                 case 7:{
                     try {
-                        CommandProcessor.readCommandFile(game, "useamnesia_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Use Amnesia On Other Virologist]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_useamnesia.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_useamnesia.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }
