@@ -216,6 +216,23 @@ public class CommandProcessor {
                 game.getVirologist(command[1]).addMaterial(game.getMaterial(command[2]));
                 return true;
             }
+            //Add virus to virologist
+            case "addvirus":{
+                //The AddVirus commands always have 2 parameters: virologist and virus
+                if(command.length != 3){
+                    System.out.println(line + " <=== Bad parameters: ConnectFields <virologist_name> <virus_name>");
+                    return true;
+                }
+                Virologist viro = game.getVirologist(command[1]);
+                Virus v = game.getVirus(command[2]);
+                //Checking the two given fields' existence
+                if(viro == null || v == null){
+                    System.out.println(line + " <=== Not existing virologist or virus.");
+                    return true;
+                }
+                viro.AddVirus(v);
+                return true;
+            }
             //Put on equipment
             case "equip": {
 

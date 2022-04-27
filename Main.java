@@ -115,7 +115,15 @@ public class Main {
                 }
                 case 4:{
                     try {
-                        CommandProcessor.readCommandFile(game, "virusself_input.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("[Use Virus On Self]");
+                        System.out.println("Initialization:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "init_virusself.txt");
+                        System.out.println("---------------------------------------");
+                        System.out.println("Output:");
+                        System.out.println("---------------------------------------");
+                        CommandProcessor.readCommandFile(game, "input_virusself.txt");
                     } catch (FileNotFoundException e) {
                         e.printStackTrace();
                     }

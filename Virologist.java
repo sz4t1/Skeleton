@@ -275,6 +275,7 @@ public class Virologist {
         materials.add(m);
     }
 
+    //returns the ammount of the known genetic codes
     public int getGenCodesAmmount(){
         return genCodes.size();
     }
