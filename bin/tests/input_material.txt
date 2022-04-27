@@ -1,0 +1,3 @@
+stealmaterial vir1 vir2 aa
+stealmaterial vir1 vir2 aa
+dropmaterial vir2 aa

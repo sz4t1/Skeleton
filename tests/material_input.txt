@@ -1,7 +1,0 @@
-create virologist vir1
-create virologist vir2
-create aminoacid aa
-addmaterial vir2 aa
-stealmaterial vir1 vir2 aa
-stealmaterial vir1 vir2 aa
-dropmaterial vir2 aa

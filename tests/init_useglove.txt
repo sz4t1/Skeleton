@@ -5,7 +5,3 @@ create virus dan
 create virus amn
 create virus stun
 equip vir2 g
-attack vir1 vir2 dan
-attack vir1 vir2 amn
-attack vir1 vir2 stun
-unequip vir2 g
