@@ -17,7 +17,7 @@ public class StealFrame extends JFrame {
     public StealFrame(String[] playerList){
         super("Steal");
 
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new GridLayout(0,2));
 
         JPanel upper = new JPanel();
         JPanel downer = new JPanel();
