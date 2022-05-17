@@ -11,6 +11,8 @@ public class PickUpFrame extends JFrame{
 
     private JComboBox comboBoxAminoAcid;
     private JComboBox comboBoxNukleodite;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public PickUpFrame(String[][] materialList, String[] equipmentList){
         super("Pickup");
@@ -86,8 +88,8 @@ public class PickUpFrame extends JFrame{
         /////////////////////////////////////////////////////////////////
 
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
         okButton.setActionCommand("PickUpOk");
 

@@ -10,6 +10,9 @@ public class StealFrame extends JFrame {
     private JComboBox comboBoxSteal;
     private JComboBox comboBoxUsedItem;
 
+    private JButton okButton;
+    private JButton cancelButton;
+
     private CardLayout crd = new CardLayout();
 
     private JPanel middle = new JPanel();
@@ -50,8 +53,8 @@ public class StealFrame extends JFrame {
 
         ///////////////////////////////////////////////////////////////////////
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
         okButton.setActionCommand("StealOk");
 

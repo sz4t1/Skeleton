@@ -10,6 +10,8 @@ public class DropFrame extends JFrame{
     private JComboBox comboBoxAminoAcid;
     private JComboBox comboBoxNukleodite;
     private JComboBox comboBoxVirus;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public DropFrame(String[][] materialList, String[] equipmentList){
         super("Drop");
@@ -90,8 +92,8 @@ public class DropFrame extends JFrame{
         /////////////////////////////////////////////////////////////////
 
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
         okButton.setActionCommand("DropOk");
 

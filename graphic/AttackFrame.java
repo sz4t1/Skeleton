@@ -9,6 +9,8 @@ public class AttackFrame extends JFrame {
 
     private JComboBox comboBoxAttack;
     private JComboBox comboBoxUsedItem;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public AttackFrame(String[] playerList, String[] itemList){
         super("Attack");
@@ -26,8 +28,8 @@ public class AttackFrame extends JFrame {
         comboBoxAttack = new JComboBox(playerList);
         comboBoxUsedItem = new JComboBox(itemList);
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
         okButton.setActionCommand("AttackOk");
 

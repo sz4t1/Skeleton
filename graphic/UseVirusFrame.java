@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 public class UseVirusFrame extends JFrame {
 
     private JComboBox comboBoxViruses;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public UseVirusFrame(String[] virusList){
         super("Use up");
@@ -23,8 +25,8 @@ public class UseVirusFrame extends JFrame {
 
         comboBoxViruses = new JComboBox(virusList);
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
         okButton.setActionCommand("UseViruskOk");
 

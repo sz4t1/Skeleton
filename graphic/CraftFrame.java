@@ -11,6 +11,8 @@ public class CraftFrame extends  JFrame{
 
     private JTextArea textvirusMaterial;
     private JComboBox comboBoxViruses;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public CraftFrame(String[] virusList) {
         super("Craft Virus");
@@ -29,8 +31,8 @@ public class CraftFrame extends  JFrame{
         comboBoxViruses.addActionListener(new ComboBoxListener());
         textvirusMaterial = new JTextArea();
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
         okButton.setActionCommand("CraftkOk");
 
