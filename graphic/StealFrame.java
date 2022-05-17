@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class StealFrame extends JFrame {
 
@@ -15,38 +16,27 @@ public class StealFrame extends JFrame {
     private JComboBox comboBoxGlove;
     private JComboBox comboBoxCape;
 
-    private CardLayout crd = new CardLayout();
+    private ArrayList<Virologist> viro;
 
-    private JPanel middle = new JPanel();
-
-    public StealFrame(String[] playerList){
+    public StealFrame(ArrayList<Virologist> v){
         super("Steal");
+        this.viro = v;
 
-        setLayout(new GridLayout(0,2));
+        setLayout(new BorderLayout());
 
         JPanel upper = new JPanel();
         JPanel downer = new JPanel();
         upper.setLayout(new FlowLayout());
-        middle.setLayout(crd);
         downer.setLayout(new FlowLayout());
 
         JLabel stealLabel = new JLabel("Steal from: ");
-        comboBoxSteal = new JComboBox(playerList);
+        comboBoxSteal = new JComboBox(comboBoxNames(this.viro));
         comboBoxSteal.addActionListener(new ComboBoxListener());
         upper.add(stealLabel);
         upper.add(comboBoxSteal);
 
         //middle
         ///////////////////////////////////////////////////////////////////////
-
-        JLabel a = new JLabel("a");
-        JLabel b = new JLabel("b");
-        JLabel c = new JLabel("c");
-
-
-        middle.add("a", a);
-        middle.add("b", b);
-        middle.add("c", c);
 
         JPanel playerinvenotyPanel = new JPanel();
         playerinvenotyPanel.setLayout(new BoxLayout(playerinvenotyPanel, BoxLayout.Y_AXIS));
@@ -61,7 +51,7 @@ public class StealFrame extends JFrame {
         JPanel row1Panel = new JPanel();
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
-        comboBoxAminoAcid = new JComboBox(comboBoxNumbers());  //viros.get(0).getAminoacidNumber()
+        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getCurrentNumber())));  //viros.get(0).getAminoacidNumber()
         JCheckBox aminoCheck = new JCheckBox();
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
@@ -72,7 +62,7 @@ public class StealFrame extends JFrame {
         JPanel row2Panel = new JPanel();
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
-        comboBoxNukleodite = new JComboBox(comboBoxNumbers()); //todo
+        comboBoxNukleodite = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getCurrentNumber()))); //todo
         JCheckBox nukleoditeCheck = new JCheckBox();
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
@@ -124,9 +114,6 @@ public class StealFrame extends JFrame {
         playerinvenotyPanel.add(row5Panel);
         playerinvenotyPanel.add(row6Panel);
 
-        middle.add(playerinvenotyPanel);
-
-
 
         ///////////////////////////////////////////////////////////////////////
 
@@ -139,12 +126,12 @@ public class StealFrame extends JFrame {
         downer.add(okButton);
         downer.add(cancelButton);
 
-        add(upper);
-        add(middle);
-        add(downer);
+        add(upper, BorderLayout.PAGE_START);
+        add(playerinvenotyPanel, BorderLayout.CENTER);
+        add(downer, BorderLayout.PAGE_END);
 
-        setSize(350, 150);
-        setResizable(false);
+        setSize(250, 450);
+        setResizable(true);
         setVisible(true);
     }
 
@@ -163,9 +150,11 @@ public class StealFrame extends JFrame {
 
     public class ComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            String choice = (String)comboBoxSteal.getSelectedItem();
-            crd.show(middle, choice);
-            }
+            int choice = comboBoxSteal.getSelectedIndex();
+            //System.out.print(choice);
+            ChangeInventory(viro.get(choice));
+
+        }
     }
 
 
@@ -177,10 +166,16 @@ public class StealFrame extends JFrame {
         return numbers;
     }
 
+    private String[] comboBoxNames(ArrayList<Virologist> viro) {
+        String[] nameStrings = new String[viro.size()];
+        for (int i = 0; i < viro.size(); i++) {
+            nameStrings[i] = viro.get(i).getName();
+        }
+        return nameStrings;
+    }
 
+    private void ChangeInventory(Virologist v) {
+        //todo
 
-
-
-
-
+    }
 }

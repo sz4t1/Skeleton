@@ -9,7 +9,7 @@ public class UseVirusFrame extends JFrame {
 
     private JComboBox comboBoxViruses;
 
-    public UseVirusFrame(String[] virusList){
+    public UseVirusFrame(Virologist v){
         super("Use up");
 
         setLayout(new GridLayout(0,1));
@@ -21,7 +21,7 @@ public class UseVirusFrame extends JFrame {
 
         JLabel useUpLabel = new JLabel("Use virus on self: ");
 
-        comboBoxViruses = new JComboBox(virusList);
+        comboBoxViruses = new JComboBox(v.getVirusList);
 
         JButton okButton = new JButton("Ok");
         JButton cancelButton = new JButton("Cancel");

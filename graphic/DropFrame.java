@@ -11,7 +11,7 @@ public class DropFrame extends JFrame{
     private JComboBox comboBoxNukleodite;
     private JComboBox comboBoxVirus;
 
-    public DropFrame(String[][] materialList, String[] equipmentList){
+    public DropFrame(Virologist v){
         super("Drop");
 
         JPanel box = new JPanel();
@@ -29,7 +29,7 @@ public class DropFrame extends JFrame{
         JPanel row1Panel = new JPanel();
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
-        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(materialList[0][1]));
+        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(v.GetAminoAcidCount() ));
         JCheckBox aminoCheck = new JCheckBox();
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
@@ -40,7 +40,7 @@ public class DropFrame extends JFrame{
         JPanel row2Panel = new JPanel();
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
-        comboBoxNukleodite = new JComboBox(comboBoxNumbers(materialList[1][1]));
+        comboBoxNukleodite = new JComboBox(comboBoxNumbers(v.GetNukleoditeCount()));
         JCheckBox nukleoditeCheck = new JCheckBox();
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
@@ -120,7 +120,7 @@ public class DropFrame extends JFrame{
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
             if(choice.equals("Apply")) {
-
+                //return kidobott tárgyak száma;
             }
             else if(choice.equals("Cancel")) {
                 dispose();

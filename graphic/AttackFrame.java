@@ -4,13 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class AttackFrame extends JFrame {
 
     private JComboBox comboBoxAttack;
     private JComboBox comboBoxUsedItem;
 
-    public AttackFrame(String[] playerList, String[] itemList){
+    public AttackFrame(ArrayList<Virologist> virologists, Virrologist v){
         super("Attack");
 
         setLayout(new GridLayout(0,1));
@@ -23,8 +24,8 @@ public class AttackFrame extends JFrame {
         JLabel attackLabel = new JLabel("Attack: ");
         JLabel withlLabel = new JLabel("With: ");
 
-        comboBoxAttack = new JComboBox(playerList);
-        comboBoxUsedItem = new JComboBox(itemList);
+        comboBoxAttack = new JComboBox(); //támadható virologusok nevei String[]
+        comboBoxUsedItem = new JComboBox(v.GetVirusList());
 
         JButton okButton = new JButton("Ok");
         JButton cancelButton = new JButton("Cancel");

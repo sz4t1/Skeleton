@@ -12,7 +12,7 @@ public class PickUpFrame extends JFrame{
     private JComboBox comboBoxAminoAcid;
     private JComboBox comboBoxNukleodite;
 
-    public PickUpFrame(String[][] materialList, String[] equipmentList){
+    public PickUpFrame(Field f){
         super("Pickup");
 
         JPanel box = new JPanel();
@@ -30,7 +30,7 @@ public class PickUpFrame extends JFrame{
         JPanel row1Panel = new JPanel();
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
-        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(materialList[0][1]));
+        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(f.GetAminoAcidCount()));
         JCheckBox aminoCheck = new JCheckBox();
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
@@ -41,7 +41,7 @@ public class PickUpFrame extends JFrame{
         JPanel row2Panel = new JPanel();
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
-        comboBoxNukleodite = new JComboBox(comboBoxNumbers(materialList[1][1]));
+        comboBoxNukleodite = new JComboBox(comboBoxNumbers(f.GetNukleoditeCount()));
         JCheckBox nukleoditeCheck = new JCheckBox();
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
@@ -124,9 +124,9 @@ public class PickUpFrame extends JFrame{
         }
     }
 
-    private String[] comboBoxNumbers(String max){
-        String[] numbers = new String[Integer.parseInt(max) +1];
-        for (int i = 0; i <= Integer.parseInt(max); i++) {
+    private String[] comboBoxNumbers(int max){
+        String[] numbers = new String[max +1];
+        for (int i = 0; i <= max; i++) {
             numbers[i] = String.valueOf(i);
         }
         return numbers;
