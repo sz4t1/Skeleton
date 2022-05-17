@@ -4,15 +4,27 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class GameScreen extends JFrame {
 
     private JPanel mapPanel;
     private JLabel currentPlayerLabel;
 
+    private  JTextArea mTextArea;
+    private JTextArea eTextArea;
+    private JTextArea vTextArea;
+    private JTextArea gTextArea;
+    private JTextArea effTextArea;
 
-    public GameScreen(){
+    private ArrayList<Virologist> virologists;
+    private ArrayList<Field> fields;
+
+    public GameScreen(ArrayList<Field> f, ArrayList<Virologist> v){
         super("Game Board");
+
+        virologists = v;
+        fields = f;
 
         setLayout(new BorderLayout());
 
@@ -39,8 +51,10 @@ public class GameScreen extends JFrame {
         /////////////////////////////////////////////////////////////
 
         JPanel mapPanel = new JPanel();
+        mapPanel.setLayout(new GridLayout(5,5));
         mapPanel.setBackground(Color.gray);
         mapPanel.setOpaque(true);
+
 
 
         /////////////////////////////////////////////////////////////
@@ -99,21 +113,27 @@ public class GameScreen extends JFrame {
         playersPanel.setLayout(new BoxLayout(playersPanel, BoxLayout.Y_AXIS));
         playersPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        /**
+         * Feltölti a játékos label-ket.
+         */
         JLabel pTextLabel = new JLabel("Players");
-        JLabel p1Label = new JLabel("p1"); //paraméterből kapják
-        JLabel p2Label = new JLabel("p2");
-        JLabel p3Label = new JLabel("p3");
-        JLabel p4Label = new JLabel("p4");
-        p4Label.setBackground(Color.red);      //játékos megkülönböztetés példa
-        p4Label.setOpaque(true);
-        JLabel p5Label = new JLabel("p5");
+        for (int i = 0; i < v.size(); i++) {
+            playersPanel.add(new JLabel(v.get(i).getName()));
+        }
+//        JLabel p1Label = new JLabel(virologists.get(0).getName()); //paraméterből kapják
+//        JLabel p2Label = new JLabel("p2");
+//        JLabel p3Label = new JLabel("p3");
+//        JLabel p4Label = new JLabel("p4");
+//        p4Label.setBackground(Color.red);      //játékos megkülönböztetés példa
+//        p4Label.setOpaque(true);
+//        JLabel p5Label = new JLabel("p5");
 
         playersPanel.add(pTextLabel);
-        playersPanel.add(p1Label);
-        playersPanel.add(p2Label);
-        playersPanel.add(p3Label);
-        playersPanel.add(p4Label);
-        playersPanel.add(p5Label);
+//        playersPanel.add(p1Label);
+//        playersPanel.add(p2Label);
+//        playersPanel.add(p3Label);
+//        playersPanel.add(p4Label);
+//        playersPanel.add(p5Label);
 
         rightPanel.add(playersPanel);
 
@@ -143,7 +163,8 @@ public class GameScreen extends JFrame {
         JPanel mPanel = new JPanel();
         mPanel.setLayout(new BoxLayout(mPanel, BoxLayout.Y_AXIS));
         JLabel mLabel = new JLabel("Materials");
-        JTextArea mTextArea = new JTextArea("-a\n-b"); //string kell
+        mTextArea = new JTextArea("-amino acid X " + v.get(0).getAminoAcidCount()+
+                                "\n-nukleodite X " +v.get(0).getNuklediteCount());
         mPanel.add(mLabel);
         mPanel.add(mTextArea);
         bottonPanel.add(mPanel);
@@ -153,7 +174,8 @@ public class GameScreen extends JFrame {
         JPanel ePanel = new JPanel();
         ePanel.setLayout(new BoxLayout(ePanel, BoxLayout.Y_AXIS));
         JLabel eLabel = new JLabel("Equipments");
-        JTextArea eTextArea = new JTextArea("-a\n-b"); //string kell
+        eTextArea = new JTextArea("-Axe X " +
+                                \n-b"); //string kell
         ePanel.add(eLabel);
         ePanel.add(eTextArea);
         bottonPanel.add(ePanel);
@@ -163,7 +185,7 @@ public class GameScreen extends JFrame {
         JPanel vPanel = new JPanel();
         vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.Y_AXIS));
         JLabel vLabel = new JLabel("Viruses");
-        JTextArea vTextArea = new JTextArea("-a\n-b"); // string kell
+        vTextArea = new JTextArea("-a\n-b"); // string kell
         vPanel.add(vLabel);
         vPanel.add(vTextArea);
         bottonPanel.add(vPanel);
@@ -173,7 +195,7 @@ public class GameScreen extends JFrame {
         JPanel gPanel = new JPanel();
         gPanel.setLayout(new BoxLayout(gPanel, BoxLayout.Y_AXIS));
         JLabel gLabel = new JLabel("Genetic code");
-        JTextArea gTextArea = new JTextArea("5"); // nagyban kell
+        gTextArea = new JTextArea("5"); // nagyban kell
         gPanel.add(gLabel);
         gPanel.add(gTextArea);
         bottonPanel.add(gPanel);
@@ -183,7 +205,7 @@ public class GameScreen extends JFrame {
         JPanel effPanel = new JPanel();
         effPanel.setLayout(new BoxLayout(effPanel, BoxLayout.Y_AXIS));
         JLabel effLabel = new JLabel("Effects");
-        JTextArea effTextArea = new JTextArea("-a\n-b"); // string kell
+        effTextArea = new JTextArea("-a\n-b"); // string kell
         effPanel.add(effLabel);
         effPanel.add(effTextArea);
         bottonPanel.add(effPanel);
@@ -208,12 +230,20 @@ public class GameScreen extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
-            //todo
+
         }
     }
 
     public void Update(){
         //todo
     }
+
+
+    private int EquipmentCount(Virologist v, String e){
+        for (int i = 0; i < v.GetEquipmentSize(); i++) {
+            if (v.GetEquipment.get(i).getName());
+        }
+    }
+
 
 }

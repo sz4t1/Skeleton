@@ -4,22 +4,22 @@ import java.awt.Dimension;
 
 public class ScreenController {
 
-	private Game game;
 	private GameScreen gameScreen;
 	private MainMenuScreen mainMenuScreen;
 
 	public ScreenController()
 	{
+
 	}
 
-	public create()
+	public void create()
 	{
 		gameScreen = new GameScreen();
 		mainMenuScreen = new MainMenuScreen();
 		mainMenuScreen.setVisible(true);
 	}
 
-	public resize(int width, int height)
+	public void resize(int width, int height)
 	{
 		if(gameScreen.isVisible() == true)
 			gameScreen.setPreferredSize(new Dimension(width, height));
@@ -27,7 +27,7 @@ public class ScreenController {
 			mainMenuScreen.setPreferredSize(new Dimension(width, height));
 	}
 
-	public dispose()
+	public void dispose()
 	{
 		if(gameScreen.isVisible() == true)
 			gameScreen.dispose();
