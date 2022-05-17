@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 //This class represents a field on the game map
 public class Field {
@@ -54,6 +55,13 @@ public class Field {
         for(int i=0;i<neighbours.size();i++)
             System.out.println(i+". neighbour of the fild is: "+neighbours.get(i));
         return neighbours;
+    }
+
+    //Returns with a random field, wich is neighbor with this field
+    public Field getRandomneighbor(){
+        int neighborCount = neighbours.size();
+        int retNum = new Random().nextInt(neighborCount);
+        return neighbours.get(retNum);
     }
 
     public void setNeighbours(ArrayList<Field> neighbours) {

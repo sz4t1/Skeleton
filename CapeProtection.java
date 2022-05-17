@@ -10,8 +10,8 @@ public class CapeProtection extends ProtectionAbility {
     @Override
     public void invokeEffect(Virologist vir, Virus v) {
         System.out.println("invokeEffect(Virologist v) - Cape Protection effect is invoked.");
-        //Az egyszerűség kedvéért it 50%-os eséllyel véd a köpeny, végleges változatnál átdolgozás szükséges
-        if(new Random().nextInt(2) == 0){
+        //82,3% probability of protection
+        if(new Random().nextDouble() >= 0.823){
             v.Effect(vir);
         }
         else{
