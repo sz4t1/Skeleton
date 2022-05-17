@@ -18,6 +18,9 @@ import javax.swing.JPanel;
 
 public class MainMenuScreen extends JFrame {
 
+    private JButton playButton;
+    private JButton helpButton;
+
 	public MainMenuScreen(ScreenController screenControllerObject)
 	{
 
@@ -50,8 +53,8 @@ public class MainMenuScreen extends JFrame {
         Integer[] numbers = {1, 2, 3, 4};
         JComboBox playerNumber = new JComboBox(numbers);
 
-        JButton playButton = new JButton("Play");
-        JButton helpButton = new JButton("Help");
+        playButton = new JButton("Play");
+        helpButton = new JButton("Help");
 
         upper.add(titleLabel, gbc);
 

@@ -9,6 +9,14 @@ public class GameScreen extends JFrame {
 
     private JPanel mapPanel;
     private JLabel currentPlayerLabel;
+    private JButton attackButton;
+    private JButton moveButton;
+    private JButton craftButton;
+    private JButton scanButton;
+    private JButton pickupButton;
+    private JButton dropButton;
+    private JButton virusButton;
+    private JButton stealButton;
 
 
     public GameScreen(){
@@ -58,21 +66,21 @@ public class GameScreen extends JFrame {
         buttonsPanel.setLayout(new GridLayout(4, 2));
 
         /////////////////////////////////////////////////////////////
-        JButton attackButton = new JButton("Attack");
+        attackButton = new JButton("Attack");
 
-        JButton moveButton = new JButton("Move");
+        moveButton = new JButton("Move");
 
-        JButton craftButton = new JButton("Craft");
+        craftButton = new JButton("Craft");
 
-        JButton scanButton = new JButton("Scan");
+        scanButton = new JButton("Scan");
 
-        JButton pickupButton = new JButton("Pickup");
+        pickupButton = new JButton("Pickup");
 
-        JButton dropButton = new JButton("Drop");
+        dropButton = new JButton("Drop");
 
-        JButton virusButton = new JButton("Use Virus");
+        virusButton = new JButton("Use Virus");
 
-        JButton stealButton = new JButton("Steal");
+        stealButton = new JButton("Steal");
 
         buttonsPanel.add(attackButton);
         buttonsPanel.add(moveButton);
