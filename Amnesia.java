@@ -5,6 +5,7 @@ public class Amnesia extends Virus {
     public Amnesia(){
         System.out.println("Amnesia() - Amnesia (virus) constructed: " + this);
         overwritable = true;
+        name = "amnesia";
     }
     @Override
     public void Effect(Virologist v) {

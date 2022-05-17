@@ -9,6 +9,7 @@ public class BearDance extends Dance{
     public BearDance(){
         System.out.println("BearDance() - BearDance (virus) constructed: " + this);
         overwritable = false;
+        name = "beardance";
     }
     @Override
     public void Effect(Virologist v) {

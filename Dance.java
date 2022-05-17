@@ -5,6 +5,7 @@ public class Dance extends Virus {
     public Dance(){
         System.out.println("Dance() - Dance (virus) constructed: " + this);
         overwritable = true;
+        name = "dance";
     }
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override

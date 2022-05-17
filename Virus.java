@@ -9,6 +9,8 @@ public abstract class Virus {
     //The ability to override a virus
     //Its always true except bearDance
     protected  boolean overwritable;
+    //név
+    protected String name;
     //Count down
     public void CountTimeDown(){expirationTime--;}
     //Use effect on virologist
@@ -25,4 +27,6 @@ public abstract class Virus {
     }
 
     protected boolean getOverwritable(){return overwritable;}
+
+    public String getName(){return name;}
 }

@@ -4,6 +4,7 @@ public class Protection extends Virus {
     public Protection(){
         System.out.println("Protection() - Protection (virus) constructed: " + this);
         overwritable = true;
+        name = "protection";
     }
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override
