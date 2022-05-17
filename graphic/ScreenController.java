@@ -21,6 +21,7 @@ public class ScreenController {
 	public create(Integer playerNumber)
 	{
 		game = new Game(playerNumber);
+        game.StartGame();
 		gameScreen.MapRender(game);
 		gameScreen.setVisible(true);
 		mainMenuScreen.dispose();
@@ -68,6 +69,7 @@ public class ScreenController {
 
                 case "Move":
                     //todo
+                    //virologist.Move(field);
                     break;
                 case "Craft":
                     CraftFrame craftFrame = new CraftFrame();
@@ -78,6 +80,7 @@ public class ScreenController {
 
                 case "Scan":
                     //todo
+                    //virologist.ScanCode();
                     break;
 
                 case "Pickup":
@@ -128,26 +131,34 @@ public class ScreenController {
 
                 case "AttackOk":
                     //todo
+                    //virologist.Attack(virus, targetVirologist);
                     break;
 
                 case "CraftOk":
                     //todo
+                    //virologist.CraftVirus(recipe);
                     break;
 
                 case "PickUpOk":
                     //todo
+                    //virologist.AddMaterial(material);
+                    //virologist.AddEquipment(equipment);
                     break;
 
                 case "DropOk":
                     //todo
+                    //virologist.RemoveEquipment(equipment);
                     break;
 
                 case "UseVirusOk":
                     //todo
+                    //virologist.UseVirusOnSelf(virus);
                     break;
 
                 case "StealOk":
                     //todo
+                    //virologist.StealEquipment(targetVirologist, equipment);
+                    //virologist.StealMaterial(targetVirologist, material)
                     break;
             }
         }

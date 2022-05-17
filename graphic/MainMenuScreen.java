@@ -20,7 +20,6 @@ public class MainMenuScreen extends JFrame {
 
 	public MainMenuScreen(ScreenController screenControllerObject)
 	{
-        game = gameObject;
 
 		setLayout(new GridLayout(0,1));
 
