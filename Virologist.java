@@ -197,6 +197,10 @@ public class Virologist {
         this.materialSize = materialSize;
     }
 
+    public ArrayList<Material> getMaterials(){
+        return materials;
+    }
+
     public Integer getVirusSize() {
         System.out.println("getVirusSize()");
         return virusSize;
