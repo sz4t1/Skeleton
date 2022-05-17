@@ -17,7 +17,10 @@ public class Warehouse extends Field{
         removeMaterial(m);
     }
     @Override
-    public ArrayList<Material> getMaterials(){return materials;}
+    public ArrayList<Material> getMaterials(){
+        return materials;
+    }
+
     //erre talán nem lesz szükség
     public void addMaterial(Material m){
         materials.add(m);
