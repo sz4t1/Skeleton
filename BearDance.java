@@ -8,10 +8,31 @@ public class BearDance extends Dance{
     //Constructor
     public BearDance(){
         System.out.println("BearDance() - BearDance (virus) constructed: " + this);
+        overwritable = false;
     }
     @Override
-    public void Effect(Virologist v) {}
+    public void Effect(Virologist v) {
+        System.out.println("Effect(Virologist v) - BearDance virus is affecting the virologist.");
+        //If the virologist has a virus on already, it is overwritten by the new one
+        if(v.getVirusOn() != null){
+            //if the virus already on is not overwritable, than nothing is gona change
+            //this will occure, if beardance is On
+            if(!getOverwritable()) return;
+
+            v.getVirusOn().EffectOff(v);
+        }
+        //The virologist's genetis codes are removed
+        v.setVirusOn(this);
+        //New BearDance virus created
+        BearMovement bd = new BearMovement();
+        //The virologist's movement ability is set to RandomMovement
+        v.setMovementAbility(bd);
+        setExpirationTime(-1);
+    }
 
     @Override
-    public void EffectOff(Virologist v) {}
+    public void EffectOff(Virologist v) {
+        System.out.println("EffectOff(Virologist v) - BearDance's effect is off");
+        v.setVirusOn(null);
+    }
 }

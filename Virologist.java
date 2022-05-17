@@ -248,6 +248,16 @@ public class Virologist {
         this.protectionAbility = protectionAbility;
     }
 
+    public ExecuteAbility gExecuteAbility(){
+        System.out.println("gExecuteAbility()");
+        return executeAbility;
+    }
+
+    public void setExecuteAbility(ExecuteAbility ea){
+        System.out.println("setExecuteAbility(ExecuteAbility ea) - The ExecuteAbility on the virologist has been changed.");
+        this.executeAbility = ea;
+    }
+
     public Field getField() {
         System.out.println("getField()");
         return field;

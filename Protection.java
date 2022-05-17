@@ -3,6 +3,7 @@
 public class Protection extends Virus {
     public Protection(){
         System.out.println("Protection() - Protection (virus) constructed: " + this);
+        overwritable = true;
     }
     //This applies the effect of the virus on the Virologist that was given as parameter
     @Override
@@ -10,6 +11,10 @@ public class Protection extends Virus {
         System.out.println("Effect(Virologist v) - Protection virus is effecting the virologist.");
         //If the virologist has a virus on already, it is overwritten by the new one
         if(v.getVirusOn() != null){
+            //if the virus already on is not overwritable, than nothing is gona change
+            //this will occure, if beardance is On
+            if(!getOverwritable()) return;
+
             v.getVirusOn().EffectOff(v);
         }
         //The protection virus gets on the virologist
@@ -18,6 +23,7 @@ public class Protection extends Virus {
         CompleteProtection cp = new CompleteProtection();
         //The virologist's protection ability is set to CompleteProtection
         v.setProtectionAbility(cp);
+        setExpirationTime(3);
     }
     //This removes the effect of the virus on the Virologist that was given as parameter
     @Override
