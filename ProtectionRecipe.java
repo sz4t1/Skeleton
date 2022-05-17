@@ -5,9 +5,9 @@ public class ProtectionRecipe implements Recipe {
     //We Override the CreateVirus, so we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {
-        System.out.println("CreateVirus(Virologist v) - New Protection virus is created");
         if(IsCraftable(v)){
             RemoveUsedMaterials(v);
+            System.out.println("CreateVirus(Virologist v) - New Protection virus is created");
             return new Protection();
         }
         return null;
@@ -34,7 +34,7 @@ public class ProtectionRecipe implements Recipe {
     //We Override the IsCraftable method here, so we can check if the Virologist that was given as a parameter have the materials
     @Override
     public boolean IsCraftable(Virologist vir) {
-        System.out.println("IsCraftable(Virologist vir) - The virus is always creatable in this part of the task");
+        System.out.println("IsCraftable(Virologist vir) - Checking for the needed materilas");
         int am = 0, nuk = 0;
         for(Material m : vir.getMaterials()){
             if(m.getName().equals("aminoacid")){

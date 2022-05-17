@@ -7,9 +7,10 @@ public class AmnesiaRecipe implements Recipe{
     //We Override the CreateVirus, sow we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {
-        System.out.println("CreateVirus(Virologist v) - New Amnesia virus is created.");
+        
         if(IsCraftable(v)){
             RemoveUsedMaterials(v);
+            System.out.println("CreateVirus(Virologist v) - New Amnesia virus is created.");
             return new Amnesia();
         }
         return null;

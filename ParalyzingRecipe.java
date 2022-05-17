@@ -5,9 +5,10 @@ public class ParalyzingRecipe implements Recipe {
     //We Override the CreateVirus, so we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {
-        System.out.println("CreateVirus(Virologist v) - New Paralyzing virus is created");
+        
         if(IsCraftable(v)){
             RemoveUsedMaterials(v);
+            System.out.println("CreateVirus(Virologist v) - New Paralyzing virus is created");
             return new Paralyzing();
         }
         return null;

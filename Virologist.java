@@ -108,11 +108,13 @@ public class Virologist {
     }
     //Creates a new virus
     public void CraftVirus( Recipe recipe){
-        if(recipe.IsCraftable(this)) {
-            recipe.RemoveUsedMaterials(this);
-            this.AddVirus(recipe.CreateVirus(this));
-        }
         System.out.println("CraftVirus(Virus v) - Virologist wants to craft a virus.");
+        Virus nv = recipe.CreateVirus(this);
+        if(nv != null) {
+            this.AddVirus(nv);
+            return;
+        }
+        System.out.println("CraftVirus(Virus v) - Not enough resources.");
     }
     //Attacks another virologist with the chosen virus
     public void Attack(Virus v, Virologist vir){

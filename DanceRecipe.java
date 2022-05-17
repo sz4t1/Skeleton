@@ -6,9 +6,10 @@ public class DanceRecipe implements Recipe {
     //We Override the CreateVirus, so we can create the Virus and it is being placed in the Virologist's inventory that is given as a parameter to this method
     @Override
     public Virus CreateVirus(Virologist v) {
-        System.out.println("CreateVirus(Virologist v) - New Dance virus is created.");
+        
         if(IsCraftable(v)){
             RemoveUsedMaterials(v);
+            System.out.println("CreateVirus(Virologist v) - New Dance virus is created.");
             return new Dance();
         }
         return null;
