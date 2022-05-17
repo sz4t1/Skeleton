@@ -8,12 +8,10 @@ import java.awt.event.ActionListener;
 public class StealFrame extends JFrame {
 
     private JComboBox comboBoxSteal;
-    private JComboBox comboBoxAminoAcid;
-    private JComboBox comboBoxNukleodite;
-    private JComboBox comboBoxAxe;
-    private JComboBox comboBoxSack;
-    private JComboBox comboBoxGlove;
-    private JComboBox comboBoxCape;
+    private JComboBox comboBoxUsedItem;
+
+    private JButton okButton;
+    private JButton cancelButton;
 
     private CardLayout crd = new CardLayout();
 
@@ -48,93 +46,17 @@ public class StealFrame extends JFrame {
         middle.add("b", b);
         middle.add("c", c);
 
-        JPanel playerinvenotyPanel = new JPanel();
-        playerinvenotyPanel.setLayout(new BoxLayout(playerinvenotyPanel, BoxLayout.Y_AXIS));
-
-        JLabel inventoryLabel = new JLabel("Inventory: ");
-        JPanel labelPanel = new JPanel();
-        labelPanel.setLayout(new FlowLayout());
-        labelPanel.add(inventoryLabel);
-
-        /////////////////////////////////////////////////////////////////
-
-        JPanel row1Panel = new JPanel();
-        row1Panel.setLayout(new FlowLayout(0));
-        JLabel aminoLabel = new JLabel("-amino acid");
-        comboBoxAminoAcid = new JComboBox(comboBoxNumbers());  //viros.get(0).getAminoacidNumber()
-        JCheckBox aminoCheck = new JCheckBox();
-        row1Panel.add(aminoLabel);
-        row1Panel.add(comboBoxAminoAcid);
-        row1Panel.add(aminoCheck);
-
-        /////////////////////////////////////////////////////////////////
-
-        JPanel row2Panel = new JPanel();
-        row2Panel.setLayout(new FlowLayout(0));
-        JLabel nukleoditeLabel = new JLabel("-nukleodite");
-        comboBoxNukleodite = new JComboBox(comboBoxNumbers()); //todo
-        JCheckBox nukleoditeCheck = new JCheckBox();
-        row2Panel.add(nukleoditeLabel);
-        row2Panel.add(comboBoxNukleodite);
-        row2Panel.add(nukleoditeCheck);
 
 
-        /////////////////////////////////////////////////////////////////
-        JPanel row3Panel = new JPanel();
-        row3Panel.setLayout(new FlowLayout(0));
-        JLabel axeLabel = new JLabel("-axe ");
-        JCheckBox axeCheck = new JCheckBox();
-        row3Panel.add(axeLabel);
-        row3Panel.add(axeCheck);
-
-
-        /////////////////////////////////////////////////////////////////
-        JPanel row4Panel = new JPanel();
-        row4Panel.setLayout(new FlowLayout(0));
-        JLabel sackLabel = new JLabel("-sack ");
-        JCheckBox sackCheck = new JCheckBox();
-        row4Panel.add(sackLabel);
-        row4Panel.add(sackCheck);
-
-
-        /////////////////////////////////////////////////////////////////
-        JPanel row5Panel = new JPanel();
-        row5Panel.setLayout(new FlowLayout(0));
-        JLabel gloveLabel = new JLabel("-glove ");
-        JCheckBox gloveCheck = new JCheckBox();
-        row5Panel.add(gloveLabel);
-        row5Panel.add(gloveCheck);
-
-        /////////////////////////////////////////////////////////////////
-        JPanel row6Panel = new JPanel();
-        row6Panel.setLayout(new FlowLayout(0));
-        JLabel capeLabel = new JLabel("-cape ");
-        JCheckBox capeCheck = new JCheckBox();
-        row6Panel.add(capeLabel);
-        row6Panel.add(capeCheck);
-
-
-        ///////////////////////////////////////////////////////////////////////
-
-        playerinvenotyPanel.add(labelPanel);
-        playerinvenotyPanel.add(row1Panel);
-        playerinvenotyPanel.add(row2Panel);
-        playerinvenotyPanel.add(row3Panel);
-        playerinvenotyPanel.add(row4Panel);
-        playerinvenotyPanel.add(row5Panel);
-        playerinvenotyPanel.add(row6Panel);
-
-        middle.add(playerinvenotyPanel);
 
 
 
         ///////////////////////////////////////////////////////////////////////
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
-        okButton.addActionListener(new ButtonListener());
-        cancelButton.addActionListener(new ButtonListener());
+        okButton.setActionCommand("StealOk");
 
         downer.add(okButton);
         downer.add(cancelButton);
@@ -148,19 +70,6 @@ public class StealFrame extends JFrame {
         setVisible(true);
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
-
-            }
-            else if(choice.equals("Cancel")) {
-                dispose();
-            }
-        }
-    }
-
     public class ComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String choice = (String)comboBoxSteal.getSelectedItem();
@@ -168,17 +77,13 @@ public class StealFrame extends JFrame {
             }
     }
 
-
-    private String[] comboBoxNumbers(String max){
-        String[] numbers = new String[Integer.parseInt(max) +1];
-        for (int i = 0; i <= Integer.parseInt(max); i++) {
-            numbers[i] = String.valueOf(i);
-        }
-        return numbers;
+    public JButton getOkButton() {
+        return okButton;
     }
 
-
-
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
 
 
 

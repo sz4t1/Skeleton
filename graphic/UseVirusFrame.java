@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
 public class UseVirusFrame extends JFrame {
 
     private JComboBox comboBoxViruses;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public UseVirusFrame(String[] virusList){
         super("Use up");
@@ -23,11 +25,10 @@ public class UseVirusFrame extends JFrame {
 
         comboBoxViruses = new JComboBox(virusList);
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
-        okButton.addActionListener(new ButtonListener());
-        cancelButton.addActionListener(new ButtonListener());
+        okButton.setActionCommand("UseViruskOk");
 
         upper.add(useUpLabel);
         upper.add(comboBoxViruses);
@@ -43,16 +44,11 @@ public class UseVirusFrame extends JFrame {
         setVisible(true);
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
+    public JButton getOkButton() {
+        return okButton;
+    }
 
-            }
-            else if(choice.equals("Cancel")) {
-                dispose();
-            }
-        }
+    public JButton getCancelButton() {
+        return cancelButton;
     }
 }

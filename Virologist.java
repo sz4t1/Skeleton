@@ -90,7 +90,6 @@ public class Virologist {
     public void Move(Field f){
         System.out.println("Move(Field f) - The virologist attempts to move to another field.");
         getMovementAbility().invokeEffect(this, f);
-
     }
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){
@@ -109,11 +108,13 @@ public class Virologist {
     }
     //Creates a new virus
     public void CraftVirus( Recipe recipe){
-        if(recipe.IsCraftable(this)) {
-            recipe.RemoveUsedMaterials(this);
-            this.AddVirus(recipe.CreateVirus(this));
-        }
         System.out.println("CraftVirus(Virus v) - Virologist wants to craft a virus.");
+        Virus nv = recipe.CreateVirus(this);
+        if(nv != null) {
+            this.AddVirus(nv);
+            return;
+        }
+        System.out.println("CraftVirus(Virus v) - Not enough resources.");
     }
     //Attacks another virologist with the chosen virus
     public void Attack(Virus v, Virologist vir){
@@ -198,6 +199,10 @@ public class Virologist {
         this.materialSize = materialSize;
     }
 
+    public ArrayList<Material> getMaterials(){
+        return materials;
+    }
+
     public Integer getVirusSize() {
         System.out.println("getVirusSize()");
         return virusSize;
@@ -246,6 +251,16 @@ public class Virologist {
     public void setProtectionAbility(ProtectionAbility protectionAbility) {
         System.out.println("setProtectionAbility(ProtectionAbility protectionAbility) - The ProtectionAbility on the virologist has been changed.");
         this.protectionAbility = protectionAbility;
+    }
+
+    public ExecuteAbility gExecuteAbility(){
+        System.out.println("gExecuteAbility()");
+        return executeAbility;
+    }
+
+    public void setExecuteAbility(ExecuteAbility ea){
+        System.out.println("setExecuteAbility(ExecuteAbility ea) - The ExecuteAbility on the virologist has been changed.");
+        this.executeAbility = ea;
     }
 
     public Field getField() {

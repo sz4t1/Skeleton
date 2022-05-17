@@ -4,6 +4,7 @@ public class AminoAcid extends Material {
     //Constructor
     public AminoAcid(){
         System.out.println("AminoAcid() - AminoAcid constructed: " + this);
+        name = "aminoacid";
     }
     //We override the abstract method beingUsed so we can use AminoAcid en recipes
     @Override

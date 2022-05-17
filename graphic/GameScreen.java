@@ -4,27 +4,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class GameScreen extends JFrame {
 
     private JPanel mapPanel;
     private JLabel currentPlayerLabel;
+    private JButton attackButton;
+    private JButton moveButton;
+    private JButton craftButton;
+    private JButton scanButton;
+    private JButton pickupButton;
+    private JButton dropButton;
+    private JButton virusButton;
+    private JButton stealButton;
 
-    private  JTextArea mTextArea;
-    private JTextArea eTextArea;
-    private JTextArea vTextArea;
-    private JTextArea gTextArea;
-    private JTextArea effTextArea;
 
-    private ArrayList<Virologist> virologists;
-    private ArrayList<Field> fields;
-
-    public GameScreen(ArrayList<Field> f, ArrayList<Virologist> v){
+    public GameScreen(){
         super("Game Board");
-
-        virologists = v;
-        fields = f;
 
         setLayout(new BorderLayout());
 
@@ -51,10 +47,8 @@ public class GameScreen extends JFrame {
         /////////////////////////////////////////////////////////////
 
         JPanel mapPanel = new JPanel();
-        mapPanel.setLayout(new GridLayout(5,5));
         mapPanel.setBackground(Color.gray);
         mapPanel.setOpaque(true);
-
 
 
         /////////////////////////////////////////////////////////////
@@ -72,29 +66,21 @@ public class GameScreen extends JFrame {
         buttonsPanel.setLayout(new GridLayout(4, 2));
 
         /////////////////////////////////////////////////////////////
-        JButton attackButton = new JButton("Attack");
-        attackButton.addActionListener(new ButtonListener());
+        attackButton = new JButton("Attack");
 
-        JButton moveButton = new JButton("Move");
-        moveButton.addActionListener(new ButtonListener());
+        moveButton = new JButton("Move");
 
-        JButton craftButton = new JButton("Craft");
-        craftButton.addActionListener(new ButtonListener());
+        craftButton = new JButton("Craft");
 
-        JButton scanButton = new JButton("Scan");
-        scanButton.addActionListener(new ButtonListener());
+        scanButton = new JButton("Scan");
 
-        JButton pickupButton = new JButton("Pickup");
-        pickupButton.addActionListener(new ButtonListener());
+        pickupButton = new JButton("Pickup");
 
-        JButton dropButton = new JButton("Drop");
-        dropButton.addActionListener(new ButtonListener());
+        dropButton = new JButton("Drop");
 
-        JButton virusButton = new JButton("Use Virus");
-        virusButton.addActionListener(new ButtonListener());
+        virusButton = new JButton("Use Virus");
 
-        JButton stealButton = new JButton("Steal");
-        stealButton.addActionListener(new ButtonListener());
+        stealButton = new JButton("Steal");
 
         buttonsPanel.add(attackButton);
         buttonsPanel.add(moveButton);
@@ -113,27 +99,21 @@ public class GameScreen extends JFrame {
         playersPanel.setLayout(new BoxLayout(playersPanel, BoxLayout.Y_AXIS));
         playersPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        /**
-         * Feltölti a játékos label-ket.
-         */
         JLabel pTextLabel = new JLabel("Players");
-        for (int i = 0; i < v.size(); i++) {
-            playersPanel.add(new JLabel(v.get(i).getName()));
-        }
-//        JLabel p1Label = new JLabel(virologists.get(0).getName()); //paraméterből kapják
-//        JLabel p2Label = new JLabel("p2");
-//        JLabel p3Label = new JLabel("p3");
-//        JLabel p4Label = new JLabel("p4");
-//        p4Label.setBackground(Color.red);      //játékos megkülönböztetés példa
-//        p4Label.setOpaque(true);
-//        JLabel p5Label = new JLabel("p5");
+        JLabel p1Label = new JLabel("p1"); //paraméterből kapják
+        JLabel p2Label = new JLabel("p2");
+        JLabel p3Label = new JLabel("p3");
+        JLabel p4Label = new JLabel("p4");
+        p4Label.setBackground(Color.red);      //játékos megkülönböztetés példa
+        p4Label.setOpaque(true);
+        JLabel p5Label = new JLabel("p5");
 
         playersPanel.add(pTextLabel);
-//        playersPanel.add(p1Label);
-//        playersPanel.add(p2Label);
-//        playersPanel.add(p3Label);
-//        playersPanel.add(p4Label);
-//        playersPanel.add(p5Label);
+        playersPanel.add(p1Label);
+        playersPanel.add(p2Label);
+        playersPanel.add(p3Label);
+        playersPanel.add(p4Label);
+        playersPanel.add(p5Label);
 
         rightPanel.add(playersPanel);
 
@@ -163,8 +143,7 @@ public class GameScreen extends JFrame {
         JPanel mPanel = new JPanel();
         mPanel.setLayout(new BoxLayout(mPanel, BoxLayout.Y_AXIS));
         JLabel mLabel = new JLabel("Materials");
-        mTextArea = new JTextArea("-amino acid X " + v.get(0).getAminoAcidCount()+
-                                "\n-nukleodite X " +v.get(0).getNuklediteCount());
+        JTextArea mTextArea = new JTextArea("-a\n-b"); //string kell
         mPanel.add(mLabel);
         mPanel.add(mTextArea);
         bottonPanel.add(mPanel);
@@ -174,8 +153,7 @@ public class GameScreen extends JFrame {
         JPanel ePanel = new JPanel();
         ePanel.setLayout(new BoxLayout(ePanel, BoxLayout.Y_AXIS));
         JLabel eLabel = new JLabel("Equipments");
-        eTextArea = new JTextArea("-Axe X " +
-                                \n-b"); //string kell
+        JTextArea eTextArea = new JTextArea("-a\n-b"); //string kell
         ePanel.add(eLabel);
         ePanel.add(eTextArea);
         bottonPanel.add(ePanel);
@@ -185,7 +163,7 @@ public class GameScreen extends JFrame {
         JPanel vPanel = new JPanel();
         vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.Y_AXIS));
         JLabel vLabel = new JLabel("Viruses");
-        vTextArea = new JTextArea("-a\n-b"); // string kell
+        JTextArea vTextArea = new JTextArea("-a\n-b"); // string kell
         vPanel.add(vLabel);
         vPanel.add(vTextArea);
         bottonPanel.add(vPanel);
@@ -195,7 +173,7 @@ public class GameScreen extends JFrame {
         JPanel gPanel = new JPanel();
         gPanel.setLayout(new BoxLayout(gPanel, BoxLayout.Y_AXIS));
         JLabel gLabel = new JLabel("Genetic code");
-        gTextArea = new JTextArea("5"); // nagyban kell
+        JTextArea gTextArea = new JTextArea("5"); // nagyban kell
         gPanel.add(gLabel);
         gPanel.add(gTextArea);
         bottonPanel.add(gPanel);
@@ -205,7 +183,7 @@ public class GameScreen extends JFrame {
         JPanel effPanel = new JPanel();
         effPanel.setLayout(new BoxLayout(effPanel, BoxLayout.Y_AXIS));
         JLabel effLabel = new JLabel("Effects");
-        effTextArea = new JTextArea("-a\n-b"); // string kell
+        JTextArea effTextArea = new JTextArea("-a\n-b"); // string kell
         effPanel.add(effLabel);
         effPanel.add(effTextArea);
         bottonPanel.add(effPanel);
@@ -226,24 +204,45 @@ public class GameScreen extends JFrame {
 
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-
-        }
-    }
-
     public void Update(){
         //todo
     }
 
-
-    private int EquipmentCount(Virologist v, String e){
-        for (int i = 0; i < v.GetEquipmentSize(); i++) {
-            if (v.GetEquipment.get(i).getName());
-        }
+    public void MapRender(Game game) {
+        //todo
     }
 
+    public JButton getAttackButton() {
+        return attackButton;
+    }
+
+    public JButton getMoveButton() {
+        return moveButton;
+    }
+
+    public JButton getCraftButton() {
+        return craftButton;
+    }
+
+    public JButton getScanButton() {
+        return scanButton;
+    }
+
+    public JButton getPickUpButton() {
+        return pickupButton;
+    }
+
+    public JButton getDropButton() {
+        return dropButton;
+    }
+
+    public JButton getUseVirusButton() {
+        return virusButton;
+    }
+
+    public JButton getStealButton() {
+        return stealButton;
+    }
+    
 
 }

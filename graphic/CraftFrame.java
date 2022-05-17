@@ -11,6 +11,8 @@ public class CraftFrame extends  JFrame{
 
     private JTextArea textvirusMaterial;
     private JComboBox comboBoxViruses;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public CraftFrame(String[] virusList) {
         super("Craft Virus");
@@ -29,11 +31,10 @@ public class CraftFrame extends  JFrame{
         comboBoxViruses.addActionListener(new ComboBoxListener());
         textvirusMaterial = new JTextArea();
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
-        okButton.addActionListener(new ButtonListener());
-        cancelButton.addActionListener(new ButtonListener());
+        okButton.setActionCommand("CraftkOk");
 
         upper.add(craftingLabel);
         upper.add(comboBoxViruses);
@@ -50,19 +51,6 @@ public class CraftFrame extends  JFrame{
         setResizable(false);
         setVisible(true);
 
-    }
-
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
-
-            }
-            else if(choice.equals("Cancel")) {
-                dispose();
-            }
-        }
     }
 
     public class ComboBoxListener implements ActionListener {
@@ -87,6 +75,14 @@ public class CraftFrame extends  JFrame{
 
         }
 
+    }
+
+    public JButton getOkButton() {
+        return okButton;
+    }
+
+    public JButton getCancelButton() {
+        return cancelButton;
     }
 
 }

@@ -18,10 +18,13 @@ import javax.swing.JPanel;
 
 public class MainMenuScreen extends JFrame {
 
-    private JComboBox playerNumbersComboBox;
+    private JButton playButton;
+    private JButton helpButton;
 
-    public MainMenuScreen() {
-        setLayout(new GridLayout(0,1));
+	public MainMenuScreen(ScreenController screenControllerObject)
+	{
+
+		setLayout(new GridLayout(0,1));
 
         JPanel upper = new JPanel();
         JPanel lower = new JPanel();
@@ -47,21 +50,18 @@ public class MainMenuScreen extends JFrame {
         titleLabel.setFont(new Font("ARIAL", Font.BOLD, 30));
         JLabel playerNumberLabel = new JLabel("Number of players:");
 
-        Integer[] numbers = {1, 2, 3, 4, 5};
-        playerNumbersComboBox = new JComboBox(numbers);
+        Integer[] numbers = {1, 2, 3, 4};
+        JComboBox playerNumber = new JComboBox(numbers);
 
-        JButton playButton = new JButton("Play");
-        JButton helpButton = new JButton("Help");
-
-        playButton.addActionListener(new ButtonListener());
-        helpButton.addActionListener(new ButtonListener());
+        playButton = new JButton("Play");
+        helpButton = new JButton("Help");
 
         upper.add(titleLabel, gbc);
 
         lowerMid.add(playButton);
         lowerMid.add(helpButton);
         lowerRight.add(playerNumberLabel);
-        lowerRight.add(playerNumbersComboBox);
+        lowerRight.add(playerNumber);
 
         lower.add(lowerLeft);
         lower.add(lowerMid);
@@ -72,21 +72,21 @@ public class MainMenuScreen extends JFrame {
 
         setSize(800, 600);
         setVisible(true);
+	}
+
+    public JButton getPlayButton()
+    {
+        return playButton;
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Play")) {
-
-            }
-            else if(choice.equals("Help")) {
-
-            }
-        }
+    public JButton getHelpButton()
+    {
+        return helpButton;
     }
 
-
+    public Integer getPlayerNumber()
+    {
+        return playerNumber.getSelectedItem();
+    }
 
 }

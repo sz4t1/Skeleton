@@ -11,6 +11,8 @@ public class PickUpFrame extends JFrame{
 
     private JComboBox comboBoxAminoAcid;
     private JComboBox comboBoxNukleodite;
+    private JButton okButton;
+    private JButton cancelButton;
 
     public PickUpFrame(String[][] materialList, String[] equipmentList){
         super("Pickup");
@@ -86,11 +88,10 @@ public class PickUpFrame extends JFrame{
         /////////////////////////////////////////////////////////////////
 
 
-        JButton okButton = new JButton("Ok");
-        JButton cancelButton = new JButton("Cancel");
+        okButton = new JButton("Ok");
+        cancelButton = new JButton("Cancel");
 
-        okButton.addActionListener(new ButtonListener());
-        cancelButton.addActionListener(new ButtonListener());
+        okButton.setActionCommand("PickUpOk");
 
         box.add(labelPanel);
         box.add(row1Panel);
@@ -111,24 +112,19 @@ public class PickUpFrame extends JFrame{
         setVisible(true);
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
-
-            }
-            else if(choice.equals("Cancel")) {
-                dispose();
-            }
-        }
-    }
-
     private String[] comboBoxNumbers(String max){
         String[] numbers = new String[Integer.parseInt(max) +1];
         for (int i = 0; i <= Integer.parseInt(max); i++) {
             numbers[i] = String.valueOf(i);
         }
         return numbers;
+    }
+
+    public JButton getOkButton() {
+        return okButton;
+    }
+
+    public JButton getCancelButton() {
+        return cancelButton;
     }
 }
