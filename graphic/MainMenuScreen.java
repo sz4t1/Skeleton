@@ -17,11 +17,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MainMenuScreen extends JFrame {
-	
-	public MainMenuScreen()
-	{
-		setLayout(new GridLayout(0,1));
 
+	public MainMenuScreen(ScreenController screenControllerObject)
+	{
+        game = gameObject;
+
+		setLayout(new GridLayout(0,1));
 
         JPanel upper = new JPanel();
         JPanel lower = new JPanel();
@@ -53,9 +54,6 @@ public class MainMenuScreen extends JFrame {
         JButton playButton = new JButton("Play");
         JButton helpButton = new JButton("Help");
 
-        playButton.addActionListener(new ButtonListener());
-        helpButton.addActionListener(new ButtonListener());
-
         upper.add(titleLabel, gbc);
 
         lowerMid.add(playButton);
@@ -74,17 +72,19 @@ public class MainMenuScreen extends JFrame {
         setVisible(true);
 	}
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Play")) {
+    public JButton getPlayButton()
+    {
+        return playButton;
+    }
 
-            }
-            else if(choice.equals("Help")) {
-                
-            }
-        }
+    public JButton getHelpButton()
+    {
+        return helpButton;
+    }
+
+    public Integer getPlayerNumber()
+    {
+        return playerNumber.getSelectedItem();
     }
 
 }

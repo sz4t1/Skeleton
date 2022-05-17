@@ -29,8 +29,7 @@ public class AttackFrame extends JFrame {
         JButton okButton = new JButton("Ok");
         JButton cancelButton = new JButton("Cancel");
 
-        okButton.addActionListener(new ButtonListener());
-        cancelButton.addActionListener(new ButtonListener());
+        okButton.setActionCommand("AttackOk");
 
         upper.add(attackLabel);
         upper.add(comboBoxAttack);
@@ -48,16 +47,19 @@ public class AttackFrame extends JFrame {
         setVisible(true);
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
+    public JButton getOkButton() {
+        return okButton;
+    }
 
-            }
-            else if(choice.equals("Cancel")) {
-                dispose();
-            }
-        }
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
+
+    public String getTarget() {
+        return comboBoxAttack.getSelectedItem();
+    }
+
+    public String getItem() {
+        return comboBoxUsedItem.getSelectedItem();
     }
 }

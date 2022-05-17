@@ -53,8 +53,7 @@ public class StealFrame extends JFrame {
         JButton okButton = new JButton("Ok");
         JButton cancelButton = new JButton("Cancel");
 
-        okButton.addActionListener(new ButtonListener());
-        cancelButton.addActionListener(new ButtonListener());
+        okButton.setActionCommand("StealOk");
 
         downer.add(okButton);
         downer.add(cancelButton);
@@ -68,19 +67,6 @@ public class StealFrame extends JFrame {
         setVisible(true);
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
-
-            }
-            else if(choice.equals("Cancel")) {
-                dispose();
-            }
-        }
-    }
-
     public class ComboBoxListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             String choice = (String)comboBoxSteal.getSelectedItem();
@@ -88,7 +74,13 @@ public class StealFrame extends JFrame {
             }
     }
 
+    public JButton getOkButton() {
+        return okButton;
+    }
 
+    public JButton getCancelButton() {
+        return cancelButton;
+    }
 
 
 

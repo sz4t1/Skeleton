@@ -59,28 +59,20 @@ public class GameScreen extends JFrame {
 
         /////////////////////////////////////////////////////////////
         JButton attackButton = new JButton("Attack");
-        attackButton.addActionListener(new ButtonListener());
 
         JButton moveButton = new JButton("Move");
-        moveButton.addActionListener(new ButtonListener());
 
         JButton craftButton = new JButton("Craft");
-        craftButton.addActionListener(new ButtonListener());
 
         JButton scanButton = new JButton("Scan");
-        scanButton.addActionListener(new ButtonListener());
 
         JButton pickupButton = new JButton("Pickup");
-        pickupButton.addActionListener(new ButtonListener());
 
         JButton dropButton = new JButton("Drop");
-        dropButton.addActionListener(new ButtonListener());
 
         JButton virusButton = new JButton("Use Virus");
-        virusButton.addActionListener(new ButtonListener());
 
         JButton stealButton = new JButton("Steal");
-        stealButton.addActionListener(new ButtonListener());
 
         buttonsPanel.add(attackButton);
         buttonsPanel.add(moveButton);
@@ -204,16 +196,45 @@ public class GameScreen extends JFrame {
 
     }
 
-    public class ButtonListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            String choice = e.getActionCommand();
-            //todo
-        }
-    }
-
     public void Update(){
         //todo
     }
+
+    public void MapRender(Game game) {
+        //todo
+    }
+
+    public JButton getAttackButton() {
+        return attackButton;
+    }
+
+    public JButton getMoveButton() {
+        return moveButton;
+    }
+
+    public JButton getCraftButton() {
+        return craftButton;
+    }
+
+    public JButton getScanButton() {
+        return scanButton;
+    }
+
+    public JButton getPickUpButton() {
+        return pickupButton;
+    }
+
+    public JButton getDropButton() {
+        return dropButton;
+    }
+
+    public JButton getUseVirusButton() {
+        return virusButton;
+    }
+
+    public JButton getStealButton() {
+        return stealButton;
+    }
+    
 
 }
