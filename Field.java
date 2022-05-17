@@ -21,15 +21,23 @@ public class Field {
         return neighbours.contains(f);
     }
 
+    //Removes the virologist from this field
     public void RemoveVirologist(Virologist v){
         System.out.println(" RemoveVirologist(Virologist v) - Virologist is removed from the old field.");
         virologists.remove(v);
     }
 
+    //Adds the virologist to this field
     public void AddVirologist(Virologist v){
         System.out.println("AddVirologist(Virologist v) - The virologist  stepped on the new field.");
         virologists.add(v);
     }
+
+    //Returns the list of the virologists, who are standing on this field
+    public ArrayList<Virologist> getVirologists(){
+        return virologists;
+    }
+
     //Public getters and setters
     public String getName() {
         System.out.println("getName");
@@ -64,4 +72,10 @@ public class Field {
     public int LabCount(){
         return 0;
     }
+
+    //warehouse and shelter getters in the parent class
+
+    public ArrayList<Material> getMaterials(){return null;}
+
+    public ArrayList<Equipment> getEquipment(){return null;}
 }

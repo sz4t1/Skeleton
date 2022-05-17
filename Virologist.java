@@ -90,7 +90,6 @@ public class Virologist {
     public void Move(Field f){
         System.out.println("Move(Field f) - The virologist attempts to move to another field.");
         getMovementAbility().invokeEffect(this, f);
-
     }
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){
