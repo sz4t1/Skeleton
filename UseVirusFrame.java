@@ -19,7 +19,7 @@ public class UseVirusFrame extends JFrame {
 
         JLabel useUpLabel = new JLabel("Use virus on self: ");
 
-        comboBoxViruses = new JComboBox(v.getVirusList);
+        comboBoxViruses = new JComboBox(v.GetVirusList());
 
         JButton okButton = new JButton("Ok");
         JButton cancelButton = new JButton("Cancel");
