@@ -21,6 +21,8 @@ public class MainMenuScreen extends JFrame {
     private JComboBox playerNumbersComboBox;
 
     public MainMenuScreen() {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         setLayout(new GridLayout(0,1));
 
         JPanel upper = new JPanel();
@@ -37,7 +39,7 @@ public class MainMenuScreen extends JFrame {
         JPanel lowerRight = new JPanel();
 
         lowerMid.setLayout(new BoxLayout(lowerMid, BoxLayout.Y_AXIS));
-        lowerRight.setLayout(new BoxLayout(lowerRight, BoxLayout.Y_AXIS));
+        lowerRight.setLayout(new FlowLayout());
 
         lowerLeft.setBackground(Color.green);
         lowerMid.setBackground(Color.green);
