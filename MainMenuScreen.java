@@ -1,5 +1,3 @@
-package graphic;
-
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -19,8 +17,11 @@ import javax.swing.JPanel;
 public class MainMenuScreen extends JFrame {
 
     private JComboBox playerNumbersComboBox;
+    private Game game;
 
-    public MainMenuScreen() {
+    public MainMenuScreen(Game game) {
+        this.game = game;
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(new GridLayout(0,1));
@@ -81,7 +82,7 @@ public class MainMenuScreen extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
             if(choice.equals("Play")) {
-
+                game.NewGame((int)playerNumbersComboBox.getSelectedItem());
             }
             else if(choice.equals("Help")) {
 

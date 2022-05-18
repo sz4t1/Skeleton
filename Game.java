@@ -1,4 +1,5 @@
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 //This class represents the game itself, it contains the players and the map
 public class Game {
@@ -103,6 +104,10 @@ public class Game {
     {
         return virologists.get(key);
     }
+    //returns with the names of the virologists
+    public Set<String> getVirologists(){
+        return virologists.keySet();
+    }
     public Material getMaterial(String key){
         return materials.get(key);
     }
@@ -130,5 +135,24 @@ public class Game {
         viruses.clear();
         recipes.clear();
         numberOfLaboratories = 0;
+    }
+
+    //creates a new game
+    public void NewGame(int virNumber){
+        clear();
+        //Building the Map
+        BuildMap();
+        //Adding virologists
+        for(int i = 1; i <= virNumber; i++){
+            String name = "Virologist" + i;
+            AddVirologist(name, new Virologist());
+        }
+        //Placeing the Virologists
+        //TODO
+
+    }
+
+    private void BuildMap(){
+        //TODO
     }
 }
