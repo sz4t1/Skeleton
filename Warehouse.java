@@ -28,4 +28,26 @@ public class Warehouse extends Field{
     public void removeMaterial(Material m){
         materials.remove(m);
     }
+
+    @Override
+    public int GetAminoAcidCount(){
+        int am = 0;
+        for (Material m : getMaterials()) {
+            if(m.getName().equals("aminoacid")){
+                am++;
+            }
+        }
+        return am;
+    }
+
+    @Override
+    public int GetNukleoditeCount(){
+        int nuk = 0;
+        for (Material m : getMaterials()) {
+            if(m.getName().equals("nukleotide")){
+                nuk++;
+            }
+        }
+        return nuk;
+    }
 }

@@ -86,4 +86,8 @@ public class Field {
     public ArrayList<Material> getMaterials(){return null;}
 
     public ArrayList<Equipment> getEquipment(){return null;}
+
+    public int GetAminoAcidCount(){return 0;}
+
+    public int GetNukleoditeCount(){return 0;}
 }
