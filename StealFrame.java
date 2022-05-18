@@ -49,7 +49,7 @@ public class StealFrame extends JFrame {
         JPanel row1Panel = new JPanel();
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
-        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getCurrentNumber())));  //viros.get(0).getAminoacidNumber()
+        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).GetAminoAcidCount())));  //viros.get(0).getAminoacidNumber()
         JCheckBox aminoCheck = new JCheckBox();
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
@@ -60,7 +60,7 @@ public class StealFrame extends JFrame {
         JPanel row2Panel = new JPanel();
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
-        comboBoxNukleodite = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getCurrentNumber()))); //todo
+        comboBoxNukleodite = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).GetNukleoditeCount()))); //todo
         JCheckBox nukleoditeCheck = new JCheckBox();
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
@@ -167,7 +167,7 @@ public class StealFrame extends JFrame {
     private String[] comboBoxNames(ArrayList<Virologist> viro) {
         String[] nameStrings = new String[viro.size()];
         for (int i = 0; i < viro.size(); i++) {
-            nameStrings[i] = viro.get(i).getName();
+            nameStrings[i] = viro.get(i).toString();    //EZ NEM VÉGLEGES!!!!!!!
         }
         return nameStrings;
     }
