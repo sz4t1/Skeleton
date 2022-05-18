@@ -1,3 +1,5 @@
+//package src;
+
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -153,6 +155,84 @@ public class Game {
     }
 
     private void BuildMap(){
-        //TODO
+
+
+        for(int i=0;i<14;i++)
+            fields.put("Field"+i,new Field());
+        for(int i=0;i<4;i++)
+            fields.put("Warehouse"+i,new Warehouse());
+        for(int i=0;i<2;i++)
+            fields.put("Shelter"+i,new Shelter());
+        for(int i=0;i<5;i++)
+            fields.put("Laboratory"+i,new Laboratory());
+        BuildMapHelper(fields.get("Shelter1"),fields.get("Warehouse4"));
+        BuildMapHelper(fields.get("Shelter1"),fields.get("Field3"));
+
+        BuildMapHelper(fields.get("Warehouse4"),fields.get("Field4"));
+        BuildMapHelper(fields.get("Warehouse4"),fields.get("Field1"));
+
+        BuildMapHelper(fields.get("Field1"),fields.get("Field5"));
+        BuildMapHelper(fields.get("Field1"),fields.get("Field2"));
+
+        BuildMapHelper(fields.get("Field2"),fields.get("Laboratory3"));
+        BuildMapHelper(fields.get("Field2"),fields.get("Field6"));
+
+        BuildMapHelper(fields.get("Laboratory3"),fields.get("Field7"));
+
+        BuildMapHelper(fields.get("Field3"),fields.get("Field4"));
+        BuildMapHelper(fields.get("Field3"),fields.get("Laboratory5"));
+
+        BuildMapHelper(fields.get("Field4"),fields.get("Field5"));
+        BuildMapHelper(fields.get("Field4"),fields.get("Laboratory4"));
+
+        BuildMapHelper(fields.get("Field5"),fields.get("Field6"));
+        BuildMapHelper(fields.get("Field5"),fields.get("Warehouse1"));
+
+        BuildMapHelper(fields.get("Field6"),fields.get("Field7"));
+        BuildMapHelper(fields.get("Field6"),fields.get("Field8"));
+
+        BuildMapHelper(fields.get("Field7"),fields.get("Warehouse3"));
+
+        BuildMapHelper(fields.get("Laboratory5"),fields.get("Field9"));
+        BuildMapHelper(fields.get("Laboratory5"),fields.get("Laboratory4"));
+
+        BuildMapHelper(fields.get("Laboratory4"),fields.get("Field10"));
+        BuildMapHelper(fields.get("Laboratory4"),fields.get("Warehouse1"));
+
+        BuildMapHelper(fields.get("Warehouse1"),fields.get("Field11"));
+        BuildMapHelper(fields.get("Warehouse1"),fields.get("Field8"));
+
+        BuildMapHelper(fields.get("Field8"),fields.get("Warehouse3"));
+        BuildMapHelper(fields.get("Field8"),fields.get("Field12"));
+
+        BuildMapHelper(fields.get("Warehouse3"),fields.get("Field13"));
+
+        BuildMapHelper(fields.get("Field9"),fields.get("Warehouse2"));
+        BuildMapHelper(fields.get("Field9"),fields.get("Field10"));
+
+        BuildMapHelper(fields.get("Field10"),fields.get("Field11"));
+        BuildMapHelper(fields.get("Field10"),fields.get("Laboratory1"));
+
+        BuildMapHelper(fields.get("Field11"),fields.get("Field12"));
+        BuildMapHelper(fields.get("Field11"),fields.get("Field14"));
+
+        BuildMapHelper(fields.get("Field12"),fields.get("Field13"));
+        BuildMapHelper(fields.get("Field12"),fields.get("Shelter2"));
+
+        BuildMapHelper(fields.get("Field13"),fields.get("Laboratory2"));
+
+        BuildMapHelper(fields.get("Warehouse2"),fields.get("Laboratory1"));
+
+        BuildMapHelper(fields.get("Laboratory1"),fields.get("Field14"));
+
+        BuildMapHelper(fields.get("Field14"),fields.get("Shelter2"));
+
+        BuildMapHelper(fields.get("Shelter2"),fields.get("Laboratory2"));
+
+
+    }
+    private static void BuildMapHelper(Field first, Field second){
+        first.addNeighbour(second);
+        second.addNeighbour(first);
     }
 }
