@@ -388,6 +388,13 @@ public class CommandProcessor {
                         }
                         break;
                     }
+                    //Fields
+                    case "fields":{
+                        for(String key : game.getFields()){
+                            System.out.println("| " + key);
+                        }
+                        break;
+                    }
                 }
                 return true;
             }

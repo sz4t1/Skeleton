@@ -100,6 +100,10 @@ public class Game {
     public Field getField(String key){
         return fields.get(key);
     }
+    //Returns with the names of the fields
+    public Set<String> getFields(){
+        return fields.keySet();
+    }
 
     //Returns with a virologist
     public Virologist getVirologist(String key)
@@ -157,13 +161,13 @@ public class Game {
     private void BuildMap(){
 
 
-        for(int i=0;i<14;i++)
+        for(int i=1;i<=14;i++)
             fields.put("Field"+i,new Field());
-        for(int i=0;i<4;i++)
+        for(int i=1;i<=4;i++)
             fields.put("Warehouse"+i,new Warehouse());
-        for(int i=0;i<2;i++)
+        for(int i=1;i<=2;i++)
             fields.put("Shelter"+i,new Shelter());
-        for(int i=0;i<5;i++)
+        for(int i=1;i<=5;i++)
             fields.put("Laboratory"+i,new Laboratory());
         BuildMapHelper(fields.get("Shelter1"),fields.get("Warehouse4"));
         BuildMapHelper(fields.get("Shelter1"),fields.get("Field3"));
