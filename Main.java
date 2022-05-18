@@ -6,9 +6,11 @@ public class Main {
         System.out.println("=======================================");
         System.out.println("|        The World of Wordless        |");
         
-        Game game = null;
+        Game game  = new Game();
         Integer input=0;
         Scanner sc = new Scanner(System.in);
+
+        MainMenuScreen mms = new MainMenuScreen(game);
 
         while(input!=-1){
             Menu.menuElements();
@@ -22,7 +24,7 @@ public class Main {
                 }
                 case 2:{
                     //Manual Testing
-                    game  = new Game();
+                    
                     CommandProcessor.readCommandLine(sc, game);
                     break;
                 }

@@ -1,5 +1,5 @@
 /**
- * NEM HISZEM HOGY ERRE AZ OSZTÁLYRA SZÜKSÉG VAN
+ * NEM HISZEM HOGY ERRE AZ OSZTáLYRA SZüKSéG VAN
  */
 import java.awt.Dimension;
 
@@ -15,7 +15,7 @@ public class ScreenController {
 
 	public void create()
 	{
-		gameScreen = new GameScreen(null, null);	//A PARAMÉTEREK CSAK AZÉRT, HOGY NE SÍRJON A FORDÍTÓ
+		gameScreen = new GameScreen(null, null);	//A PARAMéTEREK CSAK AZéRT, HOGY NE SRJON A FORDíTó
 		mainMenuScreen = new MainMenuScreen(null);	//------||--------
 		mainMenuScreen.setVisible(true);
 	}

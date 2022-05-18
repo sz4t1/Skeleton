@@ -21,6 +21,7 @@ public class GameScreen extends JFrame {
 
     private ArrayList<Virologist> virologists;
     private ArrayList<Field> fields;
+    private Game game;
 
     public GameScreen(ArrayList<Field> f, ArrayList<Virologist> v){
         super("Game Board");
@@ -36,7 +37,10 @@ public class GameScreen extends JFrame {
         /////////////////////////////////////////////////////////////
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new GridLayout(1,2));
-        roundNumberLabel = new JLabel("Round: " + game.GetRound());
+
+        //TODO
+        //roundNumberLabel = new JLabel("Round: " + game.GetRound());
+
         roundNumberLabel.setHorizontalAlignment(JLabel.LEFT);
         currentPlayerNameLabel = new JLabel(v.get(0).GetName());
         currentPlayerNameLabel.setHorizontalAlignment(JLabel.RIGHT);
@@ -164,8 +168,8 @@ public class GameScreen extends JFrame {
         JPanel mPanel = new JPanel();
         mPanel.setLayout(new BoxLayout(mPanel, BoxLayout.Y_AXIS));
         JLabel mLabel = new JLabel("Materials");
-        mTextArea = new JTextArea("-amino acid X " + v.get(0).getAminoAcidCount()+
-                                "\n-nukleodite X " +v.get(0).getNuklediteCount());
+        mTextArea = new JTextArea("-amino acid X " + v.get(0).GetAminoAcidCount()+
+                                "\n-nukleodite X " +v.get(0).GetNukleoditeCount());
         mPanel.add(mLabel);
         mPanel.add(mTextArea);
         bottonPanel.add(mPanel);
@@ -175,7 +179,7 @@ public class GameScreen extends JFrame {
         JPanel ePanel = new JPanel();
         ePanel.setLayout(new BoxLayout(ePanel, BoxLayout.Y_AXIS));
         JLabel eLabel = new JLabel("Equipments");
-        eTextArea = new JTextArea("-Axe X " v.get(0).getAxeCount()+
+        eTextArea = new JTextArea("-Axe X " + v.get(0).getAxeCount()+
                                     "\n-Cape X " + v.get(0).getCapeCount()+
                                     "\n-Sack X " + v.get(0).getSackCount()+
                                     "\n-Glove X " + v.get(0).getGloveCount());
@@ -188,7 +192,7 @@ public class GameScreen extends JFrame {
         JPanel vPanel = new JPanel();
         vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.Y_AXIS));
         JLabel vLabel = new JLabel("Viruses");
-        vTextArea = new JTextArea("-Dance X " v.get(0).getVDanceCount()+
+        vTextArea = new JTextArea("-Dance X " + v.get(0).getVDanceCount()+
                                 "\n-Paralyzing X " + v.get(0).getVParalyzingCount()+
                                 "\n-Protection X " + v.get(0).getVProtectionCount()+
                                 "\n-Amnesia X " + v.get(0).getVAmnesiaCount()); // string kell
@@ -201,7 +205,7 @@ public class GameScreen extends JFrame {
         JPanel gPanel = new JPanel();
         gPanel.setLayout(new BoxLayout(gPanel, BoxLayout.Y_AXIS));
         JLabel gLabel = new JLabel("Genetic code");
-        gTextArea = new JTextArea(v.get(0).getGeneticCodeCount()); // nagyban kell
+        gTextArea = new JTextArea(Integer.toString(v.get(0).getGenCodesAmmount())); // nagyban kell
         gPanel.add(gLabel);
         gPanel.add(gTextArea);
         bottonPanel.add(gPanel);
@@ -211,7 +215,7 @@ public class GameScreen extends JFrame {
         JPanel effPanel = new JPanel();
         effPanel.setLayout(new BoxLayout(effPanel, BoxLayout.Y_AXIS));
         JLabel effLabel = new JLabel("Effects");
-        effTextArea = new JTextArea(v.get(0).getCurrentEffect); // string kell
+        effTextArea = new JTextArea(v.get(0).getCurrentEffect()); // string kell
         effPanel.add(effLabel);
         effPanel.add(effTextArea);
         bottonPanel.add(effPanel);
@@ -236,6 +240,10 @@ public class GameScreen extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
+           
+            //EZ NEM TOM MIT, HOGYAN CSINaL
+            //FUTTATáS éRDEKéBEN EGYENLőRE KIKOMMENTEZVE
+           /*
             switch (choice) {
                 case "Use Virus":
                     UseVirusFrame virus = new UseVirusFrame(virologists.get(currentPlayerIndex));
@@ -267,6 +275,8 @@ public class GameScreen extends JFrame {
                     //do nothing
                     break;
             }
+            */
+
         }
     }
 

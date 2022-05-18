@@ -48,6 +48,9 @@ public class Virologist {
         virusSize=0;
         materialSize=0;
     }
+
+    //TODO
+    public String GetName(){return "TODOOOO";}
     
     //Add material to the virologists inventory
     public void AddMaterial(Material m){
@@ -325,4 +328,14 @@ public class Virologist {
         return nuk;
     }
 
+    ///////EZEKET BIZTOS ÍGY???????
+    public int getAxeCount(){return 0;}
+    public int getCapeCount(){return 0;}
+    public int getSackCount(){return 0;}
+    public int getGloveCount(){return 0;}
+    public int getVParalyzingCount(){return 0;}
+    public int getVProtectionCount(){return 0;}
+    public int getVAmnesiaCount(){return 0;}
+    public int getVDanceCount(){return 0;}
+    public String getCurrentEffect(){return "TODO";}
 }
