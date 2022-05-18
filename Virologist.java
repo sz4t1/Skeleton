@@ -213,6 +213,16 @@ public class Virologist {
         this.virusSize = virusSize;
     }
 
+    public String[] GetVirusList(){
+        String[] virusNames = new String[viruses.size()];
+        int i = 0;
+        for(Virus v : viruses){
+            virusNames[i] = v.getName();
+            i++;
+        }
+        return virusNames;
+    }
+
     public CapacityAbility getCapacityAbility() {
         System.out.println("getCapacityAbility()");
         return capacityAbility;
