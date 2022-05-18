@@ -378,6 +378,24 @@ public class CommandProcessor {
                 game.getVirologist(command[1]).AddGeneticCode(Integer.parseInt(command[2]));
                 return true;
             }
+            //Listing the playing objects' names
+            case "list": {
+                switch(command[1]){
+                    //virologist
+                    case "virologists":{
+                        for(String key : game.getVirologists()){
+                            System.out.println("| " + key);
+                        }
+                        break;
+                    }
+                }
+                return true;
+            }
+            //Cleares the game
+            case "cleargame": {
+                game.clear();
+                return true;
+            }
              //Breaking the while loop with the return false
 	    	case "exit": {
                 return false;
