@@ -1,5 +1,6 @@
 //package src;
 
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -28,6 +29,12 @@ public class Game {
         numberOfLaboratories = 0;
         System.out.println("Game() - Game constructed.");
     }
+
+    //TODO
+    public int GetRound(){
+        return 0;
+    }
+
     //Starts the game
     public void StartGame(){
         System.out.println("StartGame() - The game is started.");
@@ -100,8 +107,18 @@ public class Game {
     public Field getField(String key){
         return fields.get(key);
     }
+
+    public ArrayList<Field> getFields(){
+        ArrayList<Field> fs = new ArrayList<Field>();
+        for(String key : fields.keySet()){
+            fs.add(fields.get(key));
+        }
+        return fs;
+    }
+
     //Returns with the names of the fields
-    public Set<String> getFields(){
+    public Set<String> getFieldNames(){
+        
         return fields.keySet();
     }
 
@@ -110,8 +127,17 @@ public class Game {
     {
         return virologists.get(key);
     }
+
+    public ArrayList<Virologist> getVirologists(){
+        ArrayList<Virologist> fs = new ArrayList<Virologist>();
+        for(String key : virologists.keySet()){
+            fs.add(virologists.get(key));
+        }
+        return fs;
+    }
+
     //returns with the names of the virologists
-    public Set<String> getVirologists(){
+    public Set<String> getVirologistNames(){
         return virologists.keySet();
     }
     public Material getMaterial(String key){

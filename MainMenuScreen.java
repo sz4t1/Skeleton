@@ -83,6 +83,7 @@ public class MainMenuScreen extends JFrame {
             String choice = e.getActionCommand();
             if(choice.equals("Play")) {
                 game.NewGame((int)playerNumbersComboBox.getSelectedItem());
+                GameScreen gs = new GameScreen(game);
             }
             else if(choice.equals("Help")) {
 

@@ -383,14 +383,14 @@ public class CommandProcessor {
                 switch(command[1]){
                     //virologist
                     case "virologists":{
-                        for(String key : game.getVirologists()){
+                        for(String key : game.getVirologistNames()){
                             System.out.println("| " + key);
                         }
                         break;
                     }
                     //Fields
                     case "fields":{
-                        for(String key : game.getFields()){
+                        for(String key : game.getFieldNames()){
                             System.out.println("| " + key);
                         }
                         break;

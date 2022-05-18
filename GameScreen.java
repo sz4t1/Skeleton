@@ -23,12 +23,15 @@ public class GameScreen extends JFrame {
     private ArrayList<Field> fields;
     private Game game;
 
-    public GameScreen(ArrayList<Field> f, ArrayList<Virologist> v){
+    public GameScreen(Game game){
         super("Game Board");
 
+        this.game = game;
         currentPlayerIndex = 0;
-        virologists = v;
-        fields = f;
+        virologists = game.getVirologists();
+        System.out.println("virologusok pipa");
+        fields = game.getFields();
+        System.out.println("fieldek pipa");
 
         setLayout(new BorderLayout());
 
@@ -38,11 +41,10 @@ public class GameScreen extends JFrame {
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new GridLayout(1,2));
 
-        //TODO
-        //roundNumberLabel = new JLabel("Round: " + game.GetRound());
+        roundNumberLabel = new JLabel("Round: " + game.GetRound());
 
         roundNumberLabel.setHorizontalAlignment(JLabel.LEFT);
-        currentPlayerNameLabel = new JLabel(v.get(0).GetName());
+        currentPlayerNameLabel = new JLabel(virologists.get(1).GetName());
         currentPlayerNameLabel.setHorizontalAlignment(JLabel.RIGHT);
         currentPlayerNameLabel.setBackground(Color.lightGray);
         currentPlayerNameLabel.setOpaque(true);
@@ -122,8 +124,8 @@ public class GameScreen extends JFrame {
          * Feltölti a játékos label-ket.
          */
         JLabel pTextLabel = new JLabel("Players");
-        for (int i = 0; i < v.size(); i++) {
-            playersPanel.add(new JLabel(v.get(i).GetName()));
+        for (int i = 0; i < virologists.size(); i++) {
+            playersPanel.add(new JLabel(virologists.get(i).GetName()));
         }
 //        JLabel p1Label = new JLabel(virologists.get(0).getName()); //paraméterből kapják
 //        JLabel p2Label = new JLabel("p2");
@@ -168,8 +170,8 @@ public class GameScreen extends JFrame {
         JPanel mPanel = new JPanel();
         mPanel.setLayout(new BoxLayout(mPanel, BoxLayout.Y_AXIS));
         JLabel mLabel = new JLabel("Materials");
-        mTextArea = new JTextArea("-amino acid X " + v.get(0).GetAminoAcidCount()+
-                                "\n-nukleodite X " +v.get(0).GetNukleoditeCount());
+        mTextArea = new JTextArea("-amino acid X " + virologists.get(0).GetAminoAcidCount()+
+                                "\n-nukleodite X " +virologists.get(0).GetNukleoditeCount());
         mPanel.add(mLabel);
         mPanel.add(mTextArea);
         bottonPanel.add(mPanel);
@@ -179,10 +181,10 @@ public class GameScreen extends JFrame {
         JPanel ePanel = new JPanel();
         ePanel.setLayout(new BoxLayout(ePanel, BoxLayout.Y_AXIS));
         JLabel eLabel = new JLabel("Equipments");
-        eTextArea = new JTextArea("-Axe X " + v.get(0).getAxeCount()+
-                                    "\n-Cape X " + v.get(0).getCapeCount()+
-                                    "\n-Sack X " + v.get(0).getSackCount()+
-                                    "\n-Glove X " + v.get(0).getGloveCount());
+        eTextArea = new JTextArea("-Axe X " + virologists.get(0).getAxeCount()+
+                                    "\n-Cape X " + virologists.get(0).getCapeCount()+
+                                    "\n-Sack X " + virologists.get(0).getSackCount()+
+                                    "\n-Glove X " + virologists.get(0).getGloveCount());
         ePanel.add(eLabel);
         ePanel.add(eTextArea);
         bottonPanel.add(ePanel);
@@ -192,10 +194,10 @@ public class GameScreen extends JFrame {
         JPanel vPanel = new JPanel();
         vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.Y_AXIS));
         JLabel vLabel = new JLabel("Viruses");
-        vTextArea = new JTextArea("-Dance X " + v.get(0).getVDanceCount()+
-                                "\n-Paralyzing X " + v.get(0).getVParalyzingCount()+
-                                "\n-Protection X " + v.get(0).getVProtectionCount()+
-                                "\n-Amnesia X " + v.get(0).getVAmnesiaCount()); // string kell
+        vTextArea = new JTextArea("-Dance X " + virologists.get(0).getVDanceCount()+
+                                "\n-Paralyzing X " + virologists.get(0).getVParalyzingCount()+
+                                "\n-Protection X " + virologists.get(0).getVProtectionCount()+
+                                "\n-Amnesia X " + virologists.get(0).getVAmnesiaCount()); // string kell
         vPanel.add(vLabel);
         vPanel.add(vTextArea);
         bottonPanel.add(vPanel);
@@ -205,7 +207,7 @@ public class GameScreen extends JFrame {
         JPanel gPanel = new JPanel();
         gPanel.setLayout(new BoxLayout(gPanel, BoxLayout.Y_AXIS));
         JLabel gLabel = new JLabel("Genetic code");
-        gTextArea = new JTextArea(Integer.toString(v.get(0).getGenCodesAmmount())); // nagyban kell
+        gTextArea = new JTextArea(Integer.toString(virologists.get(0).getGenCodesAmmount())); // nagyban kell
         gPanel.add(gLabel);
         gPanel.add(gTextArea);
         bottonPanel.add(gPanel);
@@ -215,7 +217,7 @@ public class GameScreen extends JFrame {
         JPanel effPanel = new JPanel();
         effPanel.setLayout(new BoxLayout(effPanel, BoxLayout.Y_AXIS));
         JLabel effLabel = new JLabel("Effects");
-        effTextArea = new JTextArea(v.get(0).getCurrentEffect()); // string kell
+        effTextArea = new JTextArea(virologists.get(0).getCurrentEffect()); // string kell
         effPanel.add(effLabel);
         effPanel.add(effTextArea);
         bottonPanel.add(effPanel);

@@ -15,7 +15,7 @@ public class ScreenController {
 
 	public void create()
 	{
-		gameScreen = new GameScreen(null, null);	//A PARAMéTEREK CSAK AZéRT, HOGY NE SRJON A FORDíTó
+		gameScreen = new GameScreen( null);	//A PARAMéTEREK CSAK AZéRT, HOGY NE SRJON A FORDíTó
 		mainMenuScreen = new MainMenuScreen(null);	//------||--------
 		mainMenuScreen.setVisible(true);
 	}

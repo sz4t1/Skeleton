@@ -10,7 +10,7 @@ public class Main {
         Integer input=0;
         Scanner sc = new Scanner(System.in);
 
-        MainMenuScreen mms = new MainMenuScreen(game);
+       MainMenuScreen mms = new MainMenuScreen(game);
 
         while(input!=-1){
             Menu.menuElements();
