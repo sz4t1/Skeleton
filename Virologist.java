@@ -295,4 +295,24 @@ public class Virologist {
         return genCodes.size();
     }
 
+    public int GetAminoAcidCount(){
+        int am = 0;
+        for (Material m : getMaterials()) {
+            if(m.getName().equals("aminoacid")){
+                am++;
+            }
+        }
+        return am;
+    }
+
+    public int GetNukleoditeCount(){
+        int nuk = 0;
+        for (Material m : getMaterials()) {
+            if(m.getName().equals("nukleotide")){
+                nuk++;
+            }
+        }
+        return nuk;
+    }
+
 }

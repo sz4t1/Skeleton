@@ -27,7 +27,7 @@ public class DropFrame extends JFrame{
         JPanel row1Panel = new JPanel();
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
-        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(v.GetAminoAcidCount() ));
+        comboBoxAminoAcid = new JComboBox(comboBoxNumbers(Integer.toString(v.GetAminoAcidCount()) ));
         JCheckBox aminoCheck = new JCheckBox();
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
@@ -38,7 +38,7 @@ public class DropFrame extends JFrame{
         JPanel row2Panel = new JPanel();
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
-        comboBoxNukleodite = new JComboBox(comboBoxNumbers(v.GetNukleoditeCount()));
+        comboBoxNukleodite = new JComboBox(comboBoxNumbers(Integer.toString(v.GetNukleoditeCount())));
         JCheckBox nukleoditeCheck = new JCheckBox();
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
