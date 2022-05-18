@@ -1,5 +1,3 @@
-package graphic;
-
 import java.awt.Dimension;
 
 public class ScreenController {

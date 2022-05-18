@@ -1,5 +1,3 @@
-package graphic;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +9,7 @@ public class AttackFrame extends JFrame {
     private JComboBox comboBoxAttack;
     private JComboBox comboBoxUsedItem;
 
-    public AttackFrame(ArrayList<Virologist> virologists, Virrologist v){
+    public AttackFrame(ArrayList<Virologist> virologists, Virologist v){
         super("Attack");
 
         setLayout(new GridLayout(0,1));
