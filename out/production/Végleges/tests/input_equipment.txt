@@ -1,0 +1,5 @@
+equip vir1 c1
+equip vir2 c2
+unequip vir1 c1
+stealequipment vir1 vir2 c2
+stealequipment vir1 vir2 c2

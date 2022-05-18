@@ -1,0 +1,6 @@
+create virologist vir1
+create virologist vir2
+create dancevirus dance
+create protectionvirus prot
+addvirus vir1 dance
+addvirus vir2 prot

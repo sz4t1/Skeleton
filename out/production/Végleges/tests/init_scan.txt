@@ -1,0 +1,5 @@
+create laboratory lab1
+create laboratory lab2
+connectfields lab1 lab2
+create virologist vir
+setfield vir lab1

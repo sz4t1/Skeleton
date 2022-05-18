@@ -1,0 +1,12 @@
+create virologist vir1
+create virologist vir2
+create virologist vir3
+create laboratory l1
+create laboratory l2
+create laboratory l3
+addgeneticcode vir2 1
+addgeneticcode vir1 1
+addgeneticcode vir1 2
+addgeneticcode vir3 1
+addgeneticcode vir3 2
+addgeneticcode vir3 3

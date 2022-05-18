@@ -1,0 +1,4 @@
+usevirusonself vir1 amn
+usevirusonself vir1 dance
+usevirusonself vir2 stun
+usevirusonself vir2 prot

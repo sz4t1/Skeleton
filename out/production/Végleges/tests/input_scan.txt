@@ -1,0 +1,5 @@
+scancode vir
+setfield vir lab2
+scancode vir
+setfield vir lab1
+scancode vir

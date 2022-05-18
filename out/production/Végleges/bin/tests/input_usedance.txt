@@ -1,0 +1,3 @@
+attack vir1 vir2 dance
+usevirusonself vir2 prot
+attack vir1 vir2 dance

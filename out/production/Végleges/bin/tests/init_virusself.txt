@@ -1,0 +1,10 @@
+create virologist vir1
+create dancevirus dance
+create amnesiavirus amn
+addvirus vir1 dance
+addvirus vir1 amn
+create virologist vir2
+create protectionvirus prot
+create stunvirus stun
+addvirus vir2 prot
+addvirus vir2 stun
