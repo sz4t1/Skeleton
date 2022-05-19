@@ -217,8 +217,9 @@ public class Game {
     //Moves the active virologist to the new destination
     //If the move is successful, the stepCounter decrements
     //If the stepCounter reaches 0, the activeVirologist will change
-    public void MoveCommand(Field field){
+    public void MoveCommand(String fName){
         boolean validCommand = false;
+        Field field = fields.get(fName);
         validCommand = virologists.get(getActiveVirologistName()).Move(field);
         if(validCommand){
             stepCount -= 1;
