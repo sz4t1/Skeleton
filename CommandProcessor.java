@@ -280,7 +280,7 @@ public class CommandProcessor {
                     System.out.println(line + " <=== Not existing virologists or virus.");
                     return true;
                 }
-                game.AttackCommand(viroT, v, null);
+                game.AttackCommand(viroT.GetName(), v.getName(), false);
                 return true;
             }
             //Use virus

@@ -1,7 +1,4 @@
-//package src;
-
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -202,18 +199,25 @@ public class Game {
     //The active virologist attacks another one with vorus or axe
     //If the attack was successful, the stepCounter decrements
     //If the stepCounter reaches 0, the activeVirologist will change
-    public void AttackCommand(Virologist virologist, Virus virus, Axe axe){
+    public void AttackCommand(String virologist, String virus, boolean axe){
         boolean validCommand = false;
         //attack with virus
-        if(virus != null && axe == null){
-            validCommand = virologists.get(getActiveVirologistName()).Attack(virus, virologist);
+        Virus v = null;
+        for(Virus vir : virologists.get(getActiveVirologistName()).getViruses()){
+            if(vir.getName().equals(virus)){
+                v = vir;
+            }
+        }
+
+        if(virus != null && !axe){
+            validCommand = virologists.get(getActiveVirologistName()).Attack(v, virologists.get(virologist));
             if(validCommand){
                 stepCount -= 1;
             }
         }
-        else if(virus == null && axe != null){
+        else if(virus == null && axe){
             //attack with axe
-            validCommand = virologists.get(getActiveVirologistName()).AttackWithAxe(virologist);
+            validCommand = virologists.get(getActiveVirologistName()).AttackWithAxe(virologists.get(virologist));
             if(validCommand){
                 stepCount -= 1;
             }
@@ -360,7 +364,10 @@ public class Game {
             String fieldName = "Field" + fieldNum;
             virologists.get(name).setField(fields.get(fieldName));
         }
-        
+        //counting the laboratories
+        for(String key : fields.keySet()){
+            numberOfLaboratories += fields.get(key).LabCount();
+        }
         
 
     }

@@ -389,42 +389,30 @@ public class GameScreen extends JFrame {
     }
 
     public void UseVirusCall(String virus){
-        //game hívás
+        game.UseVirusCommand(virus);
     }
 
     public void AttackCall(String attackViro, String virus, boolean axe){
-        if (axe){
-            //fejsze támadás
-        }
-        else {
-            //virus támadás
-        }
+        game.AttackCommand(attackViro, virus, axe);
     }
 
     public  void DropCall(int amino, int nukle, int axe, int sack, int glove, int cape){
-        //todo
+        game.DropCommand(amino, nukle, axe, cape, glove, sack);
     }
 
     public  void StealCall(String viroName ,int amino, int nukle, int axe, int sack, int glove, int cape){
-        //todo
+        game.StealCommand(amino, nukle, axe, cape, glove, sack);
     }
 
     public void CraftCall(String virus){
-        //todo
+       game.CraftCommand(virus);
     }
 
     public void PickUpCall(int amino, int nukle, int axe, int sack, int glove, int cape){
-        //todo
+        game.PickUpCommand(amino, nukle, axe, cape, glove, sack);
     }
 
     public void  MoveCall(String fieldname){
-        //todo
-
         game.MoveCommand(fieldname);
-        
     }
-
-
-
-
 }

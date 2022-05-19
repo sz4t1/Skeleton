@@ -135,6 +135,7 @@ public class Virologist {
     //Attacks another virologist with the chosen virus
     public boolean Attack(Virus v, Virologist vir){
         System.out.println("Attack(Virus v, Virologist vir) - Virologist attacks a virologist.");
+        if(v == null) return false;
         if(!field.containsVirologist(vir)){
             System.out.println("The attacked virologist is too far away");
             return false;
