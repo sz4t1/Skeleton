@@ -302,7 +302,7 @@ public class GameScreen extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
-           
+
             //EZ NEM TOM MIT, HOGYAN CSINaL
             //FUTTATáS éRDEKéBEN EGYENLőRE KIKOMMENTEZVE
 
@@ -311,10 +311,10 @@ public class GameScreen extends JFrame {
                     UseVirusFrame virus = new UseVirusFrame(virologists.get(currentPlayerIndex),  GetGameScreen());
                     break;
                 case "Attack":
-                    AttackFrame attack = new AttackFrame(virologists, virologists.get(currentPlayerIndex), GetGameScreen());
+                    AttackFrame attack = new AttackFrame(virologists.get(currentPlayerIndex).getField().getVirologists() , virologists.get(currentPlayerIndex), GetGameScreen());
                     break;
                 case "Move":
-                    MoveFrame move = new MoveFrame(); //itt vissza kapjuk merre akart mozogni
+                    MoveFrame move = new MoveFrame(virologists.get(currentPlayerIndex).getField().getNeighbours()); //itt vissza kapjuk merre akart mozogni
                     break;
                 case "Craft":
                     CraftFrame craft = new CraftFrame(GetGameScreen()); //

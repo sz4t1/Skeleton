@@ -88,6 +88,4 @@ public class AttackFrame extends JFrame {
         }
     }
 
-
-
 }
