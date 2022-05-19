@@ -221,6 +221,7 @@ public class Game {
         if(stepCount <= 0){
             NextVirologist();
         }
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     //Moves the active virologist to the new destination
@@ -269,6 +270,7 @@ public class Game {
         if(stepCount <= 0){
             NextVirologist();
         }
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     //Scans the field
@@ -287,15 +289,18 @@ public class Game {
         if(stepCount <= 0){
             NextVirologist();
         }
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     public void PickUpCommand(int am, int nuk, int axe, int cape, int glove, int sack){
 
         //TODO
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     public void DropCommand(int am, int nuk, int axe, int cape, int glove, int sack){
         //TODO
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     public void UseVirusCommand(String virus){
@@ -312,10 +317,12 @@ public class Game {
         if(stepCount <= 0){
             NextVirologist();
         }
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     public void StealCommand(int am, int nuk, int axe, int cape, int glove, int sack){
         //TODO
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     //EZ NEM HISZEM, HOGY KELL!!!!!

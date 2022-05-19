@@ -323,7 +323,7 @@ public class GameScreen extends JFrame {
                     CraftFrame craft = new CraftFrame(GetGameScreen()); //
                     break;
                 case "Scan":
-                    //meghívja a gamen belül az current virora a megfelelő függvényt
+                    game.ScanCommand();
                     break;
                 case "Pickup":
                     PickUpFrame pickup = new PickUpFrame(virologists.get(game.getActiveVirologistIndex()).getField(), GetGameScreen()); //Ide kéne még a fieldben lévő elemek
