@@ -170,8 +170,10 @@ public class GameScreen extends JFrame {
         JPanel mPanel = new JPanel();
         mPanel.setLayout(new BoxLayout(mPanel, BoxLayout.Y_AXIS));
         JLabel mLabel = new JLabel("Materials");
-        mTextArea = new JTextArea("-amino acid X " + virologists.get(0).GetAminoAcidCount()+
-                                "\n-nukleodite X " +virologists.get(0).GetNukleoditeCount());
+        mTextArea = new JTextArea();
+        mTextArea.setEditable(false);
+//        mTextArea = new JTextArea("-amino acid X " + virologists.get(0).GetAminoAcidCount()+
+//                                "\n-nukleodite X " +virologists.get(0).GetNukleoditeCount());
         mPanel.add(mLabel);
         mPanel.add(mTextArea);
         bottonPanel.add(mPanel);
@@ -181,10 +183,12 @@ public class GameScreen extends JFrame {
         JPanel ePanel = new JPanel();
         ePanel.setLayout(new BoxLayout(ePanel, BoxLayout.Y_AXIS));
         JLabel eLabel = new JLabel("Equipments");
-        eTextArea = new JTextArea("-Axe X " + virologists.get(0).getAxeCount()+
-                                    "\n-Cape X " + virologists.get(0).getCapeCount()+
-                                    "\n-Sack X " + virologists.get(0).getSackCount()+
-                                    "\n-Glove X " + virologists.get(0).getGloveCount());
+        eTextArea = new JTextArea();
+        eTextArea.setEditable(false);
+//        eTextArea = new JTextArea("-Axe X " + virologists.get(0).getAxeCount()+
+//                                    "\n-Cape X " + virologists.get(0).getCapeCount()+
+//                                    "\n-Sack X " + virologists.get(0).getSackCount()+
+//                                    "\n-Glove X " + virologists.get(0).getGloveCount());
         ePanel.add(eLabel);
         ePanel.add(eTextArea);
         bottonPanel.add(ePanel);
@@ -194,10 +198,12 @@ public class GameScreen extends JFrame {
         JPanel vPanel = new JPanel();
         vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.Y_AXIS));
         JLabel vLabel = new JLabel("Viruses");
-        vTextArea = new JTextArea("-Dance X " + virologists.get(0).getVDanceCount()+
-                                "\n-Paralyzing X " + virologists.get(0).getVParalyzingCount()+
-                                "\n-Protection X " + virologists.get(0).getVProtectionCount()+
-                                "\n-Amnesia X " + virologists.get(0).getVAmnesiaCount()); // string kell
+        vTextArea = new JTextArea();
+        vTextArea.setEditable(false);
+//        vTextArea = new JTextArea("-Dance X " + virologists.get(0).getVDanceCount()+
+//                                "\n-Paralyzing X " + virologists.get(0).getVParalyzingCount()+
+//                                "\n-Protection X " + virologists.get(0).getVProtectionCount()+
+//                                "\n-Amnesia X " + virologists.get(0).getVAmnesiaCount()); // string kell
         vPanel.add(vLabel);
         vPanel.add(vTextArea);
         bottonPanel.add(vPanel);
@@ -207,7 +213,9 @@ public class GameScreen extends JFrame {
         JPanel gPanel = new JPanel();
         gPanel.setLayout(new BoxLayout(gPanel, BoxLayout.Y_AXIS));
         JLabel gLabel = new JLabel("Genetic code");
-        gTextArea = new JTextArea(Integer.toString(virologists.get(0).getGenCodesAmmount())); // nagyban kell
+        gTextArea = new JTextArea();
+        gTextArea.setEditable(false);
+//        gTextArea = new JTextArea(Integer.toString(virologists.get(0).getGenCodesAmmount())); // nagyban kell
         gPanel.add(gLabel);
         gPanel.add(gTextArea);
         bottonPanel.add(gPanel);
@@ -217,7 +225,9 @@ public class GameScreen extends JFrame {
         JPanel effPanel = new JPanel();
         effPanel.setLayout(new BoxLayout(effPanel, BoxLayout.Y_AXIS));
         JLabel effLabel = new JLabel("Effects");
-        effTextArea = new JTextArea(virologists.get(0).getCurrentEffect()); // string kell
+        effTextArea = new JTextArea();
+        effTextArea.setEditable(false);
+//        effTextArea = new JTextArea(virologists.get(0).getCurrentEffect()); // string kell
         effPanel.add(effLabel);
         effPanel.add(effTextArea);
         bottonPanel.add(effPanel);
@@ -232,6 +242,8 @@ public class GameScreen extends JFrame {
         add(rightPanel, BorderLayout.LINE_END);
         add(bottonPanel, BorderLayout.PAGE_END);
 
+        UpdateScreenData(virologists.get(0));
+
         setSize(800, 400);
         setResizable(false);
         setVisible(true);
@@ -245,46 +257,105 @@ public class GameScreen extends JFrame {
            
             //EZ NEM TOM MIT, HOGYAN CSINaL
             //FUTTATáS éRDEKéBEN EGYENLőRE KIKOMMENTEZVE
-           /*
+
             switch (choice) {
                 case "Use Virus":
-                    UseVirusFrame virus = new UseVirusFrame(virologists.get(currentPlayerIndex));
+                    UseVirusFrame virus = new UseVirusFrame(virologists.get(currentPlayerIndex),  GetGameScreen());
                     break;
                 case "Attack":
-                    AttackFrame attack = new AttackFrame(virologists, virologists.get(currentPlayerIndex));
+                    AttackFrame attack = new AttackFrame(virologists, virologists.get(currentPlayerIndex), GetGameScreen());
                     break;
                 case "Move":
                     MoveFrame move = new MoveFrame(); //itt vissza kapjuk merre akart mozogni
                     break;
                 case "Craft":
-                    CraftFrame craft = new CraftFrame(valami.getVirusList); //
+                    CraftFrame craft = new CraftFrame(GetGameScreen()); //
                     break;
                 case "Scan":
-                    if (fields.get(standingField).getGeneticCode() != null){
-                        virologists.get(currentPlayerIndex).AddGeneticCode;
-                    }
+                    //meghívja a gamen belül az current virora a megfelelő függvényt
                     break;
                 case "Pickup":
-                    PickUpFrame pickup = new PickUpFrame(fields.get(standingField));
-                    break;
+                    PickUpFrame pickup = new PickUpFrame(virologists.get(currentPlayerIndex).getField(), GetGameScreen()); //Ide kéne még a fieldben lévő elemek
+                      break;
                 case "Drop":
-                    DropFrame drop = new DropFrame(virologists.get(currentPlayerIndex));
+                    DropFrame drop = new DropFrame(virologists.get(currentPlayerIndex), GetGameScreen());
                     break;
                 case "Steal":
-                    StealFrame steal = new StealFrame(virologists);
+                    StealFrame steal = new StealFrame(virologists, GetGameScreen());
                     break;
                 default:
                     //do nothing
                     break;
             }
-            */
+
 
         }
     }
 
-    public void Update(){
+    public void UpdateScreenData(Virologist v){
+        //materials
+        mTextArea.setText("-amino acid X " + v.GetAminoAcidCount()+
+                                "\n-nukleodite X " + v.GetNukleoditeCount());
+        //equipments
+        eTextArea.setText("-Axe X " + v.getAxeCount()+
+                "\n-Cape X " + v.getCapeCount()+
+                "\n-Sack X " + v.getSackCount()+
+                "\n-Glove X " + v.getGloveCount());
+        //viruses
+        vTextArea.setText("-Dance X " + v.getVDanceCount()+
+                "\n-Paralyzing X " + v.getVParalyzingCount()+
+                "\n-Protection X " + v.getVProtectionCount()+
+                "\n-Amnesia X " + v.getVAmnesiaCount());
+        //Genetic Code
+        gTextArea.setText(Integer.toString(v.getGenCodesAmmount()));
+        //effects
+        effTextArea.setText(v.getCurrentEffect());
+    }
+
+    public String[] GetVirologistNames(){
+        int size = virologists.size()-1;
+        String[] names = new String[size];
+        for (int i = 0; i < size; i++) {
+            if (!(virologists.get(currentPlayerIndex).GetName().equals(virologists.get(i).GetName()))){
+                names[i] = virologists.get(i).GetName();
+            }
+        }
+        return names;
+    }
+
+    private GameScreen GetGameScreen(){
+        return this;
+    }
+
+    public void UseVirusCall(String virus){
+        //game hívás
+    }
+
+    public void AttackCall(String attackViro, String virus, boolean axe){
+        if (axe){
+            //fejsze támadás
+        }
+        else {
+            //virus támadás
+        }
+    }
+
+    public  void DropCall(int amino, int nukle, int axe, int sack, int glove, int cape){
         //todo
     }
+
+    public  void StealCall(String viroName ,int amino, int nukle, int axe, int sack, int glove, int cape){
+        //todo
+    }
+
+    public void CraftCall(String virus){
+        //todo
+    }
+
+    public void PickUpCall(int amino, int nukle, int axe, int sack, int glove, int cape){
+        //todo
+    }
+
 
 
 

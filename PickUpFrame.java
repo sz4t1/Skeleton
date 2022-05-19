@@ -10,8 +10,14 @@ public class PickUpFrame extends JFrame{
     private JComboBox comboBoxAminoAcid;
     private JComboBox comboBoxNukleodite;
 
-    public PickUpFrame(Field f){
+    private GameScreen parent;
+    private Field field;
+
+    public PickUpFrame(Field f, GameScreen g){
         super("Pickup");
+
+        parent = g;
+        field = f;
 
         JPanel box = new JPanel();
         JPanel buttonPanel = new JPanel();
@@ -29,10 +35,10 @@ public class PickUpFrame extends JFrame{
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
         comboBoxAminoAcid = new JComboBox(comboBoxNumbers(f.GetAminoAcidCount()));
-        JCheckBox aminoCheck = new JCheckBox();
+
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
-        row1Panel.add(aminoCheck);
+
 
         /////////////////////////////////////////////////////////////////
 
@@ -40,10 +46,10 @@ public class PickUpFrame extends JFrame{
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
         comboBoxNukleodite = new JComboBox(comboBoxNumbers(f.GetNukleoditeCount()));
-        JCheckBox nukleoditeCheck = new JCheckBox();
+
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
-        row2Panel.add(nukleoditeCheck);
+
 
 
         /////////////////////////////////////////////////////////////////
@@ -113,8 +119,15 @@ public class PickUpFrame extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
-
+            if(choice.equals("Ok")) {
+//                parent.PickUpCall( Integer.parseInt((String)comboBoxAminoAcid.getSelectedItem()),
+//                        Integer.parseInt((String)comboBoxNukleodite.getSelectedItem()),
+//                        Integer.parseInt((String)comboBoxAxe.getSelectedItem()),
+//                        Integer.parseInt((String)comboBoxSack.getSelectedItem()),
+//                        Integer.parseInt((String)comboBoxGlove.getSelectedItem()),
+//                        Integer.parseInt((String)comboBoxCape.getSelectedItem())
+//                );
+                dispose();
             }
             else if(choice.equals("Cancel")) {
                 dispose();

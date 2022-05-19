@@ -16,9 +16,13 @@ public class StealFrame extends JFrame {
 
     private ArrayList<Virologist> viro;
 
-    public StealFrame(ArrayList<Virologist> v){
+    private GameScreen parent;
+
+    public StealFrame(ArrayList<Virologist> v, GameScreen g){
         super("Steal");
         this.viro = v;
+
+        parent = g;
 
         setLayout(new BorderLayout());
 
@@ -28,7 +32,7 @@ public class StealFrame extends JFrame {
         downer.setLayout(new FlowLayout());
 
         JLabel stealLabel = new JLabel("Steal from: ");
-        comboBoxSteal = new JComboBox(comboBoxNames(this.viro));
+        comboBoxSteal = new JComboBox(comboBoxNames(viro));  //nem lesz jó, csak azok kéne
         comboBoxSteal.addActionListener(new ComboBoxListener());
         upper.add(stealLabel);
         upper.add(comboBoxSteal);
@@ -50,10 +54,10 @@ public class StealFrame extends JFrame {
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
         comboBoxAminoAcid = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).GetAminoAcidCount())));  //viros.get(0).getAminoacidNumber()
-        JCheckBox aminoCheck = new JCheckBox();
+
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
-        row1Panel.add(aminoCheck);
+
 
         /////////////////////////////////////////////////////////////////
 
@@ -61,45 +65,50 @@ public class StealFrame extends JFrame {
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
         comboBoxNukleodite = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).GetNukleoditeCount()))); //todo
-        JCheckBox nukleoditeCheck = new JCheckBox();
+
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
-        row2Panel.add(nukleoditeCheck);
+
 
 
         /////////////////////////////////////////////////////////////////
         JPanel row3Panel = new JPanel();
         row3Panel.setLayout(new FlowLayout(0));
         JLabel axeLabel = new JLabel("-axe ");
-        JCheckBox axeCheck = new JCheckBox();
+        comboBoxAxe = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getAxeCount())));
+
         row3Panel.add(axeLabel);
-        row3Panel.add(axeCheck);
+        row3Panel.add(comboBoxAxe);
+
 
 
         /////////////////////////////////////////////////////////////////
         JPanel row4Panel = new JPanel();
         row4Panel.setLayout(new FlowLayout(0));
         JLabel sackLabel = new JLabel("-sack ");
-        JCheckBox sackCheck = new JCheckBox();
+        comboBoxSack = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getSackCount())));
         row4Panel.add(sackLabel);
-        row4Panel.add(sackCheck);
+        row4Panel.add(comboBoxSack);
 
 
         /////////////////////////////////////////////////////////////////
         JPanel row5Panel = new JPanel();
         row5Panel.setLayout(new FlowLayout(0));
         JLabel gloveLabel = new JLabel("-glove ");
-        JCheckBox gloveCheck = new JCheckBox();
+        comboBoxGlove = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getGloveCount())));
+
         row5Panel.add(gloveLabel);
-        row5Panel.add(gloveCheck);
+        row5Panel.add(comboBoxGlove);
 
         /////////////////////////////////////////////////////////////////
         JPanel row6Panel = new JPanel();
         row6Panel.setLayout(new FlowLayout(0));
         JLabel capeLabel = new JLabel("-cape ");
-        JCheckBox capeCheck = new JCheckBox();
+        comboBoxCape = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getCapeCount())));
+
         row6Panel.add(capeLabel);
-        row6Panel.add(capeCheck);
+        row6Panel.add(comboBoxCape);
+
 
 
         ///////////////////////////////////////////////////////////////////////
@@ -138,7 +147,15 @@ public class StealFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
             if(choice.equals("Apply")) {
-
+                parent.StealCall((String)comboBoxSteal.getSelectedItem(),
+                        Integer.parseInt((String)comboBoxAminoAcid.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxNukleodite.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxAxe.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxSack.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxGlove.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxCape.getSelectedItem())
+                        );
+                dispose();
             }
             else if(choice.equals("Cancel")) {
                 dispose();
@@ -171,9 +188,26 @@ public class StealFrame extends JFrame {
         }
         return nameStrings;
     }
+    
+    private void setComboBoxFill(JComboBox c, int max){
+        for (int i = 0; i <= max; i++) {
+            c.addItem(i);
+        }
+    }
 
     private void ChangeInventory(Virologist v) {
-        //todo
-
+        comboBoxAminoAcid.removeAllItems();;
+        setComboBoxFill(comboBoxAminoAcid, v.GetAminoAcidCount());
+        comboBoxNukleodite.removeAllItems();;
+        setComboBoxFill(comboBoxNukleodite, v.GetNukleoditeCount());
+        comboBoxAxe.removeAllItems();;
+        setComboBoxFill(comboBoxAxe, v.getAxeCount());
+        comboBoxSack.removeAllItems();;
+        setComboBoxFill(comboBoxSack, v.getSackCount());
+        comboBoxGlove.removeAllItems();;
+        setComboBoxFill(comboBoxGlove, v.getGloveCount());
+        comboBoxCape.removeAllItems();;
+        setComboBoxFill(comboBoxCape, v.getCapeCount());
+        
     }
 }

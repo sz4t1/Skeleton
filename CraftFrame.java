@@ -10,8 +10,14 @@ public class CraftFrame extends  JFrame{
     private JTextArea textvirusMaterial;
     private JComboBox comboBoxViruses;
 
-    public CraftFrame(String[] virusList) {
+    private GameScreen parent;
+
+    private String[] viruses = {"Amnesia", "Protection", "Paralyzing", "Dance"};
+
+    public CraftFrame(GameScreen g) {
         super("Craft Virus");
+
+        parent = g;
 
         setLayout(new GridLayout(0,1));
 
@@ -23,7 +29,7 @@ public class CraftFrame extends  JFrame{
         JLabel craftingLabel = new JLabel("Crafting: ");
         JLabel materialLabel = new JLabel("Needed materials: ");
 
-        comboBoxViruses = new JComboBox(virusList);
+        comboBoxViruses = new JComboBox(viruses);
         comboBoxViruses.addActionListener(new ComboBoxListener());
         textvirusMaterial = new JTextArea();
 
@@ -54,8 +60,9 @@ public class CraftFrame extends  JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
-
+            if(choice.equals("Ok")) {
+                parent.CraftCall((String)comboBoxViruses.getSelectedItem());
+                dispose();
             }
             else if(choice.equals("Cancel")) {
                 dispose();

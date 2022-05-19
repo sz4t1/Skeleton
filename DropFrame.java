@@ -7,10 +7,17 @@ public class DropFrame extends JFrame{
 
     private JComboBox comboBoxAminoAcid;
     private JComboBox comboBoxNukleodite;
-    private JComboBox comboBoxVirus;
+    private JComboBox comboBoxAxe;
+    private JComboBox comboBoxSack;
+    private JComboBox comboBoxGlove;
+    private JComboBox comboBoxCape;
 
-    public DropFrame(Virologist v){
+    private GameScreen parent;
+
+    public DropFrame(Virologist v, GameScreen g){
         super("Drop");
+
+        parent = g;
 
         JPanel box = new JPanel();
         JPanel buttonPanel = new JPanel();
@@ -28,10 +35,10 @@ public class DropFrame extends JFrame{
         row1Panel.setLayout(new FlowLayout(0));
         JLabel aminoLabel = new JLabel("-amino acid");
         comboBoxAminoAcid = new JComboBox(comboBoxNumbers(Integer.toString(v.GetAminoAcidCount()) ));
-        JCheckBox aminoCheck = new JCheckBox();
+
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
-        row1Panel.add(aminoCheck);
+
 
         /////////////////////////////////////////////////////////////////
 
@@ -39,10 +46,10 @@ public class DropFrame extends JFrame{
         row2Panel.setLayout(new FlowLayout(0));
         JLabel nukleoditeLabel = new JLabel("-nukleodite");
         comboBoxNukleodite = new JComboBox(comboBoxNumbers(Integer.toString(v.GetNukleoditeCount())));
-        JCheckBox nukleoditeCheck = new JCheckBox();
+
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
-        row2Panel.add(nukleoditeCheck);
+
 
         /////////////////////////////////////////////////////////////////
 
@@ -54,35 +61,43 @@ public class DropFrame extends JFrame{
         JPanel row3Panel = new JPanel();
         row3Panel.setLayout(new FlowLayout(0));
         JLabel axeLabel = new JLabel("-axe ");
-        JCheckBox axeCheck = new JCheckBox();
+        comboBoxAxe = new JComboBox(comboBoxNumbers(Integer.toString(v.getAxeCount())));
+
         row3Panel.add(axeLabel);
-        row3Panel.add(axeCheck);
+        row3Panel.add(comboBoxAxe);
+
 
 
         /////////////////////////////////////////////////////////////////
         JPanel row4Panel = new JPanel();
         row4Panel.setLayout(new FlowLayout(0));
         JLabel sackLabel = new JLabel("-sack ");
-        JCheckBox sackCheck = new JCheckBox();
+        comboBoxSack = new JComboBox(comboBoxNumbers(Integer.toString(v.getSackCount())));
+
         row4Panel.add(sackLabel);
-        row4Panel.add(sackCheck);
+        row4Panel.add(comboBoxSack);
+
 
 
         /////////////////////////////////////////////////////////////////
         JPanel row5Panel = new JPanel();
         row5Panel.setLayout(new FlowLayout(0));
         JLabel gloveLabel = new JLabel("-glove ");
-        JCheckBox gloveCheck = new JCheckBox();
+        comboBoxGlove = new JComboBox(comboBoxNumbers(Integer.toString(v.getGloveCount())));
+
         row5Panel.add(gloveLabel);
-        row5Panel.add(gloveCheck);
+        row5Panel.add(comboBoxGlove);
+
 
         /////////////////////////////////////////////////////////////////
         JPanel row6Panel = new JPanel();
         row6Panel.setLayout(new FlowLayout(0));
         JLabel capeLabel = new JLabel("-cape ");
-        JCheckBox capeCheck = new JCheckBox();
+        comboBoxCape = new JComboBox(comboBoxNumbers(Integer.toString(v.getCapeCount())));
+
         row6Panel.add(capeLabel);
-        row6Panel.add(capeCheck);
+        row6Panel.add(comboBoxCape);
+
 
 
         /////////////////////////////////////////////////////////////////
@@ -117,8 +132,15 @@ public class DropFrame extends JFrame{
         @Override
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
-                //return kidobott tárgyak száma;
+            if(choice.equals("Ok")) {
+                parent.DropCall( Integer.parseInt((String)comboBoxAminoAcid.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxNukleodite.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxAxe.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxSack.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxGlove.getSelectedItem()),
+                                Integer.parseInt((String)comboBoxCape.getSelectedItem())
+                );
+                dispose();
             }
             else if(choice.equals("Cancel")) {
                 dispose();
