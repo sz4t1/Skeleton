@@ -91,9 +91,16 @@ public class Virologist {
         System.out.println("RemoveEquipment(Equipment e) - Equipment is removed from the virologist's inventory.");
     }
     //Virologist move to another field that was given as a parameter
-    public void Move(Field f){
+    public boolean Move(Field f){
         System.out.println("Move(Field f) - The virologist attempts to move to another field.");
-        getMovementAbility().invokeEffect(this, f);
+        if(!getField().IsNeighbour(f)){
+            System.out.println("The two fields aren't neighbors, the virologist couldn't step there.");
+            return false;
+        }
+         else{
+            getMovementAbility().invokeEffect(this, f);
+            return true;
+        }
     }
     //Add a new genetic code to the known ones
     public void AddGeneticCode(Integer gen){

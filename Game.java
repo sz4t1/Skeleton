@@ -36,7 +36,8 @@ public class Game {
         numberOfLaboratories = 0;
         System.out.println("Game() - Game constructed.");
     }
-
+    
+    //TODO
     //Changes the activeVirologist to the next one
     public void NextVirologist(){
         stepCount = 2;
@@ -44,8 +45,11 @@ public class Game {
         if(activeVirologistIndex >= virologists.size()){
             activeVirologistIndex = 0;
         }
+
+        //Check for movement restrictions!!!!
     }
 
+    //TODO - ezen változtatni kell!!!!!!
     //Starts the game
     public void StartGame(){
         System.out.println("StartGame() - The game is started.");
@@ -55,7 +59,7 @@ public class Game {
         }
 
         for(String key : virologists.keySet()){
-            StepVirologist(virologists.get(key));
+            //StepVirologist(virologists.get(key));
             if(CheckGeneticCodes(virologists.get(key))){
                 System.out.println(key + " knows all the codes.");
                 EndGame();
@@ -186,6 +190,9 @@ public class Game {
 
     //COMMANDS OF STEPS///////////////
 
+    //The active virologist attacks another one with vorus or axe
+    //If the attack was successful, the stepCounter decrements
+    //If the stepCounter reaches 0, the activeVirologist will change
     public void AttackCommand(Virologist virologist, Virus virus, Axe axe){
         boolean validCommand = false;
         //attack with virus
@@ -207,11 +214,27 @@ public class Game {
         }
     }
 
+    //Moves the active virologist to the new destination
+    //If the move is successful, the stepCounter decrements
+    //If the stepCounter reaches 0, the activeVirologist will change
+    public void MoveCommand(Field field){
+        boolean validCommand = false;
+        validCommand = virologists.get(getActiveVirologistName()).Move(field);
+        if(validCommand){
+            stepCount -= 1;
+        }
+        if(stepCount <= 0){
+            NextVirologist();
+        }
+    }
 
+    //EZ NEM HISZEM, HOGY KELL!!!!!
+    /*
     //virologist steps
     private void StepVirologist(Virologist v){
         System.out.println(v + " stepped.");
     }
+    */
 
     //Clears the game object: all Virologists, fields, ... should be removed from this object after a game ends
     public void clear(){
