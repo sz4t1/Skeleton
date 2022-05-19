@@ -361,6 +361,16 @@ public class GameScreen extends JFrame {
         gTextArea.setText(Integer.toString(v.getGenCodesAmmount()));
         //effects
         effTextArea.setText(v.getCurrentEffect());
+        //Table
+        for(int i=0;i<25;i++) {
+            drawFields.get(i).repaint();
+            drawFields.get(i).validate();
+        }
+        //Round label
+        roundNumberLabel.setText("Round: " + game.GetRound());
+        //Active Virologist
+        currentPlayerNameLabel.setText(game.getActiveVirologistName());
+
     }
 
     public String[] GetVirologistNames(){
@@ -411,10 +421,7 @@ public class GameScreen extends JFrame {
         //todo
 
         game.MoveCommand(fieldname);
-        for(int i=0;i<25;i++) {
-            drawFields.get(i).repaint();
-            drawFields.get(i).validate();
-        }
+        
     }
 
 
