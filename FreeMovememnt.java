@@ -14,4 +14,9 @@ public class FreeMovememnt extends MovementAbility {
         v.setField(f);
         return;
     }
+
+    @Override
+    public boolean cheatMove() {
+        return true;
+    }
 }
