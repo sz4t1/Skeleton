@@ -1,10 +1,18 @@
 import java.util.ArrayList;
+import java.util.Random;
 //Warehouse is a field on the map that contains materials
 //It extends the Field class
 public class Warehouse extends Field{
     //Constructor
     public Warehouse(){
         materials=new ArrayList<>();
+        //generating the materials
+        for(int i = 0; i < (new Random().nextInt(3) + 2); i++){
+            materials.add(new AminoAcid());
+        }
+        for(int i = 0; i < (new Random().nextInt(3) + 2); i++){
+            materials.add(new Nukleotide());
+        }
         System.out.println("Warehouse() - Warehouse constructed: " + this);
     }
     //The materials it contains

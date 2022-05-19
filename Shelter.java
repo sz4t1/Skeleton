@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 //Shelter is a field on the map that contains an equipment
 //It extends the Field class
@@ -8,6 +9,26 @@ public class Shelter extends Field{
         System.out.println("Shelter() - Shelter constructed: " + this);
         this.setName("Shelter");
         equipments = new ArrayList<>();
+        //Generating the random equipment
+        int eq = new Random().nextInt(4);
+        switch(eq){
+            case 0:{
+                equipments.add(new Cape());
+                break;
+            }
+            case 1:{
+                equipments.add(new Sack());
+                break;
+            }
+            case 2:{
+                equipments.add(new Glove());
+                break;
+            }
+            case 3:{
+                equipments.add(new Axe());
+                break;
+            }
+        }
     }
     //The equipment it have
     private ArrayList<Equipment> equipments;

@@ -50,7 +50,7 @@ public class MainMenuScreen extends JFrame {
         titleLabel.setFont(new Font("ARIAL", Font.BOLD, 30));
         JLabel playerNumberLabel = new JLabel("Number of players:");
 
-        Integer[] numbers = {1, 2, 3, 4, 5};
+        Integer[] numbers = {2, 3, 4, 5};
         playerNumbersComboBox = new JComboBox(numbers);
 
         JButton playButton = new JButton("Play");
