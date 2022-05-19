@@ -26,7 +26,10 @@ public class GameScreen extends JFrame {
     public GameScreen(Game game){
         super("Game Board");
 
+        //Connect the game with gamescreen
         this.game = game;
+        game.setGameScreen(this);
+
         currentPlayerIndex = 0;
         virologists = game.getVirologists();
         System.out.println("virologusok pipa");

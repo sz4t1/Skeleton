@@ -25,6 +25,8 @@ public class Game {
     private int activeVirologistIndex = 0;
     private int stepCount = 2;
 
+    private GameScreen gameScreen;
+
     //Constructor
     public Game(){
         virologists= new TreeMap<>();
@@ -45,6 +47,8 @@ public class Game {
         if(activeVirologistIndex >= virologists.size()){
             activeVirologistIndex = 0;
         }
+
+        
 
         //Check for movement restrictions!!!!
     }
@@ -186,6 +190,10 @@ public class Game {
     }
     public Recipe getRecipe(String key){
         return recipes.get(key);
+    }
+
+    public void setGameScreen(GameScreen gs){
+        gameScreen = gs;
     }
 
     //COMMANDS OF STEPS///////////////
