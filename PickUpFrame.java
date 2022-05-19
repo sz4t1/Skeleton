@@ -9,6 +9,10 @@ public class PickUpFrame extends JFrame{
 
     private JComboBox comboBoxAminoAcid;
     private JComboBox comboBoxNukleodite;
+    private JComboBox comboBoxAxe;
+    private JComboBox comboBoxSack;
+    private JComboBox comboBoxGlove;
+    private JComboBox comboBoxCape;
 
     private GameScreen parent;
     private Field field;
@@ -56,35 +60,41 @@ public class PickUpFrame extends JFrame{
         JPanel row3Panel = new JPanel();
         row3Panel.setLayout(new FlowLayout(0));
         JLabel axeLabel = new JLabel("-axe ");
-        JCheckBox axeCheck = new JCheckBox();
+        comboBoxAxe = new JComboBox(comboBoxNumbers(field.GetAxeCount()));
+
         row3Panel.add(axeLabel);
-        row3Panel.add(axeCheck);
+        row3Panel.add(comboBoxAxe);
+
 
 
         /////////////////////////////////////////////////////////////////
         JPanel row4Panel = new JPanel();
         row4Panel.setLayout(new FlowLayout(0));
         JLabel sackLabel = new JLabel("-sack ");
-        JCheckBox sackCheck = new JCheckBox();
+        comboBoxSack = new JComboBox(comboBoxNumbers((field.GetSackCount())));
+
         row4Panel.add(sackLabel);
-        row4Panel.add(sackCheck);
+        row4Panel.add(comboBoxSack);
 
 
         /////////////////////////////////////////////////////////////////
         JPanel row5Panel = new JPanel();
         row5Panel.setLayout(new FlowLayout(0));
         JLabel gloveLabel = new JLabel("-glove ");
-        JCheckBox gloveCheck = new JCheckBox();
+        comboBoxGlove = new JComboBox(comboBoxNumbers((field.GetGloveCount())));
+
         row5Panel.add(gloveLabel);
-        row5Panel.add(gloveCheck);
+        row5Panel.add(comboBoxGlove);
 
         /////////////////////////////////////////////////////////////////
         JPanel row6Panel = new JPanel();
         row6Panel.setLayout(new FlowLayout(0));
         JLabel capeLabel = new JLabel("-cape ");
-        JCheckBox capeCheck = new JCheckBox();
+        comboBoxCape = new JComboBox(comboBoxNumbers((field.GetCapeCount())));
+
         row6Panel.add(capeLabel);
-        row6Panel.add(capeCheck);
+        row6Panel.add(comboBoxCape);
+
 
 
         /////////////////////////////////////////////////////////////////

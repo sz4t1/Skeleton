@@ -14,6 +14,13 @@ public class AttackFrame extends JFrame {
 
     private GameScreen parent;
 
+    /**
+     *
+     * @param virologists
+     * @param v
+     * @param g
+     * Kont
+     */
     public AttackFrame(ArrayList<Virologist> virologists, Virologist v, GameScreen g){
         super("Attack");
 
