@@ -228,6 +228,38 @@ public class Game {
         }
     }
 
+    //The active virologist crafts a virus
+    //If the craft is successful, the stepCounter decrements
+    //If the stepCounter reaches 0, the activeVirologist will change
+    public void CraftCommand(String virus){
+        boolean validCommand = false;
+        switch (virus){
+            case "Amnesia":{
+                validCommand = virologists.get(getActiveVirologistName()).CraftVirus(new AmnesiaRecipe());
+                break;
+            }
+            case "Protection":{
+                validCommand = virologists.get(getActiveVirologistName()).CraftVirus(new ProtectionRecipe());
+                break;
+            }
+            case "Paralyzing":{
+                validCommand = virologists.get(getActiveVirologistName()).CraftVirus(new ParalyzingRecipe());
+                break;
+            }
+            case "Dance":
+                validCommand = virologists.get(getActiveVirologistName()).CraftVirus(new DanceRecipe());
+                break;
+            default:{
+            }   
+        }
+        if(validCommand){
+            stepCount -= 1;
+        }
+        if(stepCount <= 0){
+            NextVirologist();
+        }
+    }
+
     //EZ NEM HISZEM, HOGY KELL!!!!!
     /*
     //virologist steps

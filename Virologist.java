@@ -118,14 +118,15 @@ public class Virologist {
         genCodes.clear();
     }
     //Creates a new virus
-    public void CraftVirus( Recipe recipe ){
+    public boolean CraftVirus( Recipe recipe ){
         System.out.println("CraftVirus(Virus v) - Virologist wants to craft a virus.");
         Virus nv = recipe.CreateVirus(this);
         if(nv != null) {
             this.AddVirus(nv);
-            return;
+            return true;
         }
         System.out.println("CraftVirus(Virus v) - Not enough resources.");
+        return false;
     }
     //Attacks another virologist with the chosen virus
     public boolean Attack(Virus v, Virologist vir){
