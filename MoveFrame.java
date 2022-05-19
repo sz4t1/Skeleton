@@ -110,19 +110,21 @@ public class MoveFrame extends JFrame{
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
             if(choice.equals("Ok")) {
-                if (c1Button.isSelected()){
-                    parent.MoveCall(c1Button.getText());
+                try {
+                    if (c1Button.isSelected()) {
+                        parent.MoveCall(c1Button.getText());
+                    } else if (c2Button.isSelected()) {
+                        parent.MoveCall(c2Button.getText());
+                    } else if (c3Button.isSelected()) {
+                        parent.MoveCall(c3Button.getText());
+                    } else if (c4Button.isSelected()) {
+                        parent.MoveCall(c4Button.getText());
+                    }
+                    dispose();
                 }
-                else if (c2Button.isSelected()){
-                    parent.MoveCall(c2Button.getText());
+                catch(NullPointerException exception){
+                    dispose();
                 }
-                else if (c3Button.isSelected()){
-                    parent.MoveCall(c3Button.getText());
-                }
-                else if (c4Button.isSelected()){
-                    parent.MoveCall(c4Button.getText());
-                }
-                dispose();
             }
             else if(choice.equals("Cancel")) {
                 dispose();
