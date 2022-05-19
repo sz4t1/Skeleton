@@ -180,13 +180,14 @@ public class Game {
         for(int i = 1; i <= virNumber; i++){
             String name = "Virologist" + i;
             AddVirologist(name, new Virologist(name));
-            
+
+            //Placeing the Virologists
             int fieldNum = r.nextInt(14) + 1;
             String fieldName = "Field" + fieldNum;
             virologists.get(name).setField(fields.get(fieldName));
         }
-        //Placeing the Virologists
-        //TODO
+        
+        
 
     }
 
