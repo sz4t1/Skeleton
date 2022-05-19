@@ -298,7 +298,62 @@ public class Game {
 
     public void PickUpCommand(int am, int nuk, int axe, int cape, int glove, int sack){
 
-        //TODO
+        boolean validCommand = false;
+        if (am > 0 || nuk > 0) {
+            ArrayList<Material> mats;
+            mats = virologists.get(getActiveVirologistName()).getField().getMaterials();
+            for (int i = 0; i < am; i++) {
+                if (mats.get(i).getName().equals("aminoacid")) {
+                    virologists.get(getActiveVirologistName()).addMaterial(mats.get(i));
+                    virologists.get(getActiveVirologistName()).getField().Remove(null, mats.get(i), null);
+                }
+
+            }
+            for (int i = 0; i < nuk; i++) {
+                if (mats.get(i).getName().equals("nukleotide")) {
+                    virologists.get(getActiveVirologistName()).addMaterial(mats.get(i));
+                    virologists.get(getActiveVirologistName()).getField().Remove(null, mats.get(i), null);
+
+                }
+            }
+            validCommand = true;
+        } else if (axe > 0 || cape > 0 || glove > 0 || sack > 0) {
+            ArrayList<Equipment> equips;
+            equips = virologists.get(getActiveVirologistName()).getField().getEquipment();
+            for (int i = 0; i < axe; i++) {
+                if (equips.get(i).getName().equals("axe")) {
+                    virologists.get(getActiveVirologistName()).AddEquipment(equips.get(i));
+                    virologists.get(getActiveVirologistName()).getField().Remove(equips.get(i), null, null);
+                }
+            }
+            for (int i = 0; i < cape; i++) {
+                if (equips.get(i).getName().equals("cape")) {
+                    virologists.get(getActiveVirologistName()).AddEquipment(equips.get(i));
+                    virologists.get(getActiveVirologistName()).getField().Remove(equips.get(i), null, null);
+
+                }
+            }
+            for (int i = 0; i < glove; i++) {
+                if (equips.get(i).getName().equals("glove")) {
+                    virologists.get(getActiveVirologistName()).AddEquipment(equips.get(i));
+                    virologists.get(getActiveVirologistName()).getField().Remove(equips.get(i), null, null);
+
+                }
+            }
+            for (int i = 0; i < sack; i++) {
+                if (equips.get(i).getName().equals("sack")) {
+                    virologists.get(getActiveVirologistName()).AddEquipment(equips.get(i));
+                    virologists.get(getActiveVirologistName()).getField().Remove(equips.get(i), null, null);
+                }
+            }
+            validCommand = true;
+        }
+        if(validCommand){
+            stepCount -= 1;
+        }
+        if(stepCount <= 0){
+            NextVirologist();
+        }
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
