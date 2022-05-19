@@ -21,7 +21,7 @@ public class Game {
 
     private int numberOfLaboratories;
 
-    private int Round = 0;
+    private int Round = 1;
     private int activeVirologistIndex = 0;
     private int stepCount = 2;
 
