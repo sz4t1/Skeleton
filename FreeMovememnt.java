@@ -10,7 +10,6 @@ public class FreeMovememnt extends MovementAbility {
     public void invokeEffect(Virologist v, Field f) {
         System.out.println("invokeEffect(Virologist v, Field f) - The virologist can freely move.");
         v.getField().RemoveVirologist(v);
-        f.AddVirologist(v);
         v.setField(f);
         return;
     }

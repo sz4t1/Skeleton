@@ -22,7 +22,7 @@ public class GameScreen extends JFrame {
     private ArrayList<Virologist> virologists;
     private ArrayList<Field> fields;
     private Game game;
-
+    ArrayList<DrawField> drawFields= new ArrayList<>();
     public GameScreen(Game game){
         super("Game Board");
 
@@ -60,7 +60,7 @@ public class GameScreen extends JFrame {
         //map panel
         /////////////////////////////////////////////////////////////
 
-        ArrayList<DrawField> drawFields= new ArrayList<>();
+
         JPanel mapPanel = new JPanel();
         GridLayout gameGrid= new GridLayout(5,5);
         gameGrid.setVgap(5);
@@ -409,7 +409,12 @@ public class GameScreen extends JFrame {
 
     public void  MoveCall(String fieldname){
         //todo
-        System.out.println(fieldname);
+
+        game.MoveCommand(fieldname);
+        for(int i=0;i<25;i++) {
+            drawFields.get(i).repaint();
+            drawFields.get(i).validate();
+        }
     }
 
 
