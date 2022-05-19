@@ -303,7 +303,67 @@ public class Game {
     }
 
     public void DropCommand(int am, int nuk, int axe, int cape, int glove, int sack){
-        //TODO
+        boolean validCommand = false;
+        if(am != 0){
+            int i = am;
+            for (Material m : virologists.get(getActiveVirologistName()).getMaterials()) {
+                if(m.getName().equals("aminoacid") && i > 0){
+                    i--;
+                    validCommand = virologists.get(getActiveVirologistName()).RemoveMaterial(m);
+                }
+            }
+        }
+        if(nuk != 0){
+            int i = nuk;
+            for (Material m : virologists.get(getActiveVirologistName()).getMaterials()) {
+                if(m.getName().equals("nukleotide") && i > 0){
+                    i--;
+                    validCommand = virologists.get(getActiveVirologistName()).RemoveMaterial(m);
+                }
+            }
+        }
+        if(axe != 0){
+            int i = axe;
+            for (Equipment m : virologists.get(getActiveVirologistName()).getEquipments()) {
+                if(m.getName().equals("axe") && i > 0){
+                    i--;
+                    validCommand = virologists.get(getActiveVirologistName()).RemoveEquipment(m);
+                }
+            }
+        }
+        if(cape != 0){
+            int i = cape;
+            for (Equipment m : virologists.get(getActiveVirologistName()).getEquipments()) {
+                if(m.getName().equals("cape") && i > 0){
+                    i--;
+                    validCommand = virologists.get(getActiveVirologistName()).RemoveEquipment(m);
+                }
+            }
+        }
+        if(glove != 0){
+            int i = glove;
+            for (Equipment m : virologists.get(getActiveVirologistName()).getEquipments()) {
+                if(m.getName().equals("glove") && i > 0){
+                    i--;
+                    validCommand = virologists.get(getActiveVirologistName()).RemoveEquipment(m);
+                }
+            }
+        }
+        if(sack != 0){
+            int i = sack;
+            for (Equipment m : virologists.get(getActiveVirologistName()).getEquipments()) {
+                if(m.getName().equals("sack") && i > 0){
+                    i--;
+                    validCommand = virologists.get(getActiveVirologistName()).RemoveEquipment(m);
+                }
+            }
+        }
+        if(validCommand){
+            stepCount -= 1;
+        }
+        if(stepCount <= 0){
+            NextVirologist();
+        }
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
