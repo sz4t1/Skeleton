@@ -100,7 +100,7 @@ public class MoveFrame extends JFrame{
         add(downerPanel, BorderLayout.PAGE_END);
 
         setSize(300, 300);
-        setResizable(true);
+        setResizable(false);
         setVisible(true);
 
     }
