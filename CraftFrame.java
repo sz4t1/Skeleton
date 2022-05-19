@@ -50,6 +50,7 @@ public class CraftFrame extends  JFrame{
         add(upper);
         add(downer);
 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(375, 125);
         setResizable(false);
         setVisible(true);

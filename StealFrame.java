@@ -137,6 +137,7 @@ public class StealFrame extends JFrame {
         add(playerinvenotyPanel, BorderLayout.CENTER);
         add(downer, BorderLayout.PAGE_END);
 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(250, 450);
         setResizable(true);
         setVisible(true);

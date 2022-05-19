@@ -120,6 +120,7 @@ public class PickUpFrame extends JFrame{
 
         add(box);
 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(250, 400);
         setResizable(false);
         setVisible(true);

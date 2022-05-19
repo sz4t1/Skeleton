@@ -295,6 +295,7 @@ public class GameScreen extends JFrame {
 
         UpdateScreenData(virologists.get(0));
 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(800, 700);
         setResizable(false);
         setVisible(true);

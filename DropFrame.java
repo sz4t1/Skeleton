@@ -123,6 +123,7 @@ public class DropFrame extends JFrame{
 
         add(box);
 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(250, 425);
         setResizable(false);
         setVisible(true);
