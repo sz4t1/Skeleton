@@ -47,7 +47,7 @@ public class GameScreen extends JFrame {
         roundNumberLabel = new JLabel("Round: " + game.GetRound());
 
         roundNumberLabel.setHorizontalAlignment(JLabel.LEFT);
-        currentPlayerNameLabel = new JLabel(virologists.get(1).GetName());
+        currentPlayerNameLabel = new JLabel(virologists.get(0).GetName());
         currentPlayerNameLabel.setHorizontalAlignment(JLabel.RIGHT);
         currentPlayerNameLabel.setBackground(Color.lightGray);
         currentPlayerNameLabel.setOpaque(true);
