@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 //This class represents the game itself, it contains the players and the map
@@ -175,9 +176,14 @@ public class Game {
         //Building the Map
         BuildMap();
         //Adding virologists
+        Random r = new Random();
         for(int i = 1; i <= virNumber; i++){
             String name = "Virologist" + i;
             AddVirologist(name, new Virologist(name));
+            
+            int fieldNum = r.nextInt(14) + 1;
+            String fieldName = "Field" + fieldNum;
+            virologists.get(name).setField(fields.get(fieldName));
         }
         //Placeing the Virologists
         //TODO

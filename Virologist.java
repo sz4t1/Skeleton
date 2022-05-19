@@ -282,9 +282,14 @@ public class Virologist {
         return field;
     }
 
+    //places the virologist on one field, that already exists in the fields
     public void setField(Field field) {
         System.out.println("setField(Field field) - The virologist now stands on a field.");
+        //if already standing somewhere
+        this.field.RemoveVirologist(this);
+
         this.field = field;
+        field.AddVirologist(this);
     }
 
     public void removeEquipment(Equipment e){
