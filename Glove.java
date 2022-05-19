@@ -3,6 +3,7 @@
 public class Glove extends Equipment {
     public Glove(){
         System.out.println("Glove() - Glove constructed: " + this);
+        name = "glove";
     }
     //Override the equip method so the virologist equips the Glove
     @Override

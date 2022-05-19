@@ -5,6 +5,7 @@ public class Axe extends Equipment{
 
     public Axe() {
         System.out.println("Axe() - Axe constructed: " + this);
+        name = "axe";
     }
 
     @Override
@@ -22,5 +23,4 @@ public class Axe extends Equipment{
         CanNotExecute np = new CanNotExecute();
         vir.setExecuteAbility(np);
     }
-    
 }

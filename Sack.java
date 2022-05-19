@@ -3,6 +3,7 @@
 public class Sack extends Equipment {
     public Sack(){
         System.out.println("Sack() - Sack constructed: " + this);
+        name = "sack";
     }
     //Virologist equips the sack
     @Override
