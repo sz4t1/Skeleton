@@ -14,8 +14,12 @@ public class MoveFrame extends JFrame{
 
     private ButtonGroup moveButtons;
 
-    public MoveFrame(ArrayList<Field> neighbours) {
+    private GameScreen parent;
+
+    public MoveFrame(ArrayList<Field> neighbours, GameScreen g) {
         super("Move");
+
+        parent = g;
 
         setLayout(new BorderLayout());
 
@@ -91,6 +95,9 @@ public class MoveFrame extends JFrame{
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
             if(choice.equals("Ok")) {
+                if (c1Button.isSelected()){
+                    parent.MoveCall(c1Button.getText());
+                }
 
             }
             else if(choice.equals("Cancel")) {

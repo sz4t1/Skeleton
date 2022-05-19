@@ -317,7 +317,7 @@ public class GameScreen extends JFrame {
                     AttackFrame attack = new AttackFrame(virologists.get(currentPlayerIndex).getField().getVirologists() , virologists.get(currentPlayerIndex), GetGameScreen());
                     break;
                 case "Move":
-                    MoveFrame move = new MoveFrame(virologists.get(currentPlayerIndex).getField().getNeighbours()); //itt vissza kapjuk merre akart mozogni
+                    MoveFrame move = new MoveFrame(virologists.get(currentPlayerIndex).getField().getNeighbours(), GetGameScreen()); //itt vissza kapjuk merre akart mozogni
                     break;
                 case "Craft":
                     CraftFrame craft = new CraftFrame(GetGameScreen()); //
@@ -404,6 +404,10 @@ public class GameScreen extends JFrame {
     }
 
     public void PickUpCall(int amino, int nukle, int axe, int sack, int glove, int cape){
+        //todo
+    }
+
+    public void  MoveCall(String fieldname){
         //todo
     }
 
