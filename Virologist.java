@@ -363,13 +363,86 @@ public class Virologist {
     }
 
     ///////EZEKET BIZTOS ÍGY???????
-    public int getAxeCount(){return 0;}
-    public int getCapeCount(){return 0;}
-    public int getSackCount(){return 0;}
-    public int getGloveCount(){return 0;}
-    public int getVParalyzingCount(){return 0;}
-    public int getVProtectionCount(){return 0;}
-    public int getVAmnesiaCount(){return 0;}
-    public int getVDanceCount(){return 0;}
-    public String getCurrentEffect(){return "TODO";}
+    public int getAxeCount(){
+        int pa = 0;
+        for(Equipment v : equipment){
+            if(v.getName().equals("axe")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public int getCapeCount(){
+        int pa = 0;
+        for(Equipment v : equipment){
+            if(v.getName().equals("cape")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public int getSackCount(){
+        int pa = 0;
+        for(Equipment v : equipment){
+            if(v.getName().equals("sack")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public int getGloveCount(){
+        int pa = 0;
+        for(Equipment v : equipment){
+            if(v.getName().equals("glove")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public int getVParalyzingCount(){
+        int pa = 0;
+        for(Virus v : viruses){
+            if(v.getName().equals("paralyzing")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public int getVProtectionCount(){
+        int pa = 0;
+        for(Virus v : viruses){
+            if(v.getName().equals("protection")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public int getVAmnesiaCount(){
+        int pa = 0;
+        for(Virus v : viruses){
+            if(v.getName().equals("amnesia")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public int getVDanceCount(){
+        int pa = 0;
+        for(Virus v : viruses){
+            if(v.getName().equals("dance")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+    public String getCurrentEffect(){
+        String VOn;
+        if(virusOn == null){
+            VOn = "nothing";
+        }
+        else{
+            VOn = virusOn.getName();
+        }
+        return "Virus effecting the Virologist: " + VOn;
+    }
 }

@@ -4,6 +4,7 @@ public class Cape extends Equipment {
     //Constructor
     public Cape(){
         System.out.println("Cape() - Cape constructed: " + this);
+        name = "cape";
     }
     //The method Equip is being override here, so we can give the player the CapeProtection Ability
     @Override
