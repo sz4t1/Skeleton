@@ -1,9 +1,8 @@
 import java.awt.*;
 
 public class DrawLaboratory extends DrawField {
-
-    public DrawLaboratory(int _x){
-        super(_x);
+    public DrawLaboratory(){
+        super();
         setOpaque(true);
         setBackground(Color.red);
     }

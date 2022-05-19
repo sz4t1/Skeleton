@@ -3,12 +3,13 @@ import java.awt.*;
 
 public class DrawField extends JLabel {
     private Field field;
-    private int x;
-
-    public DrawField(int _x){
-        x=_x;
+    public DrawField(){
+        field= null;
         setOpaque(true);
         setBackground(Color.lightGray);
+    }
+    public void setFieldOnce(Field f){
+        if (field==null) field=f;
     }
     public void paintComponent(Graphics g){
         Color[] colors= new Color[4];
