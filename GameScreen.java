@@ -311,13 +311,13 @@ public class GameScreen extends JFrame {
 
             switch (choice) {
                 case "Use Virus":
-                    UseVirusFrame virus = new UseVirusFrame(virologists.get(currentPlayerIndex),  GetGameScreen());
+                    UseVirusFrame virus = new UseVirusFrame(virologists.get(game.getActiveVirologistIndex()),  GetGameScreen());
                     break;
                 case "Attack":
-                    AttackFrame attack = new AttackFrame(virologists.get(currentPlayerIndex).getField().getVirologists() , virologists.get(currentPlayerIndex), GetGameScreen());
+                    AttackFrame attack = new AttackFrame(virologists.get(game.getActiveVirologistIndex()).getField().getVirologists() , virologists.get(game.getActiveVirologistIndex()), GetGameScreen());
                     break;
                 case "Move":
-                    MoveFrame move = new MoveFrame(virologists.get(currentPlayerIndex).getField().getNeighbours(), GetGameScreen()); //itt vissza kapjuk merre akart mozogni
+                    MoveFrame move = new MoveFrame(virologists.get(game.getActiveVirologistIndex()).getField().getNeighbours(), GetGameScreen()); //itt vissza kapjuk merre akart mozogni
                     break;
                 case "Craft":
                     CraftFrame craft = new CraftFrame(GetGameScreen()); //
@@ -326,10 +326,10 @@ public class GameScreen extends JFrame {
                     //meghívja a gamen belül az current virora a megfelelő függvényt
                     break;
                 case "Pickup":
-                    PickUpFrame pickup = new PickUpFrame(virologists.get(currentPlayerIndex).getField(), GetGameScreen()); //Ide kéne még a fieldben lévő elemek
+                    PickUpFrame pickup = new PickUpFrame(virologists.get(game.getActiveVirologistIndex()).getField(), GetGameScreen()); //Ide kéne még a fieldben lévő elemek
                       break;
                 case "Drop":
-                    DropFrame drop = new DropFrame(virologists.get(currentPlayerIndex), GetGameScreen());
+                    DropFrame drop = new DropFrame(virologists.get(game.getActiveVirologistIndex()), GetGameScreen());
                     break;
                 case "Steal":
                     StealFrame steal = new StealFrame(virologists, GetGameScreen());
@@ -377,7 +377,7 @@ public class GameScreen extends JFrame {
         int size = virologists.size()-1;
         String[] names = new String[size];
         for (int i = 0; i < size; i++) {
-            if (!(virologists.get(currentPlayerIndex).GetName().equals(virologists.get(i).GetName()))){
+            if (!(virologists.get(game.getActiveVirologistIndex()).GetName().equals(virologists.get(i).GetName()))){
                 names[i] = virologists.get(i).GetName();
             }
         }

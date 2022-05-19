@@ -236,6 +236,7 @@ public class Game {
         if(stepCount <= 0){
             NextVirologist();
         }
+        gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
     //The active virologist crafts a virus
