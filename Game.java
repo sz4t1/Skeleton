@@ -303,6 +303,10 @@ public class Game {
         }
     }
 
+    public void StealCommand(int am, int nuk, int axe, int cape, int glove, int sack){
+        //TODO
+    }
+
     //EZ NEM HISZEM, HOGY KELL!!!!!
     /*
     //virologist steps
