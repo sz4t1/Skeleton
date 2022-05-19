@@ -75,11 +75,12 @@ public class Virologist {
 
     }
     //Remove material from the virologists inventory
-    public void RemoveMaterial(Material m){
+    public boolean RemoveMaterial(Material m){
         System.out.println("RemoveMaterial(Material m) - Matrial is removed from the virologist's inventory.");
         m.beingUsed();
         materials.remove(m);
         materialSize--;
+        return true;
     }
     //Remove virus from the virologists inventory
     public void RemoveVirus(Virus v){
@@ -88,10 +89,11 @@ public class Virologist {
         virusSize--;
     }
     //Remove equipment from the virologists inventory
-    public void RemoveEquipment(Equipment e){
+    public boolean RemoveEquipment(Equipment e){
         e.UnEquip(this);
         this.removeEquipment(e);
         System.out.println("RemoveEquipment(Equipment e) - Equipment is removed from the virologist's inventory.");
+        return true;
     }
     //Virologist move to another field that was given as a parameter
     public boolean Move(Field f){
@@ -198,7 +200,10 @@ public class Virologist {
         executeAbility.invokeEffekt(vir);
         return true;
     }
-    //Getters and setters
+
+    //Getters and setters///////////////////////////
+
+
     public Virus getVirusOn() {
         return virusOn;
     }
@@ -211,6 +216,10 @@ public class Virologist {
     public Integer getEquipmentSize() {
         System.out.println("getEquipmentSize()");
         return equipmentSize;
+    }
+
+    public ArrayList<Equipment> getEquipments(){
+        return equipment;
     }
 
     public void setEquipmentSize(Integer equipmentSize) {
