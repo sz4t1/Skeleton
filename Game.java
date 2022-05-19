@@ -25,6 +25,8 @@ public class Game {
     private int activeVirologistIndex = 0;
     private int stepCount = 2;
 
+    private GameScreen gameScreen;
+
     //Constructor
     public Game(){
         virologists= new TreeMap<>();
@@ -45,6 +47,8 @@ public class Game {
         if(activeVirologistIndex >= virologists.size()){
             activeVirologistIndex = 0;
         }
+
+        
 
         //Check for movement restrictions!!!!
     }
@@ -188,6 +192,10 @@ public class Game {
         return recipes.get(key);
     }
 
+    public void setGameScreen(GameScreen gs){
+        gameScreen = gs;
+    }
+
     //COMMANDS OF STEPS///////////////
 
     //The active virologist attacks another one with vorus or axe
@@ -217,8 +225,9 @@ public class Game {
     //Moves the active virologist to the new destination
     //If the move is successful, the stepCounter decrements
     //If the stepCounter reaches 0, the activeVirologist will change
-    public void MoveCommand(Field field){
+    public void MoveCommand(String fName){
         boolean validCommand = false;
+        Field field = fields.get(fName);
         validCommand = virologists.get(getActiveVirologistName()).Move(field);
         if(validCommand){
             stepCount -= 1;
@@ -349,14 +358,22 @@ public class Game {
 
     private void BuildMap(){
 
-        for(int i=1;i<=14;i++)
+        for(int i=1;i<=14;i++){
             fields.put("Field"+i,new Field());
-        for(int i=1;i<=4;i++)
-            fields.put("Warehouse"+i,new Warehouse());
-        for(int i=1;i<=2;i++)
-            fields.put("Shelter"+i,new Shelter());
-        for(int i=1;i<=5;i++)
-            fields.put("Laboratory"+i,new Laboratory());
+            fields.get("Field"+i).setName("Field"+i);
+        }
+        for(int i=1;i<=4;i++) {
+            fields.put("Warehouse" + i, new Warehouse());
+            fields.get("Warehouse" + i).setName("Warehouse" + i);
+        }
+        for(int i=1;i<=2;i++) {
+            fields.put("Shelter" + i, new Shelter());
+            fields.get("Shelter" + i).setName("Shelter" + i);
+        }
+        for(int i=1;i<=5;i++) {
+            fields.put("Laboratory" + i, new Laboratory());
+            fields.get("Laboratory"+i).setName("Laboratory"+i);
+        }
         BuildMapHelper(fields.get("Shelter1"),fields.get("Warehouse4"));
         BuildMapHelper(fields.get("Shelter1"),fields.get("Field3"));
 

@@ -33,4 +33,10 @@ public class BearMovement extends MovementAbility {
         }
         System.out.println("The two fields aren't neighbors, the virologist couldn't step there.");
     }
+
+    @Override
+    public boolean cheatMove() {
+        return false;
+    }
+
 }

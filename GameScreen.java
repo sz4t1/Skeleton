@@ -26,7 +26,10 @@ public class GameScreen extends JFrame {
     public GameScreen(Game game){
         super("Game Board");
 
+        //Connect the game with gamescreen
         this.game = game;
+        game.setGameScreen(this);
+
         currentPlayerIndex = 0;
         virologists = game.getVirologists();
         System.out.println("virologusok pipa");
@@ -68,7 +71,7 @@ public class GameScreen extends JFrame {
             switch(i){
                 case 4: case 10: case 11: case 21: case 24:{ drawFields.add(new DrawLaboratory()); break;}
                 case 0: case 23: {drawFields.add(new DrawShelter());break;}
-                case 1: case 12: case 19: case 20:{ drawFields.add(new DrawWarehouse());break;}
+                case 1: case 12: case 14: case 20:{ drawFields.add(new DrawWarehouse());break;}
                 default:{ drawFields.add(new DrawField()); break; }
             }
         }
@@ -106,7 +109,7 @@ public class GameScreen extends JFrame {
             switch(i){
                 case 4: case 10: case 11: case 21: case 24:{ mapPanel.add(drawFields.get(i)); break;}
                 case 0: case 23: {mapPanel.add(drawFields.get(i));break;}
-                case 1: case 12: case 19: case 20:{mapPanel.add(drawFields.get(i));break;}
+                case 1: case 12: case 14: case 20:{mapPanel.add(drawFields.get(i));break;}
                 default:{mapPanel.add(drawFields.get(i)); break; }
             }
         }
@@ -292,7 +295,7 @@ public class GameScreen extends JFrame {
 
         UpdateScreenData(virologists.get(0));
 
-        setSize(800, 400);
+        setSize(800, 700);
         setResizable(false);
         setVisible(true);
 

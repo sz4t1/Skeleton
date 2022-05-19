@@ -9,7 +9,10 @@ public class DrawField extends JLabel {
         setBackground(Color.lightGray);
     }
     public void setFieldOnce(Field f){
-        if (field==null) field=f;
+        if (field==null){
+            field=f;
+            setText(field.getName());
+        }
     }
     public void paintComponent(Graphics g){
         Color[] colors= new Color[4];

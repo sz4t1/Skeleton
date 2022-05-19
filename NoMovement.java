@@ -9,4 +9,9 @@ public class NoMovement extends MovementAbility {
     public void invokeEffect(Virologist v, Field f) {
         System.out.println("invokeEffect(Virologist v, Field f) - The virologist is paralyzed.");
     }
+
+    @Override
+    public boolean cheatMove() {
+        return false;
+    }
 }
