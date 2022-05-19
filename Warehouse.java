@@ -21,6 +21,9 @@ public class Warehouse extends Field{
 
     
     public void Remove(Equipment e, Material m,Virologist v){
+        if(m == null){
+            return;
+        }
         System.out.println("RemoveMaterial(Material m) - The picked up materials are removed from the Warehouse.");
         removeMaterial(m);
     }

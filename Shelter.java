@@ -35,6 +35,9 @@ public class Shelter extends Field{
     //Removes the equipment from the shelter
 
     public void Remove(Equipment e, Material m, Virologist v){
+        if(e == null){
+            return;
+        }
         System.out.println("RemoveEquipment(Equipment e) - the picked up equipment is removed from the Shelter.");
         equipments.remove(e);
     }

@@ -278,6 +278,31 @@ public class Game {
         }
     }
 
+    public void PickUpCommand(int am, int nuk, int axe, int cape, int glove, int sack){
+
+        //TODO
+    }
+
+    public void DropCommand(int am, int nuk, int axe, int cape, int glove, int sack){
+        //TODO
+    }
+
+    public void UseVirusCommand(String virus){
+        if(virus == null){
+            return;
+        }
+        for(Virus v : virologists.get(getActiveVirologistName()).getViruses()){
+            if(v.getName().equals(virus)){
+                virologists.get(getActiveVirologistName()).UseVirusOnSelf(v);
+                break;
+            }
+        }
+        stepCount -= 1;
+        if(stepCount <= 0){
+            NextVirologist();
+        }
+    }
+
     //EZ NEM HISZEM, HOGY KELL!!!!!
     /*
     //virologist steps

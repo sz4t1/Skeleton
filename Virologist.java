@@ -57,6 +57,8 @@ public class Virologist {
     public void AddMaterial(Material m){
         System.out.println("AddMaterial(Material m) - Material is added to the virologist's inventory.");
         this.getField().Remove(null,m,null);
+        materials.add(m);
+        materialSize++;
     }
     //Addd virus to the inventory
     public void AddVirus(Virus v){
@@ -235,6 +237,10 @@ public class Virologist {
     public void setVirusSize(Integer virusSize) {
         System.out.println("setVirusSize(Integer virusSize)");
         this.virusSize = virusSize;
+    }
+
+    public ArrayList<Virus> getViruses(){
+        return viruses;
     }
 
     public String[] GetVirusList(){
