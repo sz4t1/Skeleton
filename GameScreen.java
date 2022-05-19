@@ -344,6 +344,13 @@ public class GameScreen extends JFrame {
     }
 
     public void UpdateScreenData(Virologist v){
+        //round count
+        //todo
+        roundNumberLabel.setText(String.valueOf(game.GetRound()));
+
+        //player name
+        currentPlayerNameLabel.setText(v.GetName());
+
         //materials
         mTextArea.setText("-amino acid X " + v.GetAminoAcidCount()+
                                 "\n-nukleodite X " + v.GetNukleoditeCount());
