@@ -36,14 +36,21 @@ public class MoveFrame extends JFrame{
             case 2:
                 c1Button = new JRadioButton(neighbours.get(0).getName());
                 c2Button = new JRadioButton(neighbours.get(1).getName());
-                c3Button = new JRadioButton("Border");
-                c4Button = new JRadioButton("Border");
+                moveButtons.add(c1Button);
+                moveButtons.add(c2Button);
+                buttonsPanel.add(c1Button);
+                buttonsPanel.add(c2Button);
                 break;
             case 3:
                 c1Button = new JRadioButton(neighbours.get(0).getName());
                 c2Button = new JRadioButton(neighbours.get(1).getName());
                 c3Button = new JRadioButton(neighbours.get(2).getName());
-                c4Button = new JRadioButton("Border");
+                moveButtons.add(c1Button);
+                moveButtons.add(c2Button);
+                moveButtons.add(c3Button);
+                buttonsPanel.add(c1Button);
+                buttonsPanel.add(c2Button);
+                buttonsPanel.add(c3Button);
 
                 break;
             case 4:
@@ -51,6 +58,14 @@ public class MoveFrame extends JFrame{
                 c2Button = new JRadioButton(neighbours.get(1).getName());
                 c3Button = new JRadioButton(neighbours.get(2).getName());
                 c4Button = new JRadioButton(neighbours.get(3).getName());
+                moveButtons.add(c1Button);
+                moveButtons.add(c2Button);
+                moveButtons.add(c3Button);
+                moveButtons.add(c4Button);
+                buttonsPanel.add(c1Button);
+                buttonsPanel.add(c2Button);
+                buttonsPanel.add(c3Button);
+                buttonsPanel.add(c4Button);
                 break;
             default:
                 c1Button = new JRadioButton("Out of bounds");
@@ -60,16 +75,16 @@ public class MoveFrame extends JFrame{
 
         }
 
-        moveButtons.add(c1Button);
-        moveButtons.add(c2Button);
-        moveButtons.add(c3Button);
-        moveButtons.add(c4Button);
-
-
-        buttonsPanel.add(c1Button);
-        buttonsPanel.add(c2Button);
-        buttonsPanel.add(c3Button);
-        buttonsPanel.add(c4Button);
+//        moveButtons.add(c1Button);
+//        moveButtons.add(c2Button);
+//        moveButtons.add(c3Button);
+//        moveButtons.add(c4Button);
+//
+//
+//        buttonsPanel.add(c1Button);
+//        buttonsPanel.add(c2Button);
+//        buttonsPanel.add(c3Button);
+//        buttonsPanel.add(c4Button);
 
 
         JButton okButton = new JButton("Ok");
@@ -98,7 +113,16 @@ public class MoveFrame extends JFrame{
                 if (c1Button.isSelected()){
                     parent.MoveCall(c1Button.getText());
                 }
-
+                else if (c2Button.isSelected()){
+                    parent.MoveCall(c2Button.getText());
+                }
+                else if (c3Button.isSelected()){
+                    parent.MoveCall(c3Button.getText());
+                }
+                else if (c4Button.isSelected()){
+                    parent.MoveCall(c4Button.getText());
+                }
+                dispose();
             }
             else if(choice.equals("Cancel")) {
                 dispose();
