@@ -103,13 +103,15 @@ public class Virologist {
         }
     }
     //Add a new genetic code to the known ones
-    public void AddGeneticCode(Integer gen){
+    public boolean AddGeneticCode(Integer gen){
         if(!HaveGeneticCode(gen)){
-        System.out.println("AddGeneticCode(Integer gen) - A new genetic code is stored.");
-        genCodes.add(gen);
+            System.out.println("AddGeneticCode(Integer gen) - A new genetic code is stored.");
+            genCodes.add(gen);
+            return true;
         }
         else{
             System.out.println("AddGeneticCode(Integer gen) - This genetic code is already known.");
+            return false;
         }
     }
     //Remove a genetic code from the virologist's knowledge

@@ -260,6 +260,24 @@ public class Game {
         }
     }
 
+    //Scans the field
+    //It always decrements the stepCounter
+    //Checks the genCodeCountre
+    //If the stepCounter reaches 0, the activeVirologist will change
+    public void ScanCommand(){
+        virologists.get(getActiveVirologistName()).ScanCode();
+        stepCount -= 1;
+
+        if(CheckGeneticCodes(virologists.get(getActiveVirologistName()))){
+            System.out.println(getActiveVirologistName() + " knows all the codes.");
+            EndGame();
+        }
+
+        if(stepCount <= 0){
+            NextVirologist();
+        }
+    }
+
     //EZ NEM HISZEM, HOGY KELL!!!!!
     /*
     //virologist steps
@@ -301,7 +319,6 @@ public class Game {
     }
 
     private void BuildMap(){
-
 
         for(int i=1;i<=14;i++)
             fields.put("Field"+i,new Field());
