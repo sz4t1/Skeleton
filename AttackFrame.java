@@ -71,6 +71,8 @@ public class AttackFrame extends JFrame {
         add(middle);
         add(downer);
 
+
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(350, 200);
         setResizable(false);
         setVisible(true);
@@ -81,13 +83,18 @@ public class AttackFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
             if(choice.equals("Ok")) {
-                if (bVirus.isSelected()){
-                    parent.AttackCall((String)comboBoxAttack.getSelectedItem(), (String)comboBoxUsedItem.getSelectedItem(), false);
+                try {
+                    if (bVirus.isSelected()) {
+                        parent.AttackCall((String) comboBoxAttack.getSelectedItem(), (String) comboBoxUsedItem.getSelectedItem(), false);
+                    } else if (bAxe.isSelected()) {
+                        parent.AttackCall((String) comboBoxAttack.getSelectedItem(), null, true);
+                    }
+                    dispose();
                 }
-                else if(bAxe.isSelected()){
-                    parent.AttackCall((String)comboBoxAttack.getSelectedItem(), null, true);
+                catch (NullPointerException exception){
+                    dispose();
                 }
-                dispose();
+
             }
             else if(choice.equals("Cancel")) {
                 dispose();

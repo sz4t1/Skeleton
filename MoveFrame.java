@@ -99,6 +99,7 @@ public class MoveFrame extends JFrame{
         add(buttonsPanel, BorderLayout.CENTER);
         add(downerPanel, BorderLayout.PAGE_END);
 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(300, 300);
         setResizable(false);
         setVisible(true);

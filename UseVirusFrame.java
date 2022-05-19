@@ -41,6 +41,7 @@ public class UseVirusFrame extends JFrame {
         add(upper);
         add(downer);
 
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(350, 150);
         setResizable(false);
         setVisible(true);
