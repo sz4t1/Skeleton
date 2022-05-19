@@ -57,11 +57,59 @@ public class GameScreen extends JFrame {
         //map panel
         /////////////////////////////////////////////////////////////
 
+        ArrayList<DrawField> drawFields= new ArrayList<>();
         JPanel mapPanel = new JPanel();
-        mapPanel.setLayout(new GridLayout(5,5));
-        mapPanel.setBackground(Color.gray);
-        mapPanel.setOpaque(true);
+        GridLayout gameGrid= new GridLayout(5,5);
+        gameGrid.setVgap(5);
+        gameGrid.setHgap(5);
+        mapPanel.setLayout(gameGrid);
+        for(int i=0;i<25;i++)
+        {
+            switch(i){
+                case 4: case 10: case 11: case 21: case 24:{ drawFields.add(new DrawLaboratory()); break;}
+                case 0: case 23: {drawFields.add(new DrawShelter());break;}
+                case 1: case 12: case 19: case 20:{ drawFields.add(new DrawWarehouse());break;}
+                default:{ drawFields.add(new DrawField()); break; }
+            }
+        }
+        drawFields.get(0).setFieldOnce(game.getField("Shelter1"));
+        drawFields.get(1).setFieldOnce(game.getField("Warehouse4"));
+        drawFields.get(2).setFieldOnce(game.getField("Field1"));
+        drawFields.get(3).setFieldOnce(game.getField("Field2"));
+        drawFields.get(4).setFieldOnce(game.getField("Laboratory3"));
 
+        drawFields.get(5).setFieldOnce(game.getField("Field3"));
+        drawFields.get(6).setFieldOnce(game.getField("Field4"));
+        drawFields.get(7).setFieldOnce(game.getField("Field5"));
+        drawFields.get(8).setFieldOnce(game.getField("Field6"));
+        drawFields.get(9).setFieldOnce(game.getField("Field7"));
+
+        drawFields.get(10).setFieldOnce(game.getField("Laboratory5"));
+        drawFields.get(11).setFieldOnce(game.getField("Laboratory4"));
+        drawFields.get(12).setFieldOnce(game.getField("Warehouse1"));
+        drawFields.get(13).setFieldOnce(game.getField("Field8"));
+        drawFields.get(14).setFieldOnce(game.getField("Warehouse3"));
+
+        drawFields.get(15).setFieldOnce(game.getField("Field9"));
+        drawFields.get(16).setFieldOnce(game.getField("Field10"));
+        drawFields.get(17).setFieldOnce(game.getField("Field11"));
+        drawFields.get(18).setFieldOnce(game.getField("Field12"));
+        drawFields.get(19).setFieldOnce(game.getField("Field13"));
+
+        drawFields.get(20).setFieldOnce(game.getField("Warehouse2"));
+        drawFields.get(21).setFieldOnce(game.getField("Laboratory1"));
+        drawFields.get(22).setFieldOnce(game.getField("Field14"));
+        drawFields.get(23).setFieldOnce(game.getField("Shelter2"));
+        drawFields.get(24).setFieldOnce(game.getField("Laboratory2"));
+        for(int i=0;i<25;i++)
+        {
+            switch(i){
+                case 4: case 10: case 11: case 21: case 24:{ mapPanel.add(drawFields.get(i)); break;}
+                case 0: case 23: {mapPanel.add(drawFields.get(i));break;}
+                case 1: case 12: case 19: case 20:{mapPanel.add(drawFields.get(i));break;}
+                default:{mapPanel.add(drawFields.get(i)); break; }
+            }
+        }
 
 
         /////////////////////////////////////////////////////////////
