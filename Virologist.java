@@ -111,7 +111,7 @@ public class Virologist {
         genCodes.clear();
     }
     //Creates a new virus
-    public void CraftVirus( Recipe recipe){
+    public void CraftVirus( Recipe recipe ){
         System.out.println("CraftVirus(Virus v) - Virologist wants to craft a virus.");
         Virus nv = recipe.CreateVirus(this);
         if(nv != null) {
@@ -121,9 +121,14 @@ public class Virologist {
         System.out.println("CraftVirus(Virus v) - Not enough resources.");
     }
     //Attacks another virologist with the chosen virus
-    public void Attack(Virus v, Virologist vir){
+    public boolean Attack(Virus v, Virologist vir){
         System.out.println("Attack(Virus v, Virologist vir) - Virologist attacks a virologist.");
+        if(!field.containsVirologist(vir)){
+            System.out.println("The attacked virologist is too far away");
+            return false;
+        }
         vir.AttackedBy(this, v);
+        return true;
     }
     //Uses virus
     public void UseVirus(Virus v){
@@ -169,9 +174,14 @@ public class Virologist {
         reflectionAbility.invokeEffect(vir, this, v);
     }
     //Attacks another virologist with an axe
-    public void AttackWithAxe(Virologist vir){
+    public boolean AttackWithAxe(Virologist vir){
         System.out.println("AttackWithAxe(Virologist v) - The virologist attacked another virologist with an axe");
+        if(!field.containsVirologist(vir)){
+            System.out.println("The attacked virologist is too far away");
+            return false;
+        }
         executeAbility.invokeEffekt(vir);
+        return true;
     }
     //Getters and setters
     public Virus getVirusOn() {
@@ -286,7 +296,9 @@ public class Virologist {
     public void setField(Field field) {
         System.out.println("setField(Field field) - The virologist now stands on a field.");
         //if already standing somewhere
-        this.field.RemoveVirologist(this);
+        if(this.field != null){
+             this.field.RemoveVirologist(this);
+        }
 
         this.field = field;
         field.AddVirologist(this);

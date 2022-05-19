@@ -1,6 +1,7 @@
 //package src;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
@@ -13,11 +14,16 @@ public class Game {
     private Map<String, Field> fields;
     //Ezeket a prototípus miatt ide beraktam, a végleges kódban nem biztos, hogy itt is tárolva lesznek
     private Map<String, Material> materials;
+    //Ezek a prototípusnál kellettek, most per pillanat haszontalanok
     private Map<String, Equipment> equipments;
     private Map<String, Virus> viruses;
     private Map<String, Recipe> recipes;
 
     private int numberOfLaboratories;
+
+    private int Round = 0;
+    private int activeVirologistIndex = 0;
+    private int stepCount = 2;
 
     //Constructor
     public Game(){
@@ -31,9 +37,13 @@ public class Game {
         System.out.println("Game() - Game constructed.");
     }
 
-    //TODO
-    public int GetRound(){
-        return 0;
+    //Changes the activeVirologist to the next one
+    public void NextVirologist(){
+        stepCount = 2;
+        activeVirologistIndex += 1;
+        if(activeVirologistIndex >= virologists.size()){
+            activeVirologistIndex = 0;
+        }
     }
 
     //Starts the game
@@ -55,6 +65,7 @@ public class Game {
             }
         }
     }
+
     //Ends the game
     public void EndGame(){
         System.out.println("EndGame() - The game has ended.");
@@ -104,6 +115,13 @@ public class Game {
         System.out.println("AddRecipe(String key, Recipe r) - New recipe added to the game.");
         recipes.put(key, r);
     }
+
+    //GETTERS AND SETTERS//////////////////////////
+
+    public int GetRound(){
+        return Round;
+    }
+
     //Returns with a field
     public Field getField(String key){
         return fields.get(key);
@@ -115,6 +133,10 @@ public class Game {
             fs.add(fields.get(key));
         }
         return fs;
+    }
+
+    public int getActiveVirologistIndex(){
+        return activeVirologistIndex;
     }
 
     //Returns with the names of the fields
@@ -129,6 +151,7 @@ public class Game {
         return virologists.get(key);
     }
 
+    //returns with the virologists arrayList
     public ArrayList<Virologist> getVirologists(){
         ArrayList<Virologist> fs = new ArrayList<Virologist>();
         for(String key : virologists.keySet()){
@@ -141,6 +164,13 @@ public class Game {
     public Set<String> getVirologistNames(){
         return virologists.keySet();
     }
+
+    //returns with the active wirologist's name
+    public String getActiveVirologistName(){
+        ArrayList<String> nameList = new ArrayList<String>(virologists.keySet());
+        return nameList.get(activeVirologistIndex);
+    }
+
     public Material getMaterial(String key){
         return materials.get(key);
     }
@@ -153,6 +183,30 @@ public class Game {
     public Recipe getRecipe(String key){
         return recipes.get(key);
     }
+
+    //COMMANDS OF STEPS///////////////
+
+    public void AttackCommand(Virologist virologist, Virus virus, Axe axe){
+        boolean validCommand = false;
+        //attack with virus
+        if(virus != null && axe == null){
+            validCommand = virologists.get(getActiveVirologistName()).Attack(virus, virologist);
+            if(validCommand){
+                stepCount -= 1;
+            }
+        }
+        else if(virus == null && axe != null){
+            //attack with axe
+            validCommand = virologists.get(getActiveVirologistName()).AttackWithAxe(virologist);
+            if(validCommand){
+                stepCount -= 1;
+            }
+        }
+        if(stepCount <= 0){
+            NextVirologist();
+        }
+    }
+
 
     //virologist steps
     private void StepVirologist(Virologist v){

@@ -39,7 +39,12 @@ public class Field {
         return virologists;
     }
 
-    //Public getters and setters
+    //Checks, if the virologist stands there
+    public boolean containsVirologist(Virologist v){
+        return virologists.contains(v);
+    }
+
+    //Public getters and setters////////////
     public String getName() {
         System.out.println("getName");
         return name;
