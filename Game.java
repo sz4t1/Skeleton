@@ -339,7 +339,7 @@ public class Game {
             AddVirologist(name, new Virologist(name));
 
             //Placeing the Virologists
-            int fieldNum = 5;
+            int fieldNum = r.nextInt(14) + 1;
             String fieldName = "Field" + fieldNum;
             virologists.get(name).setField(fields.get(fieldName));
         }
