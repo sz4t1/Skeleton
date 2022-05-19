@@ -409,7 +409,7 @@ public class GameScreen extends JFrame {
 
     public void  MoveCall(String fieldname){
         //todo
-        System.out.println(fieldname);
+        game.MoveCommand(fieldname);
     }
 
 
