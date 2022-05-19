@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 //The virologist class represents the character which is being controlled by the player
 public class Virologist {
-    
+    private String name;
     //The actual place of the virologist
     private Field field;
     //The virus on the virologist if she/he have one on self
@@ -32,8 +32,9 @@ public class Virologist {
     private ExecuteAbility executeAbility;
 
     //Virologist constructor
-    public Virologist(){
-        System.out.println("Virologist() - Virologist constructed: " + this);
+    public Virologist(String name){
+        System.out.println("Virologist() - Virologist constructed: " + name);
+        this.name = name;
         viruses= new ArrayList<>();
         equipment=new ArrayList<>();
         materials=new ArrayList<>();
@@ -50,7 +51,7 @@ public class Virologist {
     }
 
     //TODO
-    public String GetName(){return "TODOOOO";}
+    public String GetName(){return name;}
     
     //Add material to the virologists inventory
     public void AddMaterial(Material m){

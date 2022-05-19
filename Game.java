@@ -177,7 +177,7 @@ public class Game {
         //Adding virologists
         for(int i = 1; i <= virNumber; i++){
             String name = "Virologist" + i;
-            AddVirologist(name, new Virologist());
+            AddVirologist(name, new Virologist(name));
         }
         //Placeing the Virologists
         //TODO

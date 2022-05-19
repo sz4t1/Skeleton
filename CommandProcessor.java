@@ -88,7 +88,7 @@ public class CommandProcessor {
                 switch(command[1]){
                     //virologist
                     case "virologist":{
-                        game.AddVirologist(command[2], new Virologist());
+                        game.AddVirologist(command[2], new Virologist(command[2]));
                         break;
                     }
                     //fields
