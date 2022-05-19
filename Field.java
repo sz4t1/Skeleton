@@ -95,4 +95,12 @@ public class Field {
     public int GetAminoAcidCount(){return 0;}
 
     public int GetNukleoditeCount(){return 0;}
+
+    public int GetAxeCount(){return 0;}
+
+    public int GetCapeCount(){return 0;}
+
+    public int GetGloveCount(){return 0;}
+
+    public int GetSackCount(){return 0;}
 }

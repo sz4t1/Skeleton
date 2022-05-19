@@ -45,4 +45,48 @@ public class Shelter extends Field{
     public ArrayList<Equipment> getEquipment() {
         return equipments;
     }
+
+    @Override
+    public int GetAxeCount(){
+        int pa = 0;
+        for(Equipment v : equipments){
+            if(v.getName().equals("axe")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+
+    @Override
+    public int GetCapeCount(){
+        int pa = 0;
+        for(Equipment v : equipments){
+            if(v.getName().equals("cape")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+
+    @Override
+    public int GetGloveCount(){
+        int pa = 0;
+        for(Equipment v : equipments){
+            if(v.getName().equals("glove")){
+                pa++;
+            }
+        }
+        return pa;
+    }
+
+    @Override
+    public int GetSackCount(){
+        int pa = 0;
+        for(Equipment v : equipments){
+            if(v.getName().equals("sack")){
+                pa++;
+            }
+        }
+        return pa;
+    }
 }
