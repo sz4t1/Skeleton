@@ -7,7 +7,6 @@ public class Shelter extends Field{
     //Constructor
     public Shelter(){
         System.out.println("Shelter() - Shelter constructed: " + this);
-        this.setName("Shelter");
         equipments = new ArrayList<>();
         //Generating the random equipment
         int eq = new Random().nextInt(4);

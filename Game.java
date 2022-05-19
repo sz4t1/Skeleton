@@ -339,7 +339,7 @@ public class Game {
             AddVirologist(name, new Virologist(name));
 
             //Placeing the Virologists
-            int fieldNum = r.nextInt(14) + 1;
+            int fieldNum = 5;
             String fieldName = "Field" + fieldNum;
             virologists.get(name).setField(fields.get(fieldName));
         }
@@ -350,14 +350,22 @@ public class Game {
 
     private void BuildMap(){
 
-        for(int i=1;i<=14;i++)
+        for(int i=1;i<=14;i++){
             fields.put("Field"+i,new Field());
-        for(int i=1;i<=4;i++)
-            fields.put("Warehouse"+i,new Warehouse());
-        for(int i=1;i<=2;i++)
-            fields.put("Shelter"+i,new Shelter());
-        for(int i=1;i<=5;i++)
-            fields.put("Laboratory"+i,new Laboratory());
+            fields.get("Field"+i).setName("Field"+i);
+        }
+        for(int i=1;i<=4;i++) {
+            fields.put("Warehouse" + i, new Warehouse());
+            fields.get("Warehouse" + i).setName("Warehouse" + i);
+        }
+        for(int i=1;i<=2;i++) {
+            fields.put("Shelter" + i, new Shelter());
+            fields.get("Shelter" + i).setName("Shelter" + i);
+        }
+        for(int i=1;i<=5;i++) {
+            fields.put("Laboratory" + i, new Laboratory());
+            fields.get("Laboratory"+i).setName("Laboratory"+i);
+        }
         BuildMapHelper(fields.get("Shelter1"),fields.get("Warehouse4"));
         BuildMapHelper(fields.get("Shelter1"),fields.get("Field3"));
 
