@@ -46,6 +46,7 @@ public class Game {
         activeVirologistIndex += 1;
         if(activeVirologistIndex >= virologists.size()){
             activeVirologistIndex = 0;
+            Round++;
         }
 
         
