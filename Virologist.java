@@ -76,7 +76,7 @@ public class Virologist {
     //Remove material from the virologists inventory
     public boolean RemoveMaterial(Material m){
         System.out.println("RemoveMaterial(Material m) - Matrial is removed from the virologist's inventory.");
-        m.beingUsed();
+        //m.beingUsed();
         materials.remove(m);
         materialSize--;
         return true;
