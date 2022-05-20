@@ -35,7 +35,7 @@ public class ParalyzingRecipe implements Recipe {
     //We Override the IsCraftable method here, so we can check if the Virologist that was given as a parameter have the materials
     @Override
     public boolean IsCraftable(Virologist vir) {
-        System.out.println("IsCraftable(Virologist vir) - The virus is always creatable in this part of the task");
+        System.out.println("IsCraftable(Virologist vir) - Checking for needed materials");
         int am = 0, nuk = 0;
         for(Material m : vir.getMaterials()){
             if(m.getName().equals("aminoacid")){

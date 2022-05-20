@@ -273,6 +273,8 @@ public class Game {
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
+    //This command will start a pick up action
+    //It can pick up either materials or equipment
     public void PickUpCommand(int am, int nuk, int axe, int cape, int glove, int sack){
         boolean validCommand = false;
         if (am > 0 || nuk > 0) {
@@ -319,6 +321,8 @@ public class Game {
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
+    //This will start the drop action
+    //It can drop anything, what the virologist has
     public void DropCommand(int am, int nuk, int axe, int cape, int glove, int sack){
         boolean validCommand = false;
         ArrayList<Material> mat = virologists.get(getActiveVirologistName()).getMaterials();
@@ -387,6 +391,7 @@ public class Game {
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
+    //This command will start the virus use on self
     public void UseVirusCommand(String virus){
         if(virus == null){
             return;
@@ -404,6 +409,7 @@ public class Game {
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
+    //this command will start the stealing process
     public void StealCommand(String vir, int am, int nuk, int axe, int cape, int glove, int sack){
         Virologist virologist=virologists.get(vir);
         boolean validCommand=false;
@@ -483,6 +489,8 @@ public class Game {
 
     }
 
+    //This function builds the map where the game will take place
+    //It creates the appropriate fields and connects them in the good order
     private void BuildMap(){
 
         for(int i=1;i<=14;i++){
@@ -564,9 +572,8 @@ public class Game {
         BuildMapHelper(fields.get("Field14"),fields.get("Shelter2"));
 
         BuildMapHelper(fields.get("Shelter2"),fields.get("Laboratory2"));
-
-
     }
+    //This function connect two fields with each other
     private static void BuildMapHelper(Field first, Field second){
         first.addNeighbour(second);
         second.addNeighbour(first);

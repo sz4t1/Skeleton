@@ -84,7 +84,7 @@ public class CraftFrame extends  JFrame{
                     textvirusMaterial.setText("2x amino acid \n2x nukleotide" );
                     break;
                 case "Paralyzing":
-                    textvirusMaterial.setText("3x amino acid \n4x nukleotide" );
+                    textvirusMaterial.setText("8x amino acid \n8x nukleotide" );
                     break;
                 case "Dance":
                     textvirusMaterial.setText("1x amino acid \n1x nukleotide" );
