@@ -428,7 +428,7 @@ public class Game {
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
-    public void StealCommand(int am, int nuk, int axe, int cape, int glove, int sack){
+    public void StealCommand(String vir, int am, int nuk, int axe, int cape, int glove, int sack){
         //TODO
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }

@@ -386,7 +386,7 @@ public class GameScreen extends JFrame {
     }
 
     public  void StealCall(String viroName ,int amino, int nukle, int axe, int sack, int glove, int cape){
-        game.StealCommand(amino, nukle, axe, cape, glove, sack);
+        game.StealCommand(viroName, amino, nukle, axe, cape, glove, sack);
     }
 
     public void CraftCall(String virus){
