@@ -471,14 +471,6 @@ public class Game {
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 
-    //EZ NEM HISZEM, HOGY KELL!!!!!
-    /*
-    //virologist steps
-    private void StepVirologist(Virologist v){
-        System.out.println(v + " stepped.");
-    }
-    */
-
     //Clears the game object: all Virologists, fields, ... should be removed from this object after a game ends
     public void clear(){
         virologists.clear();
@@ -490,7 +482,7 @@ public class Game {
         numberOfLaboratories = 0;
     }
 
-    //creates a new game
+    //creates a new game, virologists
     public void NewGame(int virNumber){
         clear();
         //Building the Map
