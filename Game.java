@@ -46,30 +46,7 @@ public class Game {
             Round++;
         }
 
-        
-
         //Check for movement restrictions!!!!
-    }
-
-    //TODO - ezen változtatni kell!!!!!!
-    //Starts the game
-    public void StartGame(){
-        System.out.println("StartGame() - The game is started.");
-        //Counting all the laboratories, because all of them have a unique genetic code
-        for(String key : fields.keySet()){
-            numberOfLaboratories += fields.get(key).LabCount();
-        }
-
-        for(String key : virologists.keySet()){
-            //StepVirologist(virologists.get(key));
-            if(CheckGeneticCodes(virologists.get(key))){
-                System.out.println(key + " knows all the codes.");
-                EndGame();
-            }
-            else{
-                System.out.println(key + " doesn't know all the codes.");
-            }
-        }
     }
 
     //Ends the game

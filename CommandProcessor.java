@@ -370,7 +370,7 @@ public class CommandProcessor {
             }
             //Starts the game
             case "startgame": {
-                game.StartGame();
+                //game.StartGame();
                 return true;
             }
             //Adds a genetic code to a virologist

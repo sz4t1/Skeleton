@@ -7,5 +7,3 @@ public class DrawShelter extends DrawField {
         setBackground(Color.magenta);
     }
 }
-
-

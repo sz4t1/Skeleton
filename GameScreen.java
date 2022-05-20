@@ -38,7 +38,6 @@ public class GameScreen extends JFrame {
 
         setLayout(new BorderLayout());
 
-
         //top
         /////////////////////////////////////////////////////////////
         JPanel topPanel = new JPanel();
@@ -55,11 +54,8 @@ public class GameScreen extends JFrame {
         topPanel.add(roundNumberLabel);
         topPanel.add(currentPlayerNameLabel);
 
-
-
         //map panel
         /////////////////////////////////////////////////////////////
-
 
         JPanel mapPanel = new JPanel();
         GridLayout gameGrid= new GridLayout(5,5);
@@ -114,16 +110,12 @@ public class GameScreen extends JFrame {
             }
         }
 
-
         /////////////////////////////////////////////////////////////
-
-
 
         //right side
         /////////////////////////////////////////////////////////////
         JPanel rightPanel = new JPanel();
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-
 
         /////////////////////////////////////////////////////////////Gombok
         JPanel buttonsPanel = new JPanel();
@@ -183,7 +175,6 @@ public class GameScreen extends JFrame {
 
         rightPanel.add(playersPanel);
 
-
         //botton
         /////////////////////////////////////////////////////////////
         JPanel bottonPanel = new JPanel();
@@ -213,10 +204,7 @@ public class GameScreen extends JFrame {
         JLabel eLabel = new JLabel("Equipments");
         eTextArea = new JTextArea();
         eTextArea.setEditable(false);
-//        eTextArea = new JTextArea("-Axe X " + virologists.get(0).getAxeCount()+
-//                                    "\n-Cape X " + virologists.get(0).getCapeCount()+
-//                                    "\n-Sack X " + virologists.get(0).getSackCount()+
-//                                    "\n-Glove X " + virologists.get(0).getGloveCount());
+
         ePanel.add(eLabel, BorderLayout.PAGE_START);
         ePanel.add(eTextArea, BorderLayout.CENTER);
         bottonPanel.add(ePanel);
@@ -230,10 +218,7 @@ public class GameScreen extends JFrame {
         JLabel vLabel = new JLabel("Viruses");
         vTextArea = new JTextArea();
         vTextArea.setEditable(false);
-//        vTextArea = new JTextArea("-Dance X " + virologists.get(0).getVDanceCount()+
-//                                "\n-Paralyzing X " + virologists.get(0).getVParalyzingCount()+
-//                                "\n-Protection X " + virologists.get(0).getVProtectionCount()+
-//                                "\n-Amnesia X " + virologists.get(0).getVAmnesiaCount()); // string kell
+
         vPanel.add(vLabel, BorderLayout.PAGE_START);
         vPanel.add(vTextArea, BorderLayout.CENTER);
         bottonPanel.add(vPanel);
@@ -247,7 +232,7 @@ public class GameScreen extends JFrame {
         gTextArea = new JTextArea();
         gTextArea.setFont(new Font("Monospaced", Font.PLAIN, 50));
         gTextArea.setEditable(false);
-//        gTextArea = new JTextArea(Integer.toString(virologists.get(0).getGenCodesAmmount())); // nagyban kell
+
         gPanel.add(gLabel, BorderLayout.PAGE_START);
         gPanel.add(gTextArea, BorderLayout.CENTER);
         bottonPanel.add(gPanel);
@@ -262,14 +247,12 @@ public class GameScreen extends JFrame {
         effTextArea.setLineWrap(true);
         effTextArea.setWrapStyleWord(true);
         effTextArea.setEditable(false);
-//        effTextArea = new JTextArea(virologists.get(0).getCurrentEffect()); // string kell
+
         effPanel.add(effLabel, BorderLayout.PAGE_START);
         effPanel.add(effTextArea, BorderLayout.CENTER);
         bottonPanel.add(effPanel);
 
         /////////////////////////////////////////////////////////////
-
-
 
         //felvesz
         add(topPanel, BorderLayout.PAGE_START);
@@ -283,7 +266,6 @@ public class GameScreen extends JFrame {
         setSize(800, 700);
         setResizable(false);
         setVisible(true);
-
     }
 
     public class ButtonListener implements ActionListener {
@@ -323,8 +305,6 @@ public class GameScreen extends JFrame {
                     //do nothing
                     break;
             }
-
-
         }
     }
 

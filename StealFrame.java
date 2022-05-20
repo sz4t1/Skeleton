@@ -69,8 +69,6 @@ public class StealFrame extends JFrame {
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
 
-
-
         /////////////////////////////////////////////////////////////////
         JPanel row3Panel = new JPanel();
         row3Panel.setLayout(new FlowLayout(0));
@@ -80,8 +78,6 @@ public class StealFrame extends JFrame {
         row3Panel.add(axeLabel);
         row3Panel.add(comboBoxAxe);
 
-
-
         /////////////////////////////////////////////////////////////////
         JPanel row4Panel = new JPanel();
         row4Panel.setLayout(new FlowLayout(0));
@@ -89,7 +85,6 @@ public class StealFrame extends JFrame {
         comboBoxSack = new JComboBox(comboBoxNumbers(String.valueOf(viro.get(0).getSackCount())));
         row4Panel.add(sackLabel);
         row4Panel.add(comboBoxSack);
-
 
         /////////////////////////////////////////////////////////////////
         JPanel row5Panel = new JPanel();
@@ -109,8 +104,6 @@ public class StealFrame extends JFrame {
         row6Panel.add(capeLabel);
         row6Panel.add(comboBoxCape);
 
-
-
         ///////////////////////////////////////////////////////////////////////
 
         playerinvenotyPanel.add(labelPanel);
@@ -120,7 +113,6 @@ public class StealFrame extends JFrame {
         playerinvenotyPanel.add(row4Panel);
         playerinvenotyPanel.add(row5Panel);
         playerinvenotyPanel.add(row6Panel);
-
 
         ///////////////////////////////////////////////////////////////////////
 

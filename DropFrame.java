@@ -39,7 +39,6 @@ public class DropFrame extends JFrame{
         row1Panel.add(aminoLabel);
         row1Panel.add(comboBoxAminoAcid);
 
-
         /////////////////////////////////////////////////////////////////
 
         JPanel row2Panel = new JPanel();
@@ -50,12 +49,9 @@ public class DropFrame extends JFrame{
         row2Panel.add(nukleoditeLabel);
         row2Panel.add(comboBoxNukleodite);
 
-
         /////////////////////////////////////////////////////////////////
 
         //virusok is kellenek ide, még kigondolom hogyan!
-
-
 
         /////////////////////////////////////////////////////////////////
         JPanel row3Panel = new JPanel();
@@ -66,8 +62,6 @@ public class DropFrame extends JFrame{
         row3Panel.add(axeLabel);
         row3Panel.add(comboBoxAxe);
 
-
-
         /////////////////////////////////////////////////////////////////
         JPanel row4Panel = new JPanel();
         row4Panel.setLayout(new FlowLayout(0));
@@ -76,8 +70,6 @@ public class DropFrame extends JFrame{
 
         row4Panel.add(sackLabel);
         row4Panel.add(comboBoxSack);
-
-
 
         /////////////////////////////////////////////////////////////////
         JPanel row5Panel = new JPanel();
@@ -88,7 +80,6 @@ public class DropFrame extends JFrame{
         row5Panel.add(gloveLabel);
         row5Panel.add(comboBoxGlove);
 
-
         /////////////////////////////////////////////////////////////////
         JPanel row6Panel = new JPanel();
         row6Panel.setLayout(new FlowLayout(0));
@@ -98,10 +89,7 @@ public class DropFrame extends JFrame{
         row6Panel.add(capeLabel);
         row6Panel.add(comboBoxCape);
 
-
-
         /////////////////////////////////////////////////////////////////
-
 
         JButton okButton = new JButton("Ok");
         JButton cancelButton = new JButton("Cancel");

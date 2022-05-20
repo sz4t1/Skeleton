@@ -15,7 +15,7 @@ public class AttackFrame extends JFrame {
     private GameScreen parent;
 
     /**
-     *
+     *The popup frame, wich will start the attack commands
      * @param virologists
      * @param v
      * @param g
@@ -71,7 +71,6 @@ public class AttackFrame extends JFrame {
         add(middle);
         add(downer);
 
-
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(350, 200);
         setResizable(false);
@@ -101,5 +100,4 @@ public class AttackFrame extends JFrame {
             }
         }
     }
-
 }

@@ -75,18 +75,6 @@ public class MoveFrame extends JFrame{
 
         }
 
-//        moveButtons.add(c1Button);
-//        moveButtons.add(c2Button);
-//        moveButtons.add(c3Button);
-//        moveButtons.add(c4Button);
-//
-//
-//        buttonsPanel.add(c1Button);
-//        buttonsPanel.add(c2Button);
-//        buttonsPanel.add(c3Button);
-//        buttonsPanel.add(c4Button);
-
-
         JButton okButton = new JButton("Ok");
         JButton cancelButton = new JButton("Cancel");
 

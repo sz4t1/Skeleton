@@ -4,7 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-
+/**
+ * This popup frame will start the crafting action
+ */
 public class CraftFrame extends  JFrame{
 
     private JTextArea textvirusMaterial;
