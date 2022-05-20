@@ -7,12 +7,7 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class MainMenuScreen extends JFrame {
 
@@ -86,7 +81,7 @@ public class MainMenuScreen extends JFrame {
                 GameScreen gs = new GameScreen(game);
             }
             else if(choice.equals("Help")) {
-
+                JOptionPane.showMessageDialog(new JFrame(), "You don't need help! I believe in you :)");
             }
         }
     }
