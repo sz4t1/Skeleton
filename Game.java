@@ -299,8 +299,7 @@ public class Game {
     public void PickUpCommand(int am, int nuk, int axe, int cape, int glove, int sack){
         boolean validCommand = false;
         if (am > 0 || nuk > 0) {
-            ArrayList<Material> mats;
-            ArrayList<Material> removemats= new ArrayList<>();
+            ArrayList<Material> mats= new ArrayList<>();
             mats = virologists.get(getActiveVirologistName()).getField().getMaterials();
             int max= virologists.get(getActiveVirologistName()).getField().getMaterials().size();
             for(int j=0;j<am;j++)
@@ -429,7 +428,46 @@ public class Game {
     }
 
     public void StealCommand(String vir, int am, int nuk, int axe, int cape, int glove, int sack){
-        //TODO
+        Virologist virologist=virologists.get(vir);
+        boolean validCommand=false;
+        if (am > 0 || nuk > 0) {
+
+            ArrayList<Material> mats;
+            System.out.println(virologist.getMaterials().size());
+            mats= virologist.getMaterials();
+            for(int j=0;j<am;j++)
+                for (int i=0;i<mats.size();i++){
+                    if(mats.get(i).getName().equals("aminoacid")) {
+                        virologists.get(getActiveVirologistName()).StealMaterial(virologist, mats.get(i));
+                        mats= virologist.getMaterials();
+                        break;
+                    }
+            }
+            for(int j=0;j<nuk;j++)
+                for (int i=0;i<mats.size();i++){
+                    if(mats.get(i).getName().equals("nukleotide")) {
+                        virologists.get(getActiveVirologistName()).StealMaterial(virologist, mats.get(i));
+                        mats= virologist.getMaterials();
+                        break;
+                    }
+                }
+            validCommand=true;
+        }
+        if (axe > 0 || cape > 0 || glove > 0 || sack > 0) {
+            ArrayList<Equipment> equips=virologist.getEquipments();
+            for(int j=0;j<am;j++)
+                for (int i=0;i<equips.size();i++){
+                    virologists.get(getActiveVirologistName()).StealEquipment(virologist,equips.get(i));
+                    break;
+                }
+                validCommand=true;
+        }
+        if(validCommand){
+            stepCount -= 1;
+        }
+        if(stepCount <= 0){
+            NextVirologist();
+        }
         gameScreen.UpdateScreenData(virologists.get(getActiveVirologistName()));
     }
 

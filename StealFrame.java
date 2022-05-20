@@ -147,7 +147,7 @@ public class StealFrame extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
-            if(choice.equals("Apply")) {
+            if(choice.equals("Ok")) {
                 parent.StealCall((String)comboBoxSteal.getSelectedItem(),
                         Integer.parseInt((String)comboBoxAminoAcid.getSelectedItem()),
                         Integer.parseInt((String)comboBoxNukleodite.getSelectedItem()),
@@ -185,7 +185,7 @@ public class StealFrame extends JFrame {
     private String[] comboBoxNames(ArrayList<Virologist> viro) {
         String[] nameStrings = new String[viro.size()];
         for (int i = 0; i < viro.size(); i++) {
-            nameStrings[i] = viro.get(i).toString();    //EZ NEM VÉGLEGES!!!!!!!
+            nameStrings[i] = viro.get(i).GetName();    //EZ NEM VÉGLEGES!!!!!!!
         }
         return nameStrings;
     }
