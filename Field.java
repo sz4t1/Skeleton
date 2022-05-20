@@ -46,7 +46,6 @@ public class Field {
 
     //Public getters and setters////////////
     public String getName() {
-        System.out.println("getName");
         return name;
     }
 
