@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 //The virologist class represents the character which is being controlled by the player
 public class Virologist {
@@ -132,6 +133,7 @@ public class Virologist {
             return true;
         }
         System.out.println("CraftVirus(Virus v) - Not enough resources.");
+        JOptionPane.showMessageDialog(new JFrame(), "-Not enough resources!");
         return false;
     }
     //Attacks another virologist with the chosen virus

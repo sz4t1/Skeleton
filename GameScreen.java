@@ -49,7 +49,7 @@ public class GameScreen extends JFrame {
         roundNumberLabel.setHorizontalAlignment(JLabel.LEFT);
         currentPlayerNameLabel = new JLabel(virologists.get(1).GetName());
         currentPlayerNameLabel.setHorizontalAlignment(JLabel.RIGHT);
-        currentPlayerNameLabel.setBackground(Color.lightGray);
+        currentPlayerNameLabel.setBackground(Color.YELLOW);
         currentPlayerNameLabel.setOpaque(true);
 
         topPanel.add(roundNumberLabel);
@@ -174,65 +174,42 @@ public class GameScreen extends JFrame {
         /**
          * Feltölti a játékos label-ket.
          */
-        JLabel pTextLabel = new JLabel("Players");
+
+        JLabel pTextLabel = new JLabel("Players:");
+        playersPanel.add(pTextLabel);
         for (int i = 0; i < virologists.size(); i++) {
             playersPanel.add(new JLabel(virologists.get(i).GetName()));
         }
-//        JLabel p1Label = new JLabel(virologists.get(0).getName()); //paraméterből kapják
-//        JLabel p2Label = new JLabel("p2");
-//        JLabel p3Label = new JLabel("p3");
-//        JLabel p4Label = new JLabel("p4");
-//        p4Label.setBackground(Color.red);      //játékos megkülönböztetés példa
-//        p4Label.setOpaque(true);
-//        JLabel p5Label = new JLabel("p5");
-
-        playersPanel.add(pTextLabel);
-//        playersPanel.add(p1Label);
-//        playersPanel.add(p2Label);
-//        playersPanel.add(p3Label);
-//        playersPanel.add(p4Label);
-//        playersPanel.add(p5Label);
 
         rightPanel.add(playersPanel);
-
-
-
-        /////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
 
 
         //botton
         /////////////////////////////////////////////////////////////
         JPanel bottonPanel = new JPanel();
-        bottonPanel.setLayout(new FlowLayout());
+        bottonPanel.setLayout(new GridLayout(1 , 6));
         JLabel inventoryLabel = new JLabel("Inventory:");
         bottonPanel.add(inventoryLabel, BorderLayout.PAGE_END);
 
         /////////////////////////////////////////////////////////////Material
 
         JPanel mPanel = new JPanel();
-        mPanel.setLayout(new BoxLayout(mPanel, BoxLayout.Y_AXIS));
+        mPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        mPanel.setLayout(new BorderLayout());
         JLabel mLabel = new JLabel("Materials");
         mTextArea = new JTextArea();
         mTextArea.setEditable(false);
 //        mTextArea = new JTextArea("-amino acid X " + virologists.get(0).GetAminoAcidCount()+
 //                                "\n-nukleodite X " +virologists.get(0).GetNukleoditeCount());
-        mPanel.add(mLabel);
-        mPanel.add(mTextArea);
+        mPanel.add(mLabel, BorderLayout.PAGE_START);
+        mPanel.add(mTextArea, BorderLayout.CENTER);
         bottonPanel.add(mPanel);
 
         /////////////////////////////////////////////////////////////Equipment
 
         JPanel ePanel = new JPanel();
-        ePanel.setLayout(new BoxLayout(ePanel, BoxLayout.Y_AXIS));
+        ePanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        ePanel.setLayout(new BorderLayout());
         JLabel eLabel = new JLabel("Equipments");
         eTextArea = new JTextArea();
         eTextArea.setEditable(false);
@@ -240,14 +217,16 @@ public class GameScreen extends JFrame {
 //                                    "\n-Cape X " + virologists.get(0).getCapeCount()+
 //                                    "\n-Sack X " + virologists.get(0).getSackCount()+
 //                                    "\n-Glove X " + virologists.get(0).getGloveCount());
-        ePanel.add(eLabel);
-        ePanel.add(eTextArea);
+        ePanel.add(eLabel, BorderLayout.PAGE_START);
+        ePanel.add(eTextArea, BorderLayout.CENTER);
         bottonPanel.add(ePanel);
 
         /////////////////////////////////////////////////////////////Viruses
 
         JPanel vPanel = new JPanel();
-        vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.Y_AXIS));
+        vPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        //vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.Y_AXIS));
+        vPanel.setLayout(new BorderLayout());
         JLabel vLabel = new JLabel("Viruses");
         vTextArea = new JTextArea();
         vTextArea.setEditable(false);
@@ -255,32 +234,37 @@ public class GameScreen extends JFrame {
 //                                "\n-Paralyzing X " + virologists.get(0).getVParalyzingCount()+
 //                                "\n-Protection X " + virologists.get(0).getVProtectionCount()+
 //                                "\n-Amnesia X " + virologists.get(0).getVAmnesiaCount()); // string kell
-        vPanel.add(vLabel);
-        vPanel.add(vTextArea);
+        vPanel.add(vLabel, BorderLayout.PAGE_START);
+        vPanel.add(vTextArea, BorderLayout.CENTER);
         bottonPanel.add(vPanel);
 
         /////////////////////////////////////////////////////////////Genetic code
 
         JPanel gPanel = new JPanel();
-        gPanel.setLayout(new BoxLayout(gPanel, BoxLayout.Y_AXIS));
+        gPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        gPanel.setLayout(new BorderLayout());
         JLabel gLabel = new JLabel("Genetic code");
         gTextArea = new JTextArea();
+        gTextArea.setFont(new Font("Monospaced", Font.PLAIN, 50));
         gTextArea.setEditable(false);
 //        gTextArea = new JTextArea(Integer.toString(virologists.get(0).getGenCodesAmmount())); // nagyban kell
-        gPanel.add(gLabel);
-        gPanel.add(gTextArea);
+        gPanel.add(gLabel, BorderLayout.PAGE_START);
+        gPanel.add(gTextArea, BorderLayout.CENTER);
         bottonPanel.add(gPanel);
 
         ///////////////////////////////////////////////////////////// Effects
 
         JPanel effPanel = new JPanel();
-        effPanel.setLayout(new BoxLayout(effPanel, BoxLayout.Y_AXIS));
+        effPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+        effPanel.setLayout(new BorderLayout());
         JLabel effLabel = new JLabel("Effects");
         effTextArea = new JTextArea();
+        effTextArea.setLineWrap(true);
+        effTextArea.setWrapStyleWord(true);
         effTextArea.setEditable(false);
 //        effTextArea = new JTextArea(virologists.get(0).getCurrentEffect()); // string kell
-        effPanel.add(effLabel);
-        effPanel.add(effTextArea);
+        effPanel.add(effLabel, BorderLayout.PAGE_START);
+        effPanel.add(effTextArea, BorderLayout.CENTER);
         bottonPanel.add(effPanel);
 
         /////////////////////////////////////////////////////////////
