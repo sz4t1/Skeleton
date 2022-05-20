@@ -61,6 +61,12 @@ public class Virologist {
         materials.add(m);
         materialSize++;
     }
+
+    public void addMaterial(Material m){
+        System.out.println("AddMaterial(Material m) - Material is added to the virologist's inventory.");
+        materials.add(m);
+        materialSize++;
+    }
     //Addd virus to the inventory
     public void AddVirus(Virus v){
         System.out.println("AddVirus(Virus v) - Virus is added to the virologist's inventory.");
@@ -182,7 +188,7 @@ public class Virologist {
         System.out.println("StealMaterial(Virologist v, Material m) - Stolen materials.");
         if(capacityAbility.getMaxMaterialSize()<materialSize+1){
             v.RemoveMaterial(m);
-            this.AddMaterial(m);
+            this.addMaterial(m);
         }
     }
     //Being attacked by another virologist it passes the virus that was used by the attacker
@@ -345,9 +351,7 @@ public class Virologist {
         equipmentSize++;
     }
 
-    public void addMaterial(Material m){
-        materials.add(m);
-    }
+
 
     //returns the ammount of the known genetic codes
     public int getGenCodesAmmount(){

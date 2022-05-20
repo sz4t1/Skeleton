@@ -185,7 +185,7 @@ public class StealFrame extends JFrame {
     private String[] comboBoxNames(ArrayList<Virologist> viro) {
         String[] nameStrings = new String[viro.size()];
         for (int i = 0; i < viro.size(); i++) {
-            nameStrings[i] = viro.get(i).GetName();    //EZ NEM VÉGLEGES!!!!!!!
+            nameStrings[i] = viro.get(i).GetName();
         }
         return nameStrings;
     }
