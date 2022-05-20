@@ -131,13 +131,13 @@ public class PickUpFrame extends JFrame{
         public void actionPerformed(ActionEvent e) {
             String choice = e.getActionCommand();
             if(choice.equals("Ok")) {
-//                parent.PickUpCall( Integer.parseInt((String)comboBoxAminoAcid.getSelectedItem()),
-//                        Integer.parseInt((String)comboBoxNukleodite.getSelectedItem()),
-//                        Integer.parseInt((String)comboBoxAxe.getSelectedItem()),
-//                        Integer.parseInt((String)comboBoxSack.getSelectedItem()),
-//                        Integer.parseInt((String)comboBoxGlove.getSelectedItem()),
-//                        Integer.parseInt((String)comboBoxCape.getSelectedItem())
-//                );
+                parent.PickUpCall( Integer.parseInt((String)comboBoxAminoAcid.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxNukleodite.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxAxe.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxSack.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxGlove.getSelectedItem()),
+                        Integer.parseInt((String)comboBoxCape.getSelectedItem())
+                );
                 dispose();
             }
             else if(choice.equals("Cancel")) {
